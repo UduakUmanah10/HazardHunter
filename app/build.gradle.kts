@@ -68,10 +68,21 @@ dependencies {
     implementation(libs.square.retrofit)
     implementation(libs.square.retrofit.converter.moshi)
     implementation(libs.hilt.android)
+    implementation(libs.androidx.lifecycle)
+    implementation(libs.navigation.library)
+    implementation(libs.hilt.nav)
+    implementation(libs.datastorelib)
+    implementation(libs.viewmodel.lifecycle)
+    implementation(libs.iconextended)
 
 
 
     testImplementation(libs.junit)
+    testImplementation(libs.mock.library)
+    testImplementation(libs.googleTruth)
+    testImplementation(libs.turbine)
+    testImplementation(libs.coroutine.test)
+
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(platform(libs.compose.bom))
