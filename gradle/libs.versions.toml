@@ -41,6 +41,7 @@ room = "2.5.1"
 turbine = "0.12.3"
 
 viewmodel = "2.6.1"
+window = "1.1.0"
 
 
 
@@ -51,7 +52,13 @@ accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+androidx-window = { module = "androidx.window:window", version.ref = "window" }
+compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+
+
 datastorelib = { group ="androidx.datastore" ,name ="datastore-preferences", version.ref ="data-store"}
+
+
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 coroutine-test = { group= "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test",version.ref = "coroutines"}
@@ -98,7 +105,7 @@ androidApplication = { id = "com.android.application", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android",version.ref = "hilt" }
 detekt = { id = "io.gitlab.arturbosch.detekt",version.ref = "detektGradlePlugin" }
-kolinter ={ id ="org.jmailen.kotlinter",  version.ref ="kotlinter" }
+kolinter = { id ="org.jmailen.kotlinter",  version.ref ="kotlinter" }
 kapt = { id ="kotlin-kapt" }
 
 [bundles]

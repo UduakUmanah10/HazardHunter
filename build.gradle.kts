@@ -24,3 +24,9 @@ buildscript{
     }
 
 }
+
+subprojects {
+    apply(from = "../buildscripts/detekt.gradle")
+}
+
+

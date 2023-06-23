@@ -74,6 +74,7 @@ dependencies {
     implementation(libs.datastorelib)
     implementation(libs.viewmodel.lifecycle)
     implementation(libs.iconextended)
+    implementation(libs.compose.ui.tooling)
 
 
 
