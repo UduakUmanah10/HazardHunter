@@ -5,10 +5,9 @@ plugins {
     alias(libs.plugins.kotlinAndroid) apply false
     alias(libs.plugins.detekt)
     alias(libs.plugins.kolinter)
-
+    alias(libs.plugins.ksp) apply false
 
 }//true
-
 
 
 
@@ -21,7 +20,9 @@ buildscript{
 
     dependencies {
         classpath(libs.detekt.gradle.plugin)
+        classpath ("com.squareup:javapoet:1.13.0")
     }
+
 
 }
 
