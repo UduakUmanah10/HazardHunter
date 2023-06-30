@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kolinter)
     alias(libs.plugins.hilt)
     id("kotlin-kapt")
+
 }
 
 android {
@@ -51,10 +52,15 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+    hilt {
+        enableAggregatingTask = true
+    }
 }
 
 dependencies {
 
+    implementation(libs.material2)
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
@@ -74,6 +80,7 @@ dependencies {
     implementation(libs.datastorelib)
     implementation(libs.viewmodel.lifecycle)
     implementation(libs.iconextended)
+    implementation(libs.compose.ui.tooling)
 
 
 
