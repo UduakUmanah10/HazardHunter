@@ -81,6 +81,7 @@ dependencies {
     implementation(libs.viewmodel.lifecycle)
     implementation(libs.iconextended)
     implementation(libs.compose.ui.tooling)
+    implementation(project(":homescreen"))
 
 
 

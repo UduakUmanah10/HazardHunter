@@ -5,8 +5,9 @@ import android.content.res.Configuration
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -17,9 +18,7 @@ import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
-import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -28,6 +27,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
@@ -51,6 +52,7 @@ import com.example.hazardhunt.login.domain.util.Credentials
 import com.example.hazardhunt.login.domain.util.Email
 import com.example.hazardhunt.login.domain.util.Password
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
+import com.example.hazardhunt.ui.theme.UrbanistMedium
 
 /**
  * This is a composable that maintains the the entire login Screen.
@@ -103,23 +105,24 @@ private fun LogoInputColum(
 
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        VerticalSpacer(height = 12.dp)
+        VerticalSpacer(height = 30.dp)
         // Spacer(modifier = Modifier.weight(R.dimen.spacerWeight.toFloat()))
 
-        Image(
-            painter = painterResource(id = R.drawable.login),
-            contentDescription = "",
-            modifier = Modifier.size(400.dp),
-        )
+        //  Image(
+        //  painter = painterResource(id = R.drawable.login),
+        // contentDescription = "",
+        //  modifier = Modifier.size(400.dp),
+        // )
+        ImageCard(painter = painterResource(id = R.drawable.login))
 
         // LoginAnimation()
-        Spacer(modifier = Modifier.weight(R.dimen.spacerWeight.toFloat()))
+        VerticalSpacer(height = 40.dp)
+        // Spacer(modifier = Modifier.weight(R.dimen.spacerWeight.toFloat()))
 
         if (viewState is LogInViewState.Submitting) {
             CircularProgressIndicator(
                 modifier = Modifier
                     .wrapContentSize()
-                    .padding(top = 10.dp, bottom = 10.dp)
                     .align(Alignment.CenterHorizontally),
                 color = MaterialTheme.colors.secondary,
             )
@@ -134,9 +137,10 @@ private fun LogoInputColum(
             ),
             leadingIcon = {
                 Icon(
-                    Icons.Default.Email,
-                    contentDescription = stringResource(R.string.Email),
+                    painter = painterResource(id = R.drawable.mail),
+                    contentDescription = stringResource(R.string.Password),
                     tint = MaterialTheme.colors.secondary,
+                    modifier = Modifier.size(dimensionResource(id = R.dimen.Icon_height)),
                 )
             },
 
@@ -153,26 +157,28 @@ private fun LogoInputColum(
             ),
             leadingIcon = {
                 Icon(
-                    Icons.Default.Lock,
+                    painter = painterResource(id = R.drawable.shieldlockx),
                     contentDescription = stringResource(R.string.Password),
                     tint = MaterialTheme.colors.secondary,
+                    modifier = Modifier.size(dimensionResource(id = R.dimen.Icon_height)),
                 )
             },
             visualTransformation = PasswordVisualTransformation('*'),
         )
         if (viewState is LogInViewState.SubmissionError) {
             Text(
+                fontFamily = UrbanistMedium,
                 text = viewState.errorMessage.getString(LocalContext.current),
                 color = MaterialTheme.colors.error,
                 modifier = Modifier.padding(top = 12.dp),
             )
         }
 
-        VerticalSpacer(height = 12.dp)
+        VerticalSpacer(height = 30.dp)
 
         LoginButton(onClick = onLoginClicked)
 
-        VerticalSpacer(height = 12.dp)
+        VerticalSpacer(height = 20.dp)
 
         SignupAnnotatedString(action = {})
 
@@ -182,6 +188,7 @@ private fun LogoInputColum(
 
 @Composable
 fun Password(
+    modifier: Modifier = Modifier.imePadding(),
     keyboardOption: KeyboardOptions = KeyboardOptions(
         keyboardType = KeyboardType.Password,
 
@@ -208,16 +215,14 @@ fun Password(
         trailingIcon = {
             IconButton(onClick = { passwordvisibility = !passwordvisibility }) {
                 Icon(
+                    modifier = Modifier.size(20.dp),
                     painter = painterResource(
                         id = passwordIcon,
                     ),
                     contentDescription = stringResource(id = R.string.passwordVisibility),
                     tint = MaterialTheme.colors.secondary,
                 )
-//
             }
-
-//
         },
     )
 }
@@ -309,4 +314,16 @@ class LoginViewStateProvider : PreviewParameterProvider<LogInViewState> {
 
             )
         }
+}
+
+@Composable
+fun ImageCard(painter: Painter) {
+    Box(modifier = Modifier.size(300.dp)) {
+        Image(
+            modifier = Modifier.fillMaxSize(),
+            painter = painter,
+            contentDescription = "",
+            contentScale = ContentScale.Crop,
+        )
+    }
 }

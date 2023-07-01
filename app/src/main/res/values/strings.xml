@@ -16,8 +16,8 @@
         <string name="profile">Person profile Name</string>
         <string name="lastName">Last Name</string>
         <string name="terms_and_conditions">By checking you accept our Privacy Policyand Terms od Use</string>
-        <string name="dont_have_an_account">\ Dont Have an Account ? \</string>
-        <string name="Click_toCreate_account">\ Click to Create an account\\n</string>
+        <string name="dont_have_an_account">\ Dont Have an Account? </string>
+        <string name="Click_toCreate_account">\ Click to Create an account\</string>
         <string name="and">\" And \"</string>
         <string name="terms_of_use">\" Terms of Use \"</string>
         <string name="already_have_an_account">Already Have An Account. Click Here to Sign In</string>

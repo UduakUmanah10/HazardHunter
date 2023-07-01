@@ -3,14 +3,13 @@ package com.example.hazardhunt
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat
+import com.example.hazardhunt.login.presentation.LoginScreen
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -23,9 +22,10 @@ class MainActivity : ComponentActivity() {
             // ConfigureTransparentSystemBars()
             HazardHuntTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.error) {
-                    Greeting("Android")
-                }
+                LoginScreen(
+                    modifier = Modifier.navigationBarsPadding(),
+                    loginCompleted = {},
+                )
             }
         }
     }

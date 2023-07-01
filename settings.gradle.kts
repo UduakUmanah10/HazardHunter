@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "HazardHunt"
 include(":app")
- 
+include(":homescreen")

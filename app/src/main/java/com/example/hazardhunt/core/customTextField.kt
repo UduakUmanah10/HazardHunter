@@ -5,6 +5,7 @@ import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.MaterialTheme
@@ -15,14 +16,14 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.VisualTransformation
-import androidx.compose.ui.text.intl.Locale
-import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.hazardhunt.R
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 import com.example.hazardhunt.ui.theme.OutlinedTextFieldShape
+import com.example.hazardhunt.ui.theme.UrbanistMedium
 
 /** this is a Custom text field implementation to ensure that it  implements
  * the track-app styling that we Expect. */
@@ -43,6 +44,7 @@ fun TrackAppTextField(
 ) {
     Column {
         OutlinedTextField(
+            textStyle = TextStyle(fontFamily = UrbanistMedium),
             trailingIcon = trailingIcon,
             keyboardOptions = keyboardOption,
             singleLine = true,
@@ -56,10 +58,15 @@ fun TrackAppTextField(
             ),
             value = text, // .toUpperCase(Locale.current),
             onValueChange = onTextChanged,
-            label = { Text(text = labelText.toUpperCase(Locale.current)) },
+            label = {
+                Text(
+                    text = labelText,
+                    fontFamily = UrbanistMedium,
+                )
+            },
             modifier = modifier
                 .heightIn(dimensionResource(id = R.dimen.textField_Height))
-                .fillMaxWidth(),
+                .fillMaxWidth().imePadding(),
             shape = OutlinedTextFieldShape,
             isError = (errorMessage != null),
             leadingIcon = leadingIcon,
@@ -72,8 +79,9 @@ fun TrackAppTextField(
             Text(
                 text = errorMessage,
                 color = MaterialTheme.colors.error,
+                fontFamily = UrbanistMedium,
                 modifier = Modifier.padding(
-                    top = 4.dp,
+                    top = 1.dp,
                     start = 16.dp,
                 ),
             )

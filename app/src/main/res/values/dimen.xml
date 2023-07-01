@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="text_border">1dp</dimen>
     <dimen name="button_height">48dp</dimen>
-    <dimen name="textField_Height">48dp</dimen>
+    <dimen name="Icon_height">20dp</dimen>
+    <dimen name="textField_Height">40dp</dimen>
     <dimen name="screen_padding">24dp</dimen>
     <dimen name="surface_padding">28dp</dimen>
     <dimen name="ordinary_text_font"> 18sp</dimen>
     <dimen name="ordinary_text_height">40dp </dimen>
     <dimen name="checkboxHeight">56dp</dimen>
     <dimen name="checkBoxpadding">16dp</dimen>
-    <dimen name="spacerWeight">0.5</dimen>
+    <dimen name="spacerWeight">0.1</dimen>
 
 </resources>

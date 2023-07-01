@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.detekt)
     alias(libs.plugins.kolinter)
     alias(libs.plugins.ksp) apply false
+    id("com.android.library") version "8.0.2" apply false
 
 }//true
 
