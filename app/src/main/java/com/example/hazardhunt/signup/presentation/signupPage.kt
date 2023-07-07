@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Icon
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -27,31 +29,35 @@ import androidx.compose.ui.unit.dp
 import com.example.hazardhunt.R
 import com.example.hazardhunt.core.BoldTExtField
 import com.example.hazardhunt.core.CheckBox
+import com.example.hazardhunt.core.CustomTextField
 import com.example.hazardhunt.core.Email
 import com.example.hazardhunt.core.NormalTextField
 import com.example.hazardhunt.core.Password
 import com.example.hazardhunt.core.SignUpButton
-import com.example.hazardhunt.core.TrackAppTextField
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 
 @Composable
 fun SignUpPage() {
+    val scrollstate = rememberScrollState()
     Surface(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
             .padding(dimensionResource(id = R.dimen.surface_padding)),
     ) {
-        Column(modifier = Modifier) {
+        Column(
+            modifier = Modifier
+                .verticalScroll(state = scrollstate),
+        ) {
             NormalTextField(textValue = stringResource(id = R.string.Helo))
             BoldTExtField(textValue = stringResource(id = R.string.create_account))
-            TrackAppTextField(
+            CustomTextField(
                 text = "",
                 onTextChanged = {},
                 labelText = stringResource(id = R.string.firstname),
                 leadingIcon = { Icon(Icons.Rounded.Person, stringResource(id = R.string.profile)) },
             )
-            TrackAppTextField(
+            CustomTextField(
                 text = "",
                 onTextChanged = {},
                 labelText = stringResource(id = R.string.lastName),

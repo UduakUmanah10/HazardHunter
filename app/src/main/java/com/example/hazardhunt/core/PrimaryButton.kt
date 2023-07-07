@@ -3,6 +3,7 @@ package com.example.hazardhunt.core
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
@@ -16,7 +17,6 @@ import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.hazardhunt.R
-import com.example.hazardhunt.ui.theme.ButtonShape
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 
 /**
@@ -32,7 +32,7 @@ fun PrimaryButton(
     modifier: Modifier = Modifier,
     text: String,
     onclick: () -> Unit,
-    backgroundColor: Color = androidx.compose.material3.MaterialTheme.colorScheme.tertiary,
+    backgroundColor: Color = androidx.compose.material3.MaterialTheme.colorScheme.secondaryContainer,
     textColor: Color = MaterialTheme.colors.background,
 ) {
     val buttonColors = ButtonDefaults.buttonColors(
@@ -41,7 +41,7 @@ fun PrimaryButton(
     Button(
         onClick = onclick,
         modifier = modifier
-            .clip(ButtonShape)
+            .clip(CircleShape)
             .height(dimensionResource(id = R.dimen.button_height))
             .fillMaxWidth(),
         colors = buttonColors,

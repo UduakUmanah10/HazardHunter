@@ -15,6 +15,8 @@ import androidx.compose.material.TextFieldDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.FocusState
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.VisualTransformation
@@ -29,7 +31,7 @@ import com.example.hazardhunt.ui.theme.UrbanistMedium
  * the track-app styling that we Expect. */
 
 @Composable
-fun TrackAppTextField(
+fun CustomTextField(
     modifier: Modifier = Modifier,
     text: String,
     onTextChanged: (String) -> Unit,
@@ -40,6 +42,7 @@ fun TrackAppTextField(
     enabled: Boolean = true,
     keyboardOption: KeyboardOptions = KeyboardOptions.Default,
     trailingIcon: (@Composable () -> Unit)? = null,
+    onFocusChanged: (FocusState) -> Unit = {},
 
 ) {
     Column {
@@ -66,7 +69,9 @@ fun TrackAppTextField(
             },
             modifier = modifier
                 .heightIn(dimensionResource(id = R.dimen.textField_Height))
-                .fillMaxWidth().imePadding(),
+                .fillMaxWidth()
+                .onFocusChanged(onFocusChanged)
+                .imePadding(),
             shape = OutlinedTextFieldShape,
             isError = (errorMessage != null),
             leadingIcon = leadingIcon,
@@ -83,7 +88,7 @@ fun TrackAppTextField(
                 modifier = Modifier.padding(
                     top = 1.dp,
                     start = 16.dp,
-                ),
+                ).imePadding(),
             )
         }
 //
@@ -103,7 +108,7 @@ fun TrackAppTextField(
 private fun FilledCustomTextField() {
     HazardHuntTheme {
         Surface() {
-            TrackAppTextField(
+            CustomTextField(
                 text = "Toa Text fiels",
                 onTextChanged = {},
                 labelText = "user Name",
@@ -125,7 +130,7 @@ private fun FilledCustomTextField() {
 @Composable
 private fun EmptyFilledCustomTextField() {
     HazardHuntTheme {
-        TrackAppTextField(
+        CustomTextField(
             text = "",
             onTextChanged = {},
             labelText = "user Name",
@@ -146,7 +151,7 @@ private fun EmptyFilledCustomTextField() {
 @Composable
 private fun ErrorFilledCustomTextField() {
     HazardHuntTheme {
-        TrackAppTextField(
+        CustomTextField(
             text = "",
             onTextChanged = {},
             labelText = "user Name",

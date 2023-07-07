@@ -13,7 +13,7 @@ fun Email(
     enabled: Boolean,
     leadingIcon: (@Composable () -> Unit)? = null,
 ) {
-    TrackAppTextField(
+    CustomTextField(
         enabled = enabled,
         text = text,
         onTextChanged = onEmailTextChanged,

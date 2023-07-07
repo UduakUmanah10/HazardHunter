@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">HazardHunt</string>
+    <string name="first_title"> Real Time Situational Report</string>
+    <string name="first_title_content"> Get real time Incident data report.\n
+        Respond appropriately to prevent severe Accident.
+    </string>
         <string name="sign_up">Sign Up</string>
         <string name="Log_in">Log In</string>
         <string name="Email">Email</string>

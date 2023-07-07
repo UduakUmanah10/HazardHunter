@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="text_border">1dp</dimen>
-    <dimen name="button_height">48dp</dimen>
+    <dimen name="button_height">45dp</dimen>
     <dimen name="Icon_height">20dp</dimen>
     <dimen name="textField_Height">40dp</dimen>
     <dimen name="screen_padding">24dp</dimen>
@@ -11,5 +11,7 @@
     <dimen name="checkboxHeight">56dp</dimen>
     <dimen name="checkBoxpadding">16dp</dimen>
     <dimen name="spacerWeight">0.1</dimen>
+    <dimen name="pager_height">10</dimen>
+    <dimen name="loitte">0.7</dimen>
 
 </resources>

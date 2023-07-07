@@ -36,7 +36,7 @@ fun Password(
     var passwordvisibility by remember { mutableStateOf(false) }
     val passwordIcon = if (passwordvisibility) R.drawable.visibility else R.drawable.visibility_off
 
-    TrackAppTextField(
+    CustomTextField(
         keyboardOption = keyboardOption,
         text = text,
         onTextChanged = onPasswordTextChanged,

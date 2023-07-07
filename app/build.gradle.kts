@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kolinter)
     alias(libs.plugins.hilt)
     id("kotlin-kapt")
+    id("org.jetbrains.kotlin.plugin.serialization")
 
 }
 
@@ -60,6 +61,15 @@ android {
 
 dependencies {
 
+    implementation("androidx.datastore:datastore:1.0.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
+    // Pager and Indicators - Accompanist
+    implementation ("com.google.accompanist:accompanist-pager-indicators:0.24.2-alpha")
+
+    // DataStore Preferences
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+    implementation(libs.splashscreen)
     implementation(libs.material2)
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
@@ -81,8 +91,8 @@ dependencies {
     implementation(libs.viewmodel.lifecycle)
     implementation(libs.iconextended)
     implementation(libs.compose.ui.tooling)
-    implementation(project(":homescreen"))
-
+    implementation("com.airbnb.android:lottie-compose:4.0.0")
+   //implementation(project(":HomeFeature"))
 
 
     testImplementation(libs.junit)

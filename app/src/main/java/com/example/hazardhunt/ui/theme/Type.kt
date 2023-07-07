@@ -34,10 +34,10 @@ val AppTypography =
             letterSpacing = 0.sp,
         ),
         displaySmall = TextStyle(
-            fontFamily = Roboto,
+            fontFamily = UrbanistMedium,
             fontWeight = FontWeight.W400,
-            fontSize = 36.sp,
-            lineHeight = 44.sp,
+            fontSize = 23.sp,
+            lineHeight = 40.sp,
             letterSpacing = 0.sp,
         ),
         headlineLarge = TextStyle(
@@ -69,7 +69,7 @@ val AppTypography =
             letterSpacing = 0.sp,
         ),
         titleMedium = TextStyle(
-            fontFamily = Roboto,
+            fontFamily = UrbanistMedium,
             fontWeight = FontWeight.Medium,
             fontSize = 16.sp,
             lineHeight = 24.sp,

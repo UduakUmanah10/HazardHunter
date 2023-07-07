@@ -3,46 +3,50 @@ package com.example.hazardhunt
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.navigationBarsPadding
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
-import com.example.hazardhunt.login.presentation.LoginScreen
+import androidx.navigation.compose.rememberNavController
+import com.example.hazardhunt.core.ScreenNavigation
+import com.example.hazardhunt.onboarding.data.OnboardingSettings
+import com.example.hazardhunt.onboarding.data.OnboardingState
+import com.example.hazardhunt.onboarding.data.datastore
+import com.example.hazardhunt.onboarding.domain.NavViewModel
+import com.example.hazardhunt.onboarding.presentation.Screen
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    // lateinit var navigationViewModel: NavigationViewModel
+    lateinit var navigationViewModel: NavViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
+        installSplashScreen()
+
         setContent {
-            // ConfigureTransparentSystemBars()
+            val screenn = datastore.data.collectAsState(initial = OnboardingSettings())
+            val screen = checkOnborrding(screenn.value.completed)
             HazardHuntTheme {
-                // A surface container using the 'background' color from the theme
-                LoginScreen(
-                    modifier = Modifier.navigationBarsPadding(),
-                    loginCompleted = {},
-                )
+                val appsettings = navigationViewModel.startDestination.value
+                val navController = rememberNavController()
+
+                ScreenNavigation(navHostController = navController, appsettings)
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier,
-    )
-}
-
-@Composable
-@Preview(showBackground = true)
-fun GreetingPreview() {
-    HazardHuntTheme {
-        Greeting("Android")
+fun checkOnborrding(input: OnboardingState): String {
+    return if (input == OnboardingState.COMPLETED) {
+        Screen.welcomeScreen.route
+    } else {
+        Screen.onboardingScreen.route
     }
 }

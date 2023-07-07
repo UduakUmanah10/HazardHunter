@@ -22,6 +22,7 @@ buildscript{
     dependencies {
         classpath(libs.detekt.gradle.plugin)
         classpath ("com.squareup:javapoet:1.13.0")
+        classpath ("org.jetbrains.kotlin:kotlin-serialization:1.8.10")
     }
 
 
