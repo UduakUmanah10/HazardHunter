@@ -25,5 +25,7 @@
         <string name="and">\" And \"</string>
         <string name="terms_of_use">\" Terms of Use \"</string>
         <string name="already_have_an_account">Already Have An Account. Click Here to Sign In</string>
+    <string name="done">Done\n</string>
+    <string name="Reschedue">Reschedule\n</string>
 
 </resources>

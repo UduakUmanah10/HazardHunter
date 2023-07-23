@@ -9,13 +9,14 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.hazardhunt.home.model.SafetyTasks
+import com.example.hazardhunt.R
+import com.example.hazardhunt.home.data.model.SafetyTasks
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 
 @Composable
@@ -33,10 +34,10 @@ fun ListofTasksItem(
             horizontalAlignment = Alignment.End,
 
         ) {
-            TaskText()
+            TaskText(task.description)
             RowButton(
-                done = onDoneSelectedClicked,
-                reschedule = onRescheduleClicked,
+                done = { onDoneSelectedClicked() },
+                reschedule = { onRescheduleClicked() },
 
             )
         }
@@ -53,26 +54,28 @@ private fun RowButton(done: () -> Unit, reschedule: () -> Unit) {
 
 @Composable
 private fun Reschedule(recschdule: () -> Unit) {
-    TextButton(onClick = recschdule) {
-        Text(text = "Reschedule")
-    }
+    DefaultTextButton(
+        text = stringResource(id = R.string.Reschedue),
+        onClick = recschdule,
+    )
 }
 
 @Composable
 private fun DoneButton(done: () -> Unit) {
-    TextButton(onClick = done) {
-        Text(text = "finish")
-    }
+    DefaultTextButton(
+        text = stringResource(id = R.string.done),
+        onClick = done,
+    )
 }
 
 @Composable
-private fun TaskText() {
+private fun TaskText(text: String) {
     Text(
         modifier =
         Modifier
             .padding(8.dp)
             .fillMaxWidth(),
-        text = " clean my ui",
+        text = text,
     )
 }
 

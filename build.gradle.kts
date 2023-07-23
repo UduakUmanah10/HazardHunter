@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.detekt)
     alias(libs.plugins.kolinter)
     alias(libs.plugins.ksp) apply false
+    alias(libs.plugins.kover)
     id("com.android.library") version "8.0.2" apply false
 
 }//true
@@ -20,9 +21,12 @@ buildscript{
     }
 
     dependencies {
+
         classpath(libs.detekt.gradle.plugin)
         classpath ("com.squareup:javapoet:1.13.0")
         classpath ("org.jetbrains.kotlin:kotlin-serialization:1.8.10")
+        //classpath ("com.google.protobuf:protobuf-gradle-plugin:0.8.19")
+
     }
 
 
@@ -31,5 +35,9 @@ buildscript{
 subprojects {
     apply(from = "../buildscripts/detekt.gradle")
 }
+
+
+
+
 
 

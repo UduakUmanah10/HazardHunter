@@ -47,6 +47,7 @@ turbine = "0.12.3"
 
 viewmodel = "2.6.1"
 window = "1.1.0"
+kover ="0.7.2"
 
 
 
@@ -120,6 +121,7 @@ hiltplugins ={ id = "com.google.dagger.hilt.android" }
 detekt = { id = "io.gitlab.arturbosch.detekt",version.ref = "detektGradlePlugin" }
 kolinter = { id ="org.jmailen.kotlinter",  version.ref ="kotlinter" }
 ksp = { id = "com.google.devtools.ksp" ,  version.ref = "ksp"}
+kover = {id="org.jetbrains.kotlinx.kover", version.ref= "kover"}
 
 kapt = { id ="kotlin-kapt" }
 

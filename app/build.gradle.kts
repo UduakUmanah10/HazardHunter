@@ -4,8 +4,10 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.kolinter)
     alias(libs.plugins.hilt)
+    alias(libs.plugins.kover)
     id("kotlin-kapt")
     id("org.jetbrains.kotlin.plugin.serialization")
+   // id("com.google.protobuf")
 
 }
 
@@ -57,11 +59,18 @@ android {
     hilt {
         enableAggregatingTask = true
     }
+
 }
 
 dependencies {
 
+  // implementation("com.google.protobuf:protobuf-javalite:3.21.5")
+// implementation("com.google.protobuf:protobuf-kotlin-lite3.21.5")
     implementation("androidx.datastore:datastore:1.0.0")
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+
+
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
     // Pager and Indicators - Accompanist
@@ -116,3 +125,4 @@ dependencies {
     kapt(libs.square.moshi.kotlin.codegen)
     kaptAndroidTest(libs.hilt.android.compiler)
 }
+

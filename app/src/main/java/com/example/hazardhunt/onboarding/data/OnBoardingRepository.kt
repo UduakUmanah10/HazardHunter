@@ -7,7 +7,6 @@ import kotlinx.coroutines.flow.Flow
 val Context.datastore by dataStore("onboarding-settings.json", OnBoardingSerializer)
 class OnBoardingRepository(context: Context) {
     private val dataStore = context.datastore
-    val onboardingSettings = dataStore.data
 
     suspend fun saveOnBoardingState(onboardingState: OnboardingState) {
         dataStore.updateData {

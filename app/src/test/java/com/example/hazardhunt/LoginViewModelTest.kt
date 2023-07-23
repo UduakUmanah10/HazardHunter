@@ -29,7 +29,6 @@ class LoginViewModelTest {
     @OptIn(ExperimentalCoroutinesApi::class)
     @get:Rule
     val uncaughtExceptionHandlerRule = ThreadExceptionHandler()
-
     val dispatcher = StandardTestDispatcher()
 
     @Before
@@ -51,6 +50,7 @@ class LoginViewModelTest {
         Password("Umanah4"),
     )
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun updateCredentials() = runTest {
         val testEmail = "testy@mactest.com"
@@ -85,6 +85,7 @@ class LoginViewModelTest {
             )
     }
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun submitInvalidCredentials() = runTest {
         val testEmail = "testy@mactest.com"
@@ -134,6 +135,7 @@ class LoginViewModelTest {
             )
     }
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun unknownError() = runTest {
         val testEmail = "testy@mactest.com"
@@ -213,6 +215,7 @@ class LoginViewModelTest {
             )
     }
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun testClearErrorsAfterInput() = runTest {
         val credentials = Credentials()
