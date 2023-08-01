@@ -3,11 +3,12 @@ package com.example.hazardhunt.home.presentation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.hazardhunt.home.domain.viewmodel.safetyTaskViewmodel
+import com.example.hazardhunt.home.domain.viewmodel.SafetyTaskViewmodel
 
 @Composable
 fun SafetyTaskScreen(
-    viewmodel: safetyTaskViewmodel = hiltViewModel(),
+    viewmodel: SafetyTaskViewmodel = hiltViewModel(),
+    navigationClicked:()->Unit
 ) {
     val viewstate = viewmodel.viewState.collectAsState()
 
@@ -16,5 +17,7 @@ fun SafetyTaskScreen(
         onclick = {},
         onReschedule = {},
         onAddButtonClicked = {},
+        navigationClicked = navigationClicked
+
     )
 }

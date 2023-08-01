@@ -10,11 +10,7 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.windowInsetsPadding
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
@@ -37,8 +33,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.hazardhunt.R
-import com.example.hazardhunt.home.data.model.SafetyTasks
 import com.example.hazardhunt.home.presentation.SafetyTaskScreen
+import com.example.hazardhunt.homescreen.presentation.HomeScreen
+import com.example.hazardhunt.insight.presenatation.InsightsPage
+import com.example.hazardhunt.insight.presenatation.InsightsScreen
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 
 sealed class NavigationDestination(val name: String, @DrawableRes val icons: Int, val route: String) {
@@ -64,19 +62,12 @@ fun HomeScreen(
 ) {
     val navController = rememberNavController()
     Scaffold(
-        floatingActionButton = {
-            FloatingActionButton(
-                onClick = onAddButtonClicked,
-                shape = CircleShape,
-            ) {
-                Icon(Icons.Default.Add, contentDescription = "")
-            }
-        },
         bottomBar = {
             val backStackEntry by navController.currentBackStackEntryAsState()
             var showBottomBar by rememberSaveable { mutableStateOf(true) }
             showBottomBar = when (backStackEntry?.destination?.route) {
                 "TaskScreen" -> false
+                "InsightScreen"->false
                 else -> true
             }
 
@@ -121,9 +112,10 @@ fun HomeScreen(
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(innerPadding),
+
                     ) {
                         // modulehomeScreen()
-                        com.example.hazardhunt.homescreen.presentation.HomeScreen()
+                        HomeScreen()
                     }
 //
                 }
@@ -131,25 +123,25 @@ fun HomeScreen(
                     Surface(
                         modifier = Modifier.navigationBarsPadding(),
                     ) {
-                        val tasks = (0..10).map { num ->
-                            SafetyTasks("Task no $num")
+                        SafetyTaskScreen(){
+                            navController.navigate("HomeScreen")
                         }
-                        SafetyTaskScreen()
-                        // TaskListContent(
-                        // viewState = SafetyListViewState.loaded(tasks),
-                        // onclick={},
-                        // onReschedule={},
-                        // onAddButtonClicked={},
-                        // )
+
                     }
                 }
                 composable("InsightScreen") {
                     Surface(
-                        modifier = Modifier
-                            .fillMaxSize(),
+                       modifier = Modifier,
+                        color =MaterialTheme.colorScheme.onBackground
+
                     ) {
-                        // InsightsScreen(navController)
-                    }
+
+                        InsightsScreen(){
+                            navController.navigate("HomeScreen")
+                        }
+                        //viewchart()
+
+                }
                 }
                 composable("SettingsScreen") {
                     Surface(

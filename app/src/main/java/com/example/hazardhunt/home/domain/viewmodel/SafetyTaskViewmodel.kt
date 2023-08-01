@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class safetyTaskViewmodel @Inject constructor(
+class SafetyTaskViewmodel @Inject constructor(
     private val getAllSafetyTasks: GetTaskUseCase,
 ) : ViewModel() {
 

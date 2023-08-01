@@ -31,7 +31,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
@@ -52,7 +51,6 @@ import com.google.accompanist.pager.rememberPagerState
 fun OnboardingScreen(
     navController: NavHostController,
     welcomeViewModel: OnboradingViewModel = hiltViewModel(),
-    onboardingViewModel: OnbaordingViewModel1 = viewModel(),
 ) {
     val pages = listOf(
         OnBoardingPage.First,
@@ -88,7 +86,6 @@ fun OnboardingScreen(
             pagerState = pagerState,
         ) {
             println("clicked")
-            onboardingViewModel.updateOnboarding(true)
             welcomeViewModel.saveOnBoardingState(completed = OnboardingState.COMPLETED)
             navController.navigate(Screen.welcomeScreen.route)
         }

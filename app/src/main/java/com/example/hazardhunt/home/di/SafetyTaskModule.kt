@@ -12,5 +12,5 @@ import dagger.hilt.components.SingletonComponent
 abstract class SafetyTaskModule {
 
     @Binds
-    abstract fun safetyTaskRepository(SafetyTaskUseCase: DemoSafetyTaskRepository): SafetyTaskRepository
+    abstract fun safetyTaskRepository(safetyTaskUseCase: DemoSafetyTaskRepository): SafetyTaskRepository
 }

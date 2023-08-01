@@ -3,6 +3,7 @@
     <dimen name="text_border">1dp</dimen>
     <dimen name="button_height">45dp</dimen>
     <dimen name="Icon_height">20dp</dimen>
+    <dimen name="centerBarIcon">30dp</dimen>
     <dimen name="textField_Height">40dp</dimen>
     <dimen name="screen_padding">24dp</dimen>
     <dimen name="surface_padding">28dp</dimen>

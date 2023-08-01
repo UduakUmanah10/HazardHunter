@@ -15,6 +15,7 @@ fun LoginScreen(
     modifier: Modifier = Modifier,
     loginCompleted: () -> Unit,
     viewModel: LoginViewModel = hiltViewModel(),
+    signup: () -> Unit,
 
 ) {
     val viewState = viewModel.viewState.collectAsState()
@@ -32,5 +33,6 @@ fun LoginScreen(
         onPasswordChanged = viewModel::passwordChangeed,
         onLoginClicked = viewModel::signInButtonClicked,
         onSignupClicked = viewModel::signInButtonClicked,
+        signup = signup,
     )
 }

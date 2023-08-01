@@ -63,11 +63,17 @@ android {
 }
 
 dependencies {
+    implementation ("com.github.tehras:charts:0.2.4-alpha")
 
   // implementation("com.google.protobuf:protobuf-javalite:3.21.5")
 // implementation("com.google.protobuf:protobuf-kotlin-lite3.21.5")
+
+    //implementation("com.himanshoe:charty:2.0.0-alpha01")
+
+    //implementation("co.yml:ycharts:2.1.0")
     implementation("androidx.datastore:datastore:1.0.0")
     implementation("androidx.datastore:datastore-preferences:1.0.0")
+    implementation("androidx.core:core-splashscreen:1.0.0")
 
 
 
@@ -78,7 +84,7 @@ dependencies {
 
     // DataStore Preferences
     implementation("androidx.datastore:datastore-preferences:1.0.0")
-    implementation(libs.splashscreen)
+//    implementation(libs.splashscreen)
     implementation(libs.material2)
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)

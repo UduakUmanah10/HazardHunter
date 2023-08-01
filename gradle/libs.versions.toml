@@ -41,7 +41,7 @@ navigation = "2.6.0"
 retrofit = "2.9.0"
 room = "2.5.2"
 
-splashscreen ="1.0.0"
+splashscreen ="1.0.1"
 
 turbine = "0.12.3"
 

@@ -2,7 +2,7 @@ package com.example.hazardhunt.onboarding.domain
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.hazardhunt.homescreen.data.onboardingrepository
+import com.example.hazardhunt.homescreen.data.Onboardingrepository
 import com.example.hazardhunt.onboarding.data.OnBoardingRepository
 import com.example.hazardhunt.onboarding.data.OnboardingState
 import com.example.hazardhunt.onboarding.presentation.Screen
@@ -18,7 +18,7 @@ import javax.inject.Inject
 class NavViewModel
 @Inject constructor(
     private val repository: OnBoardingRepository,
-    private val repository1: onboardingrepository,
+    private val repository1: Onboardingrepository,
 ) : ViewModel() {
 
     private val _isLoading = MutableStateFlow<Boolean>(true)

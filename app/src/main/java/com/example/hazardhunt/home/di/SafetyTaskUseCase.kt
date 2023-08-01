@@ -11,5 +11,5 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 abstract class SafetyTaskUseCase {
     @Binds
-    abstract fun bindCredentialsLoginUseCase(ProdSafetyTaskUseCase: ProdSafetyTaskUseCase): GetTaskUseCase
+    abstract fun bindCredentialsLoginUseCase(prodSafetyTaskUseCase: ProdSafetyTaskUseCase): GetTaskUseCase
 }

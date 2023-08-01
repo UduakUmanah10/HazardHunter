@@ -70,6 +70,7 @@ fun LoginPage(
     onPasswordChanged: (String) -> Unit,
     onLoginClicked: () -> Unit,
     onSignupClicked: () -> Unit,
+    signup: () -> Unit,
     modifier: Modifier = Modifier,
 
 ) {
@@ -83,6 +84,7 @@ fun LoginPage(
                 onPasswordChanged,
                 onLoginClicked,
                 onSignupClicked,
+                signup = signup,
             )
         }
     }
@@ -95,6 +97,7 @@ private fun LogoInputColum(
     onPasswordChanged: (String) -> Unit,
     onLoginClicked: () -> Unit,
     onSignupClicked: () -> Unit,
+    signup: () -> Unit,
 ) {
     Column(
         modifier = Modifier
@@ -175,7 +178,7 @@ private fun LogoInputColum(
 
         VerticalSpacer(height = 20.dp)
 
-        SignupAnnotatedString(action = {})
+        SignupAnnotatedString(action = signup)
 
         // SignUpButton(onSignupClicked = onSignupClicked)
     }
@@ -275,6 +278,7 @@ private fun LoginPreview(
     HazardHuntTheme {
         LoginPage(
             viewState = viewState,
+            {},
             {},
             {},
             {},

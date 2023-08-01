@@ -18,6 +18,7 @@ fun TaskListContent(
     onclick: (SafetyTasks) -> Unit,
     onReschedule: (SafetyTasks) -> Unit,
     onAddButtonClicked: () -> Unit,
+    navigationClicked: () -> Unit
 ) {
     Surface {
         if (viewState is SafetyListViewState.loaded) {
@@ -26,6 +27,8 @@ fun TaskListContent(
                 onAddButtonClicked,
                 onReschedule,
                 onclick,
+                navigationClicked =navigationClicked
+
             )
         }
 
@@ -42,12 +45,14 @@ private fun LoadedTask(
     onAddButtonClicked: () -> Unit,
     onReschedule: (SafetyTasks) -> Unit,
     onclick: (SafetyTasks) -> Unit,
+    navigationClicked : ()->Unit
 ) {
     safetyTaskList(
         modifier = Modifier,
         tasks = viewState.tasks,
         onRescheduleClicked = onReschedule,
         onDoneClicked = onclick,
+        navigationClicked =navigationClicked
     )
 }
 
@@ -70,6 +75,7 @@ fun taskPreview() {
             onclick = {},
             onReschedule = {},
             onAddButtonClicked = {},
+            navigationClicked = {}
         )
     }
 }

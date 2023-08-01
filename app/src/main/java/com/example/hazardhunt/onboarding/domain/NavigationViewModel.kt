@@ -8,17 +8,16 @@ import androidx.lifecycle.viewModelScope
 import com.example.hazardhunt.onboarding.data.DataStoreRepository
 import com.example.hazardhunt.onboarding.presentation.Screen
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class NavigationViewModel @Inject constructor(
-
     private val repository: DataStoreRepository,
 ) : ViewModel() {
 
     private val _isLoading = MutableStateFlow<Boolean>(true)
-    val isLoading: StateFlow<Boolean> = _isLoading
+    val isLoading = _isLoading.asStateFlow()
 
     private val _startDestination: MutableState<String> = mutableStateOf(Screen.onboardingScreen.route)
     val startDestination: State<String> = _startDestination
