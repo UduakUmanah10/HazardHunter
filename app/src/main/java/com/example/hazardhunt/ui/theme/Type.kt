@@ -11,7 +11,7 @@ import com.example.hazardhunt.R
 private val UrbanistExtraBold = FontFamily(Font(R.font.urbaist_extrabols))
 private val UrbanistSemiBold = FontFamily(Font(R.font.urbanist_semibold))
 private val UrbanistBold = FontFamily(Font(R.font.urbanist_bold))
-private val UrbanistMedium = FontFamily(Font(R.font.urbanist_medium))
+val UrbanistMedium = FontFamily(Font(R.font.urbanist_medium))
 private val UrbanistLight = FontFamily(Font(R.font.urbanist_light))
 private val UrbanistRegular = FontFamily(Font(R.font.urbanist_regular))
 
@@ -34,10 +34,10 @@ val AppTypography =
             letterSpacing = 0.sp,
         ),
         displaySmall = TextStyle(
-            fontFamily = Roboto,
+            fontFamily = UrbanistMedium,
             fontWeight = FontWeight.W400,
-            fontSize = 36.sp,
-            lineHeight = 44.sp,
+            fontSize = 23.sp,
+            lineHeight = 40.sp,
             letterSpacing = 0.sp,
         ),
         headlineLarge = TextStyle(
@@ -69,7 +69,7 @@ val AppTypography =
             letterSpacing = 0.sp,
         ),
         titleMedium = TextStyle(
-            fontFamily = Roboto,
+            fontFamily = UrbanistMedium,
             fontWeight = FontWeight.Medium,
             fontSize = 16.sp,
             lineHeight = 24.sp,

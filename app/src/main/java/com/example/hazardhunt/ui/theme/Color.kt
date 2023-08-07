@@ -30,15 +30,16 @@ private val light_onSurface = Color(0xFF1a1c1e)
 private val light_surfaceVariant = Color(0xFFdee3ea)
 private val light_onSurfaceVariant = Color(0xFF41474d)
 private val light_outline = Color(0xFF72787e)
-private val light_inverseOnSurface = Color(0xFFf0f0f3)
+private val light_inverseOnSurface = Color(0xFFcdc9c2)
 private val light_inverseSurface = Color(0xFF2f3032)
+private val light_ColorBar = Color(0xFFf4f4f2)
 
 private val dark_primary = Color(0xFF8bcdff)
 private val dark_onPrimary = Color(0xFF003450)
 private val dark_primaryContainer = Color(0xFF004b72)
 private val dark_onPrimaryContainer = Color(0xFFc9e6ff)
 private val dark_secondary = Color(0xFFb7c8d9)
-private val dark_onSecondary = Color(0xFF22323f)
+private val dark_onSecondary = Color(0xFFfefefe)
 private val dark_secondaryContainer = Color(0xFF394956)
 private val dark_onSecondaryContainer = Color(0xFFd3e4f5)
 private val dark_tertiary = Color(0xFFd0c0e8)
@@ -60,8 +61,10 @@ private val dark_inverseOnSurface = Color(0xFF1a1c1e)
 private val dark_inverseSurface = Color(0xFFe2e2e5)
 private val button_cardBackground = Color(0xFFe6f5fb)
 private val dark_fontColor = Color(0xFFe8e9e9)
-private val dark_backgroundColor = Color(0xFF2b2b2a)
+private val dark_ColorBar = Color(0xFFf4f4f2)
 
+private val dark_backgroundColor = Color(0xff2b2b2a)
+private val onboarding_buttonColor = Color(0xFF292992)
 val seed = Color(0xFF0f3750)
 val error = Color(0xFFba1b1b)
 
@@ -91,6 +94,7 @@ val LightThemeColors = lightColorScheme(
     outline = light_outline,
     inverseOnSurface = light_inverseOnSurface,
     inverseSurface = light_inverseSurface,
+    scrim = light_ColorBar,
 )
 
 val DarkThemeColors = darkColorScheme(
@@ -99,26 +103,27 @@ val DarkThemeColors = darkColorScheme(
     primaryContainer = dark_primaryContainer,
     onPrimaryContainer = dark_onPrimaryContainer,
     secondary = dark_secondary,
-    onSecondary = dark_onSecondary,
-    secondaryContainer = dark_secondaryContainer,
+    onSecondary = light_onSecondary,
+    secondaryContainer = dark_onSecondaryContainer,
     onSecondaryContainer = dark_onSecondaryContainer,
     tertiary = button_cardBackground,
     onTertiary = dark_onTertiary,
     tertiaryContainer = dark_tertiaryContainer,
     onTertiaryContainer = dark_onTertiaryContainer,
-    error = dark_error,
+    error = dark_onError,
     errorContainer = dark_errorContainer,
     onError = dark_onError,
     onErrorContainer = dark_onErrorContainer,
     background = dark_background,
-    onBackground = dark_onBackground,
+    onBackground = dark_backgroundColor,
     surface = dark_surface,
     onSurface = dark_onSurface,
     surfaceVariant = dark_surfaceVariant,
     onSurfaceVariant = dark_onSurfaceVariant,
     outline = dark_outline,
     inverseOnSurface = dark_inverseOnSurface,
-    inverseSurface = dark_inverseSurface,
+    inverseSurface = onboarding_buttonColor,
+    scrim = light_ColorBar,
 )
 
 val DarkMD2Colors = darkColors(

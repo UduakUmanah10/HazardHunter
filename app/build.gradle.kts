@@ -4,7 +4,10 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.kolinter)
     alias(libs.plugins.hilt)
+    alias(libs.plugins.kover)
     id("kotlin-kapt")
+    id("org.jetbrains.kotlin.plugin.serialization")
+   // id("com.google.protobuf")
 
 }
 
@@ -56,10 +59,32 @@ android {
     hilt {
         enableAggregatingTask = true
     }
+
 }
 
 dependencies {
+    implementation ("com.github.tehras:charts:0.2.4-alpha")
 
+  // implementation("com.google.protobuf:protobuf-javalite:3.21.5")
+// implementation("com.google.protobuf:protobuf-kotlin-lite3.21.5")
+
+    //implementation("com.himanshoe:charty:2.0.0-alpha01")
+
+    //implementation("co.yml:ycharts:2.1.0")
+    implementation("androidx.datastore:datastore:1.0.0")
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+    implementation("androidx.core:core-splashscreen:1.0.0")
+
+
+
+    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
+    // Pager and Indicators - Accompanist
+    implementation ("com.google.accompanist:accompanist-pager-indicators:0.24.2-alpha")
+
+    // DataStore Preferences
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+//    implementation(libs.splashscreen)
     implementation(libs.material2)
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
@@ -81,7 +106,8 @@ dependencies {
     implementation(libs.viewmodel.lifecycle)
     implementation(libs.iconextended)
     implementation(libs.compose.ui.tooling)
-
+    implementation(libs.lottie.compose)
+   //implementation(project(":HomeFeature"))
 
 
     testImplementation(libs.junit)
@@ -105,3 +131,4 @@ dependencies {
     kapt(libs.square.moshi.kotlin.codegen)
     kaptAndroidTest(libs.hilt.android.compiler)
 }
+

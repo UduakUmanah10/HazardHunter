@@ -3,46 +3,35 @@ package com.example.hazardhunt
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.activity.viewModels
+import androidx.compose.runtime.getValue
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
+import androidx.navigation.compose.rememberNavController
+import com.example.hazardhunt.core.ScreenNavigation
+import com.example.hazardhunt.onboarding.domain.NavViewModel
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    val viewModel: NavViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
+        val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
+
+        splashScreen.setKeepOnScreenCondition {
+            viewModel.isLoading.value
+            false
+        }
+
         WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
-            // ConfigureTransparentSystemBars()
             HazardHuntTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.error) {
-                    Greeting("Android")
-                }
+                val navController = rememberNavController()
+                ScreenNavigation(navHostController = navController)
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier,
-    )
-}
-
-@Composable
-@Preview(showBackground = true)
-fun GreetingPreview() {
-    HazardHuntTheme {
-        Greeting("Android")
     }
 }
