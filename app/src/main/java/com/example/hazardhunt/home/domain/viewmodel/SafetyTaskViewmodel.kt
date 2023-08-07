@@ -11,7 +11,11 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-
+/**
+ * This class is responsible for managing and exposing the ui State of the
+ * Safety Task screen
+ *
+ * **/
 @HiltViewModel
 class SafetyTaskViewmodel @Inject constructor(
     private val getAllSafetyTasks: GetTaskUseCase,

@@ -36,37 +36,35 @@ import com.example.hazardhunt.ui.theme.HazardHuntTheme
 import com.github.tehras.charts.bar.BarChartData
 import com.github.tehras.charts.piechart.PieChartData
 
-
 @Composable
-fun InsightsScreen( onNavigationIconClicked:()->Unit){
-    val pieChartContent =listOf(
+fun InsightsScreen(onNavigationIconClicked: () -> Unit) {
+    val pieChartContent = listOf(
         PieChartData.Slice(20f, MaterialTheme.colorScheme.onSecondary),
         PieChartData.Slice(40f, MaterialTheme.colorScheme.error),
         PieChartData.Slice(40f, MaterialTheme.colorScheme.primary),
     )
-    val bar =listOf(
-        BarChartData.Bar(label = "Jan", value = 100f, color = MaterialTheme.colorScheme.outline),
-        BarChartData.Bar(label = "Feb", value = 200f, color = MaterialTheme.colorScheme.outline),
-        BarChartData.Bar(label = "Mar", value = 300f, color = MaterialTheme.colorScheme.outline),
-        BarChartData.Bar(label = "Apr", value = 400f, color = MaterialTheme.colorScheme.onSecondary),
-        BarChartData.Bar(label = "May", value = 100f, color = MaterialTheme.colorScheme.outline),
-        BarChartData.Bar(label = "Jun", value = 200f, color = MaterialTheme.colorScheme.outline),
-        BarChartData.Bar(label = "Jul", value = 300f, color = MaterialTheme.colorScheme.outline),
-        BarChartData.Bar(label = "Aug", value = 400f, color = MaterialTheme.colorScheme.outline),
-        BarChartData.Bar(label = "Sep", value = 400f, color = MaterialTheme.colorScheme.outline),
-        BarChartData.Bar(label = "Oct", value = 100f, color = MaterialTheme.colorScheme.outline),
-        BarChartData.Bar(label = "Nov", value = 200f, color = MaterialTheme.colorScheme.outline),
-        BarChartData.Bar(label = "Dec", value = 300f, color = MaterialTheme.colorScheme.outline),
+    val bar = listOf(
+        BarChartData.Bar(label = "J", value = 100f, color = MaterialTheme.colorScheme.onSecondary),
+        BarChartData.Bar(label = "F", value = 200f, color = MaterialTheme.colorScheme.onSecondary),
+        BarChartData.Bar(label = "M", value = 300f, color = MaterialTheme.colorScheme.onSecondary),
+        BarChartData.Bar(label = "A", value = 400f, color = MaterialTheme.colorScheme.onSecondary),
+        BarChartData.Bar(label = "My", value = 100f, color = MaterialTheme.colorScheme.onSecondary),
+        BarChartData.Bar(label = "Ju", value = 200f, color = MaterialTheme.colorScheme.onSecondary),
+        BarChartData.Bar(label = "Jl", value = 300f, color = MaterialTheme.colorScheme.onSecondary),
+        BarChartData.Bar(label = "A", value = 400f, color = MaterialTheme.colorScheme.onSecondary),
+        BarChartData.Bar(label = "S", value = 400f, color = MaterialTheme.colorScheme.onSecondary),
+        BarChartData.Bar(label = "O", value = 100f, color = MaterialTheme.colorScheme.onSecondary),
+        BarChartData.Bar(label = "N", value = 200f, color = MaterialTheme.colorScheme.onSecondary),
+        BarChartData.Bar(label = "D", value = 300f, color = MaterialTheme.colorScheme.onSecondary),
     )
     InsightsPage(barComponent = bar, pieChartContent, onNavigationIconClicked)
-
 }
 
 @Composable
 fun InsightsPage(
-    barComponent:List<BarChartData.Bar>,
+    barComponent: List<BarChartData.Bar>,
     pieChartContent: List<PieChartData.Slice>,
-    onNavigationIconClicked : ()->Unit
+    onNavigationIconClicked: () -> Unit,
 ) {
     Column(
         modifier = Modifier
@@ -78,7 +76,7 @@ fun InsightsPage(
             scrollContainerColor = MaterialTheme.colorScheme.error,
             title = "Analytics",
             // navIcon = R.drawable.mail,
-            onNavigationIconClicked =  onNavigationIconClicked,
+            onNavigationIconClicked = onNavigationIconClicked,
             navigationIcon = {
                 Icon(
                     painter = painterResource(id = R.drawable.chevronleft),
@@ -107,7 +105,7 @@ fun InsightsPage(
             DoughnutKeyDescription("Under Thresh Hold", MaterialTheme.colorScheme.error),
         )
 
-        BarAndKeys(description,pieChartContent)
+        BarAndKeys(description, pieChartContent)
         Spacer(modifier = Modifier.padding(5.dp))
 
         DiagramTitleAndDescription(" Incident Occurences", " Monthly")
@@ -145,7 +143,7 @@ private fun StatisticReport(
         AfterBar(percentIncrease, firstAppbarContent, firstAppbarSceondContent)
         Divider(
             modifier = Modifier
-                .padding( 1.dp)
+                .padding(1.dp)
                 .height(40.dp)
                 .width(3.dp),
             color = Color.White,
@@ -172,14 +170,14 @@ private fun DiagramTitleAndDescription(title: String, surfaceContent: String) {
             text = title,
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.onSecondary,
-            style = MaterialTheme.typography.labelSmall
+            style = MaterialTheme.typography.labelSmall,
         )
         ContentSurface(surfaceContent)
     }
 }
 
 @Composable
-private fun BarAndKeys(description: List<DoughnutKeyDescription>, pieChartContent:List<PieChartData.Slice>) {
+private fun BarAndKeys(description: List<DoughnutKeyDescription>, pieChartContent: List<PieChartData.Slice>) {
     Row(
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween,
@@ -211,7 +209,7 @@ fun IndividualKey(description: String, color: Color) {
                 .padding(start = 10.dp, end = 10.dp)
                 .wrapContentSize(),
             color = MaterialTheme.colorScheme.onSecondary,
-            style= MaterialTheme.typography.labelMedium
+            style = MaterialTheme.typography.labelMedium,
         )
     }
 }
@@ -246,7 +244,7 @@ fun ContentSurface(textContent: String) {
             Text(
                 text = textContent,
                 color = Color.White,
-                style = MaterialTheme.typography.labelMedium
+                style = MaterialTheme.typography.labelMedium,
             )
         }
     }
@@ -264,7 +262,7 @@ fun AfterBar(percentIncrease: Int, firstContent: String, secondContent: String) 
             text = "$percentIncrease%",
             fontWeight = FontWeight.Bold,
             style = MaterialTheme.typography.headlineMedium,
-            color = Color.White
+            color = Color.White,
         )
 
         Column(modifier = Modifier.padding(7.dp)) {
@@ -273,13 +271,13 @@ fun AfterBar(percentIncrease: Int, firstContent: String, secondContent: String) 
                 text = firstContent,
                 fontWeight = FontWeight.Bold,
                 style = MaterialTheme.typography.titleSmall,
-                color = Color.White
+                color = Color.White,
             )
             Text(
                 text = secondContent,
                 fontWeight = FontWeight.Bold,
                 style = MaterialTheme.typography.titleSmall,
-                color = Color.White
+                color = Color.White,
             )
         }
     }
@@ -304,9 +302,11 @@ fun Afterbar() {
             verticalAlignment = Alignment.CenterVertically,
         ) {
             AfterBar(10, "monthly", "increase")
-            Divider(modifier = Modifier
-                .height(50.dp)
-                .width(3.dp))
+            Divider(
+                modifier = Modifier
+                    .height(50.dp)
+                    .width(3.dp),
+            )
             AfterBar(10, "monthly", "increase")
         }
     }
@@ -337,11 +337,11 @@ fun Dot() {
 )
 @Composable
 fun multipleKey() {
-val pieContent =listOf(
-    PieChartData.Slice(20f, MaterialTheme.colorScheme.onSecondary),
-    PieChartData.Slice(40f, MaterialTheme.colorScheme.error),
-    PieChartData.Slice(40f, MaterialTheme.colorScheme.primary),
-)
+    val pieContent = listOf(
+        PieChartData.Slice(20f, MaterialTheme.colorScheme.onSecondary),
+        PieChartData.Slice(40f, MaterialTheme.colorScheme.error),
+        PieChartData.Slice(40f, MaterialTheme.colorScheme.primary),
+    )
     val description = listOf(
         DoughnutKeyDescription(
             "Risk Higher than thresh hold",
@@ -382,12 +382,12 @@ val pieContent =listOf(
 @Composable
 fun insightsPage() {
     HazardHuntTheme {
-       val pieChartContent = listOf(
+        val pieChartContent = listOf(
             PieChartData.Slice(20f, MaterialTheme.colorScheme.onSecondary),
             PieChartData.Slice(40f, MaterialTheme.colorScheme.error),
             PieChartData.Slice(40f, MaterialTheme.colorScheme.primary),
         )
-        val bar =listOf(
+        val bar = listOf(
             BarChartData.Bar(label = "Jan", value = 100f, color = MaterialTheme.colorScheme.outline),
             BarChartData.Bar(label = "Feb", value = 200f, color = MaterialTheme.colorScheme.outline),
             BarChartData.Bar(label = "Mar", value = 300f, color = MaterialTheme.colorScheme.outline),

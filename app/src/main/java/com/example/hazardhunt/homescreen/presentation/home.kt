@@ -160,32 +160,6 @@ fun pagerScreen() {
         4
     })
     HorizontalPager(state = pagerState) { page ->
-        //  Card(
-        //    Modifier
-        //      .height(200.dp)
-        //    .width(400.dp)
-        //  .padding(10.dp)
-        // .graphicsLayer {
-        // Calculate the absolute offset for the current page from the
-        // scroll position. We use the absolute value which allows us to mirror
-        // any effects for both directions
-        //  val pageOffset = (
-        //    (pagerState.currentPage - page) + pagerState
-        //      .currentPageOffsetFraction
-        // ).absoluteValue
-
-        // We animate the alpha, between 50% and 100%
-        // alpha = lerp(
-        //  start = 5.dp,
-        // stop = 1.dp,
-        // fraction = 1f - pageOffset
-        //   .coerceIn(0f, 1f)
-        // .toFloat(),
-        //         ).value
-        //       },
-        // ) {
-        // Text("first")
-        // }
 
         CardWithMultipleViews(
             painter = painterResource(id = nam),

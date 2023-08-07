@@ -19,10 +19,12 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
@@ -45,6 +47,7 @@ import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.HorizontalPagerIndicator
 import com.google.accompanist.pager.PagerState
 import com.google.accompanist.pager.rememberPagerState
+import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
@@ -102,8 +105,13 @@ fun PagerScreen(onBoardingPage: OnBoardingPage) {
         verticalArrangement = Arrangement.Top,
     ) {
         val composition by rememberLottieComposition(spec = LottieCompositionSpec.RawRes(onBoardingPage.image))
-        val isPlaying by remember { mutableStateOf(true) }
+        var isPlaying by remember { mutableStateOf(true) }
         val speed by remember { mutableFloatStateOf(1f) }
+
+        LaunchedEffect(key1 = isPlaying) {
+            delay(2700)
+            isPlaying = false
+        }
 
         val progress by animateLottieCompositionAsState(
             composition = composition,

@@ -32,6 +32,7 @@ ksp = "1.8.10-1.0.9"
 lifecycle-runtime-ktx = "2.6.1"
 leakCanary = "2.11"
 
+lottieCompose = "4.0.0"
 moshi = "1.15.0"
 mock-library = "1.13.4"
 material2 = "1.4.3"
@@ -53,6 +54,7 @@ kover ="0.7.2"
 
 
 [libraries]
+lottie-compose = { module = "com.airbnb.android:lottie-compose", version.ref = "lottieCompose" }
 splashscreen = { group ="androidx.core", name = "core-splashscreen", version.ref="splashscreen"}
 
 androidx-lifecycle = { group ="androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref ="androidx-lifecycle"}
@@ -114,7 +116,7 @@ viewmodel-lifecycle = { group ="androidx.lifecycle", name ="lifecycle-viewmodel-
 
 [plugins]
 
-androidApplication = { id = "com.android.application", version = "8.0.2" }
+androidApplication = { id = "com.android.application", version = "8.2.0-alpha14" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android",version.ref = "dagger-hilt" }
 hiltplugins ={ id = "com.google.dagger.hilt.android" }

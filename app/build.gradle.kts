@@ -106,7 +106,7 @@ dependencies {
     implementation(libs.viewmodel.lifecycle)
     implementation(libs.iconextended)
     implementation(libs.compose.ui.tooling)
-    implementation("com.airbnb.android:lottie-compose:4.0.0")
+    implementation(libs.lottie.compose)
    //implementation(project(":HomeFeature"))
 
 

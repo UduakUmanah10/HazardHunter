@@ -2,16 +2,20 @@ package com.example.hazardhunt.home.presentation
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -19,6 +23,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
@@ -37,48 +42,57 @@ fun safetyTaskList(
     tasks: List<SafetyTasks>,
     onRescheduleClicked: (SafetyTasks) -> Unit,
     onDoneClicked: (SafetyTasks) -> Unit,
-    navigationClicked: ()->Unit
+    navigationClicked: () -> Unit,
 
 ) {
-    Column {
-        CustomCenterTopAppbar(
-            titleContentColor = MaterialTheme.colorScheme.onSecondary,
-            containerColor = MaterialTheme.colorScheme.outline,
-            scrollContainerColor = MaterialTheme.colorScheme.error,
-            title = "Task List",
-            // navIcon = R.drawable.mail,
-            onNavigationIconClicked = navigationClicked,
-            navigationIcon = {
-                Icon(
-                    painter = painterResource(id = R.drawable.chevronleft),
-                    contentDescription = stringResource(R.string.Password),
-                    tint = MaterialTheme.colorScheme.secondaryContainer,
-                    modifier = Modifier.size(dimensionResource(id = R.dimen.centerBarIcon)),
-                )
-            },
-            actionIcon = {
-                Icon(
-                    painter = painterResource(id = R.drawable.segment),
-                    contentDescription = stringResource(R.string.Password),
-                    tint = MaterialTheme.colorScheme.secondaryContainer,
-                    modifier = Modifier.size(dimensionResource(id = R.dimen.centerBarIcon)),
-                )
-            },
-            actionIconAction = {},
-        )
-        // centerAppbar()
-        LazyColumn(
-            contentPadding = PaddingValues(20.dp),
-            verticalArrangement = Arrangement.spacedBy(10.dp),
-        ) {
-            items(tasks) { safetytask ->
+    Box {
+        Column {
+            CustomCenterTopAppbar(
+                titleContentColor = MaterialTheme.colorScheme.onSecondary,
+                containerColor = MaterialTheme.colorScheme.outline,
+                scrollContainerColor = MaterialTheme.colorScheme.error,
+                title = "Task List",
+                // navIcon = R.drawable.mail,
+                onNavigationIconClicked = navigationClicked,
+                navigationIcon = {
+                    Icon(
+                        painter = painterResource(id = R.drawable.chevronleft),
+                        contentDescription = stringResource(R.string.Password),
+                        tint = MaterialTheme.colorScheme.secondaryContainer,
+                        modifier = Modifier.size(dimensionResource(id = R.dimen.centerBarIcon)),
+                    )
+                },
+                actionIcon = {
+                    Icon(
+                        painter = painterResource(id = R.drawable.segment),
+                        contentDescription = stringResource(R.string.Password),
+                        tint = MaterialTheme.colorScheme.secondaryContainer,
+                        modifier = Modifier.size(dimensionResource(id = R.dimen.centerBarIcon)),
+                    )
+                },
+                actionIconAction = {},
+            )
 
-                ListofTasksItem(
-                    task = safetytask,
-                    onDoneSelectedClicked = { onDoneClicked(safetytask) },
-                    onRescheduleClicked = { onRescheduleClicked(safetytask) },
-                )
+            LazyColumn(
+                contentPadding = PaddingValues(20.dp),
+                verticalArrangement = Arrangement.spacedBy(10.dp),
+            ) {
+                items(tasks) { safetytask ->
+
+                    ListofTasksItem(
+                        task = safetytask,
+                        onDoneSelectedClicked = { onDoneClicked(safetytask) },
+                        onRescheduleClicked = { onRescheduleClicked(safetytask) },
+                    )
+                }
             }
+        }
+        FloatingActionButton(
+            modifier = Modifier
+                .align(Alignment.BottomEnd).padding(end = 20.dp, bottom = 20.dp),
+            onClick = { /*TODO*/ },
+        ) {
+            Icon(Icons.Filled.Add, "Localized description")
         }
     }
 }
@@ -133,7 +147,7 @@ fun LazyPreview() {
             tasks = tasks,
             onRescheduleClicked = {},
             onDoneClicked = {},
-          navigationClicked =   {}
+            navigationClicked = {},
         )
     }
 }

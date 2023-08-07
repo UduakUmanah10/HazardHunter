@@ -14,19 +14,32 @@ class barDrawer : BarDrawer {
     private val barPaint = Paint().apply {
         this.isAntiAlias = true
     }
+
     override fun drawBar(
         drawScope: DrawScope,
         canvas: Canvas,
         barArea: Rect,
         bar: BarChartData.Bar,
     ) {
+        // canvas.drawRoundRect(
+        // barArea.left,
+        // 0f,
+        // barArea.right+24f,
+        // barArea.bottom,
+        // radiusX = 16f,
+        // radiusY = 16f,
+        // barPaint.apply {
+        //    color = Color.White
+        //  },
+        // )
+
         canvas.drawRoundRect(
             barArea.left,
             barArea.top,
-            barArea.right,
+            barArea.right + 24f,
             barArea.bottom,
-            radiusX = 20f,
-            radiusY = 20f,
+            radiusX = 16f,
+            radiusY = 16f,
             barPaint.apply {
                 color = bar.color
             },

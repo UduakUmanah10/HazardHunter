@@ -2,8 +2,13 @@
 package com.example.hazardhunt.home.presentation
 
 import android.content.res.Configuration
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Surface
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.AnimatedContentTransitionScope.SlideDirection.Companion.Left
+import androidx.compose.animation.AnimatedContentTransitionScope.SlideDirection.Companion.Right
+import androidx.compose.animation.core.EaseIn
+import androidx.compose.animation.core.EaseOut
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.togetherWith
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -18,41 +23,52 @@ fun TaskListContent(
     onclick: (SafetyTasks) -> Unit,
     onReschedule: (SafetyTasks) -> Unit,
     onAddButtonClicked: () -> Unit,
-    navigationClicked: () -> Unit
+    navigationClicked: () -> Unit,
 ) {
-    Surface {
-        if (viewState is SafetyListViewState.loaded) {
-            LoadedTask(
-                viewState,
+    AnimatedContent(
+        targetState = viewState,
+        label = "",
+        transitionSpec = {
+            slideIntoContainer(
+                animationSpec = tween(450, easing = EaseIn),
+                towards = Right,
+            ).togetherWith(
+                slideOutOfContainer(
+                    animationSpec = tween(450, easing = EaseOut),
+                    towards = Left,
+                ),
+            )
+        },
+    ) { targetState ->
+        when (targetState) {
+            is SafetyListViewState.loaded -> LoadedTask(
+
+                targetState,
                 onAddButtonClicked,
                 onReschedule,
                 onclick,
-                navigationClicked =navigationClicked
-
+                navigationClicked = navigationClicked,
             )
-        }
-
-        if (viewState is SafetyListViewState.loading) {
-            loadingScreen()
+            is SafetyListViewState.loading -> loadingScreen()
+            else -> {}
         }
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun LoadedTask(
     viewState: SafetyListViewState.loaded,
     onAddButtonClicked: () -> Unit,
     onReschedule: (SafetyTasks) -> Unit,
     onclick: (SafetyTasks) -> Unit,
-    navigationClicked : ()->Unit
+    navigationClicked: () -> Unit,
 ) {
     safetyTaskList(
         modifier = Modifier,
         tasks = viewState.tasks,
         onRescheduleClicked = onReschedule,
         onDoneClicked = onclick,
-        navigationClicked =navigationClicked
+        navigationClicked = navigationClicked,
     )
 }
 
@@ -65,7 +81,7 @@ private fun LoadedTask(
     uiMode = Configuration.UI_MODE_NIGHT_NO,
 )
 @Composable
-fun taskPreview() {
+fun TaskPreview() {
     val tasks = (0..10).map { num ->
         SafetyTasks("Task no $num")
     }
@@ -75,7 +91,7 @@ fun taskPreview() {
             onclick = {},
             onReschedule = {},
             onAddButtonClicked = {},
-            navigationClicked = {}
+            navigationClicked = {},
         )
     }
 }

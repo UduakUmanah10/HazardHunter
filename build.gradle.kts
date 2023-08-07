@@ -7,7 +7,7 @@ plugins {
     alias(libs.plugins.kolinter)
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.kover)
-    id("com.android.library") version "8.0.2" apply false
+    id("com.android.library") version "8.2.0-alpha14" apply false
 
 }//true
 
