@@ -1,15 +1,19 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-//@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
+
 plugins {
+    //kotlin("jvm") version "1.9.0" apply false
     alias(libs.plugins.androidApplication) apply false
     alias(libs.plugins.kotlinAndroid) apply false
     alias(libs.plugins.detekt)
     alias(libs.plugins.kolinter)
-    alias(libs.plugins.ksp) apply false
-    alias(libs.plugins.kover)
-    id("com.android.library") version "8.2.0-alpha14" apply false
+    //alias(libs.plugins.ksp) apply false
+    id("com.google.devtools.ksp") version "1.8.10-1.0.9" apply false
 
-}//true
+    alias(libs.plugins.kover)
+    id("com.android.library") version "8.2.0-alpha15" apply false
+
+
+
+}
 
 
 
@@ -23,6 +27,7 @@ buildscript{
 
 
     dependencies {
+        //classpath(kotlin("gradle-plugin", version = "1.9.0"))
 
         classpath(libs.detekt.gradle.plugin)
         classpath ("com.squareup:javapoet:1.13.0")

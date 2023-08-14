@@ -1,14 +1,18 @@
 [versions]
+accompanistPagerIndicators = "0.24.2-alpha"
 activity-compose = "1.7.2"
 androidx-test-ext-junit = "1.1.5"
 androidx-lifecycle = "2.6.1"
 accompanist = "0.30.1"
-agp = "8.0.2"
 
+charts = "0.2.4-alpha"
+core = "1.9.51"
 core-ktx = "1.10.1"
 compose-bom = "2023.06.01"
-coroutines = "1.6.4"
-icon-extended = "1.5.0-beta02"
+coreSplashscreen = "1.0.1"
+coroutines = "1.7.1"
+datastore = "1.0.0"
+icon-extended = "1.5.0-rc01"
 
 data-store = "1.0.0"
 
@@ -18,7 +22,7 @@ espresso-core = "3.5.1"
 
 google-Truth= "1.1.3"
 
-hilt = "2.45"
+hilt = "2.46.1"
 dagger-hilt = "2.46.1"
 hilt-navigation = "1.0.0"
 
@@ -26,7 +30,8 @@ junit = "4.13.2"
 
 kotlin = "1.8.10"
 kotlinter = "3.14.0"
-ksp = "1.8.10-1.0.9"
+kotlinxCollectionsImmutable = "0.3.5"
+kotlinxSerializationJson = "1.4.1"
 
 
 lifecycle-runtime-ktx = "2.6.1"
@@ -44,16 +49,23 @@ room = "2.5.2"
 
 splashscreen ="1.0.1"
 
-turbine = "0.12.3"
+turbine = "1.0.0"
 
 viewmodel = "2.6.1"
-window = "1.1.0"
 kover ="0.7.2"
 
 
 
 
 [libraries]
+accompanist-pager-indicators = { module = "com.google.accompanist:accompanist-pager-indicators", version.ref = "accompanistPagerIndicators" }
+androidx-core-splashscreen-v100 = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
+androidx-datastore = { module = "androidx.datastore:datastore", version.ref = "datastore" }
+charts = { module = "com.github.tehras:charts", version.ref = "charts" }
+core = { module = "io.github.raamcosta.compose-destinations:core", version.ref = "core" }
+kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutable" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+ksp = { module = "io.github.raamcosta.compose-destinations:ksp", version.ref = "core" }
 lottie-compose = { module = "com.airbnb.android:lottie-compose", version.ref = "lottieCompose" }
 splashscreen = { group ="androidx.core", name = "core-splashscreen", version.ref="splashscreen"}
 
@@ -116,16 +128,13 @@ viewmodel-lifecycle = { group ="androidx.lifecycle", name ="lifecycle-viewmodel-
 
 [plugins]
 
-androidApplication = { id = "com.android.application", version = "8.2.0-alpha14" }
+androidApplication = { id = "com.android.application", version = "8.2.0-alpha15" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android",version.ref = "dagger-hilt" }
-hiltplugins ={ id = "com.google.dagger.hilt.android" }
 detekt = { id = "io.gitlab.arturbosch.detekt",version.ref = "detektGradlePlugin" }
 kolinter = { id ="org.jmailen.kotlinter",  version.ref ="kotlinter" }
-ksp = { id = "com.google.devtools.ksp" ,  version.ref = "ksp"}
 kover = {id="org.jetbrains.kotlinx.kover", version.ref= "kover"}
 
-kapt = { id ="kotlin-kapt" }
 
 [bundles]
 
