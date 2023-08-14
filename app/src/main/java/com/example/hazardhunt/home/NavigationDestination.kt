@@ -172,6 +172,8 @@ fun HomeScreen(
     name = "Night Mode",
     uiMode = Configuration.UI_MODE_NIGHT_YES,
 )
+
+
 @Preview(
     name = "Day mode",
     uiMode = Configuration.UI_MODE_NIGHT_NO,
@@ -185,3 +187,6 @@ fun SignupPreview() {
         )
     }
 }
+
+
+
