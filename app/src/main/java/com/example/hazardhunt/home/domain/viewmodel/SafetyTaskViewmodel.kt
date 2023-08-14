@@ -14,22 +14,22 @@ import javax.inject.Inject
 /**
  * This class is responsible for managing and exposing the ui State of the
  * Safety Task screen
- *
+ * @param[getAllSafetyTasks]
  * **/
 @HiltViewModel
 class SafetyTaskViewmodel @Inject constructor(
     private val getAllSafetyTasks: GetTaskUseCase,
 ) : ViewModel() {
 
-    private val _viewstate: MutableStateFlow<SafetyListViewState> = MutableStateFlow(SafetyListViewState.loading)
+    private val _viewState: MutableStateFlow<SafetyListViewState> = MutableStateFlow(SafetyListViewState.loading)
 
-    val viewState: StateFlow<SafetyListViewState> = _viewstate
+    val viewState: StateFlow<SafetyListViewState> = _viewState
 
     init {
         viewModelScope.launch {
             val getSafetyTaskResults = getAllSafetyTasks()
 
-            _viewstate.value = when (getSafetyTaskResults) {
+            _viewState.value = when (getSafetyTaskResults) {
                 is CustomResults.Success -> {
                     SafetyListViewState.loaded(
                         tasks = getSafetyTaskResults.data,

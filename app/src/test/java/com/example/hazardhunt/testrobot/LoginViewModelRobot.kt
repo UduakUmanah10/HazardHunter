@@ -9,6 +9,7 @@ import com.example.hazardhunt.login.domain.viewmodel.LoginViewModel
 import com.google.common.truth.Truth.assertThat
 
 class LoginViewModelRobot {
+
     private val fakeCrekentialsLogInUsecase = FakeCredentialsLoginUseCase()
 
     private lateinit var viewModel: LoginViewModel
@@ -58,7 +59,8 @@ class LoginViewModelRobot {
             for (state in viewState) {
                 assertThat(awaitItem()).isEqualTo(state)
             }
-            cancel()
+           // awaitComplete()
+            ensureAllEventsConsumed()
         }
     }
 }

@@ -5,15 +5,17 @@ plugins {
     alias(libs.plugins.kolinter)
     alias(libs.plugins.hilt)
     alias(libs.plugins.kover)
+    alias(libs.plugins.detekt)
+    id("kotlin-parcelize")
     id("kotlin-kapt")
     id("org.jetbrains.kotlin.plugin.serialization")
-   // id("com.google.protobuf")
+    id ("com.google.devtools.ksp") version ("1.8.10-1.0.9")
 
 }
 
 android {
     namespace = "com.example.hazardhunt"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.hazardhunt"
@@ -59,31 +61,33 @@ android {
     hilt {
         enableAggregatingTask = true
     }
-
 }
-
+kotlin {
+    sourceSets {
+        debug {
+            kotlin.srcDir("build/generated/ksp/debug/kotlin")
+        }
+        release {
+            kotlin.srcDir("build/generated/ksp/release/kotlin")
+        }
+    }
+}
 dependencies {
-    implementation ("com.github.tehras:charts:0.2.4-alpha")
-
-  // implementation("com.google.protobuf:protobuf-javalite:3.21.5")
-// implementation("com.google.protobuf:protobuf-kotlin-lite3.21.5")
-
-    //implementation("com.himanshoe:charty:2.0.0-alpha01")
-
-    //implementation("co.yml:ycharts:2.1.0")
-    implementation("androidx.datastore:datastore:1.0.0")
-    implementation("androidx.datastore:datastore-preferences:1.0.0")
-    implementation("androidx.core:core-splashscreen:1.0.0")
+    implementation (libs.charts)
+    implementation(libs.androidx.datastore)
+    implementation(libs.datastorelib)
+    implementation(libs.androidx.core.splashscreen.v100)
 
 
 
-    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
+   implementation(libs.kotlinx.collections.immutable)
+    implementation(libs.kotlinx.serialization.json)
+
     // Pager and Indicators - Accompanist
-    implementation ("com.google.accompanist:accompanist-pager-indicators:0.24.2-alpha")
+    implementation (libs.accompanist.pager.indicators)
 
     // DataStore Preferences
-    implementation("androidx.datastore:datastore-preferences:1.0.0")
+    implementation(libs.datastorelib)
 //    implementation(libs.splashscreen)
     implementation(libs.material2)
     implementation(libs.core.ktx)
@@ -126,9 +130,12 @@ dependencies {
     debugImplementation(libs.ui.test.manifest)
     debugImplementation(libs.square.leakcanary)
 
-    kapt(libs.androidx.room.compiler)
+    //ksp(libs.androidx.room.compiler)
     kapt(libs.hilt.compiler)
     kapt(libs.square.moshi.kotlin.codegen)
     kaptAndroidTest(libs.hilt.android.compiler)
+    implementation( libs.core)
+    ksp(libs.ksp)
+
 }
 
