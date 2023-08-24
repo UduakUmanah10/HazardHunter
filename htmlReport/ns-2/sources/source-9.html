@@ -1,0 +1,231 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > PasswordComposeKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.hazardhunt.core</a>
+</div>
+
+<h1>Coverage Summary for Class: PasswordComposeKt (com.example.hazardhunt.core)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">PasswordComposeKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/27)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">PasswordComposeKt$Password$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/9)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">PasswordComposeKt$Password$1$1$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">PasswordComposeKt$Password$1$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">PasswordComposeKt$Password$2</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/45)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;// ktlint-disable filename
+&nbsp;package com.example.hazardhunt.core
+&nbsp;
+&nbsp;import androidx.compose.foundation.layout.size
+&nbsp;import androidx.compose.foundation.text.KeyboardOptions
+&nbsp;import androidx.compose.material.Icon
+&nbsp;import androidx.compose.material.IconButton
+&nbsp;import androidx.compose.material.MaterialTheme
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.runtime.getValue
+&nbsp;import androidx.compose.runtime.mutableStateOf
+&nbsp;import androidx.compose.runtime.remember
+&nbsp;import androidx.compose.runtime.setValue
+&nbsp;import androidx.compose.ui.Modifier
+&nbsp;import androidx.compose.ui.res.painterResource
+&nbsp;import androidx.compose.ui.res.stringResource
+&nbsp;import androidx.compose.ui.text.input.KeyboardType
+&nbsp;import androidx.compose.ui.text.input.PasswordVisualTransformation
+&nbsp;import androidx.compose.ui.text.input.VisualTransformation
+&nbsp;import androidx.compose.ui.unit.dp
+&nbsp;import com.example.hazardhunt.R
+&nbsp;
+&nbsp;@Composable
+&nbsp;fun Password(
+<b class="nc">&nbsp;    keyboardOption: KeyboardOptions = KeyboardOptions(</b>
+<b class="nc">&nbsp;        keyboardType = KeyboardType.Password,</b>
+&nbsp;
+&nbsp;    ),
+&nbsp;    enabled: Boolean,
+&nbsp;    text: String,
+&nbsp;    onPasswordTextChanged: (String) -&gt; Unit,
+&nbsp;    errorMessage: String?,
+<b class="nc">&nbsp;    leadingIcon: (@Composable () -&gt; Unit)? = null,</b>
+&nbsp;    visualTransformation: VisualTransformation,
+<b class="nc">&nbsp;) {</b>
+<b class="nc">&nbsp;    var passwordvisibility by remember { mutableStateOf(false) }</b>
+<b class="nc">&nbsp;    val passwordIcon = if (passwordvisibility) R.drawable.visibility else R.drawable.visibility_off</b>
+&nbsp;
+<b class="nc">&nbsp;    CustomTextField(</b>
+<b class="nc">&nbsp;        keyboardOption = keyboardOption,</b>
+<b class="nc">&nbsp;        text = text,</b>
+<b class="nc">&nbsp;        onTextChanged = onPasswordTextChanged,</b>
+<b class="nc">&nbsp;        labelText = stringResource(id = R.string.Password),</b>
+<b class="nc">&nbsp;        errorMessage = errorMessage,</b>
+<b class="nc">&nbsp;        leadingIcon = leadingIcon,</b>
+<b class="nc">&nbsp;        enabled = enabled,</b>
+<b class="nc">&nbsp;        visualTransformation = if (passwordvisibility) VisualTransformation.None else PasswordVisualTransformation(&#39;*&#39;),</b>
+<b class="nc">&nbsp;        trailingIcon = {</b>
+<b class="nc">&nbsp;            IconButton(onClick = { passwordvisibility = !passwordvisibility }) {</b>
+<b class="nc">&nbsp;                Icon(</b>
+<b class="nc">&nbsp;                    modifier = Modifier.size(20.dp),</b>
+<b class="nc">&nbsp;                    painter = painterResource(</b>
+<b class="nc">&nbsp;                        id = passwordIcon,</b>
+&nbsp;                    ),
+<b class="nc">&nbsp;                    contentDescription = stringResource(id = R.string.passwordVisibility),</b>
+<b class="nc">&nbsp;                    tint = MaterialTheme.colors.secondary,</b>
+<b class="nc">&nbsp;                )</b>
+<b class="nc">&nbsp;            }</b>
+&nbsp;        },
+&nbsp;    )
+<b class="nc">&nbsp;}</b>
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-08-21 10:08</div>
+</div>
+</body>
+</html>

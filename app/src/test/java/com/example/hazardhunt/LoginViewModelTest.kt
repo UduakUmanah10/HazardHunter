@@ -14,6 +14,7 @@ import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.StandardTestDispatcher
+import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
@@ -26,24 +27,24 @@ class LoginViewModelTest {
     private lateinit var loginRepository: FakeLoginRepository
     private lateinit var tokenRepository: FakeAuthTokenRepository
 
-    @OptIn(ExperimentalCoroutinesApi::class)
     @get:Rule
-    val uncaughtExceptionHandlerRule = ThreadExceptionHandler()
-    val dispatcher = StandardTestDispatcher()
+   // val uncaughtExceptionHandlerRule = ThreadExceptionHandler()
+   // val dispatcher = StandardTestDispatcher()
+    val mainDispatcherRule = MainDispatcherRule()
 
-    @OptIn(ExperimentalCoroutinesApi::class)
+
     @Before
     fun setUp() {
         loginRepository = FakeLoginRepository()
         tokenRepository = FakeAuthTokenRepository()
-        Dispatchers.setMain(dispatcher)
+       // Dispatchers.setMain(dispatcher)
         testRobot = LoginViewModelRobot()
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @After
     fun tearDown() {
-        Dispatchers.resetMain()
+      //  Dispatchers.resetMain()
     }
 
     private lateinit var testRobot: LoginViewModelRobot
@@ -79,15 +80,14 @@ class LoginViewModelTest {
                     this.enterPassword(testPassword)
                 },
                 viewState = listOf(
-                   // initialState,
+                    initialState,
                     emailEnteredState,
-                   // emailPasswordEnteredState,
+                    emailPasswordEnteredState,
                 ),
 
             )
     }
 
-    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun submitInvalidCredentials() = runTest {
         val testEmail = "testy@mactest.com"
@@ -137,7 +137,6 @@ class LoginViewModelTest {
             )
     }
 
-    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun unknownError() = runTest {
         val testEmail = "testy@mactest.com"
@@ -217,7 +216,7 @@ class LoginViewModelTest {
             )
     }
 
-    @OptIn(ExperimentalCoroutinesApi::class)
+
     @Test
     fun testClearErrorsAfterInput() = runTest {
         val credentials = Credentials()
@@ -262,7 +261,7 @@ class LoginViewModelTest {
             )
     }
 
-    @OptIn(ExperimentalCoroutinesApi::class)
+
     @Test
     fun testEmptyCredentialsLogin() = runTest {
         val emptyCredentials = Credentials()

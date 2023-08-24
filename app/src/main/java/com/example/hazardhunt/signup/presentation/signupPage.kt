@@ -51,20 +51,7 @@ fun SignUpPage() {
                 .align(Alignment.CenterHorizontally),
         )
         // NormalTextField(textValue = stringResource(id = R.string.Helo))
-        BoldTExtField(textValue = stringResource(id = R.string.create_account))
-        CustomTextField(
-            text = "",
-            onTextChanged = {},
-            labelText = stringResource(id = R.string.firstname),
-            leadingIcon = {
-                Icon(
-                    painter = painterResource(id = R.drawable.person),
-                    contentDescription = stringResource(R.string.Password),
-                    tint = MaterialTheme.colorScheme.secondaryContainer,
-                    modifier = Modifier.size(dimensionResource(id = R.dimen.Icon_height)),
-                )
-            },
-        )
+        BoldzTextField()
         CustomTextField(
             text = "",
             onTextChanged = {},
@@ -119,6 +106,24 @@ fun SignUpPage() {
             )
         }
     }
+}
+
+@Composable
+private fun BoldzTextField() {
+    BoldTExtField(textValue = stringResource(id = R.string.create_account))
+    CustomTextField(
+        text = "",
+        onTextChanged = {},
+        labelText = stringResource(id = R.string.firstname),
+        leadingIcon = {
+            Icon(
+                painter = painterResource(id = R.drawable.person),
+                contentDescription = stringResource(R.string.Password),
+                tint = MaterialTheme.colorScheme.secondaryContainer,
+                modifier = Modifier.size(dimensionResource(id = R.dimen.Icon_height)),
+            )
+        },
+    )
 }
 
 @Preview(

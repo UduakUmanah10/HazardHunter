@@ -39,9 +39,9 @@ import com.github.tehras.charts.piechart.PieChartData
 @Composable
 fun InsightsScreen(onNavigationIconClicked: () -> Unit) {
     val pieChartContent = listOf(
-        PieChartData.Slice(20f, MaterialTheme.colorScheme.onSecondary),
-        PieChartData.Slice(40f, MaterialTheme.colorScheme.error),
-        PieChartData.Slice(40f, MaterialTheme.colorScheme.primary),
+        PieChartData.Slice(FIRST_SLICE_VALUE, MaterialTheme.colorScheme.onSecondary),
+        PieChartData.Slice(SECOND_SLICE_VALUE, MaterialTheme.colorScheme.error),
+        PieChartData.Slice(THIRD_SLICE_VALUE, MaterialTheme.colorScheme.primary),
     )
     val bar = listOf(
         BarChartData.Bar(label = "J", value = 100f, color = MaterialTheme.colorScheme.onSecondary),
@@ -283,49 +283,7 @@ fun AfterBar(percentIncrease: Int, firstContent: String, secondContent: String) 
     }
 }
 
-@Preview(
-    name = "Night Mode",
-    uiMode = Configuration.UI_MODE_NIGHT_YES,
-)
-@Preview(
-    name = "Day mode",
-    uiMode = Configuration.UI_MODE_NIGHT_NO,
-)
-@Composable
-fun Afterbar() {
-    HazardHuntTheme {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(10.dp),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            AfterBar(10, "monthly", "increase")
-            Divider(
-                modifier = Modifier
-                    .height(50.dp)
-                    .width(3.dp),
-            )
-            AfterBar(10, "monthly", "increase")
-        }
-    }
-}
 
-@Preview(
-    name = "Night Mode",
-    uiMode = Configuration.UI_MODE_NIGHT_YES,
-)
-@Preview(
-    name = "Day mode",
-    uiMode = Configuration.UI_MODE_NIGHT_NO,
-)
-@Composable
-fun Dot() {
-    HazardHuntTheme {
-        ContentSurface(" Incident Occurences")
-    }
-}
 
 @Preview(
     name = "Night Mode",
@@ -371,36 +329,3 @@ fun multipleKey() {
     }
 }
 
-@Preview(
-    name = "Night Mode",
-    uiMode = Configuration.UI_MODE_NIGHT_YES,
-)
-@Preview(
-    name = "Day mode",
-    uiMode = Configuration.UI_MODE_NIGHT_NO,
-)
-@Composable
-fun insightsPage() {
-    HazardHuntTheme {
-        val pieChartContent = listOf(
-            PieChartData.Slice(20f, MaterialTheme.colorScheme.onSecondary),
-            PieChartData.Slice(40f, MaterialTheme.colorScheme.error),
-            PieChartData.Slice(40f, MaterialTheme.colorScheme.primary),
-        )
-        val bar = listOf(
-            BarChartData.Bar(label = "Jan", value = 100f, color = MaterialTheme.colorScheme.outline),
-            BarChartData.Bar(label = "Feb", value = 200f, color = MaterialTheme.colorScheme.outline),
-            BarChartData.Bar(label = "Mar", value = 300f, color = MaterialTheme.colorScheme.outline),
-            BarChartData.Bar(label = "Apr", value = 400f, color = MaterialTheme.colorScheme.onSecondary),
-            BarChartData.Bar(label = "May", value = 100f, color = MaterialTheme.colorScheme.outline),
-            BarChartData.Bar(label = "Jun", value = 200f, color = MaterialTheme.colorScheme.outline),
-            BarChartData.Bar(label = "Jul", value = 300f, color = MaterialTheme.colorScheme.outline),
-            BarChartData.Bar(label = "Aug", value = 400f, color = MaterialTheme.colorScheme.outline),
-            BarChartData.Bar(label = "Sep", value = 400f, color = MaterialTheme.colorScheme.outline),
-            BarChartData.Bar(label = "Oct", value = 100f, color = MaterialTheme.colorScheme.outline),
-            BarChartData.Bar(label = "Nov", value = 200f, color = MaterialTheme.colorScheme.outline),
-            BarChartData.Bar(label = "Dec", value = 300f, color = MaterialTheme.colorScheme.outline),
-        )
-        InsightsPage(bar, pieChartContent, {})
-    }
-}

@@ -1,0 +1,229 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > CustomAppbarKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.hazardhunt.core</a>
+</div>
+
+<h1>Coverage Summary for Class: CustomAppbarKt (com.example.hazardhunt.core)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CustomAppbarKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/14)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">CustomAppbarKt$CustomCenterTopAppbar$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">CustomAppbarKt$CustomCenterTopAppbar$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">CustomAppbarKt$CustomCenterTopAppbar$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">CustomAppbarKt$CustomCenterTopAppbar$4</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/27)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.hazardhunt.core
+&nbsp;
+&nbsp;import androidx.compose.material3.CenterAlignedTopAppBar
+&nbsp;import androidx.compose.material3.ExperimentalMaterial3Api
+&nbsp;import androidx.compose.material3.IconButton
+&nbsp;import androidx.compose.material3.Text
+&nbsp;import androidx.compose.material3.TopAppBarDefaults
+&nbsp;import androidx.compose.material3.rememberTopAppBarState
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.ui.Modifier
+&nbsp;import androidx.compose.ui.graphics.Color
+&nbsp;import androidx.compose.ui.text.style.TextOverflow
+&nbsp;
+&nbsp;@OptIn(ExperimentalMaterial3Api::class)
+&nbsp;@Composable
+&nbsp;fun CustomCenterTopAppbar(
+&nbsp;    titleContentColor: Color,
+&nbsp;    scrollContainerColor: Color,
+&nbsp;    containerColor: Color,
+<b class="nc">&nbsp;    modifier: Modifier = Modifier,</b>
+&nbsp;    title: String,
+&nbsp;    navigationIcon: (@Composable () -&gt; Unit),
+&nbsp;    // @DrawableRes navIcon:Int,
+&nbsp;    onNavigationIconClicked: () -&gt; Unit,
+&nbsp;    actionIcon: (@Composable () -&gt; Unit),
+&nbsp;    actionIconAction: (() -&gt; Unit),
+<b class="nc">&nbsp;) {</b>
+<b class="nc">&nbsp;    val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior(rememberTopAppBarState())</b>
+<b class="nc">&nbsp;    CenterAlignedTopAppBar(</b>
+<b class="nc">&nbsp;        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(</b>
+<b class="nc">&nbsp;            titleContentColor = titleContentColor,</b>
+<b class="nc">&nbsp;            scrolledContainerColor = scrollContainerColor,</b>
+<b class="nc">&nbsp;            containerColor = containerColor,</b>
+&nbsp;        ),
+&nbsp;
+<b class="nc">&nbsp;        modifier = modifier,</b>
+&nbsp;
+<b class="nc">&nbsp;        scrollBehavior = scrollBehavior,</b>
+<b class="nc">&nbsp;        title = {</b>
+<b class="nc">&nbsp;            Text(</b>
+<b class="nc">&nbsp;                title,</b>
+<b class="nc">&nbsp;                maxLines = 1,</b>
+<b class="nc">&nbsp;                overflow = TextOverflow.Ellipsis,</b>
+<b class="nc">&nbsp;            )</b>
+&nbsp;        },
+<b class="nc">&nbsp;        navigationIcon = {</b>
+<b class="nc">&nbsp;            IconButton(</b>
+<b class="nc">&nbsp;                onClick = onNavigationIconClicked,</b>
+<b class="nc">&nbsp;                content = navigationIcon,</b>
+<b class="nc">&nbsp;            )</b>
+&nbsp;        },
+<b class="nc">&nbsp;        actions = {</b>
+<b class="nc">&nbsp;            IconButton(</b>
+<b class="nc">&nbsp;                onClick = actionIconAction,</b>
+<b class="nc">&nbsp;                content = actionIcon,</b>
+<b class="nc">&nbsp;            )</b>
+&nbsp;        },
+&nbsp;    )
+<b class="nc">&nbsp;}</b>
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-08-21 10:08</div>
+</div>
+</body>
+</html>

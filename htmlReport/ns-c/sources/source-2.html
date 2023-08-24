@@ -1,0 +1,365 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > HomeKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.hazardhunt.homescreen.presentation</a>
+</div>
+
+<h1>Coverage Summary for Class: HomeKt (com.example.hazardhunt.homescreen.presentation)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">HomeKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/156)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">HomeKt$CardWithMultipleViews$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/83)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">HomeKt$CardWithMultipleViews$2</td>
+  </tr>
+  <tr>
+    <td class="name">HomeKt$HomeScreen$2</td>
+  </tr>
+  <tr>
+    <td class="name">HomeKt$LoginPreview$1</td>
+  </tr>
+  <tr>
+    <td class="name">HomeKt$pagerScreen$2</td>
+  </tr>
+  <tr>
+    <td class="name">HomeKt$pagerScreen$pagerState$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/240)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.hazardhunt.homescreen.presentation
+&nbsp;
+&nbsp;import android.content.res.Configuration
+&nbsp;import androidx.annotation.DrawableRes
+&nbsp;import androidx.compose.foundation.ExperimentalFoundationApi
+&nbsp;import androidx.compose.foundation.Image
+&nbsp;import androidx.compose.foundation.background
+&nbsp;import androidx.compose.foundation.basicMarquee
+&nbsp;import androidx.compose.foundation.layout.Arrangement
+&nbsp;import androidx.compose.foundation.layout.Box
+&nbsp;import androidx.compose.foundation.layout.Column
+&nbsp;import androidx.compose.foundation.layout.Row
+&nbsp;import androidx.compose.foundation.layout.fillMaxHeight
+&nbsp;import androidx.compose.foundation.layout.fillMaxSize
+&nbsp;import androidx.compose.foundation.layout.fillMaxWidth
+&nbsp;import androidx.compose.foundation.layout.height
+&nbsp;import androidx.compose.foundation.layout.padding
+&nbsp;import androidx.compose.foundation.layout.size
+&nbsp;import androidx.compose.foundation.layout.width
+&nbsp;import androidx.compose.foundation.pager.HorizontalPager
+&nbsp;import androidx.compose.foundation.pager.rememberPagerState
+&nbsp;import androidx.compose.foundation.shape.CircleShape
+&nbsp;import androidx.compose.foundation.shape.RoundedCornerShape
+&nbsp;import androidx.compose.material3.Card
+&nbsp;import androidx.compose.material3.CardDefaults
+&nbsp;import androidx.compose.material3.MaterialTheme
+&nbsp;import androidx.compose.material3.Text
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.ui.Alignment
+&nbsp;import androidx.compose.ui.Modifier
+&nbsp;import androidx.compose.ui.draw.clip
+&nbsp;import androidx.compose.ui.graphics.Color
+&nbsp;import androidx.compose.ui.graphics.painter.Painter
+&nbsp;import androidx.compose.ui.layout.ContentScale
+&nbsp;import androidx.compose.ui.res.painterResource
+&nbsp;import androidx.compose.ui.tooling.preview.Preview
+&nbsp;import androidx.compose.ui.unit.dp
+&nbsp;import com.example.hazardhunt.R
+&nbsp;import com.example.hazardhunt.ui.theme.HazardHuntTheme
+&nbsp;
+<b class="nc">&nbsp;@DrawableRes val nam: Int = R.drawable.safetypager</b>
+&nbsp;
+&nbsp;@Composable
+&nbsp;fun CardWithMultipleViews(
+&nbsp;    painter: Painter,
+&nbsp;    contentDescription: String,
+&nbsp;    title: String,
+<b class="nc">&nbsp;    modifier: Modifier = Modifier,</b>
+&nbsp;
+<b class="nc">&nbsp;) {</b>
+<b class="nc">&nbsp;    Card(</b>
+<b class="nc">&nbsp;        modifier = modifier,</b>
+<b class="nc">&nbsp;        shape = RoundedCornerShape(15.dp),</b>
+<b class="nc">&nbsp;        elevation = CardDefaults.cardElevation(</b>
+<b class="nc">&nbsp;            defaultElevation = 5.dp,</b>
+&nbsp;        ),
+&nbsp;
+<b class="nc">&nbsp;    ) {</b>
+<b class="nc">&nbsp;        Box(</b>
+<b class="nc">&nbsp;            modifier = Modifier</b>
+<b class="nc">&nbsp;                .height(200.dp)</b>
+<b class="nc">&nbsp;                .width(400.dp),</b>
+&nbsp;        ) {
+<b class="nc">&nbsp;            Image(</b>
+<b class="nc">&nbsp;                painter = painter,</b>
+<b class="nc">&nbsp;                contentDescription = contentDescription,</b>
+<b class="nc">&nbsp;                contentScale = ContentScale.Crop,</b>
+<b class="nc">&nbsp;                modifier = Modifier.fillMaxWidth(),</b>
+&nbsp;            )
+&nbsp;
+<b class="nc">&nbsp;            Box(</b>
+<b class="nc">&nbsp;                modifier = Modifier</b>
+<b class="nc">&nbsp;                    .fillMaxSize(),</b>
+<b class="nc">&nbsp;                contentAlignment = Alignment.CenterStart,</b>
+&nbsp;            ) {
+<b class="nc">&nbsp;                Text(text = &quot;Goodmorning&quot;)</b>
+<b class="nc">&nbsp;            }</b>
+<b class="nc">&nbsp;        }</b>
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;@OptIn(ExperimentalFoundationApi::class)
+&nbsp;@Composable
+<b class="nc">&nbsp;fun HomeScreen() {</b>
+<b class="nc">&nbsp;    Column(</b>
+<b class="nc">&nbsp;        modifier = Modifier</b>
+<b class="nc">&nbsp;            .fillMaxWidth()</b>
+<b class="nc">&nbsp;            .fillMaxHeight(),</b>
+&nbsp;
+&nbsp;    ) {
+<b class="nc">&nbsp;        Text(</b>
+<b class="nc">&nbsp;            modifier = Modifier</b>
+<b class="nc">&nbsp;                .fillMaxWidth()</b>
+<b class="nc">&nbsp;                .padding(vertical = 10.dp)</b>
+<b class="nc">&nbsp;                .background(MaterialTheme.colorScheme.error)</b>
+<b class="nc">&nbsp;                .basicMarquee(</b>
+<b class="nc">&nbsp;                    iterations = Int.MAX_VALUE,</b>
+<b class="nc">&nbsp;                    delayMillis = 0,</b>
+<b class="nc">&nbsp;                    initialDelayMillis = 0,</b>
+<b class="nc">&nbsp;                    velocity = 100.dp,</b>
+&nbsp;
+&nbsp;                ),
+&nbsp;
+<b class="nc">&nbsp;            color = MaterialTheme.colorScheme.inverseSurface,</b>
+<b class="nc">&nbsp;            text = &quot; Safety Alert oil spill detected at oml 25............. &quot;,</b>
+&nbsp;        )
+<b class="nc">&nbsp;        pagerScreen()</b>
+<b class="nc">&nbsp;        lazyVerticalGrid(</b>
+<b class="nc">&nbsp;            features = listOf(</b>
+<b class="nc">&nbsp;                Features(</b>
+<b class="nc">&nbsp;                    title = &quot;Sensors&quot;,</b>
+<b class="nc">&nbsp;                    icon = R.drawable.person,</b>
+<b class="nc">&nbsp;                    MaterialTheme.colorScheme.inversePrimary,</b>
+<b class="nc">&nbsp;                    MaterialTheme.colorScheme.secondaryContainer,</b>
+<b class="nc">&nbsp;                    MaterialTheme.colorScheme.onPrimary,</b>
+&nbsp;
+&nbsp;                ),
+<b class="nc">&nbsp;                Features(</b>
+<b class="nc">&nbsp;                    title = &quot;Sensors&quot;,</b>
+<b class="nc">&nbsp;                    icon = R.drawable.person,</b>
+<b class="nc">&nbsp;                    MaterialTheme.colorScheme.inversePrimary,</b>
+<b class="nc">&nbsp;                    MaterialTheme.colorScheme.secondaryContainer,</b>
+<b class="nc">&nbsp;                    MaterialTheme.colorScheme.onPrimary,</b>
+&nbsp;
+&nbsp;                ),
+<b class="nc">&nbsp;                Features(</b>
+<b class="nc">&nbsp;                    title = &quot;Sensors&quot;,</b>
+<b class="nc">&nbsp;                    icon = R.drawable.person,</b>
+<b class="nc">&nbsp;                    MaterialTheme.colorScheme.inversePrimary,</b>
+<b class="nc">&nbsp;                    MaterialTheme.colorScheme.secondaryContainer,</b>
+<b class="nc">&nbsp;                    MaterialTheme.colorScheme.onPrimary,</b>
+&nbsp;
+&nbsp;                ),
+<b class="nc">&nbsp;                Features(</b>
+<b class="nc">&nbsp;                    title = &quot;Sensors&quot;,</b>
+<b class="nc">&nbsp;                    icon = R.drawable.person,</b>
+<b class="nc">&nbsp;                    MaterialTheme.colorScheme.inversePrimary,</b>
+<b class="nc">&nbsp;                    MaterialTheme.colorScheme.secondaryContainer,</b>
+<b class="nc">&nbsp;                    MaterialTheme.colorScheme.onPrimary,</b>
+&nbsp;
+&nbsp;                ),
+<b class="nc">&nbsp;                Features(</b>
+<b class="nc">&nbsp;                    title = &quot;Sensors&quot;,</b>
+<b class="nc">&nbsp;                    icon = R.drawable.person,</b>
+<b class="nc">&nbsp;                    MaterialTheme.colorScheme.inversePrimary,</b>
+<b class="nc">&nbsp;                    MaterialTheme.colorScheme.secondaryContainer,</b>
+<b class="nc">&nbsp;                    MaterialTheme.colorScheme.onPrimary,</b>
+&nbsp;
+&nbsp;                ),
+&nbsp;            ),
+&nbsp;        )
+<b class="nc">&nbsp;    }</b>
+<b class="nc">&nbsp;}</b>
+&nbsp;
+&nbsp;@OptIn(ExperimentalFoundationApi::class)
+&nbsp;@Composable
+<b class="nc">&nbsp;fun pagerScreen() {</b>
+<b class="nc">&nbsp;    val pageCount = 4</b>
+<b class="nc">&nbsp;    val pagerState = rememberPagerState(pageCount = {</b>
+<b class="nc">&nbsp;        4</b>
+&nbsp;    })
+<b class="nc">&nbsp;    HorizontalPager(state = pagerState) { page -&gt;</b>
+&nbsp;
+&nbsp;        CardWithMultipleViews(
+&nbsp;            painter = painterResource(id = nam),
+&nbsp;            contentDescription = &quot;********&quot;,
+&nbsp;            title = &quot;&gt;&gt;&gt;&gt;&gt;&gt;&quot;,
+&nbsp;            modifier = Modifier.padding(10.dp),
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+<b class="nc">&nbsp;    Row(</b>
+<b class="nc">&nbsp;        Modifier</b>
+<b class="nc">&nbsp;            .height(20.dp)</b>
+<b class="nc">&nbsp;            .fillMaxWidth(),</b>
+<b class="nc">&nbsp;        horizontalArrangement = Arrangement.Center,</b>
+&nbsp;    ) {
+<b class="nc">&nbsp;        repeat(pageCount) { iteration -&gt;</b>
+<b class="nc">&nbsp;            val color = if (pagerState.currentPage == iteration) Color.DarkGray else Color.LightGray</b>
+<b class="nc">&nbsp;            Box(</b>
+<b class="nc">&nbsp;                modifier = Modifier</b>
+<b class="nc">&nbsp;                    .padding(2.dp)</b>
+<b class="nc">&nbsp;                    .clip(CircleShape)</b>
+<b class="nc">&nbsp;                    .background(color)</b>
+<b class="nc">&nbsp;                    .size(10.dp),</b>
+&nbsp;
+&nbsp;            )
+<b class="nc">&nbsp;        }</b>
+<b class="nc">&nbsp;    }</b>
+<b class="nc">&nbsp;}</b>
+&nbsp;
+&nbsp;@Preview(
+&nbsp;    name = &quot;Night Mode&quot;,
+&nbsp;    uiMode = Configuration.UI_MODE_NIGHT_YES,
+&nbsp;)
+&nbsp;@Preview(
+&nbsp;    name = &quot;Day mode&quot;,
+&nbsp;    uiMode = Configuration.UI_MODE_NIGHT_NO,
+&nbsp;)
+&nbsp;@Composable
+<b class="nc">&nbsp;fun LoginPreview() {</b>
+<b class="nc">&nbsp;    HazardHuntTheme {</b>
+&nbsp;        HomeScreen()
+&nbsp;    }
+<b class="nc">&nbsp;}</b>
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-08-21 10:08</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,198 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > OnBoardingPage</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.hazardhunt.onboarding.presentation</a>
+</div>
+
+<h1>Coverage Summary for Class: OnBoardingPage (com.example.hazardhunt.onboarding.presentation)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">OnBoardingPage</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">OnBoardingPage$First</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">OnBoardingPage$Second</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">OnBoardingPage$Third</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/17)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;// ktlint-disable filename
+&nbsp;
+&nbsp;package com.example.hazardhunt.onboarding.presentation
+&nbsp;
+&nbsp;import androidx.annotation.RawRes
+&nbsp;import com.example.hazardhunt.R
+&nbsp;
+<b class="nc">&nbsp;sealed class OnBoardingPage(</b>
+<b class="nc">&nbsp;    @RawRes</b>
+<b class="nc">&nbsp;    val image: Int,</b>
+<b class="nc">&nbsp;    val title: String,</b>
+<b class="nc">&nbsp;    val description: String,</b>
+&nbsp;) {
+<b class="nc">&nbsp;    object First : OnBoardingPage(</b>
+<b class="nc">&nbsp;        image = R.raw.men_at_work,</b>
+<b class="nc">&nbsp;        title = &quot;Real Time Situational Report&quot;,</b>
+<b class="nc">&nbsp;        description = &quot;Get real time Incident data, Respond appropriately to prevent severe Accident.&quot;,</b>
+&nbsp;    )
+&nbsp;
+<b class="nc">&nbsp;    object Second : OnBoardingPage(</b>
+<b class="nc">&nbsp;        image = R.raw.dataanalysis,</b>
+<b class="nc">&nbsp;        title = &quot;Data Analysis&quot;,</b>
+<b class="nc">&nbsp;        description = &quot;Analyze incident data, Take necessary Actions, prevent future occurrences .&quot;,</b>
+&nbsp;    )
+&nbsp;
+<b class="nc">&nbsp;    object Third : OnBoardingPage(</b>
+<b class="nc">&nbsp;        image = R.raw.ambulancia,</b>
+<b class="nc">&nbsp;        title = &quot;Automated Distress Calls&quot;,</b>
+<b class="nc">&nbsp;        description = &quot; Automate emergency calls, execute emergency action plans, prevent life loss.&quot;,</b>
+&nbsp;    )
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-08-21 10:08</div>
+</div>
+</body>
+</html>

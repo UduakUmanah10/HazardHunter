@@ -1,0 +1,118 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > ProdCredentialsLoginUseCase_Factory</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.hazardhunt.login.domain.usecase</a>
+</div>
+
+<h1>Coverage Summary for Class: ProdCredentialsLoginUseCase_Factory (com.example.hazardhunt.login.domain.usecase)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">ProdCredentialsLoginUseCase_Factory</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.hazardhunt.login.domain.usecase;
+&nbsp;
+&nbsp;import com.example.hazardhunt.login.domain.repository.LoginRepository;
+&nbsp;import com.example.hazardhunt.login.domain.repository.TokenRepository;
+&nbsp;import dagger.internal.DaggerGenerated;
+&nbsp;import dagger.internal.Factory;
+&nbsp;import dagger.internal.QualifierMetadata;
+&nbsp;import dagger.internal.ScopeMetadata;
+&nbsp;import javax.annotation.processing.Generated;
+&nbsp;import javax.inject.Provider;
+&nbsp;
+&nbsp;@ScopeMetadata
+&nbsp;@QualifierMetadata
+&nbsp;@DaggerGenerated
+&nbsp;@Generated(
+&nbsp;    value = &quot;dagger.internal.codegen.ComponentProcessor&quot;,
+&nbsp;    comments = &quot;https://dagger.dev&quot;
+&nbsp;)
+&nbsp;@SuppressWarnings({
+&nbsp;    &quot;unchecked&quot;,
+&nbsp;    &quot;rawtypes&quot;,
+&nbsp;    &quot;KotlinInternal&quot;,
+&nbsp;    &quot;KotlinInternalInJava&quot;
+&nbsp;})
+&nbsp;public final class ProdCredentialsLoginUseCase_Factory implements Factory&lt;ProdCredentialsLoginUseCase&gt; {
+&nbsp;  private final Provider&lt;LoginRepository&gt; loginRepositoryProvider;
+&nbsp;
+&nbsp;  private final Provider&lt;TokenRepository&gt; authTokenRepositoryProvider;
+&nbsp;
+&nbsp;  public ProdCredentialsLoginUseCase_Factory(Provider&lt;LoginRepository&gt; loginRepositoryProvider,
+&nbsp;      Provider&lt;TokenRepository&gt; authTokenRepositoryProvider) {
+&nbsp;    this.loginRepositoryProvider = loginRepositoryProvider;
+&nbsp;    this.authTokenRepositoryProvider = authTokenRepositoryProvider;
+&nbsp;  }
+&nbsp;
+&nbsp;  @Override
+&nbsp;  public ProdCredentialsLoginUseCase get() {
+&nbsp;    return newInstance(loginRepositoryProvider.get(), authTokenRepositoryProvider.get());
+&nbsp;  }
+&nbsp;
+&nbsp;  public static ProdCredentialsLoginUseCase_Factory create(
+&nbsp;      Provider&lt;LoginRepository&gt; loginRepositoryProvider,
+&nbsp;      Provider&lt;TokenRepository&gt; authTokenRepositoryProvider) {
+&nbsp;    return new ProdCredentialsLoginUseCase_Factory(loginRepositoryProvider, authTokenRepositoryProvider);
+&nbsp;  }
+&nbsp;
+&nbsp;  public static ProdCredentialsLoginUseCase newInstance(LoginRepository loginRepository,
+&nbsp;      TokenRepository authTokenRepository) {
+&nbsp;    return new ProdCredentialsLoginUseCase(loginRepository, authTokenRepository);
+&nbsp;  }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-08-21 10:08</div>
+</div>
+</body>
+</html>

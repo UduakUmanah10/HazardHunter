@@ -1,5 +1,8 @@
 package com.example.hazardhunt.login.presentation
 
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.width
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.collectAsState
@@ -20,6 +23,7 @@ fun LoginScreen(
 ) {
     val viewState = viewModel.viewState.collectAsState()
     val coroutineScope = rememberCoroutineScope()
+
     SideEffect {
         coroutineScope.launch {
             viewModel.completedState.receive()
@@ -36,3 +40,6 @@ fun LoginScreen(
         signup = signup,
     )
 }
+
+
+

@@ -1,0 +1,260 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > ColorKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.hazardhunt.ui.theme</a>
+</div>
+
+<h1>Coverage Summary for Class: ColorKt (com.example.hazardhunt.ui.theme)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ColorKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/137)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;@file:Suppress(&quot;MagicNumber&quot;)
+&nbsp;
+&nbsp;package com.example.hazardhunt.ui.theme
+&nbsp;import androidx.compose.material.darkColors
+&nbsp;import androidx.compose.material.lightColors
+&nbsp;import androidx.compose.material3.darkColorScheme
+&nbsp;import androidx.compose.material3.lightColorScheme
+&nbsp;import androidx.compose.ui.graphics.Color
+&nbsp;
+<b class="nc">&nbsp;private val light_primary = Color(0xFF006495)</b>
+<b class="nc">&nbsp;private val light_onPrimary = Color(0xFFffffff)</b>
+<b class="nc">&nbsp;private val light_primaryContainer = Color(0xFFc9e6ff)</b>
+<b class="nc">&nbsp;private val light_onPrimaryContainer = Color(0xFF001e31)</b>
+<b class="nc">&nbsp;private val light_secondary = Color(0xFF50606e)</b>
+<b class="nc">&nbsp;private val light_onSecondary = Color(0xFFffffff)</b>
+<b class="nc">&nbsp;private val light_secondaryContainer = Color(0xFFd3e4f5)</b>
+<b class="nc">&nbsp;private val light_onSecondaryContainer = Color(0xFF0c1d29)</b>
+<b class="nc">&nbsp;private val light_tertiary = Color(0xFF65587b)</b>
+<b class="nc">&nbsp;private val light_onTertiary = Color(0xFFffffff)</b>
+<b class="nc">&nbsp;private val light_tertiaryContainer = Color(0xFFecdcff)</b>
+<b class="nc">&nbsp;private val light_onTertiaryContainer = Color(0xFF211634)</b>
+<b class="nc">&nbsp;private val light_error = Color(0xFFba1b1b)</b>
+<b class="nc">&nbsp;private val light_errorContainer = Color(0xFFffdad4)</b>
+<b class="nc">&nbsp;private val light_onError = Color(0xFFffffff)</b>
+<b class="nc">&nbsp;private val light_onErrorContainer = Color(0xFF410001)</b>
+<b class="nc">&nbsp;private val light_background = Color(0xFFfcfcff)</b>
+<b class="nc">&nbsp;private val light_onBackground = Color(0xFF1a1c1e)</b>
+<b class="nc">&nbsp;private val light_surface = Color(0xFFfcfcff)</b>
+<b class="nc">&nbsp;private val light_onSurface = Color(0xFF1a1c1e)</b>
+<b class="nc">&nbsp;private val light_surfaceVariant = Color(0xFFdee3ea)</b>
+<b class="nc">&nbsp;private val light_onSurfaceVariant = Color(0xFF41474d)</b>
+<b class="nc">&nbsp;private val light_outline = Color(0xFF72787e)</b>
+<b class="nc">&nbsp;private val light_inverseOnSurface = Color(0xFFcdc9c2)</b>
+<b class="nc">&nbsp;private val light_inverseSurface = Color(0xFF2f3032)</b>
+<b class="nc">&nbsp;private val light_ColorBar = Color(0xFFf4f4f2)</b>
+&nbsp;
+<b class="nc">&nbsp;private val dark_primary = Color(0xFF8bcdff)</b>
+<b class="nc">&nbsp;private val dark_onPrimary = Color(0xFF003450)</b>
+<b class="nc">&nbsp;private val dark_primaryContainer = Color(0xFF004b72)</b>
+<b class="nc">&nbsp;private val dark_onPrimaryContainer = Color(0xFFc9e6ff)</b>
+<b class="nc">&nbsp;private val dark_secondary = Color(0xFFb7c8d9)</b>
+<b class="nc">&nbsp;private val dark_onSecondary = Color(0xFFfefefe)</b>
+<b class="nc">&nbsp;private val dark_secondaryContainer = Color(0xFF394956)</b>
+<b class="nc">&nbsp;private val dark_onSecondaryContainer = Color(0xFFd3e4f5)</b>
+<b class="nc">&nbsp;private val dark_tertiary = Color(0xFFd0c0e8)</b>
+<b class="nc">&nbsp;private val dark_onTertiary = Color(0xFF362b4a)</b>
+<b class="nc">&nbsp;private val dark_tertiaryContainer = Color(0xFF4d4162)</b>
+<b class="nc">&nbsp;private val dark_onTertiaryContainer = Color(0xFFecdcff)</b>
+<b class="nc">&nbsp;private val dark_error = Color(0xFFffb4a9)</b>
+<b class="nc">&nbsp;private val dark_errorContainer = Color(0xFF930006)</b>
+<b class="nc">&nbsp;private val dark_onError = Color(0xFF680003)</b>
+<b class="nc">&nbsp;private val dark_onErrorContainer = Color(0xFFffdad4)</b>
+<b class="nc">&nbsp;private val dark_background = Color(0xFF2b2b2a)</b>
+<b class="nc">&nbsp;private val dark_onBackground = Color(0xFFe2e2e5)</b>
+<b class="nc">&nbsp;private val dark_surface = Color(0xFF1a1c1e)</b>
+<b class="nc">&nbsp;private val dark_onSurface = Color(0xFFe2e2e5)</b>
+<b class="nc">&nbsp;private val dark_surfaceVariant = Color(0xFF41474d)</b>
+<b class="nc">&nbsp;private val dark_onSurfaceVariant = Color(0xFFc2c7ce)</b>
+<b class="nc">&nbsp;private val dark_outline = Color(0xFF8b9198)</b>
+<b class="nc">&nbsp;private val dark_inverseOnSurface = Color(0xFF1a1c1e)</b>
+<b class="nc">&nbsp;private val dark_inverseSurface = Color(0xFFe2e2e5)</b>
+<b class="nc">&nbsp;private val button_cardBackground = Color(0xFFe6f5fb)</b>
+<b class="nc">&nbsp;private val dark_fontColor = Color(0xFFe8e9e9)</b>
+<b class="nc">&nbsp;private val dark_ColorBar = Color(0xFFf4f4f2)</b>
+&nbsp;
+<b class="nc">&nbsp;private val dark_backgroundColor = Color(0xff2b2b2a)</b>
+<b class="nc">&nbsp;private val onboarding_buttonColor = Color(0xFF292992)</b>
+<b class="nc">&nbsp;val seed = Color(0xFF0f3750)</b>
+<b class="nc">&nbsp;val error = Color(0xFFba1b1b)</b>
+&nbsp;
+<b class="nc">&nbsp;val LightThemeColors = lightColorScheme(</b>
+<b class="nc">&nbsp;    primary = light_primary,</b>
+<b class="nc">&nbsp;    onPrimary = light_onPrimary,</b>
+<b class="nc">&nbsp;    primaryContainer = light_primaryContainer,</b>
+<b class="nc">&nbsp;    onPrimaryContainer = light_onPrimaryContainer,</b>
+<b class="nc">&nbsp;    secondary = light_secondary,</b>
+<b class="nc">&nbsp;    onSecondary = light_onSecondary,</b>
+<b class="nc">&nbsp;    secondaryContainer = light_secondaryContainer,</b>
+<b class="nc">&nbsp;    onSecondaryContainer = light_onSecondaryContainer,</b>
+<b class="nc">&nbsp;    tertiary = light_secondary,</b>
+<b class="nc">&nbsp;    onTertiary = light_onTertiary,</b>
+<b class="nc">&nbsp;    tertiaryContainer = light_tertiaryContainer,</b>
+<b class="nc">&nbsp;    onTertiaryContainer = light_onTertiaryContainer,</b>
+<b class="nc">&nbsp;    error = light_error,</b>
+<b class="nc">&nbsp;    errorContainer = light_errorContainer,</b>
+<b class="nc">&nbsp;    onError = light_onError,</b>
+<b class="nc">&nbsp;    onErrorContainer = light_onErrorContainer,</b>
+<b class="nc">&nbsp;    background = light_background,</b>
+<b class="nc">&nbsp;    onBackground = light_onBackground,</b>
+<b class="nc">&nbsp;    surface = light_surface,</b>
+<b class="nc">&nbsp;    onSurface = light_onSurface,</b>
+<b class="nc">&nbsp;    surfaceVariant = light_surfaceVariant,</b>
+<b class="nc">&nbsp;    onSurfaceVariant = light_onSurfaceVariant,</b>
+<b class="nc">&nbsp;    outline = light_outline,</b>
+<b class="nc">&nbsp;    inverseOnSurface = light_inverseOnSurface,</b>
+<b class="nc">&nbsp;    inverseSurface = light_inverseSurface,</b>
+<b class="nc">&nbsp;    scrim = light_ColorBar,</b>
+&nbsp;)
+&nbsp;
+<b class="nc">&nbsp;val DarkThemeColors = darkColorScheme(</b>
+<b class="nc">&nbsp;    primary = dark_primary,</b>
+<b class="nc">&nbsp;    onPrimary = dark_onPrimary,</b>
+<b class="nc">&nbsp;    primaryContainer = dark_primaryContainer,</b>
+<b class="nc">&nbsp;    onPrimaryContainer = dark_onPrimaryContainer,</b>
+<b class="nc">&nbsp;    secondary = dark_secondary,</b>
+<b class="nc">&nbsp;    onSecondary = light_onSecondary,</b>
+<b class="nc">&nbsp;    secondaryContainer = dark_onSecondaryContainer,</b>
+<b class="nc">&nbsp;    onSecondaryContainer = dark_onSecondaryContainer,</b>
+<b class="nc">&nbsp;    tertiary = button_cardBackground,</b>
+<b class="nc">&nbsp;    onTertiary = dark_onTertiary,</b>
+<b class="nc">&nbsp;    tertiaryContainer = dark_tertiaryContainer,</b>
+<b class="nc">&nbsp;    onTertiaryContainer = dark_onTertiaryContainer,</b>
+<b class="nc">&nbsp;    error = dark_onError,</b>
+<b class="nc">&nbsp;    errorContainer = dark_errorContainer,</b>
+<b class="nc">&nbsp;    onError = dark_onError,</b>
+<b class="nc">&nbsp;    onErrorContainer = dark_onErrorContainer,</b>
+<b class="nc">&nbsp;    background = dark_background,</b>
+<b class="nc">&nbsp;    onBackground = dark_backgroundColor,</b>
+<b class="nc">&nbsp;    surface = dark_surface,</b>
+<b class="nc">&nbsp;    onSurface = dark_onSurface,</b>
+<b class="nc">&nbsp;    surfaceVariant = dark_surfaceVariant,</b>
+<b class="nc">&nbsp;    onSurfaceVariant = dark_onSurfaceVariant,</b>
+<b class="nc">&nbsp;    outline = dark_outline,</b>
+<b class="nc">&nbsp;    inverseOnSurface = dark_inverseOnSurface,</b>
+<b class="nc">&nbsp;    inverseSurface = onboarding_buttonColor,</b>
+<b class="nc">&nbsp;    scrim = light_ColorBar,</b>
+&nbsp;)
+&nbsp;
+<b class="nc">&nbsp;val DarkMD2Colors = darkColors(</b>
+<b class="nc">&nbsp;    primary = DarkThemeColors.primary,</b>
+<b class="nc">&nbsp;    secondary = DarkThemeColors.secondary,</b>
+<b class="nc">&nbsp;    background = DarkThemeColors.background,</b>
+<b class="nc">&nbsp;    surface = DarkThemeColors.surface,</b>
+<b class="nc">&nbsp;    error = DarkThemeColors.error,</b>
+<b class="nc">&nbsp;    onPrimary = DarkThemeColors.onPrimary,</b>
+<b class="nc">&nbsp;    onSecondary = DarkThemeColors.onSecondary,</b>
+<b class="nc">&nbsp;    onBackground = DarkThemeColors.onBackground,</b>
+<b class="nc">&nbsp;    onSurface = DarkThemeColors.onSurface,</b>
+<b class="nc">&nbsp;    onError = DarkThemeColors.onError,</b>
+&nbsp;)
+&nbsp;
+<b class="nc">&nbsp;val LightMD2Colors = lightColors(</b>
+<b class="nc">&nbsp;    primary = LightThemeColors.primary,</b>
+<b class="nc">&nbsp;    secondary = LightThemeColors.secondary,</b>
+<b class="nc">&nbsp;    background = LightThemeColors.background,</b>
+<b class="nc">&nbsp;    surface = LightThemeColors.surface,</b>
+<b class="nc">&nbsp;    error = LightThemeColors.error,</b>
+<b class="nc">&nbsp;    onPrimary = LightThemeColors.onPrimary,</b>
+<b class="nc">&nbsp;    onSecondary = LightThemeColors.onSecondary,</b>
+<b class="nc">&nbsp;    onBackground = LightThemeColors.onBackground,</b>
+<b class="nc">&nbsp;    onSurface = LightThemeColors.onSurface,</b>
+<b class="nc">&nbsp;    onError = LightThemeColors.onError,</b>
+&nbsp;)
+&nbsp;
+<b class="nc">&nbsp;val backgroundColor = Color(0xFF2b2b2a)</b>
+<b class="nc">&nbsp;val cardBackground = Color(0xFFe6f5fb)</b>
+<b class="nc">&nbsp;val fontColor = Color(0xFFe8e9e9)</b>
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-08-21 10:08</div>
+</div>
+</body>
+</html>

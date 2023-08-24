@@ -16,6 +16,8 @@ import com.example.hazardhunt.core.loadingScreen
 import com.example.hazardhunt.home.data.model.SafetyTasks
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 
+typealias TWIN = Int
+const val TWEEN_VALUE =450
 @Composable
 fun TaskListContent(
     modifier: Modifier = Modifier,
@@ -30,11 +32,11 @@ fun TaskListContent(
         label = "",
         transitionSpec = {
             slideIntoContainer(
-                animationSpec = tween(450, easing = EaseIn),
+                animationSpec = tween(TWEEN_VALUE, easing = EaseIn),
                 towards = Right,
             ).togetherWith(
                 slideOutOfContainer(
-                    animationSpec = tween(450, easing = EaseOut),
+                    animationSpec = tween(TWEEN_VALUE, easing = EaseOut),
                     towards = Left,
                 ),
             )
