@@ -7,9 +7,11 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import com.github.tehras.charts.bar.BarChartData
 import com.github.tehras.charts.bar.renderer.bar.BarDrawer
 
-class barDrawer : BarDrawer {
-    val name = "aaa"
-    val nam = name.chars()
+typealias RADIUSDIMENSION =Float
+
+const val RADIUS:RADIUSDIMENSION =16f
+const val RIGHT_BAR_ADDITOIN:RADIUSDIMENSION =24f
+class BarDrawer : BarDrawer {
 
     private val barPaint = Paint().apply {
         this.isAntiAlias = true
@@ -36,10 +38,10 @@ class barDrawer : BarDrawer {
         canvas.drawRoundRect(
             barArea.left,
             barArea.top,
-            barArea.right + 24f,
+            barArea.right + RIGHT_BAR_ADDITOIN,
             barArea.bottom,
-            radiusX = 16f,
-            radiusY = 16f,
+            radiusX = RADIUS,
+            radiusY = RADIUS,
             barPaint.apply {
                 color = bar.color
             },

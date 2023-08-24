@@ -1,0 +1,380 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > LazyVerticalGridKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.hazardhunt.homescreen.presentation</a>
+</div>
+
+<h1>Coverage Summary for Class: LazyVerticalGridKt (com.example.hazardhunt.homescreen.presentation)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LazyVerticalGridKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/67)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">LazyVerticalGridKt$GridFeature$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/95)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">LazyVerticalGridKt$GridFeature$1$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">LazyVerticalGridKt$GridFeature$1$2$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">LazyVerticalGridKt$GridFeature$2</td>
+  </tr>
+  <tr>
+    <td class="name">LazyVerticalGridKt$lazyVerticalGrid$1$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">LazyVerticalGridKt$lazyVerticalGrid$1$1$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">LazyVerticalGridKt$lazyVerticalGrid$2</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/171)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.hazardhunt.homescreen.presentation
+&nbsp;
+&nbsp;import android.graphics.drawable.Icon
+&nbsp;import androidx.annotation.DrawableRes
+&nbsp;import androidx.compose.foundation.Canvas
+&nbsp;import androidx.compose.foundation.background
+&nbsp;import androidx.compose.foundation.clickable
+&nbsp;import androidx.compose.foundation.layout.Box
+&nbsp;import androidx.compose.foundation.layout.BoxWithConstraints
+&nbsp;import androidx.compose.foundation.layout.Column
+&nbsp;import androidx.compose.foundation.layout.PaddingValues
+&nbsp;import androidx.compose.foundation.layout.aspectRatio
+&nbsp;import androidx.compose.foundation.layout.fillMaxHeight
+&nbsp;import androidx.compose.foundation.layout.fillMaxSize
+&nbsp;import androidx.compose.foundation.layout.fillMaxWidth
+&nbsp;import androidx.compose.foundation.layout.padding
+&nbsp;import androidx.compose.foundation.lazy.grid.GridCells
+&nbsp;import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+&nbsp;import androidx.compose.foundation.shape.RoundedCornerShape
+&nbsp;import androidx.compose.material3.Icon
+&nbsp;import androidx.compose.material3.MaterialTheme
+&nbsp;import androidx.compose.material3.Text
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.ui.Alignment
+&nbsp;import androidx.compose.ui.Modifier
+&nbsp;import androidx.compose.ui.draw.clip
+&nbsp;import androidx.compose.ui.geometry.Offset
+&nbsp;import androidx.compose.ui.graphics.Color
+&nbsp;import androidx.compose.ui.graphics.Path
+&nbsp;import androidx.compose.ui.res.painterResource
+&nbsp;import androidx.compose.ui.text.font.FontWeight
+&nbsp;import androidx.compose.ui.unit.dp
+&nbsp;import androidx.compose.ui.unit.sp
+&nbsp;import kotlin.math.abs
+&nbsp;
+&nbsp;data class Features(
+&nbsp;    val title: String,
+&nbsp;    @DrawableRes
+&nbsp;    val icon: Int,
+&nbsp;    val color: Color,
+&nbsp;    val lightcolor: Color,
+&nbsp;    val mediumcolor: Color,
+&nbsp;)
+&nbsp;
+&nbsp;@Composable
+<b class="nc">&nbsp;fun lazyVerticalGrid(features: List&lt;Features&gt;) {</b>
+<b class="nc">&nbsp;    Column(modifier = Modifier.fillMaxWidth()) {</b>
+<b class="nc">&nbsp;        Text(</b>
+<b class="nc">&nbsp;            &quot;Features&quot;,</b>
+<b class="nc">&nbsp;            style = MaterialTheme.typography.labelMedium,</b>
+<b class="nc">&nbsp;            modifier = Modifier.padding(15.dp),</b>
+&nbsp;        )
+<b class="nc">&nbsp;        LazyVerticalGrid(</b>
+<b class="nc">&nbsp;            columns = GridCells.Fixed(2),</b>
+<b class="nc">&nbsp;            modifier = Modifier.fillMaxHeight(),</b>
+<b class="nc">&nbsp;            contentPadding = PaddingValues(</b>
+<b class="nc">&nbsp;                start = 7.5.dp,</b>
+<b class="nc">&nbsp;                end = 7.5.dp,</b>
+<b class="nc">&nbsp;                bottom = 100.dp,</b>
+&nbsp;            ),
+&nbsp;        ) {
+<b class="nc">&nbsp;            items(features.size) {</b>
+<b class="nc">&nbsp;                GridFeature(features = features[it])</b>
+&nbsp;            }
+&nbsp;        }
+<b class="nc">&nbsp;    }</b>
+&nbsp;}
+&nbsp;
+&nbsp;@Composable
+<b class="nc">&nbsp;fun GridFeature(features: Features) {</b>
+<b class="nc">&nbsp;    BoxWithConstraints(</b>
+<b class="nc">&nbsp;        modifier = Modifier</b>
+<b class="nc">&nbsp;            .padding(7.5.dp)</b>
+<b class="nc">&nbsp;            .aspectRatio(1f)</b>
+<b class="nc">&nbsp;            .clip(RoundedCornerShape(10.dp))</b>
+<b class="nc">&nbsp;            .background(features.color),</b>
+<b class="nc">&nbsp;    ) {</b>
+<b class="nc">&nbsp;        val width = constraints.maxWidth</b>
+<b class="nc">&nbsp;        val height = constraints.maxHeight</b>
+&nbsp;
+<b class="nc">&nbsp;        val mediumColouredPoint1 = Offset(0f, height * 0.3f)</b>
+<b class="nc">&nbsp;        val mediumColouredPoint2 = Offset(width * 0.1f, height * 0.35f)</b>
+<b class="nc">&nbsp;        val mediumColouredPoint3 = Offset(width * 0.4f, height * 0.05f)</b>
+<b class="nc">&nbsp;        val mediumColouredPoint4 = Offset(width * 0.75f, height * 0.7f)</b>
+<b class="nc">&nbsp;        val mediumColouredPoint5 = Offset(width * 1.4f, -height.toFloat())</b>
+&nbsp;
+<b class="nc">&nbsp;        val mediumColoredPath = Path().apply {</b>
+<b class="nc">&nbsp;            moveTo(mediumColouredPoint1.x, mediumColouredPoint1.y)</b>
+<b class="nc">&nbsp;            standardQuadtTo(mediumColouredPoint1, mediumColouredPoint2)</b>
+<b class="nc">&nbsp;            standardQuadtTo(mediumColouredPoint2, mediumColouredPoint3)</b>
+<b class="nc">&nbsp;            standardQuadtTo(mediumColouredPoint3, mediumColouredPoint4)</b>
+<b class="nc">&nbsp;            standardQuadtTo(mediumColouredPoint4, mediumColouredPoint5)</b>
+&nbsp;
+<b class="nc">&nbsp;            lineTo(width.toFloat() + 100f, height.toFloat() + 100f)</b>
+<b class="nc">&nbsp;            lineTo(-100f, height.toFloat() + 100f)</b>
+<b class="nc">&nbsp;            close()</b>
+<b class="nc">&nbsp;        }</b>
+&nbsp;
+<b class="nc">&nbsp;        val lightPoint1 = Offset(0f, height * 0.35f)</b>
+<b class="nc">&nbsp;        val lightPoint2 = Offset(width * 0.1f, height * 0.4f)</b>
+<b class="nc">&nbsp;        val lightPoint3 = Offset(width * 0.3f, height * 0.035f)</b>
+<b class="nc">&nbsp;        val lightPoint4 = Offset(width * 0.65f, height.toFloat())</b>
+<b class="nc">&nbsp;        val lightPoint5 = Offset(width * 1.4f, -height.toFloat())</b>
+&nbsp;
+<b class="nc">&nbsp;        val lightColoredPath = Path().apply {</b>
+<b class="nc">&nbsp;            moveTo(lightPoint1.x, lightPoint1.y)</b>
+<b class="nc">&nbsp;            standardQuadtTo(lightPoint1, lightPoint2)</b>
+<b class="nc">&nbsp;            standardQuadtTo(lightPoint2, lightPoint3)</b>
+<b class="nc">&nbsp;            standardQuadtTo(lightPoint3, lightPoint4)</b>
+<b class="nc">&nbsp;            standardQuadtTo(lightPoint4, lightPoint5)</b>
+&nbsp;
+<b class="nc">&nbsp;            lineTo(width.toFloat() + 100f, height.toFloat() + 100f)</b>
+<b class="nc">&nbsp;            lineTo(-100f, height.toFloat() + 100f)</b>
+<b class="nc">&nbsp;            close()</b>
+<b class="nc">&nbsp;        }</b>
+&nbsp;
+<b class="nc">&nbsp;        Canvas(modifier = Modifier.fillMaxSize()) {</b>
+<b class="nc">&nbsp;            drawPath(</b>
+<b class="nc">&nbsp;                path = mediumColoredPath,</b>
+<b class="nc">&nbsp;                color = features.mediumcolor,</b>
+&nbsp;            )
+<b class="nc">&nbsp;            drawPath(</b>
+<b class="nc">&nbsp;                path = lightColoredPath,</b>
+<b class="nc">&nbsp;                color = features.lightcolor,</b>
+&nbsp;            )
+&nbsp;        }
+<b class="nc">&nbsp;        Box(</b>
+<b class="nc">&nbsp;            modifier = Modifier</b>
+<b class="nc">&nbsp;                .fillMaxSize()</b>
+<b class="nc">&nbsp;                .padding(15.dp),</b>
+&nbsp;        ) {
+<b class="nc">&nbsp;            Text(</b>
+<b class="nc">&nbsp;                text = features.title,</b>
+<b class="nc">&nbsp;                style = MaterialTheme.typography.bodySmall,</b>
+<b class="nc">&nbsp;                lineHeight = 26.sp,</b>
+<b class="nc">&nbsp;                modifier = Modifier.align(Alignment.TopStart),</b>
+&nbsp;            )
+<b class="nc">&nbsp;            Icon(</b>
+<b class="nc">&nbsp;                painter = painterResource(</b>
+<b class="nc">&nbsp;                    id = features.icon,</b>
+&nbsp;                ),
+<b class="nc">&nbsp;                contentDescription = features.title,</b>
+<b class="nc">&nbsp;                modifier = Modifier.align(Alignment.BottomStart),</b>
+&nbsp;            )
+<b class="nc">&nbsp;            Text(</b>
+<b class="nc">&nbsp;                text = &quot;start&quot;,</b>
+<b class="nc">&nbsp;                color = MaterialTheme.colorScheme.inversePrimary,</b>
+<b class="nc">&nbsp;                fontSize = 14.sp,</b>
+<b class="nc">&nbsp;                fontWeight = FontWeight.Bold,</b>
+<b class="nc">&nbsp;                modifier = Modifier</b>
+<b class="nc">&nbsp;                    .clickable {}</b>
+<b class="nc">&nbsp;                    .align(Alignment.BottomEnd)</b>
+<b class="nc">&nbsp;                    .clip(RoundedCornerShape(10.dp))</b>
+<b class="nc">&nbsp;                    .background(MaterialTheme.colorScheme.background)</b>
+<b class="nc">&nbsp;                    .padding(vertical = 6.dp, horizontal = 15.dp),</b>
+&nbsp;
+&nbsp;            )
+<b class="nc">&nbsp;        }</b>
+&nbsp;    }
+<b class="nc">&nbsp;}</b>
+&nbsp;
+&nbsp;fun Path.standardQuadtTo(from: Offset, to: Offset) {
+<b class="nc">&nbsp;    quadraticBezierTo(</b>
+<b class="nc">&nbsp;        from.x,</b>
+<b class="nc">&nbsp;        from.y,</b>
+<b class="nc">&nbsp;        abs(from.x + to.x) / 2f,</b>
+<b class="nc">&nbsp;        abs(from.y + to.y) / 2f,</b>
+&nbsp;    )
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-08-21 10:08</div>
+</div>
+</body>
+</html>

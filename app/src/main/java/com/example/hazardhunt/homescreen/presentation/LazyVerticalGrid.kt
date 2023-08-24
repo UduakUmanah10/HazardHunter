@@ -1,6 +1,5 @@
 package com.example.hazardhunt.homescreen.presentation
 
-import android.graphics.drawable.Icon
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -32,6 +31,21 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlin.math.abs
+
+
+typealias GRID_DIMENSION  =Float
+const val ONE_HUNDRED:GRID_DIMENSION= 100f
+const val ZERO:GRID_DIMENSION= 0f
+const val ZERO_POINT_ZERO_THREE_FIVE:GRID_DIMENSION= 0.035f
+const val ZERO_POINT_ZERO_FIVE:GRID_DIMENSION= 0.05f
+const val ZERO_POINT_ONE:GRID_DIMENSION= 0.1f
+const val ZERO_POINT_THREE_FIVE:GRID_DIMENSION= 0.35f
+const val ZERO_POINT_THREE:GRID_DIMENSION= 0.3f
+const val ZERO_POINT_FOUR_:GRID_DIMENSION= 0.4f
+const val ZERO_POINT_SIX_FIVE:GRID_DIMENSION= 0.65f
+const val ZERO_POINT_SEVEN:GRID_DIMENSION= 0.7f
+const val ZERO_POINT_SEVEN_FIVE:GRID_DIMENSION= 0.75f
+const val ONE_POINT_FOUR:GRID_DIMENSION= 1.4f
 
 data class Features(
     val title: String,
@@ -78,11 +92,11 @@ fun GridFeature(features: Features) {
         val width = constraints.maxWidth
         val height = constraints.maxHeight
 
-        val mediumColouredPoint1 = Offset(0f, height * 0.3f)
-        val mediumColouredPoint2 = Offset(width * 0.1f, height * 0.35f)
-        val mediumColouredPoint3 = Offset(width * 0.4f, height * 0.05f)
-        val mediumColouredPoint4 = Offset(width * 0.75f, height * 0.7f)
-        val mediumColouredPoint5 = Offset(width * 1.4f, -height.toFloat())
+        val mediumColouredPoint1 = Offset(ZERO, height * ZERO_POINT_THREE)
+        val mediumColouredPoint2 = Offset(width * ZERO_POINT_ONE, height * ZERO_POINT_THREE_FIVE)
+        val mediumColouredPoint3 = Offset(width * ZERO_POINT_FOUR_, height * ZERO_POINT_ZERO_FIVE)
+        val mediumColouredPoint4 = Offset(width * ZERO_POINT_SEVEN_FIVE, height * ZERO_POINT_SEVEN)
+        val mediumColouredPoint5 = Offset(width * ONE_POINT_FOUR, -height.toFloat())
 
         val mediumColoredPath = Path().apply {
             moveTo(mediumColouredPoint1.x, mediumColouredPoint1.y)
@@ -91,16 +105,16 @@ fun GridFeature(features: Features) {
             standardQuadtTo(mediumColouredPoint3, mediumColouredPoint4)
             standardQuadtTo(mediumColouredPoint4, mediumColouredPoint5)
 
-            lineTo(width.toFloat() + 100f, height.toFloat() + 100f)
-            lineTo(-100f, height.toFloat() + 100f)
+            lineTo(width.toFloat() + ONE_HUNDRED, height.toFloat() + ONE_HUNDRED)
+            lineTo(-ONE_HUNDRED, height.toFloat() + ONE_HUNDRED)
             close()
         }
 
-        val lightPoint1 = Offset(0f, height * 0.35f)
-        val lightPoint2 = Offset(width * 0.1f, height * 0.4f)
-        val lightPoint3 = Offset(width * 0.3f, height * 0.035f)
-        val lightPoint4 = Offset(width * 0.65f, height.toFloat())
-        val lightPoint5 = Offset(width * 1.4f, -height.toFloat())
+        val lightPoint1 = Offset(ZERO, height * ZERO_POINT_THREE_FIVE)
+        val lightPoint2 = Offset(width * ZERO_POINT_ONE, height * ZERO_POINT_FOUR_)
+        val lightPoint3 = Offset(width * ZERO_POINT_THREE, height * ZERO_POINT_ZERO_THREE_FIVE)
+        val lightPoint4 = Offset(width * ZERO_POINT_SIX_FIVE, height.toFloat())
+        val lightPoint5 = Offset(width * ONE_POINT_FOUR, -height.toFloat())
 
         val lightColoredPath = Path().apply {
             moveTo(lightPoint1.x, lightPoint1.y)
@@ -109,8 +123,8 @@ fun GridFeature(features: Features) {
             standardQuadtTo(lightPoint3, lightPoint4)
             standardQuadtTo(lightPoint4, lightPoint5)
 
-            lineTo(width.toFloat() + 100f, height.toFloat() + 100f)
-            lineTo(-100f, height.toFloat() + 100f)
+            lineTo(width.toFloat() + ONE_HUNDRED, height.toFloat() + ONE_HUNDRED)
+            lineTo(-ONE_HUNDRED, height.toFloat() + ONE_HUNDRED)
             close()
         }
 
@@ -124,38 +138,43 @@ fun GridFeature(features: Features) {
                 color = features.lightcolor,
             )
         }
-        Box(
+        BoxInsideConstraint(features)
+    }
+}
+
+@Composable
+private fun BoxInsideConstraint(features: Features) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(15.dp),
+    ) {
+        Text(
+            text = features.title,
+            style = MaterialTheme.typography.bodySmall,
+            lineHeight = 26.sp,
+            modifier = Modifier.align(Alignment.TopStart),
+        )
+        Icon(
+            painter = painterResource(
+                id = features.icon,
+            ),
+            contentDescription = features.title,
+            modifier = Modifier.align(Alignment.BottomStart),
+        )
+        Text(
+            text = "start",
+            color = MaterialTheme.colorScheme.inversePrimary,
+            fontSize = 14.sp,
+            fontWeight = FontWeight.Bold,
             modifier = Modifier
-                .fillMaxSize()
-                .padding(15.dp),
-        ) {
-            Text(
-                text = features.title,
-                style = MaterialTheme.typography.bodySmall,
-                lineHeight = 26.sp,
-                modifier = Modifier.align(Alignment.TopStart),
-            )
-            Icon(
-                painter = painterResource(
-                    id = features.icon,
-                ),
-                contentDescription = features.title,
-                modifier = Modifier.align(Alignment.BottomStart),
-            )
-            Text(
-                text = "start",
-                color = MaterialTheme.colorScheme.inversePrimary,
-                fontSize = 14.sp,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier
-                    .clickable {}
-                    .align(Alignment.BottomEnd)
-                    .clip(RoundedCornerShape(10.dp))
-                    .background(MaterialTheme.colorScheme.background)
-                    .padding(vertical = 6.dp, horizontal = 15.dp),
+                .clickable {}
+                .align(Alignment.BottomEnd)
+                .clip(RoundedCornerShape(10.dp))
+                .background(MaterialTheme.colorScheme.background)
+                .padding(vertical = 6.dp, horizontal = 15.dp),
 
             )
-        }
     }
 }
 

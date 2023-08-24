@@ -1,0 +1,111 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > OnboradingViewModel_Factory</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.hazardhunt.onboarding.domain</a>
+</div>
+
+<h1>Coverage Summary for Class: OnboradingViewModel_Factory (com.example.hazardhunt.onboarding.domain)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">OnboradingViewModel_Factory</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.hazardhunt.onboarding.domain;
+&nbsp;
+&nbsp;import com.example.hazardhunt.onboarding.data.OnBoardingRepository;
+&nbsp;import dagger.internal.DaggerGenerated;
+&nbsp;import dagger.internal.Factory;
+&nbsp;import dagger.internal.QualifierMetadata;
+&nbsp;import dagger.internal.ScopeMetadata;
+&nbsp;import javax.annotation.processing.Generated;
+&nbsp;import javax.inject.Provider;
+&nbsp;
+&nbsp;@ScopeMetadata
+&nbsp;@QualifierMetadata
+&nbsp;@DaggerGenerated
+&nbsp;@Generated(
+&nbsp;    value = &quot;dagger.internal.codegen.ComponentProcessor&quot;,
+&nbsp;    comments = &quot;https://dagger.dev&quot;
+&nbsp;)
+&nbsp;@SuppressWarnings({
+&nbsp;    &quot;unchecked&quot;,
+&nbsp;    &quot;rawtypes&quot;,
+&nbsp;    &quot;KotlinInternal&quot;,
+&nbsp;    &quot;KotlinInternalInJava&quot;
+&nbsp;})
+&nbsp;public final class OnboradingViewModel_Factory implements Factory&lt;OnboradingViewModel&gt; {
+&nbsp;  private final Provider&lt;OnBoardingRepository&gt; repositoryProvider;
+&nbsp;
+&nbsp;  public OnboradingViewModel_Factory(Provider&lt;OnBoardingRepository&gt; repositoryProvider) {
+&nbsp;    this.repositoryProvider = repositoryProvider;
+&nbsp;  }
+&nbsp;
+&nbsp;  @Override
+&nbsp;  public OnboradingViewModel get() {
+&nbsp;    return newInstance(repositoryProvider.get());
+&nbsp;  }
+&nbsp;
+&nbsp;  public static OnboradingViewModel_Factory create(
+&nbsp;      Provider&lt;OnBoardingRepository&gt; repositoryProvider) {
+&nbsp;    return new OnboradingViewModel_Factory(repositoryProvider);
+&nbsp;  }
+&nbsp;
+&nbsp;  public static OnboradingViewModel newInstance(OnBoardingRepository repository) {
+&nbsp;    return new OnboradingViewModel(repository);
+&nbsp;  }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-08-21 10:08</div>
+</div>
+</body>
+</html>

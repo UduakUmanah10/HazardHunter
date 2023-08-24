@@ -1,0 +1,253 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > LogInViewState</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.hazardhunt.login.domain</a>
+</div>
+
+<h1>Coverage Summary for Class: LogInViewState (com.example.hazardhunt.login.domain)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LogInViewState</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">LogInViewState$Active</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">LogInViewState$InitialLoginState</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">LogInViewState$LoginSuccess</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">LogInViewState$SubmissionError</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">LogInViewState$Submitting</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    83.3%
+  </span>
+  <span class="absValue">
+    (5/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    85.7%
+  </span>
+  <span class="absValue">
+    (18/21)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;// ktlint-disable filename
+&nbsp;package com.example.hazardhunt.login.domain
+&nbsp;
+&nbsp;import com.example.hazardhunt.core.UIText
+&nbsp;import com.example.hazardhunt.login.domain.util.Credentials
+&nbsp;
+&nbsp;/**
+&nbsp; * This class Defines the current and possible state of the log in screen
+&nbsp; * @param[credentials] the current text entered into the ui text field
+&nbsp; * @param[buttonsEnabled] the current password entered in the password field
+&nbsp; *
+&nbsp; *
+&nbsp; */
+&nbsp;
+<b class="fc">&nbsp;sealed class LogInViewState(</b>
+<b class="fc">&nbsp;    open val credentials: Credentials,</b>
+<b class="fc">&nbsp;    open val buttonsEnabled: Boolean = true,</b>
+&nbsp;) {
+<b class="fc">&nbsp;    object InitialLoginState : LogInViewState(</b>
+<b class="fc">&nbsp;        credentials = Credentials(),</b>
+&nbsp;    )
+&nbsp;
+&nbsp;    data class Active(
+<b class="fc">&nbsp;        override val credentials: Credentials,</b>
+<b class="fc">&nbsp;        val emailInputErrorMessage: UIText? = null,</b>
+<b class="fc">&nbsp;        val passwordInputErrorMessage: UIText? = null,</b>
+<b class="fc">&nbsp;    ) : LogInViewState(</b>
+<b class="fc">&nbsp;        credentials = credentials,</b>
+&nbsp;    )
+&nbsp;
+&nbsp;    data class Submitting(
+<b class="fc">&nbsp;        override val credentials: Credentials,</b>
+<b class="fc">&nbsp;    ) : LogInViewState(</b>
+<b class="fc">&nbsp;        credentials = credentials,</b>
+<b class="fc">&nbsp;        buttonsEnabled = false,</b>
+&nbsp;    )
+&nbsp;
+&nbsp;    data class SubmissionError(
+<b class="fc">&nbsp;        override val credentials: Credentials,</b>
+<b class="fc">&nbsp;        val errorMessage: UIText,</b>
+<b class="fc">&nbsp;    ) : LogInViewState(</b>
+<b class="fc">&nbsp;        credentials = credentials,</b>
+&nbsp;    )
+<b class="nc">&nbsp;    object LoginSuccess : LogInViewState(</b>
+<b class="nc">&nbsp;        Credentials(),</b>
+<b class="nc">&nbsp;        buttonsEnabled = false,</b>
+&nbsp;    )
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-08-21 10:08</div>
+</div>
+</body>
+</html>

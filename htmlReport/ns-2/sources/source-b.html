@@ -1,0 +1,130 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > SignupButtonKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.hazardhunt.core</a>
+</div>
+
+<h1>Coverage Summary for Class: SignupButtonKt (com.example.hazardhunt.core)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SignupButtonKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">SignupButtonKt$SignUpButton$1</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;// ktlint-disable filename
+&nbsp;package com.example.hazardhunt.core
+&nbsp;
+&nbsp;import androidx.compose.foundation.layout.navigationBarsPadding
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.ui.Modifier
+&nbsp;import androidx.compose.ui.res.stringResource
+&nbsp;import com.example.hazardhunt.R
+&nbsp;
+&nbsp;@Composable
+<b class="nc">&nbsp;fun SignUpButton(onSignupClicked: () -&gt; Unit) {</b>
+<b class="nc">&nbsp;    PrimaryButton(</b>
+<b class="nc">&nbsp;        modifier = Modifier.navigationBarsPadding(),</b>
+<b class="nc">&nbsp;        text = stringResource(id = R.string.sign_up),</b>
+<b class="nc">&nbsp;        onclick = onSignupClicked,</b>
+&nbsp;    )
+<b class="nc">&nbsp;}</b>
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-08-21 10:08</div>
+</div>
+</body>
+</html>

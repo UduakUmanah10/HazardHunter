@@ -3,7 +3,7 @@ package com.example.hazardhunt
 import org.junit.rules.TestWatcher
 import org.junit.runner.Description
 
-class ThreadExceptionHandler : TestWatcher() {
+class  ThreadExceptionHandler : TestWatcher() {
 
     private var previousHandler: Thread.UncaughtExceptionHandler? = null
 

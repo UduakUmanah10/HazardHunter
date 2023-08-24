@@ -22,6 +22,10 @@ import com.github.tehras.charts.piechart.PieChartData
 import com.github.tehras.charts.piechart.PieChartData.Slice
 import com.github.tehras.charts.piechart.animation.simpleChartAnimation
 import com.github.tehras.charts.piechart.renderer.SimpleSliceDrawer
+typealias SLICEDATA =Float
+const val FIRST_SLICE_VALUE:SLICEDATA = 20f
+const val SECOND_SLICE_VALUE:SLICEDATA = 40f
+const val THIRD_SLICE_VALUE:SLICEDATA = 40f
 
 @Composable
 fun viewchart() {
@@ -51,9 +55,9 @@ fun viewchart() {
 @Composable
 fun viewPie() {
     val piedata = listOf(
-        Slice(20f, MaterialTheme.colorScheme.onSecondary),
-        Slice(40f, MaterialTheme.colorScheme.error),
-        Slice(40f, MaterialTheme.colorScheme.primary),
+        Slice(FIRST_SLICE_VALUE, MaterialTheme.colorScheme.onSecondary),
+        Slice(SECOND_SLICE_VALUE, MaterialTheme.colorScheme.error),
+        Slice(THIRD_SLICE_VALUE, MaterialTheme.colorScheme.primary),
     )
     Column {
         Box(modifier = Modifier.padding(vertical = 16.dp)) {
@@ -87,7 +91,7 @@ fun BarChartComposable(barContent: List<Bar>) {
                 // padBy = 10f,
 
             ),
-            labelDrawer = labelDrawer(),
+            labelDrawer = LabelDrawer(),
 
             yAxisDrawer = SimpleYAxisDrawer(
                 labelTextColor = MaterialTheme.colorScheme.inverseOnSurface,
@@ -95,7 +99,7 @@ fun BarChartComposable(barContent: List<Bar>) {
                 axisLineColor = MaterialTheme.colorScheme.outline,
             ),
             xAxisDrawer = SimpleXAxisDrawer(axisLineColor = MaterialTheme.colorScheme.outline),
-            barDrawer = barDrawer(),
+            barDrawer = BarDrawer(),
             modifier = Modifier
                 .fillMaxWidth().padding(4.dp)
                 .height(147.dp),

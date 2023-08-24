@@ -1,0 +1,111 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Onboardingrepository_Factory</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.hazardhunt.homescreen.data</a>
+</div>
+
+<h1>Coverage Summary for Class: Onboardingrepository_Factory (com.example.hazardhunt.homescreen.data)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">Onboardingrepository_Factory</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.hazardhunt.homescreen.data;
+&nbsp;
+&nbsp;import com.example.hazardhunt.onboarding.data.OnBoardingRepository;
+&nbsp;import dagger.internal.DaggerGenerated;
+&nbsp;import dagger.internal.Factory;
+&nbsp;import dagger.internal.QualifierMetadata;
+&nbsp;import dagger.internal.ScopeMetadata;
+&nbsp;import javax.annotation.processing.Generated;
+&nbsp;import javax.inject.Provider;
+&nbsp;
+&nbsp;@ScopeMetadata
+&nbsp;@QualifierMetadata
+&nbsp;@DaggerGenerated
+&nbsp;@Generated(
+&nbsp;    value = &quot;dagger.internal.codegen.ComponentProcessor&quot;,
+&nbsp;    comments = &quot;https://dagger.dev&quot;
+&nbsp;)
+&nbsp;@SuppressWarnings({
+&nbsp;    &quot;unchecked&quot;,
+&nbsp;    &quot;rawtypes&quot;,
+&nbsp;    &quot;KotlinInternal&quot;,
+&nbsp;    &quot;KotlinInternalInJava&quot;
+&nbsp;})
+&nbsp;public final class Onboardingrepository_Factory implements Factory&lt;Onboardingrepository&gt; {
+&nbsp;  private final Provider&lt;OnBoardingRepository&gt; onboardingProvider;
+&nbsp;
+&nbsp;  public Onboardingrepository_Factory(Provider&lt;OnBoardingRepository&gt; onboardingProvider) {
+&nbsp;    this.onboardingProvider = onboardingProvider;
+&nbsp;  }
+&nbsp;
+&nbsp;  @Override
+&nbsp;  public Onboardingrepository get() {
+&nbsp;    return newInstance(onboardingProvider.get());
+&nbsp;  }
+&nbsp;
+&nbsp;  public static Onboardingrepository_Factory create(
+&nbsp;      Provider&lt;OnBoardingRepository&gt; onboardingProvider) {
+&nbsp;    return new Onboardingrepository_Factory(onboardingProvider);
+&nbsp;  }
+&nbsp;
+&nbsp;  public static Onboardingrepository newInstance(OnBoardingRepository onboarding) {
+&nbsp;    return new Onboardingrepository(onboarding);
+&nbsp;  }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-08-21 10:08</div>
+</div>
+</body>
+</html>

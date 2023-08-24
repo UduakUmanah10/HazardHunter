@@ -1,0 +1,111 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > SafetyTaskViewmodel_Factory</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.hazardhunt.home.domain.viewmodel</a>
+</div>
+
+<h1>Coverage Summary for Class: SafetyTaskViewmodel_Factory (com.example.hazardhunt.home.domain.viewmodel)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">SafetyTaskViewmodel_Factory</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.hazardhunt.home.domain.viewmodel;
+&nbsp;
+&nbsp;import com.example.hazardhunt.home.domain.usecase.GetTaskUseCase;
+&nbsp;import dagger.internal.DaggerGenerated;
+&nbsp;import dagger.internal.Factory;
+&nbsp;import dagger.internal.QualifierMetadata;
+&nbsp;import dagger.internal.ScopeMetadata;
+&nbsp;import javax.annotation.processing.Generated;
+&nbsp;import javax.inject.Provider;
+&nbsp;
+&nbsp;@ScopeMetadata
+&nbsp;@QualifierMetadata
+&nbsp;@DaggerGenerated
+&nbsp;@Generated(
+&nbsp;    value = &quot;dagger.internal.codegen.ComponentProcessor&quot;,
+&nbsp;    comments = &quot;https://dagger.dev&quot;
+&nbsp;)
+&nbsp;@SuppressWarnings({
+&nbsp;    &quot;unchecked&quot;,
+&nbsp;    &quot;rawtypes&quot;,
+&nbsp;    &quot;KotlinInternal&quot;,
+&nbsp;    &quot;KotlinInternalInJava&quot;
+&nbsp;})
+&nbsp;public final class SafetyTaskViewmodel_Factory implements Factory&lt;SafetyTaskViewmodel&gt; {
+&nbsp;  private final Provider&lt;GetTaskUseCase&gt; getAllSafetyTasksProvider;
+&nbsp;
+&nbsp;  public SafetyTaskViewmodel_Factory(Provider&lt;GetTaskUseCase&gt; getAllSafetyTasksProvider) {
+&nbsp;    this.getAllSafetyTasksProvider = getAllSafetyTasksProvider;
+&nbsp;  }
+&nbsp;
+&nbsp;  @Override
+&nbsp;  public SafetyTaskViewmodel get() {
+&nbsp;    return newInstance(getAllSafetyTasksProvider.get());
+&nbsp;  }
+&nbsp;
+&nbsp;  public static SafetyTaskViewmodel_Factory create(
+&nbsp;      Provider&lt;GetTaskUseCase&gt; getAllSafetyTasksProvider) {
+&nbsp;    return new SafetyTaskViewmodel_Factory(getAllSafetyTasksProvider);
+&nbsp;  }
+&nbsp;
+&nbsp;  public static SafetyTaskViewmodel newInstance(GetTaskUseCase getAllSafetyTasks) {
+&nbsp;    return new SafetyTaskViewmodel(getAllSafetyTasks);
+&nbsp;  }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-08-21 10:08</div>
+</div>
+</body>
+</html>

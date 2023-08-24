@@ -7,6 +7,7 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.shrinkVertically
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.navigationBars
@@ -33,6 +34,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavBackStackEntry
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -42,6 +45,9 @@ import com.example.hazardhunt.home.presentation.SafetyTaskScreen
 import com.example.hazardhunt.homescreen.presentation.HomeScreen
 import com.example.hazardhunt.insight.presenatation.InsightsScreen
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
+typealias DELAY= Int
+const val ANIMATION_DELAY:DELAY =1200
+const val VERTICAL_EXPANSION:DELAY =20
 
 sealed class NavigationDestination(val name: String, @DrawableRes val icons: Int, val route: String) {
 
@@ -77,9 +83,10 @@ fun HomeScreen(
 
             AnimatedVisibility(
                 showBottomBar,
-                enter = expandVertically(expandFrom = Alignment.Top) { 20 },
+                enter = expandVertically(expandFrom = Alignment.Top) { VERTICAL_EXPANSION},
                 exit = shrinkVertically(
-                    animationSpec = tween(1200),
+                    animationSpec = tween(ANIMATION_DELAY),
+
                 ) { fullHeight ->
                     fullHeight / 2
                 },
@@ -94,24 +101,7 @@ fun HomeScreen(
                 ) {
                     destinations.forEach { content ->
 
-                        NavigationBarItem(
-                            modifier = Modifier.windowInsetsPadding(WindowInsets.navigationBars),
-                            selected = backStackEntry?.destination?.route == content.route,
-                            onClick = { navController.navigate(content.route) },
-                            label = {
-                                Text(
-                                    content.name,
-                                    style = MaterialTheme.typography.bodySmall,
-                                )
-                            },
-                            icon = {
-                                Icon(
-                                    painterResource(id = content.icons),
-                                    contentDescription = content.name,
-                                    Modifier.size(24.dp),
-                                )
-                            },
-                        )
+                        NavigationBarItem(backStackEntry, content, navController)
                     }
 
 //
@@ -167,6 +157,33 @@ fun HomeScreen(
 
     )
 }
+
+@Composable
+private fun RowScope.NavigationBarItem(
+    backStackEntry: NavBackStackEntry?,
+    content: NavigationDestination,
+    navController: NavHostController,
+) {
+    NavigationBarItem(
+        modifier = Modifier.windowInsetsPadding(WindowInsets.navigationBars),
+        selected = backStackEntry?.destination?.route == content.route,
+        onClick = { navController.navigate(content.route) },
+        label = {
+            Text(
+                content.name,
+                style = MaterialTheme.typography.bodySmall,
+            )
+        },
+        icon = {
+            Icon(
+                painterResource(id = content.icons),
+                contentDescription = content.name,
+                Modifier.size(24.dp),
+            )
+        },
+    )
+}
+
 
 @Preview(
     name = "Night Mode",

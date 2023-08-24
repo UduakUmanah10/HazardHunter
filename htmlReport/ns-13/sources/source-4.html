@@ -1,0 +1,111 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > LoginViewModel_Factory</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.hazardhunt.login.domain.viewmodel</a>
+</div>
+
+<h1>Coverage Summary for Class: LoginViewModel_Factory (com.example.hazardhunt.login.domain.viewmodel)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">LoginViewModel_Factory</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.hazardhunt.login.domain.viewmodel;
+&nbsp;
+&nbsp;import com.example.hazardhunt.login.domain.usecase.CredentialsLoginUsecase;
+&nbsp;import dagger.internal.DaggerGenerated;
+&nbsp;import dagger.internal.Factory;
+&nbsp;import dagger.internal.QualifierMetadata;
+&nbsp;import dagger.internal.ScopeMetadata;
+&nbsp;import javax.annotation.processing.Generated;
+&nbsp;import javax.inject.Provider;
+&nbsp;
+&nbsp;@ScopeMetadata
+&nbsp;@QualifierMetadata
+&nbsp;@DaggerGenerated
+&nbsp;@Generated(
+&nbsp;    value = &quot;dagger.internal.codegen.ComponentProcessor&quot;,
+&nbsp;    comments = &quot;https://dagger.dev&quot;
+&nbsp;)
+&nbsp;@SuppressWarnings({
+&nbsp;    &quot;unchecked&quot;,
+&nbsp;    &quot;rawtypes&quot;,
+&nbsp;    &quot;KotlinInternal&quot;,
+&nbsp;    &quot;KotlinInternalInJava&quot;
+&nbsp;})
+&nbsp;public final class LoginViewModel_Factory implements Factory&lt;LoginViewModel&gt; {
+&nbsp;  private final Provider&lt;CredentialsLoginUsecase&gt; credentialLoginUseCaseProvider;
+&nbsp;
+&nbsp;  public LoginViewModel_Factory(Provider&lt;CredentialsLoginUsecase&gt; credentialLoginUseCaseProvider) {
+&nbsp;    this.credentialLoginUseCaseProvider = credentialLoginUseCaseProvider;
+&nbsp;  }
+&nbsp;
+&nbsp;  @Override
+&nbsp;  public LoginViewModel get() {
+&nbsp;    return newInstance(credentialLoginUseCaseProvider.get());
+&nbsp;  }
+&nbsp;
+&nbsp;  public static LoginViewModel_Factory create(
+&nbsp;      Provider&lt;CredentialsLoginUsecase&gt; credentialLoginUseCaseProvider) {
+&nbsp;    return new LoginViewModel_Factory(credentialLoginUseCaseProvider);
+&nbsp;  }
+&nbsp;
+&nbsp;  public static LoginViewModel newInstance(CredentialsLoginUsecase credentialLoginUseCase) {
+&nbsp;    return new LoginViewModel(credentialLoginUseCase);
+&nbsp;  }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-08-21 10:08</div>
+</div>
+</body>
+</html>

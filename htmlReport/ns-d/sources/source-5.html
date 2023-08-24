@@ -1,0 +1,151 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > barDrawer</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.hazardhunt.insight.presenatation</a>
+</div>
+
+<h1>Coverage Summary for Class: barDrawer (com.example.hazardhunt.insight.presenatation)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">barDrawer</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/16)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.hazardhunt.insight.presenatation
+&nbsp;
+&nbsp;import androidx.compose.ui.geometry.Rect
+&nbsp;import androidx.compose.ui.graphics.Canvas
+&nbsp;import androidx.compose.ui.graphics.Paint
+&nbsp;import androidx.compose.ui.graphics.drawscope.DrawScope
+&nbsp;import com.github.tehras.charts.bar.BarChartData
+&nbsp;import com.github.tehras.charts.bar.renderer.bar.BarDrawer
+&nbsp;
+<b class="nc">&nbsp;class barDrawer : BarDrawer {</b>
+<b class="nc">&nbsp;    val name = &quot;aaa&quot;</b>
+<b class="nc">&nbsp;    val nam = name.chars()</b>
+&nbsp;
+<b class="nc">&nbsp;    private val barPaint = Paint().apply {</b>
+<b class="nc">&nbsp;        this.isAntiAlias = true</b>
+<b class="nc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    override fun drawBar(
+&nbsp;        drawScope: DrawScope,
+&nbsp;        canvas: Canvas,
+&nbsp;        barArea: Rect,
+&nbsp;        bar: BarChartData.Bar,
+&nbsp;    ) {
+&nbsp;        // canvas.drawRoundRect(
+&nbsp;        // barArea.left,
+&nbsp;        // 0f,
+&nbsp;        // barArea.right+24f,
+&nbsp;        // barArea.bottom,
+&nbsp;        // radiusX = 16f,
+&nbsp;        // radiusY = 16f,
+&nbsp;        // barPaint.apply {
+&nbsp;        //    color = Color.White
+&nbsp;        //  },
+&nbsp;        // )
+&nbsp;
+<b class="nc">&nbsp;        canvas.drawRoundRect(</b>
+<b class="nc">&nbsp;            barArea.left,</b>
+<b class="nc">&nbsp;            barArea.top,</b>
+<b class="nc">&nbsp;            barArea.right + 24f,</b>
+<b class="nc">&nbsp;            barArea.bottom,</b>
+<b class="nc">&nbsp;            radiusX = 16f,</b>
+<b class="nc">&nbsp;            radiusY = 16f,</b>
+<b class="nc">&nbsp;            barPaint.apply {</b>
+<b class="nc">&nbsp;                color = bar.color</b>
+<b class="nc">&nbsp;            },</b>
+&nbsp;        )
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-08-21 10:08</div>
+</div>
+</body>
+</html>
