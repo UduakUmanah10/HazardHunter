@@ -38,8 +38,9 @@ import androidx.compose.ui.unit.dp
 import com.example.hazardhunt.R
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 
-typealias PAGER= Int
-const val PAGER_COUNT =4
+typealias PAGER = Int
+const val PAGER_COUNT = 4
+
 @DrawableRes val nam: Int = R.drawable.safetypager
 
 @Composable

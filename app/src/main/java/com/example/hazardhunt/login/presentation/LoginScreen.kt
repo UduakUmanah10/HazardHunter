@@ -1,8 +1,5 @@
 package com.example.hazardhunt.login.presentation
 
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.width
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.collectAsState
@@ -40,6 +37,3 @@ fun LoginScreen(
         signup = signup,
     )
 }
-
-
-

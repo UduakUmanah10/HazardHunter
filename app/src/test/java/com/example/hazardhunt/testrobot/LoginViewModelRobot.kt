@@ -15,7 +15,6 @@ class LoginViewModelRobot {
     private lateinit var viewModel: LoginViewModel
 
     fun BuildViewModel() = apply {
-
         viewModel = LoginViewModel(
             credentialLoginUseCase = fakeCrekentialsLogInUsecase.mock,
 
@@ -60,7 +59,7 @@ class LoginViewModelRobot {
             for (state in viewState) {
                 assertThat(awaitItem()).isEqualTo(state)
             }
-           // awaitComplete()
+            // awaitComplete()
             ensureAllEventsConsumed()
         }
     }

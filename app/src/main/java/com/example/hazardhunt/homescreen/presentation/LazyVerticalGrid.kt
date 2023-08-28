@@ -32,20 +32,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlin.math.abs
 
-
-typealias GRID_DIMENSION  =Float
-const val ONE_HUNDRED:GRID_DIMENSION= 100f
-const val ZERO:GRID_DIMENSION= 0f
-const val ZERO_POINT_ZERO_THREE_FIVE:GRID_DIMENSION= 0.035f
-const val ZERO_POINT_ZERO_FIVE:GRID_DIMENSION= 0.05f
-const val ZERO_POINT_ONE:GRID_DIMENSION= 0.1f
-const val ZERO_POINT_THREE_FIVE:GRID_DIMENSION= 0.35f
-const val ZERO_POINT_THREE:GRID_DIMENSION= 0.3f
-const val ZERO_POINT_FOUR_:GRID_DIMENSION= 0.4f
-const val ZERO_POINT_SIX_FIVE:GRID_DIMENSION= 0.65f
-const val ZERO_POINT_SEVEN:GRID_DIMENSION= 0.7f
-const val ZERO_POINT_SEVEN_FIVE:GRID_DIMENSION= 0.75f
-const val ONE_POINT_FOUR:GRID_DIMENSION= 1.4f
+typealias GRID_DIMENSION = Float
+const val ONE_HUNDRED: GRID_DIMENSION = 100f
+const val ZERO: GRID_DIMENSION = 0f
+const val ZERO_POINT_ZERO_THREE_FIVE: GRID_DIMENSION = 0.035f
+const val ZERO_POINT_ZERO_FIVE: GRID_DIMENSION = 0.05f
+const val ZERO_POINT_ONE: GRID_DIMENSION = 0.1f
+const val ZERO_POINT_THREE_FIVE: GRID_DIMENSION = 0.35f
+const val ZERO_POINT_THREE: GRID_DIMENSION = 0.3f
+const val ZERO_POINT_FOUR_: GRID_DIMENSION = 0.4f
+const val ZERO_POINT_SIX_FIVE: GRID_DIMENSION = 0.65f
+const val ZERO_POINT_SEVEN: GRID_DIMENSION = 0.7f
+const val ZERO_POINT_SEVEN_FIVE: GRID_DIMENSION = 0.75f
+const val ONE_POINT_FOUR: GRID_DIMENSION = 1.4f
 
 data class Features(
     val title: String,
@@ -174,7 +173,7 @@ private fun BoxInsideConstraint(features: Features) {
                 .background(MaterialTheme.colorScheme.background)
                 .padding(vertical = 6.dp, horizontal = 15.dp),
 
-            )
+        )
     }
 }
 

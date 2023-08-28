@@ -27,5 +27,6 @@
         <string name="already_have_an_account">Already Have An Account. Click Here to Sign In</string>
     <string name="done">Done\n</string>
     <string name="Reschedue">Reschedule\n</string>
+    <string name="submit_Task">Start Task</string>
 
 </resources>

@@ -31,8 +31,6 @@ import com.example.hazardhunt.core.Email
 import com.example.hazardhunt.core.Password
 import com.example.hazardhunt.core.SignUpButton
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
-import com.ramcosta.composedestinations.annotation.Destination
-
 
 @Composable
 fun SignUpPage() {

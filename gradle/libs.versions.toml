@@ -128,7 +128,7 @@ viewmodel-lifecycle = { group ="androidx.lifecycle", name ="lifecycle-viewmodel-
 
 [plugins]
 
-androidApplication = { id = "com.android.application", version = "8.2.0-alpha16" }
+androidApplication = { id = "com.android.application", version = "8.3.0-alpha01" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android",version.ref = "dagger-hilt" }
 detekt = { id = "io.gitlab.arturbosch.detekt",version.ref = "detektGradlePlugin" }

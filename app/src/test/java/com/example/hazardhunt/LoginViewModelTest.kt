@@ -11,13 +11,8 @@ import com.example.hazardhunt.login.domain.util.LoginResults
 import com.example.hazardhunt.login.domain.util.Password
 import com.example.hazardhunt.testrobot.LoginViewModelRobot
 import com.google.common.truth.Truth.assertThat
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.StandardTestDispatcher
-import kotlinx.coroutines.test.advanceUntilIdle
-import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
-import kotlinx.coroutines.test.setMain
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
@@ -27,24 +22,23 @@ class LoginViewModelTest {
     private lateinit var loginRepository: FakeLoginRepository
     private lateinit var tokenRepository: FakeAuthTokenRepository
 
+    // val uncaughtExceptionHandlerRule = ThreadExceptionHandler()
+    // val dispatcher = StandardTestDispatcher()
     @get:Rule
-   // val uncaughtExceptionHandlerRule = ThreadExceptionHandler()
-   // val dispatcher = StandardTestDispatcher()
     val mainDispatcherRule = MainDispatcherRule()
-
 
     @Before
     fun setUp() {
         loginRepository = FakeLoginRepository()
         tokenRepository = FakeAuthTokenRepository()
-       // Dispatchers.setMain(dispatcher)
+        // Dispatchers.setMain(dispatcher)
         testRobot = LoginViewModelRobot()
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @After
     fun tearDown() {
-      //  Dispatchers.resetMain()
+        //  Dispatchers.resetMain()
     }
 
     private lateinit var testRobot: LoginViewModelRobot
@@ -216,7 +210,6 @@ class LoginViewModelTest {
             )
     }
 
-
     @Test
     fun testClearErrorsAfterInput() = runTest {
         val credentials = Credentials()
@@ -260,7 +253,6 @@ class LoginViewModelTest {
                 ),
             )
     }
-
 
     @Test
     fun testEmptyCredentialsLogin() = runTest {

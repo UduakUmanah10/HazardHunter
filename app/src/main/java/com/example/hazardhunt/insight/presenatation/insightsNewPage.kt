@@ -283,8 +283,6 @@ fun AfterBar(percentIncrease: Int, firstContent: String, secondContent: String) 
     }
 }
 
-
-
 @Preview(
     name = "Night Mode",
     uiMode = Configuration.UI_MODE_NIGHT_YES,
@@ -328,4 +326,3 @@ fun multipleKey() {
         }
     }
 }
-

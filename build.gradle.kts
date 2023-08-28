@@ -9,7 +9,7 @@ plugins {
     id("com.google.devtools.ksp") version "1.8.10-1.0.9" apply false
 
     alias(libs.plugins.kover)
-    id("com.android.library") version "8.2.0-alpha16" apply false
+    id("com.android.library") version "8.3.0-alpha01" apply false
 
 
 

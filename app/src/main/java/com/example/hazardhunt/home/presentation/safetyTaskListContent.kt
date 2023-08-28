@@ -17,7 +17,8 @@ import com.example.hazardhunt.home.data.model.SafetyTasks
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 
 typealias TWIN = Int
-const val TWEEN_VALUE =450
+const val TWEEN_VALUE = 450
+
 @Composable
 fun TaskListContent(
     modifier: Modifier = Modifier,
