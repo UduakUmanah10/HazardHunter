@@ -1,3 +1,4 @@
+// ktlint-disable filename
 package com.example.hazardhunt.home.domain.usecase
 
 import com.example.hazardhunt.home.data.model.SafetyTasks

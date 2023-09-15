@@ -151,7 +151,3 @@ val LightMD2Colors = lightColors(
     onSurface = LightThemeColors.onSurface,
     onError = LightThemeColors.onError,
 )
-
-val backgroundColor = Color(0xFF2b2b2a)
-val cardBackground = Color(0xFFe6f5fb)
-val fontColor = Color(0xFFe8e9e9)

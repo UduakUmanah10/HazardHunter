@@ -1,3 +1,4 @@
+// ktlint-disable filename
 package com.example.hazardhunt.insight.presenatation
 
 import android.content.res.Configuration
@@ -71,6 +72,7 @@ fun InsightsPage(
             .fillMaxSize(),
     ) {
         CustomCenterTopAppbar(
+
             titleContentColor = MaterialTheme.colorScheme.onSecondary,
             containerColor = MaterialTheme.colorScheme.outline,
             scrollContainerColor = MaterialTheme.colorScheme.error,
@@ -283,8 +285,6 @@ fun AfterBar(percentIncrease: Int, firstContent: String, secondContent: String) 
     }
 }
 
-
-
 @Preview(
     name = "Night Mode",
     uiMode = Configuration.UI_MODE_NIGHT_YES,
@@ -328,4 +328,3 @@ fun multipleKey() {
         }
     }
 }
-

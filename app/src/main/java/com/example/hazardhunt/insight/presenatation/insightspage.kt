@@ -1,3 +1,4 @@
+// ktlint-disable filename
 package com.example.hazardhunt.insight.presenatation
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Box
@@ -22,10 +23,10 @@ import com.github.tehras.charts.piechart.PieChartData
 import com.github.tehras.charts.piechart.PieChartData.Slice
 import com.github.tehras.charts.piechart.animation.simpleChartAnimation
 import com.github.tehras.charts.piechart.renderer.SimpleSliceDrawer
-typealias SLICEDATA =Float
-const val FIRST_SLICE_VALUE:SLICEDATA = 20f
-const val SECOND_SLICE_VALUE:SLICEDATA = 40f
-const val THIRD_SLICE_VALUE:SLICEDATA = 40f
+typealias SLICEDATA = Float
+const val FIRST_SLICE_VALUE: SLICEDATA = 20f
+const val SECOND_SLICE_VALUE: SLICEDATA = 40f
+const val THIRD_SLICE_VALUE: SLICEDATA = 40f
 
 @Composable
 fun viewchart() {

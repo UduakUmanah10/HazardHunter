@@ -8,7 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.hazardhunt.home.HomeScreen
 import com.example.hazardhunt.login.presentation.LoginScreen
-import com.example.hazardhunt.onboarding.domain.NavViewModel
+import com.example.hazardhunt.onboarding.domain.Navigationviewmodel
 import com.example.hazardhunt.onboarding.presentation.OnboardingScreen
 import com.example.hazardhunt.onboarding.presentation.Screen
 import com.example.hazardhunt.signup.presentation.SignUpPage
@@ -16,9 +16,9 @@ import com.example.hazardhunt.signup.presentation.SignUpPage
 @Composable
 fun ScreenNavigation(
     navHostController: NavHostController,
-    navigationViewModel: NavViewModel = hiltViewModel(),
+    navigationViewModel: Navigationviewmodel = hiltViewModel(),
 ) {
-    val startDest = navigationViewModel.startDestination.collectAsState()
+    // val startDest = navigationViewModel.startDestination.collectAsState()
 
     NavHost(
         navController = navHostController,
@@ -30,9 +30,9 @@ fun ScreenNavigation(
                 signup = { navHostController.navigate("signup") },
             )
         }
-        composable(Screen.onboardingScreen.route) {
-            OnboardingScreen(navController = navHostController)
-        }
+        // composable(Screen.onboardingScreen.route) {
+        //   OnboardingScreen(navController = navHostController)
+        // }
         composable(Screen.welcomeScreen.route) {
             LoginScreen(
                 loginCompleted = {
@@ -43,7 +43,9 @@ fun ScreenNavigation(
             )
         }
         composable("first") {
-            HomeScreen(onAddButtonClicked = {})
+            HomeScreen(
+                onAddButtonClicked = {},
+            )
         }
         composable("signup") {
             SignUpPage()
@@ -54,7 +56,7 @@ fun ScreenNavigation(
 @Composable
 fun newOnboarding(
     navHostController: NavHostController,
-    navigationViewModel: NavViewModel = hiltViewModel(),
+    navigationViewModel: Navigationviewmodel = hiltViewModel(),
     signup: () -> Unit,
 ) {
     val start = navigationViewModel.startDestination.collectAsState()

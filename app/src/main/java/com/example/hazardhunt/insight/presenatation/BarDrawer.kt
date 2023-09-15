@@ -7,10 +7,10 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import com.github.tehras.charts.bar.BarChartData
 import com.github.tehras.charts.bar.renderer.bar.BarDrawer
 
-typealias RADIUSDIMENSION =Float
+typealias RADIUSDIMENSION = Float
 
-const val RADIUS:RADIUSDIMENSION =16f
-const val RIGHT_BAR_ADDITOIN:RADIUSDIMENSION =24f
+const val RADIUS: RADIUSDIMENSION = 16f
+const val RIGHT_BAR_ADDITOIN: RADIUSDIMENSION = 24f
 class BarDrawer : BarDrawer {
 
     private val barPaint = Paint().apply {

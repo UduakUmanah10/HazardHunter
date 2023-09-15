@@ -1,3 +1,4 @@
+// ktlint-disable filename
 package com.example.hazardhunt.core
 
 import androidx.compose.material3.CenterAlignedTopAppBar

@@ -15,7 +15,6 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.windowInsetsPadding
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
@@ -41,13 +40,15 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.hazardhunt.R
+import com.example.hazardhunt.addnewtask.presentation.AddNewTasksScreen
 import com.example.hazardhunt.home.presentation.SafetyTaskScreen
 import com.example.hazardhunt.homescreen.presentation.HomeScreen
 import com.example.hazardhunt.insight.presenatation.InsightsScreen
+import com.example.hazardhunt.tasklocationhistory.presentation.testscreen
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
-typealias DELAY= Int
-const val ANIMATION_DELAY:DELAY =1200
-const val VERTICAL_EXPANSION:DELAY =20
+typealias DELAY = Int
+const val ANIMATION_DELAY: DELAY = 1200
+const val VERTICAL_EXPANSION: DELAY = 20
 
 sealed class NavigationDestination(val name: String, @DrawableRes val icons: Int, val route: String) {
 
@@ -64,11 +65,12 @@ val NavigationDestinationItems = arrayListOf(
     NavigationDestination.Settings,
 )
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     destinations: ArrayList<NavigationDestination> = NavigationDestinationItems,
     onAddButtonClicked: () -> Unit,
+    // startService:()->Unit,
+    // stopService:()->Unit
 ) {
     val navController = rememberNavController()
     Scaffold(
@@ -83,7 +85,7 @@ fun HomeScreen(
 
             AnimatedVisibility(
                 showBottomBar,
-                enter = expandVertically(expandFrom = Alignment.Top) { VERTICAL_EXPANSION},
+                enter = expandVertically(expandFrom = Alignment.Top) { VERTICAL_EXPANSION },
                 exit = shrinkVertically(
                     animationSpec = tween(ANIMATION_DELAY),
 
@@ -126,9 +128,11 @@ fun HomeScreen(
                     Surface(
                         modifier = Modifier.navigationBarsPadding(),
                     ) {
-                        SafetyTaskScreen() {
-                            navController.navigate("HomeScreen")
-                        }
+                        SafetyTaskScreen(
+                            navigationClicked = { navController.navigate("HomeScreen") },
+
+                            onAddnewTaskClicked = { navController.navigate("AddNewTask") },
+                        )
                     }
                 }
                 composable("InsightScreen") {
@@ -144,13 +148,13 @@ fun HomeScreen(
                     }
                 }
                 composable("SettingsScreen") {
-                    Surface(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(innerPadding),
-                    ) {
-                        // SettingsScreen(navController = navController)
-                    }
+                    // MapScreen()
+                    // sensorScreen()
+                    testscreen()
+                }
+
+                composable("AddNewTask") {
+                    AddNewTasksScreen()
                 }
             }
         },
@@ -184,13 +188,10 @@ private fun RowScope.NavigationBarItem(
     )
 }
 
-
 @Preview(
     name = "Night Mode",
     uiMode = Configuration.UI_MODE_NIGHT_YES,
 )
-
-
 @Preview(
     name = "Day mode",
     uiMode = Configuration.UI_MODE_NIGHT_NO,
@@ -204,6 +205,3 @@ fun SignupPreview() {
         )
     }
 }
-
-
-

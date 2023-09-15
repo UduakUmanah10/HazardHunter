@@ -1,6 +1,5 @@
 package com.example.hazardhunt.insight.presenatation
 
-
 import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.graphics.Canvas
 import androidx.compose.ui.graphics.Color
@@ -11,9 +10,9 @@ import com.github.tehras.charts.piechart.utils.toLegacyInt
 
 typealias GRAPHDEMENSION = Float
 
-const val TEXT_SIZE:GRAPHDEMENSION =43f
-const val LEFT_SIDE_ADDITION:GRAPHDEMENSION =32f
-const val RIGHT_SIDE_ADDITION:GRAPHDEMENSION =40f
+const val TEXT_SIZE: GRAPHDEMENSION = 43f
+const val LEFT_SIDE_ADDITION: GRAPHDEMENSION = 32f
+const val RIGHT_SIDE_ADDITION: GRAPHDEMENSION = 40f
 
 class LabelDrawer : LabelDrawer {
 

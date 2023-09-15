@@ -6,7 +6,7 @@ import com.example.hazardhunt.login.domain.util.Credentials
 
 /**
  * This class Defines the current and possible state of the log in screen
- * @param[credentials] the current text entered into the ui text field
+ * @Param[credentials] the current text entered into the ui text field
  * @param[buttonsEnabled] the current password entered in the password field
  *
  *

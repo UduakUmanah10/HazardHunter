@@ -1,3 +1,4 @@
+// ktlint-disable filename
 package com.example.hazardhunt.homescreen.di
 
 import com.example.hazardhunt.homescreen.data.Onboardingrepository

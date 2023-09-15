@@ -9,6 +9,7 @@ import com.example.hazardhunt.home.domain.viewmodel.SafetyTaskViewmodel
 fun SafetyTaskScreen(
     viewmodel: SafetyTaskViewmodel = hiltViewModel(),
     navigationClicked: () -> Unit,
+    onAddnewTaskClicked: () -> Unit,
 ) {
     val viewstate = viewmodel.viewState.collectAsState()
 
@@ -16,7 +17,7 @@ fun SafetyTaskScreen(
         viewState = viewstate.value,
         onclick = {},
         onReschedule = {},
-        onAddButtonClicked = {},
+        onAddButtonClicked = onAddnewTaskClicked,
         navigationClicked = navigationClicked,
 
     )

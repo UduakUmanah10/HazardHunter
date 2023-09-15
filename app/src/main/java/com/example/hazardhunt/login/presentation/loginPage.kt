@@ -19,7 +19,6 @@ import androidx.compose.material.Text
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -106,7 +105,7 @@ private fun LogoInputColum(
             .background(
                 color = colorResource(id = R.color.background),
 
-                )
+            )
             .padding(dimensionResource(id = R.dimen.screen_padding))
             .fillMaxSize()
             .navigationBarsPadding(),
@@ -261,18 +260,17 @@ fun Email(
         leadingIcon = leadingIcon,
     )
 }
+
 @Composable
-fun reuseableButtonComposable(
-    text:String,
-    comp:((@Composable ()-> Unit))?,
-    onclick:()->Unit
-){
+fun ReuseableButtonComposable(
+    text: String,
+    comp: ((@Composable () -> Unit))?,
+    onclick: () -> Unit,
+) {
     Button(onClick = onclick) {
         Text(text = text)
-
     }
 }
-
 
 @Preview(
     name = "Night Mode",
@@ -284,14 +282,9 @@ fun reuseableButtonComposable(
 )
 @Suppress("UnusedPrivateMember")
 @Composable
-private fun LoginPrev(
-
-){
+private fun LoginPrev() {
     HazardHuntTheme {
-
     }
-
-
 }
 
 @Preview(
@@ -360,5 +353,3 @@ fun ImageCard(painter: Painter) {
         )
     }
 }
-
-
