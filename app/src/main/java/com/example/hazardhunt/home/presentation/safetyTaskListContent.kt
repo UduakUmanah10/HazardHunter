@@ -72,6 +72,7 @@ private fun LoadedTask(
         onRescheduleClicked = onReschedule,
         onDoneClicked = onclick,
         navigationClicked = navigationClicked,
+        onAddNewTaskClicked = onAddButtonClicked,
     )
 }
 

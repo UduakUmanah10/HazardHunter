@@ -43,6 +43,7 @@ fun safetyTaskList(
     onRescheduleClicked: (SafetyTasks) -> Unit,
     onDoneClicked: (SafetyTasks) -> Unit,
     navigationClicked: () -> Unit,
+    onAddNewTaskClicked: () -> Unit,
 
 ) {
     Box {
@@ -90,7 +91,7 @@ fun safetyTaskList(
         FloatingActionButton(
             modifier = Modifier
                 .align(Alignment.BottomEnd).padding(end = 20.dp, bottom = 20.dp),
-            onClick = { /*TODO*/ },
+            onClick = onAddNewTaskClicked,
         ) {
             Icon(Icons.Filled.Add, "Localized description")
         }
@@ -148,6 +149,7 @@ fun LazyPreview() {
             onRescheduleClicked = {},
             onDoneClicked = {},
             navigationClicked = {},
+            onAddNewTaskClicked = {},
         )
     }
 }

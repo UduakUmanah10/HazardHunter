@@ -3,13 +3,14 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.kolinter)
-    alias(libs.plugins.hilt)
+    //alias(libs.plugins.hilt)
     alias(libs.plugins.kover)
     alias(libs.plugins.detekt)
     id("kotlin-parcelize")
-    id("kotlin-kapt")
+    //id("kotlin-kapt")
     id("org.jetbrains.kotlin.plugin.serialization")
-    id ("com.google.devtools.ksp") version ("1.8.10-1.0.9")
+    id ("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
 
 }
 
@@ -50,7 +51,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.5.1"
     }
     packaging {
         resources {
@@ -58,9 +59,9 @@ android {
         }
     }
 
-    hilt {
-        enableAggregatingTask = true
-    }
+    //hilt {
+      //  enableAggregatingTask = true
+    //}
 }
 kotlin {
     sourceSets {
@@ -73,6 +74,35 @@ kotlin {
     }
 }
 dependencies {
+    implementation("com.maxkeppeler.sheets-compose-dialogs:core:1.2.0")
+
+    // CALENDAR
+    implementation("com.maxkeppeler.sheets-compose-dialogs:calendar:1.2.0")
+
+    // CLOCK
+    implementation("com.maxkeppeler.sheets-compose-dialogs:clock:1.2.0")
+
+    implementation ("com.jakewharton.timber:timber:5.0.1")
+
+    implementation("androidx.room:room-runtime:2.5.2")
+    implementation("androidx.room:room-ktx:2.5.2")
+    implementation("androidx.compose.foundation:foundation-android:+")
+    implementation("androidx.compose.ui:ui-tooling-preview-android:1.6.0-alpha05")
+    annotationProcessor("androidx.room:room-compiler:2.5.2")
+
+    // To use Kotlin annotation processing tool (kapt)
+    ksp("androidx.room:room-compiler:2.5.2")
+
+    implementation("com.google.maps.android:maps-compose:2.11.4")
+    implementation("com.google.android.gms:play-services-maps:18.1.0")
+
+    // Optional Util Library
+    implementation ("com.google.maps.android:maps-compose-utils:2.11.4")
+    implementation("com.google.maps.android:maps-compose-widgets:2.11.4")
+
+    // Optional Accompanist permissions to request permissions in compose
+    implementation("com.google.accompanist:accompanist-permissions:0.31.5-beta")
+
     implementation (libs.charts)
     implementation(libs.androidx.datastore)
     implementation(libs.datastorelib)
@@ -131,9 +161,9 @@ dependencies {
     debugImplementation(libs.square.leakcanary)
 
     //ksp(libs.androidx.room.compiler)
-    kapt(libs.hilt.compiler)
-    kapt(libs.square.moshi.kotlin.codegen)
-    kaptAndroidTest(libs.hilt.android.compiler)
+    ksp(libs.hilt.compiler)
+    ksp(libs.square.moshi.kotlin.codegen)
+    kspAndroidTest(libs.hilt.android.compiler)
     implementation( libs.core)
     ksp(libs.ksp)
 

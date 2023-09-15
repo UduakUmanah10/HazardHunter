@@ -5,7 +5,6 @@ import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
-import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.MaterialTheme
@@ -70,8 +69,7 @@ fun CustomTextField(
             modifier = modifier
                 .heightIn(dimensionResource(id = R.dimen.textField_Height))
                 .fillMaxWidth()
-                .onFocusChanged(onFocusChanged)
-                .imePadding(),
+                .onFocusChanged(onFocusChanged),
             shape = OutlinedTextFieldShape,
             isError = (errorMessage != null),
             leadingIcon = leadingIcon,
@@ -88,7 +86,7 @@ fun CustomTextField(
                 modifier = Modifier.padding(
                     top = 1.dp,
                     start = 16.dp,
-                ).imePadding(),
+                ),
             )
         }
 //

@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class NavViewModel
+class Navigationviewmodel
 @Inject constructor(
     private val repository: OnBoardingRepository,
     private val repository1: Onboardingrepository,
@@ -23,9 +23,6 @@ class NavViewModel
 
     private val _isLoading = MutableStateFlow<Boolean>(true)
     val isLoading = _isLoading.asStateFlow()
-
-    private val _isLoading1 = MutableStateFlow<OnboardingState>(OnboardingState.NOTCOMPLETED)
-    val isLoading1 = _isLoading.asStateFlow()
 
     private val _startDestination: MutableStateFlow<String> = MutableStateFlow(Screen.onboardingScreen.route)
     val startDestination: StateFlow<String> = _startDestination

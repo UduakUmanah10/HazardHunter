@@ -1,3 +1,4 @@
+// ktlint-disable filename
 package com.example.hazardhunt.insight.presenatation
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Box

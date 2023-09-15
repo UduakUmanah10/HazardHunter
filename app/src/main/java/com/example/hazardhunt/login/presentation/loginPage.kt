@@ -262,7 +262,7 @@ fun Email(
 }
 
 @Composable
-fun reuseableButtonComposable(
+fun ReuseableButtonComposable(
     text: String,
     comp: ((@Composable () -> Unit))?,
     onclick: () -> Unit,

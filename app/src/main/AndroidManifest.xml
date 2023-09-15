@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" >
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+
     <application
         android:name="com.example.hazardhunt.HazardHuntApp"
         android:allowBackup="true"
@@ -14,6 +21,14 @@
         android:theme="@style/Theme.App.Starting"
         android:windowSoftInputMode="adjustResize"
         tools:targetApi="31" >
+
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value= "AIzaSyBl-Y__vJRQq61xX-QUwdBSVlVf0K9IP_g"
+            />
+
+
         <activity
             android:name="com.example.hazardhunt.MainActivity"
             android:exported="true"
@@ -25,6 +40,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".sesorsscreen.data.SensorForgroundService"/>
+
+
     </application>
 
 </manifest>

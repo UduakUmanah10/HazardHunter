@@ -1,3 +1,4 @@
+// ktlint-disable filename
 package com.example.hazardhunt.core
 
 import android.content.res.Configuration

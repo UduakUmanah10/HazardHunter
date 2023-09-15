@@ -1,6 +1,8 @@
+// ktlint-disable filename
 package com.example.hazardhunt.homescreen.presentation
 
 import android.content.res.Configuration
+import android.media.Image
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
@@ -41,7 +43,7 @@ import com.example.hazardhunt.ui.theme.HazardHuntTheme
 typealias PAGER = Int
 const val PAGER_COUNT = 4
 
-@DrawableRes val nam: Int = R.drawable.safetypager
+@DrawableRes val nam: Int = R.drawable.safetyofficer
 
 @Composable
 fun CardWithMultipleViews(

@@ -1,3 +1,4 @@
+// ktlint-disable filename
 package com.example.hazardhunt.insight.presenatation
 
 typealias Currency = Int
