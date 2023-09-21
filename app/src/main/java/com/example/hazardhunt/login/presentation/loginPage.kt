@@ -47,7 +47,7 @@ import com.example.hazardhunt.core.SignupAnnotatedString
 import com.example.hazardhunt.core.UIText
 import com.example.hazardhunt.core.VerticalSpacer
 import com.example.hazardhunt.core.getString
-import com.example.hazardhunt.login.domain.LogInViewState
+import com.example.hazardhunt.login.data.model.LogInViewState
 import com.example.hazardhunt.login.domain.util.Credentials
 import com.example.hazardhunt.login.domain.util.Email
 import com.example.hazardhunt.login.domain.util.Password

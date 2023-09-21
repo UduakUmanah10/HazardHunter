@@ -2,10 +2,10 @@ package com.example.hazardhunt.testrobot
 
 import app.cash.turbine.test
 import com.example.hazardhunt.fakeclasses.FakeCredentialsLoginUseCase
-import com.example.hazardhunt.login.domain.LogInViewState
+import com.example.hazardhunt.login.data.model.LogInViewState
 import com.example.hazardhunt.login.domain.util.Credentials
 import com.example.hazardhunt.login.domain.util.LoginResults
-import com.example.hazardhunt.login.domain.viewmodel.LoginViewModel
+import com.example.hazardhunt.login.presentation.LoginViewModel
 import com.google.common.truth.Truth.assertThat
 
 class LoginViewModelRobot {

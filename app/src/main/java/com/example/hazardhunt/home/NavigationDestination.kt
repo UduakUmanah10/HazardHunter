@@ -40,11 +40,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.hazardhunt.R
-import com.example.hazardhunt.addnewtask.presentation.AddNewTasksScreen
 import com.example.hazardhunt.home.presentation.SafetyTaskScreen
 import com.example.hazardhunt.homescreen.presentation.HomeScreen
 import com.example.hazardhunt.insight.presenatation.InsightsScreen
-import com.example.hazardhunt.tasklocationhistory.presentation.testscreen
+import com.example.hazardhunt.sesorsscreen.presentation.sensorScreen
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 typealias DELAY = Int
 const val ANIMATION_DELAY: DELAY = 1200
@@ -149,12 +148,12 @@ fun HomeScreen(
                 }
                 composable("SettingsScreen") {
                     // MapScreen()
-                    // sensorScreen()
-                    testscreen()
+                    sensorScreen()
+                    // testscreen()
                 }
 
                 composable("AddNewTask") {
-                    AddNewTasksScreen()
+                    // AddNewTasksScreen()
                 }
             }
         },

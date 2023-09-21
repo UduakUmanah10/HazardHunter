@@ -1,5 +1,5 @@
 // ktlint-disable filename
-package com.example.hazardhunt.login.domain
+package com.example.hazardhunt.login.data.model
 
 import com.example.hazardhunt.core.UIText
 import com.example.hazardhunt.login.domain.util.Credentials

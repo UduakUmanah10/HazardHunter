@@ -27,8 +27,8 @@ import com.google.maps.android.compose.rememberCameraPositionState
 import com.google.maps.android.compose.rememberMarkerState
 
 typealias Coordinate = Double
-const val LATITUDE:Coordinate = 51.508610
-const val LONGITUDE:Coordinate =-0.163611
+const val LATITUDE: Coordinate = 51.508610
+const val LONGITUDE: Coordinate = -0.163611
 
 @Composable
 fun testscreen(
@@ -68,9 +68,9 @@ fun testscreen(
                         icon = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED),
                         onInfoWindowLongClick = {
                             viewModel.onEvent(
-                                MapScreenEvent.onInfoWindowLongClick(individualposition)
+                                MapScreenEvent.onInfoWindowLongClick(individualposition),
                             )
-                                                },
+                        },
                         onClick = {
                             it.showInfoWindow()
                             true
