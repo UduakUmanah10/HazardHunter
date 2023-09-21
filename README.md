@@ -7,6 +7,9 @@ Architecture diagram
 <img src="app/src/main/res/drawable/mvvm.gif" width="1000" height="250">
 
 
+- [x] View:
+The View class is the base class or we can say that it is the superclass for all the GUI components in android. For example, the EditText class is used to accept the input from users in android apps, which is a subclass of View, and another example of the TextView class which is used to display text labels in Android apps is also a subclass of View. 
+
 - [x] ViewModel:
 A view model is responsible only for taking the result of an action and mapping it into a ViewState. It connects the view with any use case. It consumes ui events, triggers use cases and processes a use case response into a ViewState that is exposed For the screen to render.
 
