@@ -1,6 +1,6 @@
 # HazardHunter
 
-## Application Architecture:
+Application Architecture:
 
 Architecture diagram
 
