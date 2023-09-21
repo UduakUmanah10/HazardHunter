@@ -1,8 +1,8 @@
 # HazardHunter
 
 ## Application Architecture:
-![Architecture diagram]
-<img src="app/src/main/res/drawable/mvvm.gif" width="2500" height="250">
+[Architecture diagram]
+<img src="app/src/main/res/drawable/mvvm.gif" width="2000" height="250">
 
 - [x] Repository:
 A repository is any component that is responsible for making data requests. This could be a remote server, local preference, database, etc. The repository should not have side effects such as calling a different repository. The response should map information from Dto(data transfer objects) to domain-specific data classes.
