@@ -1,7 +1,8 @@
 # HazardHunter
 
 ## Application Architecture:
-[Architecture diagram]
+
+Architecture diagram
 
 <img src="app/src/main/res/drawable/mvvm.gif" width="1000" height="250">
 
