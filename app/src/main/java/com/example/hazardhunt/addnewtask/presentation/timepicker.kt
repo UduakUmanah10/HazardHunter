@@ -19,7 +19,8 @@ import java.time.format.DateTimeFormatter
  * it has three parameters:
  * @param[is24hoursClock] -> responsible for switching the clock  format to 24 or 12 hours format.
  * @param[showTimePicker] -> this is responsible for displaying and hiding the time picker dialog.
- * @param[onTimeSelected] -> thi is a lambda the=at is responsible for exposing the selected time to components that require it.
+ * @param[onTimeSelected] -> thi is a lambda the=at is responsible for exposing the selected time
+ * to components that require it.
  * */
 
 @OptIn(ExperimentalMaterial3Api::class)

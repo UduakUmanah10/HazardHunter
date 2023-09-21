@@ -28,7 +28,6 @@ import com.example.hazardhunt.addnewtask.data.model.TaskinputModel
 import com.example.hazardhunt.core.CustomCenterTopAppbar
 import com.example.hazardhunt.core.PrimaryButton
 import com.example.hazardhunt.core.UIText
-import com.example.hazardhunt.login.domain.util.Password
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 import com.maxkeppeker.sheets.core.models.base.UseCaseState
 import java.time.LocalDate
@@ -101,7 +100,7 @@ fun AddNewTasksScreen(
         DateAndTime(
             onDateValueChanged = {}, // complete tomorrem ,
             onTimeValueChanged = {}, // complete tomorrow,
-            dateTextFieldContent = viewState.taskInput.ScheduledDate.touiString(), // "${vm.currentDate.value}",
+            dateTextFieldContent = viewState.taskInput.scheduledDate.touiString(), // "${vm.currentDate.value}",
             timeTextFieldContent = "",
             shouldShowDialog = false, // showdialog.value,
             dismissDatePicker = {
@@ -143,7 +142,7 @@ class AddTaskViewStateProvider : PreviewParameterProvider<Addtaskviewstate> {
     override val values: Sequence<Addtaskviewstate> get() {
         val activeInput = TaskinputModel(
             "Measure weather",
-            ScheduledDate = LocalDate.now(),
+            scheduledDate = LocalDate.now(),
 
         )
 

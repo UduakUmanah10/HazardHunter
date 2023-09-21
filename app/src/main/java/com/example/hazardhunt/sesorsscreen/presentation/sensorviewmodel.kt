@@ -15,6 +15,7 @@ import javax.inject.Inject
 
 typealias threshHold = Float
 const val LIGHTTHRESHHOLD: threshHold = 60f
+const val NOTIFICATIONID =3
 
 @HiltViewModel
 class Sensorviewmodel @Inject constructor(
@@ -45,7 +46,7 @@ class Sensorviewmodel @Inject constructor(
 
     fun showNotification(context: Context) {
         notificationBuilder.showNotification(
-            3,
+            NOTIFICATIONID,
             SensorNotification.SERVICE_CHANNEL_ID,
             " Test",
             "Testing nptification",

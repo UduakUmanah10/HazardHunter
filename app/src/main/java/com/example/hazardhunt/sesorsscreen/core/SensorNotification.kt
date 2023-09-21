@@ -1,7 +1,6 @@
 package com.example.hazardhunt.sesorsscreen.core
 
 import android.app.Notification
-import android.app.Notification.VISIBILITY_PUBLIC
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.TaskStackBuilder
@@ -12,10 +11,12 @@ import androidx.core.app.NotificationCompat
 import androidx.core.net.toUri
 import com.example.hazardhunt.MainActivity
 import com.example.hazardhunt.R
-
+typealias INTENTCODE = Int
 const val MY_URI = "https://uduakumanah"
 const val ARGUEMENT = "default"
 const val KEY = "default"
+const val INTENTREQUESTCODE:INTENTCODE =9
+
 
 class SensorNotification(
     private val context1: Context,
@@ -24,7 +25,7 @@ class SensorNotification(
 
     fun checkCodeVersion() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
 
-    fun CounterNotification(
+    fun counterNotification(
         context: Context,
         channelId: String,
         notificationMessage: String,
@@ -42,7 +43,7 @@ class SensorNotification(
 
         val clickPendingIntent: PendingIntent = TaskStackBuilder.create(context1).run {
             addNextIntentWithParentStack(deeplinkpendingintent)
-            getPendingIntent(9, flag)
+            getPendingIntent(INTENTREQUESTCODE, flag)
         }
 
         val pendingIntent = PendingIntent.getActivity(
@@ -72,11 +73,11 @@ class SensorNotification(
 
     fun showNotification(
         notificationId: Int,
-        channel_Id: String,
+        channelId: String,
         notificationMessage: String,
         notificationTitle: String,
     ) {
-        val notification = CounterNotification(context1, channel_Id, notificationMessage, notificationTitle)
+        val notification = counterNotification(context1, channelId, notificationMessage, notificationTitle)
         notificationManager.notify(notificationId, notification)
     }
 

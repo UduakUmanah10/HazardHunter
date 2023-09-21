@@ -12,7 +12,7 @@ import java.time.LocalDateTime
 data class TaskinputModel(
     val taskTitle: String = "",
     val description: String = "",
-    val ScheduledDate: LocalDate = LocalDate.now(),
-    val ScheduledTime: LocalDateTime? = null,
+    val scheduledDate: LocalDate = LocalDate.now(),
+    val scheduledTime: LocalDateTime? = null,
 
-)
+    )

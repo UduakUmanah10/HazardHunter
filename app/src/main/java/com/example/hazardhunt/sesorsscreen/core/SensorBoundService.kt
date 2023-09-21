@@ -16,16 +16,7 @@ class SensorBoundService : Service() {
         return binder
     }
 
-    fun getProgress(): Flow<Float> {
-        var progress = 0f
-        return flow {
-            while (progress < 1.0f) {
-                progress += .1f
-                delay(1000)
-                emit(progress)
-            }
-        }
-    }
+
 
 /**
      * this is an inner class that provides a method that can be easily used inside

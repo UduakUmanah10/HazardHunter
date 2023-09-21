@@ -38,17 +38,17 @@ class HazardHuntApp : Application() {
      **/
 
     private fun createNotificationChannel(
-        channel_Id: String,
-        channel_Name: String,
-        channel_Description: String,
+        channelId: String,
+        channelName: String,
+        channelDescription: String,
     ) {
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val channel = NotificationChannel(
-            channel_Id,
-            channel_Name,
+            channelId,
+            channelName,
             NotificationManager.IMPORTANCE_HIGH,
         )
-        channel.description = channel_Description
+        channel.description = channelDescription
 
         notificationManager.createNotificationChannel(channel)
     }
