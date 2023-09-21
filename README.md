@@ -2,7 +2,7 @@
 
 ## Application Architecture:
 ![Architecture diagram]()
-<img src="app/src/main/res/drawable/mvvm.gif" width="200">
+<img src="app/src/main/res/drawable/mvvm.gif" width="6000">
 - [x] Repository:
 A repository is any component that is responsible for making data requests. This could be a remote server, local preference, database, etc. The repository should not have side effects such as calling a different repository. The response should map information from Dto(data transfer objects) to domain-specific data classes.
  Repositories should not be responsible for data manipulation of response. For example, suppose a repository is requesting a list of users, but the screen only cares about users with a certain property. In that case, the use case should be responsible for filtering the list accordingly. By removing logic from your view model, we make the view model slim and separate business logic from our repository(which should only fetch data.
