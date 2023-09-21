@@ -20,10 +20,10 @@ A view model is responsible only for taking the result of an action and mapping 
 
 ## ✨ Features
 - [x] Search for Task by keyword.
-- [x] Fire Base Back End As Service
+- [x] measure safety data using android sensor
 - [x] Create a user account with email and password
 - [x] Reset Password 
-- [x] Search news by category.
+- [x] Search Tasks by category.
 
 
 
