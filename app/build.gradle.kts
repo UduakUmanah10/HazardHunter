@@ -82,6 +82,12 @@ dependencies {
     // CLOCK
     implementation("com.maxkeppeler.sheets-compose-dialogs:clock:1.2.0")
 
+
+
+    // DURATION
+    implementation("com.maxkeppeler.sheets-compose-dialogs:duration:1.2.0")
+
+
     implementation ("com.jakewharton.timber:timber:5.0.1")
 
     implementation("androidx.room:room-runtime:2.5.2")

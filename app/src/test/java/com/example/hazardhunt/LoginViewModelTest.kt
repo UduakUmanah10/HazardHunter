@@ -3,7 +3,7 @@ package com.example.hazardhunt
 import com.example.hazardhunt.core.UIText
 import com.example.hazardhunt.fakeclasses.FakeAuthTokenRepository
 import com.example.hazardhunt.fakeclasses.FakeLoginRepository
-import com.example.hazardhunt.login.domain.LogInViewState
+import com.example.hazardhunt.login.data.model.LogInViewState
 import com.example.hazardhunt.login.domain.usecase.ProdCredentialsLoginUseCase
 import com.example.hazardhunt.login.domain.util.Credentials
 import com.example.hazardhunt.login.domain.util.Email

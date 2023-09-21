@@ -1,26 +1,26 @@
 // ktlint-disable filename
 package com.example.hazardhunt.sesorsscreen.presentation
 
+import android.content.Context
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
 import androidx.lifecycle.ViewModel
+import com.example.hazardhunt.sesorsscreen.core.SensorNotification
 import com.example.hazardhunt.sesorsscreen.data.MeasurableSensor
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 
-typealias  threshHold = Float
-const val LIGHTTHRESHHOLD:threshHold =60f
+typealias threshHold = Float
+const val LIGHTTHRESHHOLD: threshHold = 60f
+
 @HiltViewModel
 class Sensorviewmodel @Inject constructor(
 
     private val lightSensor: MeasurableSensor,
-    private val notificationBuilder: NotificationCompat.Builder,
-    private val notificationManager: NotificationManagerCompat,
+    private val notificationBuilder: SensorNotification,
 
 ) : ViewModel() {
 
@@ -43,5 +43,12 @@ class Sensorviewmodel @Inject constructor(
         }
     }
 
-
+    fun showNotification(context: Context) {
+        notificationBuilder.showNotification(
+            3,
+            SensorNotification.SERVICE_CHANNEL_ID,
+            " Test",
+            "Testing nptification",
+        )
+    }
 }

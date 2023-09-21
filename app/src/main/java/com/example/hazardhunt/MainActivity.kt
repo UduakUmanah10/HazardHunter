@@ -20,15 +20,21 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-
     private val airPlaneModeReceiver = AirPlaneModeReciever()
-
-    val viewModel: Navigationviewmodel by viewModels()
+    private val viewModel: Navigationviewmodel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val splashScreen = installSplashScreen()
-
         super.onCreate(savedInstanceState)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                0,
+            )
+        }
+
         registerReceiver(
             airPlaneModeReceiver,
             IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED),

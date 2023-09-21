@@ -77,7 +77,7 @@ fun MapScreen(
                     snippet = "Long Click To Delete",
                     onInfoWindowLongClick = {
                         viewModel.onEvent(MapScreenEvent.onInfoWindowLongClick(individualposition))
-                                            },
+                    },
                     onClick = {
                         it.showInfoWindow()
                         true

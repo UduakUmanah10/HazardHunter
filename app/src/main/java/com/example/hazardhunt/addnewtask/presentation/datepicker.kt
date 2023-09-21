@@ -17,7 +17,7 @@ import com.maxkeppeler.sheets.calendar.models.CalendarSelection
 import com.maxkeppeler.sheets.calendar.models.CalendarStyle
 import java.time.LocalDate
 
-val usecase = UseCaseState()
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

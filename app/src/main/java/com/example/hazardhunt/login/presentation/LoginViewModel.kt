@@ -1,10 +1,10 @@
-package com.example.hazardhunt.login.domain.viewmodel
+package com.example.hazardhunt.login.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.hazardhunt.R
 import com.example.hazardhunt.core.UIText
-import com.example.hazardhunt.login.domain.LogInViewState
+import com.example.hazardhunt.login.data.model.LogInViewState
 import com.example.hazardhunt.login.domain.usecase.CredentialsLoginUsecase
 import com.example.hazardhunt.login.domain.util.Credentials
 import com.example.hazardhunt.login.domain.util.Email
