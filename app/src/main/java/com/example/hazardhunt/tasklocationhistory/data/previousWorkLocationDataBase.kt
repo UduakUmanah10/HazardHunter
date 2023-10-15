@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 @Database(
     entities = [ PreviousWorkSpotEntity::class],
     version = 1,
-    exportSchema = true,
+    exportSchema = false,
 )
 abstract class PreviousWorkLocationDataBase : RoomDatabase() {
 

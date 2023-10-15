@@ -4,29 +4,30 @@
     <string name="first_title_content"> Get real time Incident data report.\n
         Respond appropriately to prevent severe Accident.
     </string>
-        <string name="sign_up">Sign Up</string>
-        <string name="Log_in">Log In</string>
-        <string name="Email">Email</string>
-        <string name="Password">Password</string>
-        <string name="error_invalid_credentials">email or password is not correct</string>
-        <string name="err_login_failure"> There was a problem logging in. please check your internet Connection and tr again</string>
-        <string name="error_empty_password">Please Enter Password</string>
-        <string name="error_empty_email">Please Enter Email</string>
-        <string name="title_activity_task">TaskActivity</string>
-        <string name="passwordVisibility">PasswordVisibility\n</string>
-        <string name="Helo">Hello\n</string>
-        <string name="create_account">Create Account\n</string>
-        <string name="firstname">First Name</string>
-        <string name="profile">Person profile Name</string>
-        <string name="lastName">Last Name</string>
-        <string name="terms_and_conditions">By checking you accept our Privacy Policyand Terms od Use</string>
-        <string name="dont_have_an_account">\ Dont Have an Account? </string>
-        <string name="Click_toCreate_account">\ Click to Create an account\</string>
-        <string name="and">\" And \"</string>
-        <string name="terms_of_use">\" Terms of Use \"</string>
-        <string name="already_have_an_account">Already Have An Account. Click Here to Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="Log_in">Log In</string>
+    <string name="Email">Email</string>
+    <string name="Password">Password</string>
+    <string name="error_invalid_credentials">email or password is not correct</string>
+    <string name="err_login_failure"> There was a problem logging in. please check your internet Connection and tr again</string>
+    <string name="error_empty_password">Please Enter Password</string>
+    <string name="error_empty_email">Please Enter Email</string>
+    <string name="title_activity_task">TaskActivity</string>
+    <string name="passwordVisibility">PasswordVisibility\n</string>
+    <string name="Helo">Hello\n</string>
+    <string name="create_account">Create Account\n</string>
+    <string name="firstname">First Name</string>
+    <string name="profile">Person profile Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="terms_and_conditions">By checking you accept our Privacy Policyand Terms od Use</string>
+    <string name="dont_have_an_account">\ Dont Have an Account? </string>
+    <string name="Click_toCreate_account">\ Click to Create an account\</string>
+    <string name="and">\" And \"</string>
+    <string name="terms_of_use">\" Terms of Use \"</string>
+    <string name="already_have_an_account">Already Have An Account. Click Here to Sign In</string>
     <string name="done">Done\n</string>
     <string name="Reschedue">Reschedule\n</string>
     <string name="submit_Task">Start Task</string>
+    <string name="title_activity_sensor_service">SensorServiceActivity</string>
 
 </resources>

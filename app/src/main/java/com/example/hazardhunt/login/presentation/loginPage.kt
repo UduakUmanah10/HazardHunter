@@ -135,12 +135,17 @@ private fun LogoInputColum(
                 LocalContext.current,
             ),
             leadingIcon = {
-                Icon(
-                    painter = painterResource(id = R.drawable.mail),
-                    contentDescription = stringResource(R.string.Password),
-                    tint = MaterialTheme.colorScheme.secondaryContainer,
-                    modifier = Modifier.size(dimensionResource(id = R.dimen.Icon_height)),
-                )
+                IconButton(
+                    onClick = { /*TODO*/ },
+                    enabled = viewState.buttonsEnabled,
+                ) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.mail),
+                        contentDescription = stringResource(R.string.Password),
+                        tint = MaterialTheme.colorScheme.secondaryContainer,
+                        modifier = Modifier.size(dimensionResource(id = R.dimen.Icon_height)),
+                    )
+                }
             },
 
         )
@@ -200,6 +205,7 @@ fun Password(
     visualTransformation: VisualTransformation,
 ) {
     var passwordvisibility by remember { mutableStateOf(false) }
+
     val passwordIcon = if (passwordvisibility) R.drawable.visibility else R.drawable.visibility_off
 
     CustomTextField(
@@ -212,7 +218,10 @@ fun Password(
         enabled = enabled,
         visualTransformation = if (passwordvisibility) VisualTransformation.None else PasswordVisualTransformation('*'),
         trailingIcon = {
-            IconButton(onClick = { passwordvisibility = !passwordvisibility }) {
+            IconButton(
+                onClick = { passwordvisibility = !passwordvisibility },
+                enabled = enabled,
+            ) {
                 Icon(
                     modifier = Modifier.size(20.dp),
                     painter = painterResource(

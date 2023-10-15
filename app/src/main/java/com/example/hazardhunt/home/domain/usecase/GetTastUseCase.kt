@@ -3,8 +3,8 @@ package com.example.hazardhunt.home.domain.usecase
 
 import com.example.hazardhunt.home.data.model.SafetyTasks
 import com.example.hazardhunt.login.domain.util.CustomResults
+import kotlinx.coroutines.flow.Flow
 
 interface GetTaskUseCase {
-    suspend operator fun invoke():
-        CustomResults<List<SafetyTasks>>
+    operator fun invoke(): Flow<CustomResults<List<SafetyTasks>>>
 }
