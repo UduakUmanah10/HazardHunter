@@ -2,7 +2,7 @@
 package com.example.hazardhunt.addnewtask.presentation
 import com.example.hazardhunt.addnewtask.data.model.TaskinputModel
 import com.example.hazardhunt.core.UIText
-import java.time.LocalDateTime
+import java.time.LocalTime
 
 /**
  * this is a class that determines the view state that would be possible in
@@ -13,7 +13,7 @@ import java.time.LocalDateTime
 sealed class Addtaskviewstate(
     open val taskInput: TaskinputModel = TaskinputModel(),
     open val inputEnabled: Boolean = true,
-    open val time: LocalDateTime? = null,
+    open val time: LocalTime? = null,
 
 ) {
     object InitialState : Addtaskviewstate(taskInput = TaskinputModel())

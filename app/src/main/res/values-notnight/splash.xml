@@ -8,7 +8,7 @@
              animated drawable. One of these is required. -->
         <item name="windowSplashScreenAnimatedIcon">@drawable/shield</item>
         <!-- Required for animated icons -->
-        <item name="windowSplashScreenAnimationDuration">1</item>
+       <!-- <item name="windowSplashScreenAnimationDuration">1</item>-->
 
         <!-- Set the theme of the Activity that directly follows your splash screen. -->
         <!-- Required -->

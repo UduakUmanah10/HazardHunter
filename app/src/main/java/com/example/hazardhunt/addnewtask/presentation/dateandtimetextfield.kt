@@ -16,28 +16,45 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.hazardhunt.R
 import com.maxkeppeker.sheets.core.models.base.UseCaseState
+import java.time.LocalDate
+import java.time.LocalTime
 
 @Composable
 fun DateAndTime(
     dateTextFieldContent: String,
     timeTextFieldContent: String,
-    shouldShowDialog: Boolean,
+    shouldShowDateDialog: Boolean,
+    onTimeIconClicked: () -> Unit,
+    shouldShowTimeDialog: Boolean,
+    onTimeSelected: (LocalTime) -> Unit,
     onDateValueChanged: (String) -> Unit,
     onTimeValueChanged: (String) -> Unit,
     dismissDatePicker: UseCaseState.() -> Unit,
-    showDatePicker: () -> Unit,
-    currentSelectedDate: (String) -> Unit,
+    dismissTimePicker: UseCaseState.() -> Unit,
+
+    onDateIconClicked: () -> Unit,
+    currentSelectedDate: (LocalDate) -> Unit,
 ) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .padding(10.dp),
     ) {
-        if (shouldShowDialog) {
+        if (shouldShowDateDialog) {
             CalendarDialog(
                 showDialog = true,
                 closeSelection = dismissDatePicker,
                 currentSelectedDate = currentSelectedDate,
+            )
+        }
+
+        if (shouldShowTimeDialog) {
+            timePicker(
+                is24hoursClock = false,
+                showTimePicker = true,
+                closeTimeSelection = dismissTimePicker,
+                onTimeSelected = onTimeSelected,
+
             )
         }
 
@@ -52,7 +69,7 @@ fun DateAndTime(
                     tint = MaterialTheme.colorScheme.secondaryContainer,
                     modifier = Modifier
                         .size(dimensionResource(id = R.dimen.Icon_height))
-                        .clickable(onClick = showDatePicker),
+                        .clickable(onClick = onDateIconClicked),
                 )
             },
             numberOfLines = 1,
@@ -61,6 +78,7 @@ fun DateAndTime(
                 .weight(1f)
                 .padding(10.dp),
         )
+
         SimpleOutlinedTextFieldSample(
             textContent = timeTextFieldContent,
             textFieldLabel = "Time",
@@ -69,9 +87,10 @@ fun DateAndTime(
                     painter = painterResource(id = R.drawable.time),
                     contentDescription = stringResource(R.string.Password),
                     tint = MaterialTheme.colorScheme.secondaryContainer,
+
                     modifier = Modifier
                         .size(dimensionResource(id = R.dimen.Icon_height))
-                        .clickable { },
+                        .clickable(onClick = onTimeIconClicked),
                 )
             },
             numberOfLines = 1,
