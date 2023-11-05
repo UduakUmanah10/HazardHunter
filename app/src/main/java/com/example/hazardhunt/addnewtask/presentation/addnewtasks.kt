@@ -12,8 +12,6 @@ import androidx.compose.material.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -25,7 +23,6 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import com.example.hazardhunt.R
 import com.example.hazardhunt.addnewtask.data.model.TaskinputModel
 import com.example.hazardhunt.core.CustomCenterTopAppbar
@@ -43,31 +40,22 @@ const val END: Loop = 3
 
 @Composable
 fun AddNewTasksScreen(
-    vm: AddNewTaskVieModel = hiltViewModel(),
-    navController: NavController,
+    vm: Addnewtaskviewmodel = hiltViewModel(),
+    viewState: Addtaskviewstate,
 ) {
-    val viewState: Addtaskviewstate = vm.viewState.collectAsState().value
-    val showtimeDialog = vm.showtimeIcon.collectAsState()
-    val showDateDialog = vm.showDatePicker.collectAsState()
-
-    LaunchedEffect(viewState) {
-        if (viewState is Addtaskviewstate.Successful) {
-            navController.navigate("TaskScreen")
-        }
-    }
-
+    val showdialog = vm.showDatePicker.collectAsState()
     Column(modifier = Modifier.fillMaxSize()) {
         CustomCenterTopAppbar(
             titleContentColor = Color.White,
             scrollContainerColor = MaterialTheme.colorScheme.secondaryContainer,
-            containerColor = MaterialTheme.colorScheme.outline,
+            containerColor = MaterialTheme.colorScheme.secondary,
             title = "Add new Task",
             navigationIcon = {
                 Icon(
                     painter = painterResource(id = R.drawable.chevronleft),
                     contentDescription = stringResource(R.string.Password),
                     tint = MaterialTheme.colorScheme.secondaryContainer,
-                    modifier = Modifier.size(dimensionResource(id = R.dimen.centerBarIcon)),
+                    modifier = Modifier.size(dimensionResource(id = R.dimen.Icon_height)),
                 )
             },
 
@@ -78,7 +66,7 @@ fun AddNewTasksScreen(
                     contentDescription = stringResource(R.string.Password),
                     tint = MaterialTheme.colorScheme.secondaryContainer,
                     modifier = Modifier
-                        .size(dimensionResource(id = R.dimen.centerBarIcon))
+                        .size(dimensionResource(id = R.dimen.Icon_height))
                         .clickable { },
                 )
             },
@@ -87,7 +75,7 @@ fun AddNewTasksScreen(
         )
 
         SimpleOutlinedTextFieldSample(
-            onvalueChanged = { vm.ontaskTitleChanged(it) }, // complete tomorroe ,
+            onvalueChanged = {}, // complete tomorroe ,
             textContent = viewState.taskInput.taskTitle,
             textFieldLabel = "Task Title",
             trailingIcon = {
@@ -97,7 +85,7 @@ fun AddNewTasksScreen(
                     tint = MaterialTheme.colorScheme.secondaryContainer,
                     modifier = Modifier
                         .size(dimensionResource(id = R.dimen.Icon_height))
-                        .clickable { vm.onTaskTitleCleared() },
+                        .clickable { },
                 )
             },
             numberOfLines = 1,
@@ -109,61 +97,35 @@ fun AddNewTasksScreen(
 
         val calnel = UseCaseState()
 
-        dateandTime(vm, showtimeDialog, showDateDialog, viewState, calnel)
+        DateAndTime(
+            onDateValueChanged = {}, // complete tomorrem ,
+            onTimeValueChanged = {}, // complete tomorrow,
+            dateTextFieldContent = viewState.taskInput.scheduledDate.touiString(), // "${vm.currentDate.value}",
+            timeTextFieldContent = "",
+            shouldShowDialog = false, // showdialog.value,
+            dismissDatePicker = {
+                calnel.hide()
+                vm.shouldShowDatePicker()
+            },
+            showDatePicker = { vm.shouldShowDatePicker() },
+            currentSelectedDate = vm::onDateValueChanged,
+        )
 
         MultipleSurfaceWithICons()
 
         SimpleOutlinedTextFieldSample(
-            enableTextField = viewState.inputEnabled,
-            textContent = viewState.taskInput.description,
+            enableTextField = true,
+            textContent = "",
             numberOfLines = 5,
             textFieldLabel = "Task Description",
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(
-                    top = 10.dp,
-                    start = 17.dp,
-                    end = 17.dp,
-                    bottom = 20.dp,
-                ),
-            onvalueChanged = { vm.onTaskDescriptionChanged(it) }, // complete tomorrow
+                .padding(top = 10.dp, start = 17.dp, end = 17.dp, bottom = 20.dp),
+            onvalueChanged = {}, // complete tomorrow
         )
-        SubmitTask(submitTaskButtonClicked = { vm.onSubmitButtonClicked() })
+        SubmitTask(submitTaskButtonClicked = { vm.shouldShowDatePicker() })
         Text(text = "")
     }
-}
-
-@Composable
-private fun dateandTime(
-    vm: AddNewTaskVieModel,
-    showtimeDialog: State<Boolean>,
-    showDateDialog: State<Boolean>,
-    viewState: Addtaskviewstate,
-    calnel: UseCaseState,
-) {
-    DateAndTime(
-        onDateIconClicked = vm::shouldShowDatePicker,
-        onTimeIconClicked = vm::onTimeIconClicked,
-        shouldShowTimeDialog = showtimeDialog.value,
-        shouldShowDateDialog = showDateDialog.value,
-        onTimeSelected = vm::onTimeSelected,
-        currentSelectedDate = vm::onDateSelected,
-        onDateValueChanged = {}, // complete tomorrem ,
-        onTimeValueChanged = {}, // complete tomorrow,
-        dateTextFieldContent = viewState.taskInput.scheduledDate, // date.value,
-        timeTextFieldContent = viewState.taskInput.scheduledTime, // time.value,
-
-        dismissDatePicker = {
-            calnel.hide()
-            vm.shouldShowDatePicker()
-        },
-
-        dismissTimePicker = {
-            calnel.hide()
-            vm.onTimeIconClicked()
-        },
-
-    )
 }
 
 @Composable
@@ -180,7 +142,7 @@ class AddTaskViewStateProvider : PreviewParameterProvider<Addtaskviewstate> {
     override val values: Sequence<Addtaskviewstate> get() {
         val activeInput = TaskinputModel(
             "Measure weather",
-            scheduledDate = LocalDate.now().touiString(),
+            scheduledDate = LocalDate.now(),
 
         )
 
@@ -210,9 +172,9 @@ fun NewTaskPage(
     @PreviewParameter(AddTaskViewStateProvider::class)
     addtaskviewstate: Addtaskviewstate,
 ) {
-    val vm: AddNewTaskVieModel = hiltViewModel()
     HazardHuntTheme {
-        // AddNewTasksScreen(
-        //   vm)
+        AddNewTasksScreen(
+            viewState = addtaskviewstate,
+        )
     }
 }

@@ -34,7 +34,7 @@ fun ListofTasksItem(
             horizontalAlignment = Alignment.End,
 
         ) {
-            TaskText(task.taskTitle)
+            TaskText(task.description)
             RowButton(
                 done = { onDoneSelectedClicked() },
                 reschedule = { onRescheduleClicked() },

@@ -5,7 +5,7 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
-import com.example.hazardhunt.sensorscreen.core.SensorNotification
+import com.example.hazardhunt.sesorsscreen.core.SensorNotification
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
@@ -14,6 +14,7 @@ class HazardHuntApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
+        super.onCreate()
         /**
          * this is done for the very first her so that the channel is instiated when the
          * app run for the firdt time
@@ -25,11 +26,6 @@ class HazardHuntApp : Application() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             createNotificationChannel(
                 SensorNotification.SERVICE_CHANNEL_ID,
-                "service channel",
-                "Test Notification",
-            )
-            createNotificationChannel(
-                "location_track",
                 "service channel",
                 "Test Notification",
             )
@@ -47,7 +43,6 @@ class HazardHuntApp : Application() {
         channelDescription: String,
     ) {
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-
         val channel = NotificationChannel(
             channelId,
             channelName,

@@ -1,4 +1,3 @@
-// ktlint-disable filename
 package com.example.hazardhunt.addnewtask.presentation
 
 import androidx.compose.foundation.layout.Arrangement
@@ -25,8 +24,8 @@ fun MultipleSurfaceWithICons() {
     ) {
         Text(
 
-            " Turn on Sensor :",
-            style = MaterialTheme.typography.bodyMedium,
+            "Task Category :",
+            style = MaterialTheme.typography.displaySmall,
             modifier = Modifier.weight(TEXTFIELDWEIGHT),
 
         )

@@ -1,10 +1,8 @@
 // ktlint-disable filename
 package com.example.hazardhunt.addnewtask.data.model
 
-import com.example.hazardhunt.addnewtask.presentation.formatToDayAndNight
-import com.example.hazardhunt.addnewtask.presentation.touiString
 import java.time.LocalDate
-import java.time.LocalTime
+import java.time.LocalDateTime
 
 /**
  * This entity Model correspond  to the information that is needed when creating a
@@ -14,7 +12,7 @@ import java.time.LocalTime
 data class TaskinputModel(
     val taskTitle: String = "",
     val description: String = "",
-    val scheduledDate: String = LocalDate.now().touiString(),
-    val scheduledTime: String = LocalTime.now().formatToDayAndNight(),
+    val scheduledDate: LocalDate = LocalDate.now(),
+    val scheduledTime: LocalDateTime? = null,
 
-)
+    )
