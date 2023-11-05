@@ -40,6 +40,7 @@ import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.example.hazardhunt.R
+import com.example.hazardhunt.onboarding.data.OnboardingState
 import com.example.hazardhunt.onboarding.domain.OnboradingViewModel
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
@@ -53,7 +54,6 @@ import kotlinx.coroutines.delay
 fun OnboardingScreen(
     navController: NavHostController,
     welcomeViewModel: OnboradingViewModel = hiltViewModel(),
-    event: (OnBoardingScreenEvent) -> Unit,
 ) {
     val pages = listOf(
         OnBoardingPage.First,
@@ -88,9 +88,9 @@ fun OnboardingScreen(
             modifier = Modifier.weight(1f),
             pagerState = pagerState,
         ) {
-            event(OnBoardingScreenEvent.SaveOnBoardingState)
-            // welcomeViewModel.saveOnBoardingState(completed = OnboardingState.COMPLETED)
-            // navController.navigate(Screen.welcomeScreen.route)
+            println("clicked")
+            welcomeViewModel.saveOnBoardingState(completed = OnboardingState.COMPLETED)
+            navController.navigate(Screen.welcomeScreen.route)
         }
     }
 }

@@ -1,20 +1,18 @@
 // ktlint-disable filename
 package com.example.hazardhunt.home
 
-import android.annotation.SuppressLint
 import android.content.res.Configuration
 import androidx.annotation.DrawableRes
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.shrinkVertically
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material3.Icon
@@ -32,7 +30,6 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -43,11 +40,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.hazardhunt.R
-import com.example.hazardhunt.addnewtask.presentation.AddNewTasksScreen
 import com.example.hazardhunt.home.presentation.SafetyTaskScreen
 import com.example.hazardhunt.homescreen.presentation.HomeScreen
 import com.example.hazardhunt.insight.presenatation.InsightsScreen
-import com.example.hazardhunt.sensorscreen.presentation.sensorScreen
+import com.example.hazardhunt.sesorsscreen.presentation.sensorScreen
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 typealias DELAY = Int
 const val ANIMATION_DELAY: DELAY = 1200
@@ -68,19 +64,15 @@ val NavigationDestinationItems = arrayListOf(
     NavigationDestination.Settings,
 )
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun HomeScreen(
     destinations: ArrayList<NavigationDestination> = NavigationDestinationItems,
     onAddButtonClicked: () -> Unit,
+    // startService:()->Unit,
+    // stopService:()->Unit
 ) {
     val navController = rememberNavController()
     Scaffold(
-
-        modifier = Modifier
-            .fillMaxWidth()
-            .fillMaxHeight(),
-
         bottomBar = {
             val backStackEntry by navController.currentBackStackEntryAsState()
             var showBottomBar by rememberSaveable { mutableStateOf(true) }
@@ -102,10 +94,10 @@ fun HomeScreen(
 
             ) {
                 NavigationBar(
-                    modifier = Modifier.background(MaterialTheme.colorScheme.error),
+                    modifier = Modifier,
                     windowInsets = NavigationBarDefaults.windowInsets,
-                    tonalElevation = 1.dp,
-                    containerColor = MaterialTheme.colorScheme.onBackground,
+                    tonalElevation = NavigationBarDefaults.Elevation,
+                    containerColor = MaterialTheme.colorScheme.secondary,
 
                 ) {
                     destinations.forEach { content ->
@@ -120,7 +112,15 @@ fun HomeScreen(
         content = { innerPadding ->
             NavHost(navController = navController, startDestination = "HomeScreen") {
                 composable("HomeScreen") {
-                    HomeScreen()
+                    Surface(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(innerPadding),
+
+                    ) {
+                        // modulehomeScreen()
+                        HomeScreen()
+                    }
 //
                 }
                 composable("TaskScreen") {
@@ -153,9 +153,7 @@ fun HomeScreen(
                 }
 
                 composable("AddNewTask") {
-                    AddNewTasksScreen(
-                        navController = navController,
-                    )
+                    // AddNewTasksScreen()
                 }
             }
         },
@@ -170,7 +168,6 @@ private fun RowScope.NavigationBarItem(
     navController: NavHostController,
 ) {
     NavigationBarItem(
-
         modifier = Modifier.windowInsetsPadding(WindowInsets.navigationBars),
         selected = backStackEntry?.destination?.route == content.route,
         onClick = { navController.navigate(content.route) },
@@ -185,7 +182,6 @@ private fun RowScope.NavigationBarItem(
                 painterResource(id = content.icons),
                 contentDescription = content.name,
                 Modifier.size(24.dp),
-                tint = Color.Black,
             )
         },
     )

@@ -10,7 +10,7 @@ charts = "0.2.4-alpha"
 core = "1.9.51"
 core-ktx = "1.10.1"
 compose-bom = "2023.06.01"
-coreSplashscreen = "1.0.0-beta02"
+coreSplashscreen = "1.0.1"
 coroutines = "1.7.1"
 datastore = "1.0.0"
 icon-extended = "1.5.0-rc01"
@@ -60,6 +60,7 @@ kover ="0.7.2"
 
 [libraries]
 accompanist-pager-indicators = { module = "com.google.accompanist:accompanist-pager-indicators", version.ref = "accompanistPagerIndicators" }
+androidx-core-splashscreen-v100 = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
 androidx-datastore = { module = "androidx.datastore:datastore", version.ref = "datastore" }
 charts = { module = "com.github.tehras:charts", version.ref = "charts" }
 core = { module = "io.github.raamcosta.compose-destinations:core", version.ref = "core" }

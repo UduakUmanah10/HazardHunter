@@ -2,11 +2,6 @@ package com.example.hazardhunt.onboarding.dependencyInjection
 
 import android.content.Context
 import com.example.hazardhunt.onboarding.data.OnBoardingRepository
-import com.example.hazardhunt.onboarding.data.OnboardingEventManagerImpl
-import com.example.hazardhunt.onboarding.data.model.OnBoardingUseCases
-import com.example.hazardhunt.onboarding.domain.reposirory.OnboardingEventManager
-import com.example.hazardhunt.onboarding.domain.usecases.ReadOnBoardingState
-import com.example.hazardhunt.onboarding.domain.usecases.SaveOnBoardingState
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,26 +18,4 @@ object SplashModule {
     fun provideOnBoardingRepository(
         @ApplicationContext context: Context,
     ) = OnBoardingRepository(context = context)
-
-    @Provides
-    @Singleton
-    fun provideLocalUserManager(
-        @ApplicationContext
-        context: Context,
-    ): OnboardingEventManager {
-        return OnboardingEventManagerImpl(context)
-    }
-
-    @Provides
-    @Singleton
-    fun provideLocalUserManagerUseCase(
-        @ApplicationContext
-        context: Context,
-        onboardingEvent: OnboardingEventManager,
-    ): OnBoardingUseCases {
-        return OnBoardingUseCases(
-            readOnBoardingState = ReadOnBoardingState(onboardingEvent),
-            saveOnBoardingState = SaveOnBoardingState(onboardingEvent),
-        )
-    }
 }
