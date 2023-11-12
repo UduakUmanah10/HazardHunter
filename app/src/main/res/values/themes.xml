@@ -3,12 +3,6 @@
 
     <style name="Theme.HazardHunt" parent="android:Theme.Material.Light.NoActionBar">
 
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:windowBackground">@color/background</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/bubble_24</item>
-        <item name="windowSplashScreenIconBackgroundColor">@color/background</item>
-
-    </style>>
+            </style>>
 
 </resources>

@@ -1,3 +1,4 @@
+apply(plugin = "org.jetbrains.kotlin.android")
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.androidApplication)
@@ -53,6 +54,11 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
     }
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -74,6 +80,7 @@ kotlin {
     }
 }
 dependencies {
+    implementation("com.google.android.gms:play-services-location:21.0.1")
     implementation("com.maxkeppeler.sheets-compose-dialogs:core:1.2.0")
 
     // CALENDAR
@@ -89,11 +96,18 @@ dependencies {
 
 
     implementation ("com.jakewharton.timber:timber:5.0.1")
+    implementation("androidx.activity:activity-compose:1.8.0")
+    implementation("io.appwrite:sdk-for-android:4.0.0")
 
     implementation("androidx.room:room-runtime:2.5.2")
     implementation("androidx.room:room-ktx:2.5.2")
     implementation("androidx.compose.foundation:foundation-android:+")
     implementation("androidx.compose.ui:ui-tooling-preview-android:1.6.0-alpha05")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.5.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation(platform("androidx.compose:compose-bom:2022.10.00"))
+    androidTestImplementation(platform("androidx.compose:compose-bom:2022.10.00"))
     annotationProcessor("androidx.room:room-compiler:2.5.2")
 
     // To use Kotlin annotation processing tool (kapt)
@@ -112,7 +126,7 @@ dependencies {
     implementation (libs.charts)
     implementation(libs.androidx.datastore)
     implementation(libs.datastorelib)
-    implementation(libs.androidx.core.splashscreen.v100)
+    implementation(libs.splashscreen)
 
 
 
