@@ -17,14 +17,12 @@ import com.maxkeppeler.sheets.calendar.models.CalendarSelection
 import com.maxkeppeler.sheets.calendar.models.CalendarStyle
 import java.time.LocalDate
 
-
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CalendarDialog(
     showDialog: Boolean,
     closeSelection: UseCaseState.() -> Unit,
-    currentSelectedDate: (String) -> Unit,
+    currentSelectedDate: (LocalDate) -> Unit,
 ) {
     val currentDate = LocalDate.now()
 
@@ -42,7 +40,7 @@ fun CalendarDialog(
         ),
 
         selection = CalendarSelection.Dates { newDates ->
-            currentSelectedDate(newDates[0].touiString())
+            currentSelectedDate(newDates[0])
         },
     )
 }
