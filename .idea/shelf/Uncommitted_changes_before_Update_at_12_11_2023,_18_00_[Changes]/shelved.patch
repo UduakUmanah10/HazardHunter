@@ -1,0 +1,99 @@
+Index: gradle/libs.versions.toml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[versions]\nactivity-compose = \"1.7.2\"\nandroidx-test-ext-junit = \"1.1.5\"\nandroidx-lifecycle = \"2.6.1\"\naccompanist = \"0.30.1\"\nagp = \"8.0.2\"\n\ncore-ktx = \"1.10.1\"\ncompose-bom = \"2023.06.01\"\ncoroutines = \"1.6.4\"\nicon-extended = \"1.5.0-beta02\"\n\ndata-store = \"1.0.0\"\n\ndetektGradlePlugin = \"1.23.0\"\nespresso-core = \"3.5.1\"\n\n\ngoogle-Truth= \"1.1.3\"\n\nhilt = \"2.45\"\ndagger-hilt = \"2.46.1\"\nhilt-navigation = \"1.0.0\"\n\njunit = \"4.13.2\"\n\nkotlin = \"1.8.10\"\nkotlinter = \"3.14.0\"\nksp = \"1.8.10-1.0.9\"\n\n\nlifecycle-runtime-ktx = \"2.6.1\"\nleakCanary = \"2.11\"\n\nlottieCompose = \"4.0.0\"\nmoshi = \"1.15.0\"\nmock-library = \"1.13.4\"\nmaterial2 = \"1.4.3\"\n\nnavigation = \"2.6.0\"\n\nretrofit = \"2.9.0\"\nroom = \"2.5.2\"\n\nsplashscreen =\"1.0.1\"\n\nturbine = \"0.12.3\"\n\nviewmodel = \"2.6.1\"\nwindow = \"1.1.0\"\nkover =\"0.7.2\"\n\n\n\n\n[libraries]\nlottie-compose = { module = \"com.airbnb.android:lottie-compose\", version.ref = \"lottieCompose\" }\nsplashscreen = { group =\"androidx.core\", name = \"core-splashscreen\", version.ref=\"splashscreen\"}\n\nandroidx-lifecycle = { group =\"androidx.lifecycle\", name = \"lifecycle-viewmodel-compose\", version.ref =\"androidx-lifecycle\"}\naccompanist-systemuicontroller = { module = \"com.google.accompanist:accompanist-systemuicontroller\", version.ref = \"accompanist\" }\nandroidx-test-ext-junit = { group = \"androidx.test.ext\", name = \"junit\", version.ref = \"androidx-test-ext-junit\" }\nactivity-compose = { group = \"androidx.activity\", name = \"activity-compose\", version.ref = \"activity-compose\" }\nandroidx-room-compiler = { module = \"androidx.room:room-compiler\", version.ref = \"room\" }\ncompose-ui-tooling = { group = \"androidx.compose.ui\", name = \"ui-tooling\" }\n\n\ndatastorelib = { group =\"androidx.datastore\" ,name =\"datastore-preferences\", version.ref =\"data-store\"}\n\n\ncompose-bom = { group = \"androidx.compose\", name = \"compose-bom\", version.ref = \"compose-bom\" }\ncore-ktx = { group = \"androidx.core\", name = \"core-ktx\", version.ref = \"core-ktx\" }\ncoroutine-test = { group= \"org.jetbrains.kotlinx\", name = \"kotlinx-coroutines-test\",version.ref = \"coroutines\"}\ndetekt-gradle-plugin = { module = \"io.gitlab.arturbosch.detekt:detekt-gradle-plugin\", version.ref = \"detektGradlePlugin\" }\n\nespresso-core = { group = \"androidx.test.espresso\", name = \"espresso-core\", version.ref = \"espresso-core\" }\n\ngoogleTruth = { group =\"com.google.truth\", name =\"truth\", version.ref = \"google-Truth\" }\n\nhilt-android = { module = \"com.google.dagger:hilt-android\", version.ref = \"hilt\" }\nhilt-android-compiler = { module = \"com.google.dagger:hilt-android-compiler\", version.ref = \"hilt\" }\nhilt-android-testing = { module = \"com.google.dagger:hilt-android-testing\", version.ref = \"hilt\" }\nhilt-compiler = { module = \"com.google.dagger:hilt-compiler\", version.ref = \"hilt\" }\nhilt-nav = { group = \"androidx.hilt\" , name =\"hilt-navigation-compose\", version.ref = \"hilt-navigation\" }\n\niconextended = {group=\"androidx.compose.material\",name =\"material-icons-extended-android\", version.ref=\"icon-extended\"}\n\njunit = { group = \"junit\", name = \"junit\", version.ref = \"junit\" }\n\nlifecycle-runtime-ktx = { group = \"androidx.lifecycle\", name = \"lifecycle-runtime-ktx\", version.ref = \"lifecycle-runtime-ktx\" }\n\n\nmaterial3 = { group = \"androidx.compose.material3\", name = \"material3\" }\nmaterial2 ={ group =  \"androidx.compose.material\", name =\"material\", version.ref = \"material2\"}\nmock-library = { group = \"io.mockk\", name = \"mockk\", version.ref = \"mock-library\"}\n\nnavigation-library = { group =\"androidx.navigation\", name =\"navigation-compose\", version.ref =\"navigation\"}\n\nui = { group = \"androidx.compose.ui\", name = \"ui\" }\nui-graphics = { group = \"androidx.compose.ui\", name = \"ui-graphics\" }\nui-tooling = { group = \"androidx.compose.ui\", name = \"ui-tooling\" }\nui-tooling-preview = { group = \"androidx.compose.ui\", name = \"ui-tooling-preview\" }\nui-test-manifest = { group = \"androidx.compose.ui\", name = \"ui-test-manifest\" }\nui-test-junit4 = { group = \"androidx.compose.ui\", name = \"ui-test-junit4\" }\n\nsquare-leakcanary = { module = \"com.squareup.leakcanary:leakcanary-android\", version.ref = \"leakCanary\" }\nsquare-moshi-kotlin = { module = \"com.squareup.moshi:moshi-kotlin\", version.ref = \"moshi\" }\nsquare-moshi-kotlin-codegen = { module = \"com.squareup.moshi:moshi-kotlin-codegen\", version.ref = \"moshi\" }\nsquare-retrofit = { module = \"com.squareup.retrofit2:retrofit\", version.ref = \"retrofit\" }\nsquare-retrofit-converter-moshi = { module = \"com.squareup.retrofit2:converter-moshi\", version.ref = \"retrofit\"}\n\nturbine = { group = \"app.cash.turbine\", name = \"turbine\" , version.ref = \"turbine\"}\n\nviewmodel-lifecycle = { group =\"androidx.lifecycle\", name =\"lifecycle-viewmodel-compose\",version.ref=\"viewmodel\" }\n\n\n[plugins]\n\nandroidApplication = { id = \"com.android.application\", version = \"8.2.0-alpha14\" }\nkotlinAndroid = { id = \"org.jetbrains.kotlin.android\", version.ref = \"kotlin\" }\nhilt = { id = \"com.google.dagger.hilt.android\",version.ref = \"dagger-hilt\" }\nhiltplugins ={ id = \"com.google.dagger.hilt.android\" }\ndetekt = { id = \"io.gitlab.arturbosch.detekt\",version.ref = \"detektGradlePlugin\" }\nkolinter = { id =\"org.jmailen.kotlinter\",  version.ref =\"kotlinter\" }\nksp = { id = \"com.google.devtools.ksp\" ,  version.ref = \"ksp\"}\nkover = {id=\"org.jetbrains.kotlinx.kover\", version.ref= \"kover\"}\n\nkapt = { id =\"kotlin-kapt\" }\n\n[bundles]\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/gradle/libs.versions.toml b/gradle/libs.versions.toml
+--- a/gradle/libs.versions.toml	(revision 41d57abf13f7ebd2e9e3a38599bc61f955a9bf66)
++++ b/gradle/libs.versions.toml	(date 1699801910820)
+@@ -116,7 +116,7 @@
+ 
+ [plugins]
+ 
+-androidApplication = { id = "com.android.application", version = "8.2.0-alpha14" }
++androidApplication = { id = "com.android.application", version = "8.3.0-alpha13" }
+ kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ hilt = { id = "com.google.dagger.hilt.android",version.ref = "dagger-hilt" }
+ hiltplugins ={ id = "com.google.dagger.hilt.android" }
+Index: build.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Top-level build file where you can add configuration options common to all sub-projects/modules.\n//@Suppress(\"DSL_SCOPE_VIOLATION\") // TODO: Remove once KTIJ-19369 is fixed\nplugins {\n    alias(libs.plugins.androidApplication) apply false\n    alias(libs.plugins.kotlinAndroid) apply false\n    alias(libs.plugins.detekt)\n    alias(libs.plugins.kolinter)\n    alias(libs.plugins.ksp) apply false\n    alias(libs.plugins.kover)\n    id(\"com.android.library\") version \"8.2.0-alpha14\" apply false\n\n}//true\n\n\n\nbuildscript{\n    repositories {\n        google()\n        mavenCentral()\n        maven(url = \"https://plugins.gradle.org/m2/\")\n        maven( url = \"https://jitpack.io\")\n    }\n\n\n    dependencies {\n\n        classpath(libs.detekt.gradle.plugin)\n        classpath (\"com.squareup:javapoet:1.13.0\")\n        classpath (\"org.jetbrains.kotlin:kotlin-serialization:1.8.10\")\n        //classpath (\"com.google.protobuf:protobuf-gradle-plugin:0.8.19\")\n\n    }\n\n\n}\n\nsubprojects {\n    apply(from = \"../buildscripts/detekt.gradle\")\n}\n\n\n\n\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle.kts b/build.gradle.kts
+--- a/build.gradle.kts	(revision 41d57abf13f7ebd2e9e3a38599bc61f955a9bf66)
++++ b/build.gradle.kts	(date 1699801911136)
+@@ -7,7 +7,7 @@
+     alias(libs.plugins.kolinter)
+     alias(libs.plugins.ksp) apply false
+     alias(libs.plugins.kover)
+-    id("com.android.library") version "8.2.0-alpha14" apply false
++    id("com.android.library") version "8.3.0-alpha13" apply false
+ 
+ }//true
+ 
+Index: gradle/wrapper/gradle-wrapper.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Thu Jun 29 13:53:11 WAT 2023\ndistributionBase=GRADLE_USER_HOME\ndistributionPath=wrapper/dists\ndistributionUrl=https\\://services.gradle.org/distributions/gradle-8.2-bin.zip\nzipStoreBase=GRADLE_USER_HOME\nzipStorePath=wrapper/dists\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/gradle/wrapper/gradle-wrapper.properties b/gradle/wrapper/gradle-wrapper.properties
+--- a/gradle/wrapper/gradle-wrapper.properties	(revision 41d57abf13f7ebd2e9e3a38599bc61f955a9bf66)
++++ b/gradle/wrapper/gradle-wrapper.properties	(date 1699801911224)
+@@ -1,6 +1,6 @@
+ #Thu Jun 29 13:53:11 WAT 2023
+ distributionBase=GRADLE_USER_HOME
+ distributionPath=wrapper/dists
+-distributionUrl=https\://services.gradle.org/distributions/gradle-8.2-bin.zip
++distributionUrl=https\://services.gradle.org/distributions/gradle-8.4-bin.zip
+ zipStoreBase=GRADLE_USER_HOME
+ zipStorePath=wrapper/dists
+Index: .idea/deploymentTargetDropDown.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"deploymentTargetDropDown\">\n    <value>\n      <entry key=\"InsightPreview - Night Mode\">\n        <State />\n      </entry>\n      <entry key=\"PieChartDataPreview\">\n        <State />\n      </entry>\n      <entry key=\"app\">\n        <State>\n          <targetSelectedWithDropDown>\n            <Target>\n              <type value=\"QUICK_BOOT_TARGET\" />\n              <deviceKey>\n                <Key>\n                  <type value=\"VIRTUAL_DEVICE_PATH\" />\n                  <value value=\"C:\\Users\\User\\.android\\avd\\Pixel_2_API_28.avd\" />\n                </Key>\n              </deviceKey>\n            </Target>\n          </targetSelectedWithDropDown>\n          <timeTargetWasSelectedWithDropDown value=\"2023-07-20T07:02:07.244316Z\" />\n        </State>\n      </entry>\n    </value>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/deploymentTargetDropDown.xml b/.idea/deploymentTargetDropDown.xml
+--- a/.idea/deploymentTargetDropDown.xml	(revision 41d57abf13f7ebd2e9e3a38599bc61f955a9bf66)
++++ b/.idea/deploymentTargetDropDown.xml	(date 1699807700327)
+@@ -2,26 +2,20 @@
+ <project version="4">
+   <component name="deploymentTargetDropDown">
+     <value>
+-      <entry key="InsightPreview - Night Mode">
+-        <State />
+-      </entry>
+-      <entry key="PieChartDataPreview">
+-        <State />
+-      </entry>
+       <entry key="app">
+         <State>
+-          <targetSelectedWithDropDown>
++          <runningDeviceTargetSelectedWithDropDown>
+             <Target>
+-              <type value="QUICK_BOOT_TARGET" />
++              <type value="RUNNING_DEVICE_TARGET" />
+               <deviceKey>
+                 <Key>
+-                  <type value="VIRTUAL_DEVICE_PATH" />
+-                  <value value="C:\Users\User\.android\avd\Pixel_2_API_28.avd" />
++                  <type value="SERIAL_NUMBER" />
++                  <value value="adb-102672536L004107-JfZyNy._adb-tls-connect._tcp" />
+                 </Key>
+               </deviceKey>
+             </Target>
+-          </targetSelectedWithDropDown>
+-          <timeTargetWasSelectedWithDropDown value="2023-07-20T07:02:07.244316Z" />
++          </runningDeviceTargetSelectedWithDropDown>
++          <timeTargetWasSelectedWithDropDown value="2023-11-12T16:07:35.282682819Z" />
+         </State>
+       </entry>
+     </value>

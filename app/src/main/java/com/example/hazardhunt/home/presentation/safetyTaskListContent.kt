@@ -42,10 +42,9 @@ fun TaskListContent(
                 ),
             )
         },
-    ) { targetState ->
+    ) { targetState  ->
         when (targetState) {
             is SafetyListViewState.loaded -> LoadedTask(
-
                 targetState,
                 onAddButtonClicked,
                 onReschedule,
