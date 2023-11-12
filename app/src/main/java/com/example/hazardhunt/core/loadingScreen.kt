@@ -18,12 +18,12 @@ fun loadingScreen() {
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.onSecondaryContainer,
     ) {
-        CircularProgressIndicator(
-            modifier = Modifier
-                .wrapContentSize(),
-
-            color = MaterialTheme.colorScheme.secondaryContainer,
-        )
+//        CircularProgressIndicator(
+//            modifier = Modifier
+//                .wrapContentSize(),
+//
+//            color = MaterialTheme.colorScheme.secondaryContainer,
+//        )
     }
 }
 
