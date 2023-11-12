@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
@@ -26,6 +27,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -87,73 +89,79 @@ fun CardWithMultipleViews(
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun HomeScreen() {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .fillMaxHeight(),
+    Scaffold(modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)) {
+            padding ->
 
-    ) {
-        Text(
+        Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(vertical = 10.dp)
-                .background(MaterialTheme.colorScheme.error)
-                .basicMarquee(
-                    iterations = Int.MAX_VALUE,
-                    delayMillis = 0,
-                    initialDelayMillis = 0,
-                    velocity = 100.dp,
+                .fillMaxHeight()
+                .statusBarsPadding()
+                .background(MaterialTheme.colorScheme.onBackground),
 
+        ) {
+            Text(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 10.dp)
+                    .background(MaterialTheme.colorScheme.error)
+                    .basicMarquee(
+                        iterations = Int.MAX_VALUE,
+                        delayMillis = 0,
+                        initialDelayMillis = 0,
+                        velocity = 100.dp,
+
+                    ),
+
+                color = MaterialTheme.colorScheme.inverseSurface,
+                text = " Safety Alert oil spill detected at oml 25............. ",
+            )
+            pagerScreen()
+            lazyVerticalGrid(
+                features = listOf(
+                    Features(
+                        title = "Sensors",
+                        icon = R.drawable.person,
+                        MaterialTheme.colorScheme.inversePrimary,
+                        MaterialTheme.colorScheme.secondaryContainer,
+                        MaterialTheme.colorScheme.onPrimary,
+
+                    ),
+                    Features(
+                        title = "Sensors",
+                        icon = R.drawable.person,
+                        MaterialTheme.colorScheme.inversePrimary,
+                        MaterialTheme.colorScheme.secondaryContainer,
+                        MaterialTheme.colorScheme.onPrimary,
+
+                    ),
+                    Features(
+                        title = "Sensors",
+                        icon = R.drawable.person,
+                        MaterialTheme.colorScheme.inversePrimary,
+                        MaterialTheme.colorScheme.secondaryContainer,
+                        MaterialTheme.colorScheme.onPrimary,
+
+                    ),
+                    Features(
+                        title = "Sensors",
+                        icon = R.drawable.person,
+                        MaterialTheme.colorScheme.inversePrimary,
+                        MaterialTheme.colorScheme.secondaryContainer,
+                        MaterialTheme.colorScheme.onPrimary,
+
+                    ),
+                    Features(
+                        title = "Sensors",
+                        icon = R.drawable.person,
+                        MaterialTheme.colorScheme.inversePrimary,
+                        MaterialTheme.colorScheme.secondaryContainer,
+                        MaterialTheme.colorScheme.onPrimary,
+
+                    ),
                 ),
-
-            color = MaterialTheme.colorScheme.inverseSurface,
-            text = " Safety Alert oil spill detected at oml 25............. ",
-        )
-        pagerScreen()
-        lazyVerticalGrid(
-            features = listOf(
-                Features(
-                    title = "Sensors",
-                    icon = R.drawable.person,
-                    MaterialTheme.colorScheme.inversePrimary,
-                    MaterialTheme.colorScheme.secondaryContainer,
-                    MaterialTheme.colorScheme.onPrimary,
-
-                ),
-                Features(
-                    title = "Sensors",
-                    icon = R.drawable.person,
-                    MaterialTheme.colorScheme.inversePrimary,
-                    MaterialTheme.colorScheme.secondaryContainer,
-                    MaterialTheme.colorScheme.onPrimary,
-
-                ),
-                Features(
-                    title = "Sensors",
-                    icon = R.drawable.person,
-                    MaterialTheme.colorScheme.inversePrimary,
-                    MaterialTheme.colorScheme.secondaryContainer,
-                    MaterialTheme.colorScheme.onPrimary,
-
-                ),
-                Features(
-                    title = "Sensors",
-                    icon = R.drawable.person,
-                    MaterialTheme.colorScheme.inversePrimary,
-                    MaterialTheme.colorScheme.secondaryContainer,
-                    MaterialTheme.colorScheme.onPrimary,
-
-                ),
-                Features(
-                    title = "Sensors",
-                    icon = R.drawable.person,
-                    MaterialTheme.colorScheme.inversePrimary,
-                    MaterialTheme.colorScheme.secondaryContainer,
-                    MaterialTheme.colorScheme.onPrimary,
-
-                ),
-            ),
-        )
+            )
+        }
     }
 }
 

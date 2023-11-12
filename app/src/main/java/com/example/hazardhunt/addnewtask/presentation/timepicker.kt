@@ -1,4 +1,4 @@
-
+// ktlint-disable filename
 package com.example.hazardhunt.addnewtask.presentation
 
 import android.content.res.Configuration
@@ -7,15 +7,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.window.DialogProperties
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
+import com.maxkeppeker.sheets.core.models.base.UseCaseState
 import com.maxkeppeker.sheets.core.models.base.rememberUseCaseState
 import com.maxkeppeler.sheets.clock.ClockDialog
 import com.maxkeppeler.sheets.clock.models.ClockConfig
 import com.maxkeppeler.sheets.clock.models.ClockSelection
 import java.time.LocalTime
-import java.time.format.DateTimeFormatter
 /**
- * this is a composable function that is responsible for displaying the time picker dialog.
+ * this is a composable function that is responsible for displaying the time picker dialog using the
+ * @author[maxkeppeler] library.
+ * @see(https://maxkeppeler.notion.site/Sheets-Compose-Dialogs-804f0ebcb2c84b98b7afa5f687295aed) .
  * it has three parameters:
  * @param[is24hoursClock] -> responsible for switching the clock  format to 24 or 12 hours format.
  * @param[showTimePicker] -> this is responsible for displaying and hiding the time picker dialog.
@@ -27,31 +30,27 @@ import java.time.format.DateTimeFormatter
 @Composable
 fun timePicker(
     is24hoursClock: Boolean,
-    showTimePicker: Boolean = true,
+    showTimePicker: Boolean,
+    closeTimeSelection: UseCaseState.() -> Unit,
     onTimeSelected: (LocalTime) -> Unit,
 
 ) {
     val selectedTime = remember { mutableStateOf<LocalTime>(LocalTime.now()) }
     ClockDialog(
-        state = rememberUseCaseState(visible = showTimePicker),
+        state = rememberUseCaseState(visible = showTimePicker, onCloseRequest = { closeTimeSelection() }),
+
         selection = ClockSelection.HoursMinutesSeconds { hours, minutes, seconds ->
             selectedTime.value = LocalTime.of(hours, minutes, seconds)
             onTimeSelected(LocalTime.of(hours, minutes, seconds))
         },
+
         config = ClockConfig(
             is24HourFormat = is24hoursClock,
         ),
+        properties = DialogProperties(),
+        // header = Header.Custom()
 
     )
-}
-
-/**
- * this is an extension function that is responsible for converting Local time into day and night format
- */
-
-fun LocalTime.formatToDayAndNight(): String {
-    val formatter = DateTimeFormatter.ofPattern("hh:mm a")
-    return this.format(formatter)
 }
 
 @Preview(
@@ -65,7 +64,7 @@ fun LocalTime.formatToDayAndNight(): String {
 @Composable
 fun TimePicker() {
     HazardHuntTheme {
-        timePicker(true) {
+        timePicker(true, true, closeTimeSelection = {}) {
             it.formatToDayAndNight()
         }
     }

@@ -45,10 +45,12 @@ fun BoldTExtField(textValue: String) {
             .wrapContentHeight(),
         fontSize = 30.sp,
         style = TextStyle(
+            color = MaterialTheme.colorScheme.secondaryContainer,
             fontWeight = FontWeight.Bold,
             fontStyle = FontStyle.Normal,
         ),
         textAlign = TextAlign.Center,
+        color = MaterialTheme.colorScheme.tertiary,
 
     )
 }
