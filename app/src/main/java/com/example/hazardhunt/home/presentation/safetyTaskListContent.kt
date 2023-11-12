@@ -28,25 +28,24 @@ fun TaskListContent(
     onAddButtonClicked: () -> Unit,
     navigationClicked: () -> Unit,
 ) {
-    AnimatedContent(
-        targetState = viewState,
-        label = "",
-        transitionSpec = {
-            slideIntoContainer(
-                animationSpec = tween(TWEEN_VALUE, easing = EaseIn),
-                towards = Right,
-            ).togetherWith(
-                slideOutOfContainer(
-                    animationSpec = tween(TWEEN_VALUE, easing = EaseOut),
-                    towards = Left,
-                ),
-            )
-        },
-    ) { targetState ->
-        when (targetState) {
+//    AnimatedContent(
+//        targetState = viewState,
+//        label = "",
+//        transitionSpec = {
+//            slideIntoContainer(
+//                animationSpec = tween(TWEEN_VALUE, easing = EaseIn),
+//                towards = Right,
+//            ).togetherWith(
+//                slideOutOfContainer(
+//                    animationSpec = tween(TWEEN_VALUE, easing = EaseOut),
+//                    towards = Left,
+//                ),
+//            )
+//        },
+//    ) { targetState ->
+        when (viewState) {
             is SafetyListViewState.loaded -> LoadedTask(
-
-                targetState,
+                viewState,
                 onAddButtonClicked,
                 onReschedule,
                 onclick,
@@ -55,7 +54,7 @@ fun TaskListContent(
             is SafetyListViewState.loading -> loadingScreen()
             else -> {}
         }
-    }
+//    }
 }
 
 @Composable

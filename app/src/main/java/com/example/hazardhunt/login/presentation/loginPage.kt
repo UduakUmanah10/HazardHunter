@@ -119,12 +119,13 @@ private fun LogoInputColum(
         VerticalSpacer(height = 10.dp)
 
         if (viewState is LogInViewState.Submitting) {
-            CircularProgressIndicator(
-                modifier = Modifier
-                    .wrapContentSize()
-                    .align(Alignment.CenterHorizontally),
-                color = MaterialTheme.colorScheme.secondaryContainer,
-            )
+            //do nothing
+//            CircularProgressIndicator(
+//                modifier = Modifier
+//                    .wrapContentSize()
+//                    .align(Alignment.CenterHorizontally),
+//                color = MaterialTheme.colorScheme.secondaryContainer,
+//            )
         }
 
         Email(
