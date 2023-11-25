@@ -52,7 +52,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.3"
     }
     packagingOptions {
         resources {
@@ -80,14 +80,14 @@ kotlin {
     }
 }
 dependencies {
-    implementation("com.google.android.gms:play-services-location:21.0.1")
-    implementation("com.maxkeppeler.sheets-compose-dialogs:core:1.2.0")
+    implementation(libs.play.services.location)
+    implementation(libs.sheets.compose.dialogs.core)
 
     // CALENDAR
-    implementation("com.maxkeppeler.sheets-compose-dialogs:calendar:1.2.0")
+    implementation(libs.calendar)
 
     // CLOCK
-    implementation("com.maxkeppeler.sheets-compose-dialogs:clock:1.2.0")
+    implementation(libs.clock)
 
 
 
@@ -99,29 +99,29 @@ dependencies {
     implementation("androidx.activity:activity-compose:1.8.0")
     implementation("io.appwrite:sdk-for-android:4.0.0")
 
-    implementation("androidx.room:room-runtime:2.5.2")
-    implementation("androidx.room:room-ktx:2.5.2")
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
     implementation("androidx.compose.foundation:foundation-android:+")
-    implementation("androidx.compose.ui:ui-tooling-preview-android:1.6.0-alpha05")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.5.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.compose.ui:ui-tooling-preview-android:1.6.0-beta01")
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.constraintlayout)
     implementation(platform("androidx.compose:compose-bom:2022.10.00"))
     androidTestImplementation(platform("androidx.compose:compose-bom:2022.10.00"))
-    annotationProcessor("androidx.room:room-compiler:2.5.2")
+    annotationProcessor(libs.androidx.room.compiler)
 
     // To use Kotlin annotation processing tool (kapt)
-    ksp("androidx.room:room-compiler:2.5.2")
+    ksp(libs.room.compiler.v252)
 
-    implementation("com.google.maps.android:maps-compose:2.11.4")
-    implementation("com.google.android.gms:play-services-maps:18.1.0")
+    implementation(libs.maps.compose)
+    implementation(libs.play.services.maps)
 
     // Optional Util Library
-    implementation ("com.google.maps.android:maps-compose-utils:2.11.4")
-    implementation("com.google.maps.android:maps-compose-widgets:2.11.4")
+    implementation (libs.maps.compose.utils)
+    implementation(libs.maps.compose.widgets)
 
     // Optional Accompanist permissions to request permissions in compose
-    implementation("com.google.accompanist:accompanist-permissions:0.31.5-beta")
+    implementation(libs.accompanist.permissions)
 
     implementation (libs.charts)
     implementation(libs.androidx.datastore)

@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Icon
@@ -119,13 +120,16 @@ private fun LogoInputColum(
         VerticalSpacer(height = 10.dp)
 
         if (viewState is LogInViewState.Submitting) {
+
+           // IndeterminateCircularIndicator()
             //do nothing
-//            CircularProgressIndicator(
-//                modifier = Modifier
-//                    .wrapContentSize()
-//                    .align(Alignment.CenterHorizontally),
-//                color = MaterialTheme.colorScheme.secondaryContainer,
-//            )
+           // CircularProgressIndicator(
+          //     modifier = Modifier
+            //       .wrapContentSize()
+
+          //        .align(Alignment.CenterHorizontally),
+          ///     color = MaterialTheme.colorScheme.secondaryContainer,
+          //  )
         }
 
         Email(
@@ -233,6 +237,15 @@ fun Password(
                 )
             }
         },
+    )
+}
+
+@Composable
+fun IndeterminateCircularIndicator() {
+    CircularProgressIndicator(
+        modifier = Modifier.width(64.dp),
+        color = MaterialTheme.colorScheme.secondary,
+        trackColor = MaterialTheme.colorScheme.surfaceVariant,
     )
 }
 

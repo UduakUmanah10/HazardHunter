@@ -1,19 +1,25 @@
 [versions]
 
 accompanistPagerIndicators = "0.24.2-alpha"
-activity-compose = "1.7.2"
+accompanistPermissions = "0.31.5-beta"
+activity-compose = "1.8.1"
 androidx-test-ext-junit = "1.1.5"
-androidx-lifecycle = "2.6.1"
+androidx-lifecycle = "2.6.2"
 accompanist = "0.30.1"
 
+appcompat = "1.6.1"
+calendar = "1.2.0"
 charts = "0.2.4-alpha"
+clock = "1.2.0"
+constraintlayout = "2.1.4"
 core = "1.9.51"
-core-ktx = "1.10.1"
-compose-bom = "2023.06.00"
+core-ktx = "1.12.0"
+compose-bom = "2023.10.01"
 coreSplashscreen = "1.0.1"
+coreVersion = "1.2.0"
 coroutines = "1.7.1"
 datastore = "1.0.0"
-icon-extended = "1.5.0-rc01"
+icon-extended = "1.5.4"
 
 data-store = "1.0.0"
 
@@ -25,34 +31,39 @@ google-Truth= "1.1.3"
 
 hilt = "2.48"
 dagger-hilt = "2.48"
-hilt-navigation = "1.0.0"
+hilt-navigation = "1.1.0"
 
 junit = "4.13.2"
 
-kotlin = "1.9.0"
+kotlin = "1.9.10"
 kotlinter = "3.14.0"
 kotlinxCollectionsImmutable = "0.3.5"
 kotlinxSerializationJson = "1.4.1"
 
 
-lifecycle-runtime-ktx = "2.6.1"
+lifecycle-runtime-ktx = "2.6.2"
 leakCanary = "2.11"
 
 lottieCompose = "4.0.0"
+mapsCompose = "2.11.4"
+material = "1.10.0"
 moshi = "1.15.0"
 mock-library = "1.13.4"
-material2 = "1.4.3"
+material2 = "1.5.4"
 
-navigation = "2.6.0"
+navigation = "2.7.5"
 
+playServicesLocation = "21.0.1"
+playServicesMaps = "18.2.0"
 retrofit = "2.9.0"
-room = "2.5.2"
+room = "2.6.0"
 
+roomCompilerVersion = "2.5.2"
 splashscreen ="1.0.1"
 
 turbine = "1.0.0"
 
-viewmodel = "2.6.1"
+viewmodel = "2.6.2"
 kover ="0.7.2"
 
 
@@ -60,14 +71,29 @@ kover ="0.7.2"
 
 [libraries]
 accompanist-pager-indicators = { module = "com.google.accompanist:accompanist-pager-indicators", version.ref = "accompanistPagerIndicators" }
+accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanistPermissions" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
 androidx-core-splashscreen-v100 = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
 androidx-datastore = { module = "androidx.datastore:datastore", version.ref = "datastore" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomCompilerVersion" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomCompilerVersion" }
+calendar = { module = "com.maxkeppeler.sheets-compose-dialogs:calendar", version.ref = "calendar" }
 charts = { module = "com.github.tehras:charts", version.ref = "charts" }
+clock = { module = "com.maxkeppeler.sheets-compose-dialogs:clock", version.ref = "clock" }
 core = { module = "io.github.raamcosta.compose-destinations:core", version.ref = "core" }
 kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutable" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 ksp = { module = "io.github.raamcosta.compose-destinations:ksp", version.ref = "core" }
 lottie-compose = { module = "com.airbnb.android:lottie-compose", version.ref = "lottieCompose" }
+maps-compose = { module = "com.google.maps.android:maps-compose", version.ref = "mapsCompose" }
+maps-compose-utils = { module = "com.google.maps.android:maps-compose-utils", version.ref = "mapsCompose" }
+maps-compose-widgets = { module = "com.google.maps.android:maps-compose-widgets", version.ref = "mapsCompose" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocation" }
+play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
+room-compiler-v252 = { module = "androidx.room:room-compiler", version.ref = "roomCompilerVersion" }
+sheets-compose-dialogs-core = { module = "com.maxkeppeler.sheets-compose-dialogs:core", version.ref = "coreVersion" }
 splashscreen = { group ="androidx.core", name = "core-splashscreen", version.ref="splashscreen"}
 
 androidx-lifecycle = { group ="androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref ="androidx-lifecycle"}
@@ -126,7 +152,7 @@ viewmodel-lifecycle = { group ="androidx.lifecycle", name ="lifecycle-viewmodel-
 
 
 [plugins]
-androidApplication = { id = "com.android.application", version = "8.0.2" }
+androidApplication = { id = "com.android.application", version = "8.1.4" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android",version.ref = "dagger-hilt" }
 detekt = { id = "io.gitlab.arturbosch.detekt",version.ref = "detektGradlePlugin" }
