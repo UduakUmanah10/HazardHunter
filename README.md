@@ -1,5 +1,8 @@
 # HazardHunter
 
+
+<img src="app/src/main/res/drawable/hazardhunt.gif" width="200"> | <img src="app/src/main/res/drawable/hazardhunt2.gif" width="200"> |
+
 Application Architecture:
 
 Architecture diagram
