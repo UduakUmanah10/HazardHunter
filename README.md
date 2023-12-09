@@ -8,10 +8,11 @@ Hazard Hunter is an Android application designed to bolster safety measures in w
 
 
 ## ✨ Features
-
+<div align='justify'>
+ - [x] Emergency SOS Button:
+ </div>
 
  <div align='justify'>
- - [x] Emergency SOS Button:
 The aap has a prominently placed SOS button on the main screen, easily accessible in case of emergencies. When pressed, this button triggers a series of actions to alert predefined contacts or emergency services.
   
 </div>
