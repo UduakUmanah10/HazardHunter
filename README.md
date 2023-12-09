@@ -1,8 +1,7 @@
 ## HazardHunter
 
 <div align='justify'>
-  
-- [x] Hazard Hunter is an Android application designed to bolster safety measures in workplace environments, utilising key Android architecture components like activities, services, and broadcast receivers. The user interface is crafted with JetPack Compose, ensuring an intuitive design, while data persistence is effectively handled through the Android Room library and shared preferences. To enhance code quality, the app undergoes static analysis using Detekt and Kotlin Lint. Following a structured MVVM architecture, Hazard Hunter incorporates Lottie for engaging animations, integrates the Retrofit Library for efficient network calls, and employs the Dagger-Hilt Library for seamless automated dependency injection. 
+Hazard Hunter is an Android application designed to bolster safety measures in workplace environments, utilising key Android architecture components like activities, services, and broadcast receivers. The user interface is crafted with JetPack Compose, ensuring an intuitive design, while data persistence is effectively handled through the Android Room library and shared preferences. To enhance code quality, the app undergoes static analysis using Detekt and Kotlin Lint. Following a structured MVVM architecture, Hazard Hunter incorporates Lottie for engaging animations, integrates the Retrofit Library for efficient network calls, and employs the Dagger-Hilt Library for seamless automated dependency injection. 
   
 </div>
 
@@ -10,10 +9,9 @@
 
 ## ✨ Features
 
-- [x] Emergency SOS Button:
 
  <div align='justify'>
-
+ - [x] Emergency SOS Button:
 The aap has a prominently placed SOS button on the main screen, easily accessible in case of emergencies. When pressed, this button triggers a series of actions to alert predefined contacts or emergency services.
   
 </div>
