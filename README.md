@@ -2,56 +2,32 @@
 
 Hazard Hunter is an Android application designed to bolster safety measures in workplace environments, utilising key Android architecture components like activities, services, and broadcast receivers. The user interface is crafted with JetPack Compose, ensuring an intuitive design, while data persistence is effectively handled through the Android Room library and shared preferences. To enhance code quality, the app undergoes static analysis using Detekt and Kotlin Lint. Following a structured MVVM architecture, Hazard Hunter incorporates Lottie for engaging animations, integrates the Retrofit Library for efficient network calls, and employs the Dagger-Hilt Library for seamless automated dependency injection. 
 
+## ✨ Features
 
+- [x] Emergency SOS Button:
 
-Emergency SOS Button:
+The app should has a prominently placed SOS button on the main screen, easily accessible in case of emergencies. When pressed, this button triggers a series of actions to alert predefined contacts or emergency services.
 
-The app should have a prominently placed SOS button on the main screen, easily accessible in case of emergencies. When pressed, this button triggers a series of actions to alert predefined contacts or emergency services.
-Location Tracking:
-
+- [x] Location Tracking:
 Real-time GPS tracking to share the user's location with trusted contacts during an emergency. This feature helps responders locate the user quickly.
 Personal Guardian Services:
 
-A virtual guardian system that allows users to set a timer for a specific activity. If the user doesn't confirm their safety within a specified timeframe, the app sends an alert to designated contacts.
+- [x] A virtual guardian system that allows users to set a timer for a specific activity. If the user doesn't confirm their safety within a specified timeframe, the app sends an alert to designated contacts.
 Check-In Feature:
 
-Users can set regular check-in intervals with the app. If they fail to check in, the application can send notifications to selected contacts or trigger an emergency response.
-Audio and Video Recording:
+- [x] Report Incidents
+   If they fail to check in, the application can send notifications to selected contacts or trigger an emergency response. Audio and Video Recording:
 
-The ability to record audio or video during an emergency, providing valuable evidence or context for the situation. These recordings can be automatically sent to pre-defined contacts or stored securely in the cloud.
-Emergency Services Directory:
-
-Integration with local emergency service directories, providing quick access to contact numbers for police, fire, medical assistance, etc.
-In-App Chat or Call:
-
-A secure and private communication channel within the app for users to chat or make calls to their emergency contacts directly.
-Panic Alarm:
-
+- [x] Emergency Locator
 An audible alarm or flashing light that can be activated to attract attention in crowded or isolated areas.
 Safety Tips and Information:
 
+- [x] contnou learning
 Educational content on personal safety, emergency preparedness, and self-defense techniques.
 Community Watch:
 
-Integration with a community-based safety network where users can report incidents, share safety tips, and support each other.
-Offline Mode:
-
-Basic functionality should be available even without an internet connection to ensure usability in areas with poor connectivity.
-Privacy Controls:
-
-Robust privacy settings to allow users to control who has access to their information and when.
-Biometric Authentication:
-
-An additional layer of security through fingerprint or facial recognition to prevent unauthorized access to the app.
-Wearable Device Integration:
-
-Compatibility with smartwatches or other wearable devices for quick access to safety features.
-Regular Updates and Improvements:
-
+- [x] continous updates
 Continuous updates to enhance the app's features, security, and usability based on user feedback and emerging safety trends.
-
-
-
 
 
 
