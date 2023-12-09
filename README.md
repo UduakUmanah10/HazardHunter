@@ -34,9 +34,9 @@ Continuous updates to enhance the app's features, security, and usability based 
 
 <img src="app/src/main/res/drawable/hazardhunt.gif" width="200"> | <img src="app/src/main/res/drawable/hazardhunt2.gif" width="200"> |
 
-## Application Architecture:
+# Application Architecture:
 
-# Architecture diagram
+## Architecture diagram
 
 <img src="app/src/main/res/drawable/mvvm.gif" width="1000" height="250">
 
