@@ -295,20 +295,7 @@ fun ReuseableButtonComposable(
     }
 }
 
-@Preview(
-    name = "Night Mode",
-    uiMode = Configuration.UI_MODE_NIGHT_YES,
-)
-@Preview(
-    name = "Day mode",
-    uiMode = Configuration.UI_MODE_NIGHT_NO,
-)
-@Suppress("UnusedPrivateMember")
-@Composable
-private fun LoginPrev() {
-    HazardHuntTheme {
-    }
-}
+
 
 @Preview(
     name = "Night Mode",
