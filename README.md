@@ -1,15 +1,8 @@
 # HazardHunter
 
-
-equalizer 3
-
+Hazard Hunter is an Android application designed to bolster safety measures in workplace environments, utilising key Android architecture components like activities, services, and broadcast receivers. The user interface is crafted with JetPack Compose, ensuring an intuitive design, while data persistence is effectively handled through the Android Room library and shared preferences. To enhance code quality, the app undergoes static analysis using Detekt and Kotlin Lint. Following a structured MVVM architecture, Hazard Hunter incorporates Lottie for engaging animations, integrates the Retrofit Library for efficient network calls, and employs the Dagger-Hilt Library for seamless automated dependency injection. 
 
 
-
-
-A well-designed Android safety application combines the various Android Core Components  to provide a comprehensive solution for personal safety and emergency response.
-
-This Android safety application is designed to enhance the safety and well-being of users by providing various features and functionalities that can be utilized in emergency situations or for general personal safety. Here's a description of key features that a comprehensive Android safety application might include:
 
 Emergency SOS Button:
 
