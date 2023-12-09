@@ -42,7 +42,7 @@ Continuous updates to enhance the app's features, security, and usability based 
 
 ## Architecture diagram
 
-<img src= "app/src/main/res/drawable/app_architecture.jpg" width="1000" height="100">
+<img src= "app/src/main/res/drawable/app_architecture.jpg" width="500" height="250">
 
 # View:
 <div align='justify'>
