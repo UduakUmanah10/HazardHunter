@@ -58,20 +58,6 @@ A repository is any component that is responsible for making data requests. This
 
 
 
-## ✨ Features
-- [x] Search for Task by keyword.
-- [x] measure safety data using android sensor
-- [x] Create a user account with email and password
-- [x] Reset Password 
-- [x] Search Tasks by category.
-
-
-
-
-
-
-
-
 ## 🔌 Plugins
 
 | Name                                                    | Usage                                               |
