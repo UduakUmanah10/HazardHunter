@@ -16,7 +16,7 @@ Hazard Hunter is an Android application designed to bolster safety measures in w
 Real-time GPS tracking to share the user's location with trusted contacts during an emergency. This feature helps responders locate the user quickly.
 Personal Guardian Services:
 
-- [ ] A virtual guardian system that allows users to set a timer for a specific activity. If the user doesn't confirm their safety within a specified timeframe, the app sends an alert to designated contacts.
+- [x] A virtual guardian system that allows users to set a timer for a specific activity. If the user doesn't confirm their safety within a specified timeframe, the app sends an alert to designated contacts.
 Check-In Feature:
 
 - [ ] Report Incidents
