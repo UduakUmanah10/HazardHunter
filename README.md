@@ -80,5 +80,9 @@ A repository is any component that is responsible for making data requests. This
 | [**Truth Library**](https://truth.dev/)|Assertion Test|
 | [**Mockk**](https://mockk.io/)|Creating Fake Entities for TestTest|
 
+## ⚖️ LICENSE
+
+By contributing to the Open Sauced project, you agree that your contributions will be licensed under [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 
