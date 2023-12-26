@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -120,16 +119,15 @@ private fun LogoInputColum(
         VerticalSpacer(height = 10.dp)
 
         if (viewState is LogInViewState.Submitting) {
+            // IndeterminateCircularIndicator()
+            // do nothing
+            // CircularProgressIndicator(
+            //  modifier = Modifier
+            //     .wrapContentSize()
 
-           // IndeterminateCircularIndicator()
-            //do nothing
-           // CircularProgressIndicator(
-          //     modifier = Modifier
-            //       .wrapContentSize()
-
-          //        .align(Alignment.CenterHorizontally),
-          ///     color = MaterialTheme.colorScheme.secondaryContainer,
-          //  )
+            // .align(Alignment.CenterHorizontally),
+            // color = MaterialTheme.colorScheme.secondaryContainer,
+            // )
         }
 
         Email(
@@ -294,8 +292,6 @@ fun ReuseableButtonComposable(
         Text(text = text)
     }
 }
-
-
 
 @Preview(
     name = "Night Mode",

@@ -1,7 +1,6 @@
 // ktlint-disable filename
 package com.example.hazardhunt.onboarding.presentation.navgraph
 
-
 /**
  * this is a sealed class that represents the navigation for the various screens
  * in th e android application.

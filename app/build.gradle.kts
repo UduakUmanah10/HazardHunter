@@ -88,7 +88,8 @@ dependencies {
 
     // CLOCK
     implementation(libs.clock)
-
+    implementation ("androidx.compose.material3:material3:1.1.2")
+    implementation ("androidx.compose.material3:material3-window-size-class:1.1.2")
 
 
     // DURATION
@@ -101,10 +102,10 @@ dependencies {
 
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    implementation("androidx.compose.foundation:foundation-android:+")
+    implementation("androidx.compose.foundation:foundation-android:1.5.4")
     implementation("androidx.compose.ui:ui-tooling-preview-android:1.6.0-beta01")
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
+    //implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
     implementation(platform("androidx.compose:compose-bom:2022.10.00"))
     androidTestImplementation(platform("androidx.compose:compose-bom:2022.10.00"))
@@ -139,7 +140,7 @@ dependencies {
     // DataStore Preferences
     implementation(libs.datastorelib)
 //    implementation(libs.splashscreen)
-    implementation(libs.material2)
+    //implementation(libs.material2)
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
@@ -147,7 +148,7 @@ dependencies {
     implementation(libs.ui)
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
-    implementation(libs.material3)
+    //implementation(libs.material3)
     implementation(libs.accompanist.systemuicontroller)
     implementation(libs.square.moshi.kotlin)
     implementation(libs.square.retrofit)
