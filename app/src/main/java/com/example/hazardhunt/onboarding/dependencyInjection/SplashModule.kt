@@ -4,7 +4,6 @@ import android.content.Context
 import com.example.hazardhunt.onboarding.data.OnBoardingRepository
 import com.example.hazardhunt.onboarding.data.OnboardingEventManagerImpl
 import com.example.hazardhunt.onboarding.data.model.OnBoardingUseCases
-import com.example.hazardhunt.onboarding.domain.reposirory.OnboardingEventManager
 import com.example.hazardhunt.onboarding.domain.usecases.ReadOnBoardingState
 import com.example.hazardhunt.onboarding.domain.usecases.SaveOnBoardingState
 import dagger.Module
@@ -29,16 +28,14 @@ object SplashModule {
     fun provideLocalUserManager(
         @ApplicationContext
         context: Context,
-    ): OnboardingEventManager {
+    ): OnboardingEventManagerImpl {
         return OnboardingEventManagerImpl(context)
     }
 
     @Provides
     @Singleton
     fun provideLocalUserManagerUseCase(
-        @ApplicationContext
-        context: Context,
-        onboardingEvent: OnboardingEventManager,
+        onboardingEvent: OnboardingEventManagerImpl,
     ): OnBoardingUseCases {
         return OnBoardingUseCases(
             readOnBoardingState = ReadOnBoardingState(onboardingEvent),

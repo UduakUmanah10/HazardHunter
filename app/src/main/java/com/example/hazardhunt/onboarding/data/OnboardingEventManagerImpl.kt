@@ -7,7 +7,6 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.preferencesDataStore
 import com.example.hazardhunt.core.util.Constants
-import com.example.hazardhunt.core.util.Constants.APP_ENTRY
 import com.example.hazardhunt.core.util.Constants.ON_BOARDING_SETTINGS
 import com.example.hazardhunt.onboarding.domain.reposirory.OnboardingEventManager
 import kotlinx.coroutines.flow.Flow
