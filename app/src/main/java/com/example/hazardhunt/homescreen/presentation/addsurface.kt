@@ -4,10 +4,13 @@ package com.example.hazardhunt.homescreen.presentation
 import android.content.res.Configuration
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Icon
 import androidx.compose.material.Surface
@@ -23,26 +26,23 @@ import com.example.hazardhunt.R
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 
 @Composable
-fun addSurface() {
+fun addSurface(modifier: Modifier = Modifier) {
     Surface(
-        modifier = Modifier
-            .height(20.dp)
-            .width(20.dp)
-            .clip(CircleShape)
-            .background(MaterialTheme.colorScheme.surface)
-            .border(3.dp, Color.Red, CircleShape),
-
+        modifier = modifier,
     ) {
-        Icon(
-            painter = painterResource(id = R.drawable.add),
-            contentDescription = "add image",
-            tint = Color.Black,
-            modifier = Modifier
-                .padding(start = 3.dp, top = 3.dp, end = 3.dp, bottom = 3.dp)
-                .size(2.dp)
-                .clip(CircleShape),
-
-        )
+        Column(
+            modifier = Modifier.wrapContentSize(),
+            // horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center,
+        ) {
+            Icon(
+                painter = painterResource(id = R.drawable.add),
+                contentDescription = "add image",
+                tint = Color.Black,
+                modifier = Modifier
+                    .size(10.dp),
+            )
+        }
     }
 }
 
@@ -57,6 +57,15 @@ fun addSurface() {
 @Composable
 fun AddSurfacePreview() {
     HazardHuntTheme {
-        addSurface()
+        addSurface(
+            modifier = Modifier
+                .height(20.dp)
+                .width(20.dp)
+                .clip(CircleShape)
+                .background(MaterialTheme.colorScheme.surface)
+                .border(3.dp, Color.Red, CircleShape)
+                .padding(end = 1.dp, bottom = 3.dp)
+                .size(10.dp),
+        )
     }
 }

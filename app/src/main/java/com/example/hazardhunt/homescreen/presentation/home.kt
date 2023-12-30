@@ -7,7 +7,6 @@ import androidx.annotation.DrawableRes
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.basicMarquee
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -100,21 +99,34 @@ fun HomeScreen() {
                 .background(MaterialTheme.colorScheme.onBackground),
 
         ) {
-            Text(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 10.dp)
-                    .background(MaterialTheme.colorScheme.error)
-                    .basicMarquee(
-                        iterations = Int.MAX_VALUE,
-                        delayMillis = 0,
-                        initialDelayMillis = 0,
-                        velocity = 100.dp,
+            // Text(
+            // modifier = Modifier
+            //   .fillMaxWidth()
+            // .padding(vertical = 10.dp)
+            //  .background(MaterialTheme.colorScheme.error)
+            // .basicMarquee(
+            //  iterations = Int.MAX_VALUE,
+            // delayMillis = 0,
+            // initialDelayMillis = 0,
+            // velocity = 100.dp,
 
-                    ),
+            // ),
 
-                color = MaterialTheme.colorScheme.inverseSurface,
-                text = " Safety Alert oil spill detected at oml 25............. ",
+            // color = MaterialTheme.colorScheme.inverseSurface,
+            // text = " Safety Alert oil spill detected at oml 25............. ",
+            // )
+
+            profileBar(
+                notificationModifier = Modifier.padding(7.dp),
+                rowModifier = Modifier.padding(10.dp).width(80.dp),
+                notificationSurfaceHeight = 20.dp,
+                notificationSurfaceWidth = 20.dp,
+                notificationSurfaceShape = RoundedCornerShape(10.dp),
+                notifiactionBackgroundcolor = MaterialTheme.colorScheme.onBackground,
+                animatedBorderHeight = 30.dp,
+                animatedBorderWidth = 30.dp,
+                animatedSurfaceShape = RoundedCornerShape(10.dp),
+                animatedBackgroundColor = Color.Transparent,
             )
             pagerScreen()
             lazyVerticalGrid(
