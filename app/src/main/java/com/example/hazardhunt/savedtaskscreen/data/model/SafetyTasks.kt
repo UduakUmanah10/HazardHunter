@@ -1,4 +1,4 @@
-package com.example.hazardhunt.home.data.model
+package com.example.hazardhunt.savedtaskscreen.data.model
 
 import com.example.hazardhunt.addnewtask.presentation.formatToDayAndNight
 import com.example.hazardhunt.addnewtask.presentation.touiString

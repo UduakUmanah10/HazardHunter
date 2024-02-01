@@ -48,10 +48,10 @@ fun notoficationIcon(
             .clip(surfaceShape) // RoundedCornerShape(10.dp)
             .background(backgroundColor), // MaterialTheme.colorScheme.surface
     ) {
-        Box {
+        Box(modifier = Modifier.height(100.dp).width(70.dp)) {
             Icon(
                 tint = Color.Black,
-                modifier = Modifier.size(30.dp),
+                modifier = Modifier.height(100.dp).width(50.dp),
                 painter = painterResource(id = painterResource),
                 contentDescription = "dashboard",
             )

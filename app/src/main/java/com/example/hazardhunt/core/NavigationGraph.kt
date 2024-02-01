@@ -10,13 +10,13 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.example.hazardhunt.home.HomeScreen
 import com.example.hazardhunt.login.presentation.LoginScreen
 import com.example.hazardhunt.onboarding.domain.Navigationviewmodel
 import com.example.hazardhunt.onboarding.presentation.OnBoardingViewModel
 import com.example.hazardhunt.onboarding.presentation.OnboardingScreen
 import com.example.hazardhunt.onboarding.presentation.Screen
 import com.example.hazardhunt.onboarding.presentation.navgraph.NavigationRoutes
+import com.example.hazardhunt.savedtaskscreen.HomeScreen
 import com.example.hazardhunt.signup.presentation.SignUpPage
 
 @Composable

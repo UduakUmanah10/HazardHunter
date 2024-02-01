@@ -1,7 +1,7 @@
-package com.example.hazardhunt.home.di
+package com.example.hazardhunt.savedtaskscreen.di
 
-import com.example.hazardhunt.home.domain.usecase.GetTaskUseCase
-import com.example.hazardhunt.home.domain.usecase.ProdSafetyTaskUseCase
+import com.example.hazardhunt.savedtaskscreen.domain.usecase.GetTaskUseCase
+import com.example.hazardhunt.savedtaskscreen.domain.usecase.ProdSafetyTaskUseCase
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

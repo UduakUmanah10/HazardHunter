@@ -1,6 +1,6 @@
-package com.example.hazardhunt.home.di
+package com.example.hazardhunt.savedtaskscreen.di
 import com.example.hazardhunt.addnewtask.data.repository.RoomtasklistRepository
-import com.example.hazardhunt.home.domain.repository.SafetyTaskRepository
+import com.example.hazardhunt.savedtaskscreen.domain.repository.SafetyTaskRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

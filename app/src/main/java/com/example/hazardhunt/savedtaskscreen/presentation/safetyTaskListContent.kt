@@ -1,5 +1,5 @@
 // ktlint-disable filename
-package com.example.hazardhunt.home.presentation
+package com.example.hazardhunt.savedtaskscreen.presentation
 
 import android.content.res.Configuration
 import androidx.compose.animation.AnimatedContent
@@ -13,7 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.hazardhunt.core.loadingScreen
-import com.example.hazardhunt.home.data.model.SafetyTasks
+import com.example.hazardhunt.savedtaskscreen.data.model.SafetyTasks
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 
 typealias TWIN = Int

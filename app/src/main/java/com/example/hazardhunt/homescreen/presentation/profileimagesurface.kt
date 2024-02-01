@@ -1,6 +1,7 @@
 // ktlint-disable filename
 package com.example.hazardhunt.homescreen.presentation
 
+import android.content.res.Configuration
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -20,8 +21,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.example.hazardhunt.ui.theme.HazardHuntTheme
 
 @Composable
 fun profileImageSurface(
@@ -29,6 +32,7 @@ fun profileImageSurface(
     surfaceWidth: Dp,
     surfaceShape: Shape,
     backgroundColor: Color,
+    showaddSurface: Boolean = false,
     @DrawableRes painterResource: Int,
 ) {
     Surface(
@@ -44,15 +48,31 @@ fun profileImageSurface(
                 contentDescription = "",
             )
 
-            addSurface(
-                modifier = Modifier
-                    .padding(start = 3.dp, top = 3.dp, end = 3.dp, bottom = 3.dp)
-                    .clip(CircleShape)
-                    .background(MaterialTheme.colorScheme.surface)
-                    .border(1.dp, Color.Red, CircleShape)
-                    .size(7.dp)
-                    .align(Alignment.BottomEnd),
-            )
+            if (showaddSurface) {
+                addSurface(
+                    modifier = Modifier
+                        .padding(start = 3.dp, top = 3.dp, end = 3.dp, bottom = 3.dp)
+                        .clip(CircleShape)
+                        .background(MaterialTheme.colorScheme.surface)
+                        .border(1.dp, Color.Red, CircleShape)
+                        .size(7.dp)
+                        .align(Alignment.BottomEnd),
+                )
+            }
         }
+    }
+}
+
+@Preview(
+    name = "Night Mode",
+    uiMode = Configuration.UI_MODE_NIGHT_YES,
+)
+@Preview(
+    name = "Day mode",
+    uiMode = Configuration.UI_MODE_NIGHT_NO,
+)
+@Composable
+fun profileimage() {
+    HazardHuntTheme {
     }
 }

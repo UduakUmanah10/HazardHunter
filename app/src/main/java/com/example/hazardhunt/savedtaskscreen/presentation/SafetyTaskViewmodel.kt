@@ -1,11 +1,11 @@
-package com.example.hazardhunt.home.presentation
+package com.example.hazardhunt.savedtaskscreen.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.hazardhunt.core.UIText
-import com.example.hazardhunt.home.data.model.SafetyTasks
-import com.example.hazardhunt.home.domain.usecase.GetTaskUseCase
 import com.example.hazardhunt.login.domain.util.CustomResults
+import com.example.hazardhunt.savedtaskscreen.data.model.SafetyTasks
+import com.example.hazardhunt.savedtaskscreen.domain.usecase.GetTaskUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

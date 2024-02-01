@@ -31,17 +31,16 @@ class LoginViewModelTest {
     fun setUp() {
         loginRepository = FakeLoginRepository()
         tokenRepository = FakeAuthTokenRepository()
-        // Dispatchers.setMain(dispatcher)
         testRobot = LoginViewModelRobot()
     }
 
-    @OptIn(ExperimentalCoroutinesApi::class)
     @After
     fun tearDown() {
         //  Dispatchers.resetMain()
     }
 
     private lateinit var testRobot: LoginViewModelRobot
+
     private val defaultCredantials = Credentials(
         Email("uduakumanah10@gmail.com"),
         Password("Umanah4"),
@@ -183,9 +182,9 @@ class LoginViewModelTest {
     @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun testSubmitWithoutCredentials() = runTest {
-        Thread.setDefaultUncaughtExceptionHandler { thread, Throwable ->
-            throw Throwable
-        }
+        // Thread.setDefaultUncaughtExceptionHandler { _, Throwable ->
+        //   throw Throwable
+        // }
         val credentials = Credentials()
         val initialState = LogInViewState.InitialLoginState
         val submitting = LogInViewState.Submitting(
