@@ -2,7 +2,6 @@
 package com.example.hazardhunt.homescreen.presentation
 
 import android.content.res.Configuration
-import android.media.Image
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
@@ -85,6 +84,18 @@ fun CardWithMultipleViews(
     }
 }
 
+@Composable
+fun imagec() {
+    Image(
+        painter = painterResource(id = R.drawable.sun_and_cloud),
+        contentDescription = "",
+        contentScale = ContentScale.Crop,
+        modifier = Modifier
+            .height(50.19.dp)
+            .width(50.dp),
+    )
+}
+
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun HomeScreen() {
@@ -99,32 +110,18 @@ fun HomeScreen() {
                 .background(MaterialTheme.colorScheme.onBackground),
 
         ) {
-            // Text(
-            // modifier = Modifier
-            //   .fillMaxWidth()
-            // .padding(vertical = 10.dp)
-            //  .background(MaterialTheme.colorScheme.error)
-            // .basicMarquee(
-            //  iterations = Int.MAX_VALUE,
-            // delayMillis = 0,
-            // initialDelayMillis = 0,
-            // velocity = 100.dp,
-
-            // ),
-
-            // color = MaterialTheme.colorScheme.inverseSurface,
-            // text = " Safety Alert oil spill detected at oml 25............. ",
-            // )
-
             profileBar(
                 notificationModifier = Modifier.padding(7.dp),
-                rowModifier = Modifier.padding(10.dp).width(80.dp),
-                notificationSurfaceHeight = 20.dp,
-                notificationSurfaceWidth = 20.dp,
+                rowModifier = Modifier
+                    .padding(10.dp)
+                    .width(80.dp)
+                    .height(50.dp),
+                notificationSurfaceHeight = 30.dp,
+                notificationSurfaceWidth = 30.dp,
                 notificationSurfaceShape = RoundedCornerShape(10.dp),
                 notifiactionBackgroundcolor = MaterialTheme.colorScheme.onBackground,
-                animatedBorderHeight = 30.dp,
-                animatedBorderWidth = 30.dp,
+                animatedBorderHeight = 40.dp,
+                animatedBorderWidth = 40.dp,
                 animatedSurfaceShape = RoundedCornerShape(10.dp),
                 animatedBackgroundColor = Color.Transparent,
             )
@@ -163,14 +160,7 @@ fun HomeScreen() {
                         MaterialTheme.colorScheme.onPrimary,
 
                     ),
-                    Features(
-                        title = "Sensors",
-                        icon = R.drawable.person,
-                        MaterialTheme.colorScheme.inversePrimary,
-                        MaterialTheme.colorScheme.secondaryContainer,
-                        MaterialTheme.colorScheme.onPrimary,
 
-                    ),
                 ),
             )
         }
@@ -226,5 +216,20 @@ fun pagerScreen() {
 fun LoginPreview() {
     HazardHuntTheme {
         HomeScreen()
+    }
+}
+
+@Preview(
+    name = "Night Mode",
+    uiMode = Configuration.UI_MODE_NIGHT_YES,
+)
+@Preview(
+    name = "Day mode",
+    uiMode = Configuration.UI_MODE_NIGHT_NO,
+)
+@Composable
+fun LoginPre() {
+    HazardHuntTheme {
+        imagec()
     }
 }

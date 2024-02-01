@@ -24,6 +24,7 @@ import java.time.LocalTime
  * @param[showTimePicker] -> this is responsible for displaying and hiding the time picker dialog.
  * @param[onTimeSelected] -> thi is a lambda the=at is responsible for exposing the selected time
  * to components that require it.
+ *
  * */
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -36,7 +37,9 @@ fun timePicker(
 
 ) {
     val selectedTime = remember { mutableStateOf<LocalTime>(LocalTime.now()) }
+
     ClockDialog(
+
         state = rememberUseCaseState(visible = showTimePicker, onCloseRequest = { closeTimeSelection() }),
 
         selection = ClockSelection.HoursMinutesSeconds { hours, minutes, seconds ->
@@ -47,8 +50,10 @@ fun timePicker(
         config = ClockConfig(
             is24HourFormat = is24hoursClock,
         ),
+
         properties = DialogProperties(),
-        // header = Header.Custom()
+
+        // header = Header.Custom() //
 
     )
 }

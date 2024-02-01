@@ -1,8 +1,8 @@
-package com.example.hazardhunt.home.domain.usecase
+package com.example.hazardhunt.savedtaskscreen.domain.usecase
 
-import com.example.hazardhunt.home.data.model.SafetyTasks
-import com.example.hazardhunt.home.domain.repository.SafetyTaskRepository
 import com.example.hazardhunt.login.domain.util.CustomResults
+import com.example.hazardhunt.savedtaskscreen.data.model.SafetyTasks
+import com.example.hazardhunt.savedtaskscreen.domain.repository.SafetyTaskRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

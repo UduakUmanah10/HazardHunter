@@ -1,7 +1,7 @@
-package com.example.hazardhunt.home.domain.repository
+package com.example.hazardhunt.savedtaskscreen.domain.repository
 
-import com.example.hazardhunt.home.data.model.SafetyTasks
 import com.example.hazardhunt.login.domain.util.CustomResults
+import com.example.hazardhunt.savedtaskscreen.data.model.SafetyTasks
 import kotlinx.coroutines.flow.Flow
 
 interface SafetyTaskRepository {

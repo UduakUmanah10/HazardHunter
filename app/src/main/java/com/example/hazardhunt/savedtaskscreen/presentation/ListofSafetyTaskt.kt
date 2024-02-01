@@ -1,4 +1,4 @@
-package com.example.hazardhunt.home.presentation
+package com.example.hazardhunt.savedtaskscreen.presentation
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
@@ -25,7 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.hazardhunt.R
 import com.example.hazardhunt.core.CustomCenterTopAppbar
-import com.example.hazardhunt.home.data.model.SafetyTasks
+import com.example.hazardhunt.savedtaskscreen.data.model.SafetyTasks
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 
 @Composable

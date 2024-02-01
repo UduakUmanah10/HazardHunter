@@ -98,7 +98,7 @@ dependencies {
 
     implementation ("com.jakewharton.timber:timber:5.0.1")
     implementation("androidx.activity:activity-compose:1.8.0")
-    implementation("io.appwrite:sdk-for-android:4.0.0")
+    //implementation("io.appwrite:sdk-for-android:4.0.0")
 
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)

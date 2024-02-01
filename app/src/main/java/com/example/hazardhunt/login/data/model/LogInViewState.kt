@@ -9,7 +9,6 @@ import com.example.hazardhunt.login.domain.util.Credentials
  * @Param[credentials] the current text entered into the ui text field
  * @param[buttonsEnabled] the current password entered in the password field
  *
- *
  */
 
 sealed class LogInViewState(

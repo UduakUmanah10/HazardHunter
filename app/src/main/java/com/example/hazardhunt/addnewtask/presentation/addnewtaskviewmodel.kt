@@ -6,8 +6,8 @@ import androidx.lifecycle.viewModelScope
 import com.example.hazardhunt.addnewtask.data.model.TaskinputModel
 import com.example.hazardhunt.addnewtask.domain.usecase.ProdAddTaskUseCase
 import com.example.hazardhunt.core.UIText
-import com.example.hazardhunt.home.data.model.SafetyTasks
 import com.example.hazardhunt.login.domain.util.CustomResults
+import com.example.hazardhunt.savedtaskscreen.data.model.SafetyTasks
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

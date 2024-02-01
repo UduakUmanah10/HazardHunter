@@ -1,5 +1,5 @@
 // ktlint-disable filename
-package com.example.hazardhunt.home
+package com.example.hazardhunt.savedtaskscreen
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
@@ -44,9 +44,9 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.hazardhunt.R
 import com.example.hazardhunt.addnewtask.presentation.AddNewTasksScreen
-import com.example.hazardhunt.home.presentation.SafetyTaskScreen
 import com.example.hazardhunt.homescreen.presentation.HomeScreen
 import com.example.hazardhunt.insight.presenatation.InsightsScreen
+import com.example.hazardhunt.savedtaskscreen.presentation.SafetyTaskScreen
 import com.example.hazardhunt.sensorscreen.presentation.sensorScreen
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 typealias DELAY = Int
