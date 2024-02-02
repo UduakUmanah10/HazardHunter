@@ -70,6 +70,7 @@ fun textComponentOfairQuality() {
         }
 
         Text(
+            // i am adding you
             text = "Un healthy",
             style = MaterialTheme.typography.displaySmall,
         )
@@ -87,7 +88,6 @@ fun textComponentOfairQuality() {
 @Composable
 fun airqualityPreview() {
     HazardHuntTheme {
-
         airquality()
     }
 }
