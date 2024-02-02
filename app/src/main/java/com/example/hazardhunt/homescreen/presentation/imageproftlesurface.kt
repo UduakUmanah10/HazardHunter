@@ -10,7 +10,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Surface
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -32,7 +32,7 @@ import com.example.hazardhunt.ui.theme.HazardHuntTheme
 @Composable
 fun AnimatedBorderCard(
     modifier: Modifier = Modifier,
-    shape: Shape = RoundedCornerShape(size = 10.dp),
+    shape: Shape = CircleShape,
     borderWidth: Dp = 2.dp,
     gradient: Brush = Brush.sweepGradient(listOf(Color.Gray, Color.White)),
     animationDuration: Int = 10000,
@@ -94,7 +94,7 @@ fun PofileImagSurface() {
             profileImageSurface(
                 surfaceHeight = 30.dp,
                 surfaceWidth = 30.dp,
-                surfaceShape = RoundedCornerShape(10.dp),
+                surfaceShape = CircleShape,
                 backgroundColor = MaterialTheme.colorScheme.surface,
                 painterResource = R.drawable.profileimage,
             )

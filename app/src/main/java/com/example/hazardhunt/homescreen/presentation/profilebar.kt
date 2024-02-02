@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -88,14 +89,14 @@ fun ProfilebarPreview() {
     HazardHuntTheme {
         profileBar(
             notificationModifier = Modifier.padding(7.dp),
-            rowModifier = Modifier.padding(10.dp).width(80.dp),
-            notificationSurfaceHeight = 20.dp,
+            rowModifier = Modifier.padding(10.dp).width(90.dp),
+            notificationSurfaceHeight = 30.dp,
             notificationSurfaceWidth = 20.dp,
             notificationSurfaceShape = RoundedCornerShape(10.dp),
             notifiactionBackgroundcolor = Color.Transparent,
             animatedBorderHeight = 30.dp,
             animatedBorderWidth = 30.dp,
-            animatedSurfaceShape = RoundedCornerShape(10.dp),
+            animatedSurfaceShape = CircleShape,
             animatedBackgroundColor = Color.Transparent,
         )
     }
