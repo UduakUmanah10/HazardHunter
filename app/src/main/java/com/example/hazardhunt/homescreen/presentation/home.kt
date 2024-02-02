@@ -114,7 +114,7 @@ fun HomeScreen() {
                 notificationModifier = Modifier.padding(7.dp),
                 rowModifier = Modifier
                     .padding(10.dp)
-                    .width(80.dp)
+                    .width(90.dp)
                     .height(50.dp),
                 notificationSurfaceHeight = 30.dp,
                 notificationSurfaceWidth = 30.dp,
@@ -122,7 +122,7 @@ fun HomeScreen() {
                 notifiactionBackgroundcolor = MaterialTheme.colorScheme.onBackground,
                 animatedBorderHeight = 40.dp,
                 animatedBorderWidth = 40.dp,
-                animatedSurfaceShape = RoundedCornerShape(10.dp),
+                animatedSurfaceShape = CircleShape,
                 animatedBackgroundColor = Color.Transparent,
             )
             pagerScreen()

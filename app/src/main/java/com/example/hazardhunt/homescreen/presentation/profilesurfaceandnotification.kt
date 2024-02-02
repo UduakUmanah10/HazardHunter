@@ -6,7 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -74,11 +74,11 @@ fun profilesurfaceandnotification() {
             rowModifier = Modifier.padding(10.dp).width(70.dp),
             notificationSurfaceHeight = 20.dp,
             notificationSurfaceWidth = 20.dp,
-            notificationSurfaceShape = RoundedCornerShape(10.dp),
+            notificationSurfaceShape = CircleShape,
             notifiactionBackgroundcolor = Color.Transparent,
             animatedBorderHeight = 30.dp,
             animatedBorderWidth = 30.dp,
-            animatedSurfaceShape = RoundedCornerShape(10.dp),
+            animatedSurfaceShape = CircleShape,
             animatedBackgroundColor = Color.Transparent,
 
         )

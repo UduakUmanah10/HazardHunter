@@ -51,14 +51,14 @@ fun notoficationIcon(
         Box(modifier = Modifier.height(100.dp).width(70.dp)) {
             Icon(
                 tint = Color.Black,
-                modifier = Modifier.height(100.dp).width(50.dp),
+                modifier = Modifier.height(50.dp).width(50.dp),
                 painter = painterResource(id = painterResource),
                 contentDescription = "dashboard",
             )
 
             notificationIcon(
                 modifier = Modifier
-                    .padding(start = 3.dp, top = 3.dp, end = 3.dp, bottom = 3.dp)
+                    .padding(start = 3.dp, top = 7.dp, end = 3.dp, bottom = 3.dp)
                     .clip(CircleShape)
                     .background(MaterialTheme.colorScheme.surface)
                     .border(1.dp, Color.Red, CircleShape)
@@ -103,7 +103,7 @@ fun NotificationIcon() {
     HazardHuntTheme {
         notoficationIcon(
             surfaceHeight = 30.dp,
-            surfaceWidth = 30.dp,
+            surfaceWidth = 20.dp,
             surfaceShape = RoundedCornerShape(10.dp),
             backgroundColor = Color.Transparent,
             painterResource = R.drawable.notifications,
