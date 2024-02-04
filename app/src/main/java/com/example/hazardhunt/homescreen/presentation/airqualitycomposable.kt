@@ -5,10 +5,12 @@ import android.content.res.Configuration
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.Text
 import androidx.compose.material3.Divider
@@ -33,8 +35,8 @@ fun airquality() {
             painter = painterResource(id = R.drawable.airpolution),
             contentDescription = "",
             modifier = Modifier
-                .height(80.dp)
-                .width(80.dp).padding(top = 3.dp),
+                .height(70.dp)
+                .width(70.dp).padding(top = 3.dp),
         )
 
         textComponentOfairQuality()
@@ -43,7 +45,7 @@ fun airquality() {
 
 @Composable
 fun textComponentOfairQuality() {
-    Column(modifier = Modifier.padding(start = 10.dp)) {
+    Column(modifier = Modifier.padding(5.dp).height(100.dp)) {
         Row(modifier = Modifier.fillMaxWidth()) {
             Text(
                 text = "162",
@@ -70,8 +72,12 @@ fun textComponentOfairQuality() {
         }
 
         Text(
+            modifier = Modifier
+                .padding(bottom = 3.dp)
+                .fillMaxWidth().wrapContentHeight(),
+
             // i am adding you
-            text = "Un healthy",
+            text = "Unhealthy",
             style = MaterialTheme.typography.displaySmall,
         )
     }
@@ -88,6 +94,12 @@ fun textComponentOfairQuality() {
 @Composable
 fun airqualityPreview() {
     HazardHuntTheme {
-        airquality()
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .fillMaxWidth(),
+        ) {
+            airquality()
+        }
     }
 }

@@ -128,6 +128,7 @@ private fun LogoInputColum(
             // .align(Alignment.CenterHorizontally),
             // color = MaterialTheme.colorScheme.secondaryContainer,
             // )
+            // CircularProgressIndicator()
         }
 
         Email(
