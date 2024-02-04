@@ -11,9 +11,9 @@ charts = "0.2.4-alpha"
 clock = "1.2.0"
 constraintlayout = "2.1.4"
 core = "1.9.51"
-ksp = "1.9.51"
+
 core-ktx = "1.12.0"
-compose-bom = "2023.10.01"
+compose-bom = "2024.01.00"
 coreVersion = "1.2.0"
 coroutines = "1.7.1"
 datastore = "1.0.0"
@@ -26,7 +26,8 @@ hilt = "2.48"
 dagger-hilt = "2.48"
 hilt-navigation = "1.1.0"
 junit = "4.13.2"
-kotlin = "1.9.10"
+kotlin = "1.9.22"
+ksp = "1.9.51"
 kotlinter = "3.14.0"
 kotlinxCollectionsImmutable = "0.3.5"
 kotlinxSerializationJson = "1.4.1"
@@ -36,7 +37,6 @@ lottieCompose = "4.0.0"
 mapsCompose = "2.11.4"
 moshi = "1.15.0"
 mock-library = "1.13.4"
-material2 = "1.5.4"
 navigation = "2.7.6"
 playServicesLocation = "21.0.1"
 playServicesMaps = "18.2.0"
@@ -108,7 +108,6 @@ lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtim
 
 
 material3 = { group = "androidx.compose.material3", name = "material3" }
-material2 ={ group =  "androidx.compose.material", name ="material", version.ref = "material2"}
 mock-library = { group = "io.mockk", name = "mockk", version.ref = "mock-library"}
 navigation-library = { group ="androidx.navigation", name ="navigation-compose", version.ref ="navigation"}
 ui = { group = "androidx.compose.ui", name = "ui" }
