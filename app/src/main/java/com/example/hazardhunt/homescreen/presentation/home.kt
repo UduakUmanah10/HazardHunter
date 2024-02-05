@@ -160,7 +160,13 @@ fun HomeScreen() {
                         MaterialTheme.colorScheme.onPrimary,
 
                     ),
-
+                    Features(
+                        title = "Sensors",
+                        icon = R.drawable.person,
+                        MaterialTheme.colorScheme.inversePrimary,
+                        MaterialTheme.colorScheme.secondaryContainer,
+                        MaterialTheme.colorScheme.onPrimary,
+                    ),
                 ),
             )
         }
