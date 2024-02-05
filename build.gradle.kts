@@ -1,6 +1,6 @@
 
 plugins {
-    //kotlin("jvm") version "1.9.0" apply false
+    kotlin("jvm") version "1.9.22" apply false
     alias(libs.plugins.androidApplication) apply false
     alias(libs.plugins.kotlinAndroid) apply false
     alias(libs.plugins.detekt)
