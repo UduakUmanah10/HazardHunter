@@ -17,7 +17,8 @@ compose-bom = "2024.01.00"
 coreVersion = "1.2.0"
 coroutines = "1.7.1"
 datastore = "1.0.0"
-icon-extended = "1.5.4"
+foundationAndroid = "1.6.0"
+icon-extended = "1.6.0"
 data-store = "1.0.0"
 detektGradlePlugin = "1.23.0"
 espresso-core = "3.5.1"
@@ -31,21 +32,25 @@ ksp = "1.9.51"
 kotlinter = "3.14.0"
 kotlinxCollectionsImmutable = "0.3.5"
 kotlinxSerializationJson = "1.4.1"
-lifecycle-runtime-ktx = "2.6.2"
+lifecycle-runtime-ktx = "2.7.0"
 leakCanary = "2.11"
 lottieCompose = "4.0.0"
 mapsCompose = "2.11.4"
+material3 = "1.1.2"
+material3Window = "1.1.2"
 moshi = "1.15.0"
 mock-library = "1.13.4"
 navigation = "2.7.6"
-playServicesLocation = "21.0.1"
+playServicesLocation = "21.1.0"
 playServicesMaps = "18.2.0"
 retrofit = "2.9.0"
 room = "2.6.1"
 roomCompilerVersion = "2.6.1"
 splashscreen ="1.0.1"
+timber = "5.0.1"
 turbine = "1.0.0"
-viewmodel = "2.6.2"
+uiToolingPreviewAndroid = "1.6.0"
+viewmodel = "2.7.0"
 kover ="0.7.2"
 
 
@@ -57,12 +62,16 @@ accompanist-permissions = { module = "com.google.accompanist:accompanist-permiss
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
 androidx-datastore = { module = "androidx.datastore:datastore", version.ref = "datastore" }
+androidx-foundation-android = { module = "androidx.compose.foundation:foundation-android", version.ref = "foundationAndroid" }
+androidx-material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomCompilerVersion" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomCompilerVersion" }
+androidx-ui-tooling-preview-android = { module = "androidx.compose.ui:ui-tooling-preview-android", version.ref = "uiToolingPreviewAndroid" }
 calendar = { module = "com.maxkeppeler.sheets-compose-dialogs:calendar", version.ref = "calendar" }
 charts = { module = "com.github.tehras:charts", version.ref = "charts" }
 clock = { module = "com.maxkeppeler.sheets-compose-dialogs:clock", version.ref = "clock" }
 core = { module = "io.github.raamcosta.compose-destinations:core", version.ref = "core" }
+duration = { module = "com.maxkeppeler.sheets-compose-dialogs:duration", version.ref = "calendar" }
 kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutable" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 ksp = { module = "io.github.raamcosta.compose-destinations:ksp", version.ref = "ksp" }
@@ -109,7 +118,10 @@ lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtim
 
 material3 = { group = "androidx.compose.material3", name = "material3" }
 mock-library = { group = "io.mockk", name = "mockk", version.ref = "mock-library"}
+material3-window ={ group = "androidx.compose.material3", name = "material3-window-size-class", version.ref = "material3Window"}
+
 navigation-library = { group ="androidx.navigation", name ="navigation-compose", version.ref ="navigation"}
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 ui = { group = "androidx.compose.ui", name = "ui" }
 ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }

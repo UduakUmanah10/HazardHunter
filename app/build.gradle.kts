@@ -88,22 +88,23 @@ dependencies {
 
     // CLOCK
     implementation(libs.clock)
-    implementation ("androidx.compose.material3:material3:1.1.2")
-    implementation ("androidx.compose.material3:material3-window-size-class:1.1.2")
+    implementation (libs.androidx.material3)
+    //implementation ("androidx.compose.material3:material3-window-size-class:1.1.2")
+    implementation(libs.material3.window)
 
 
     // DURATION
-    implementation("com.maxkeppeler.sheets-compose-dialogs:duration:1.2.0")
+    implementation(libs.duration)
 
 
-    implementation ("com.jakewharton.timber:timber:5.0.1")
-    implementation("androidx.activity:activity-compose:1.8.0")
+    implementation (libs.timber)
+    implementation(libs.activity.compose)
     //implementation("io.appwrite:sdk-for-android:4.0.0")
 
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    implementation("androidx.compose.foundation:foundation-android:1.5.4")
-    implementation("androidx.compose.ui:ui-tooling-preview-android:1.6.0-beta01")
+    implementation(libs.androidx.foundation.android)
+    implementation(libs.androidx.ui.tooling.preview.android)
     implementation(libs.androidx.appcompat)
     //implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
