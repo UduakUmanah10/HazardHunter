@@ -3,24 +3,27 @@ accompanistPagerIndicators = "0.24.2-alpha"
 accompanistPermissions = "0.31.5-beta"
 activity-compose = "1.8.2"
 androidx-test-ext-junit = "1.1.5"
-androidx-lifecycle = "2.6.2"
+androidx-lifecycle = "2.7.0"
 accompanist = "0.30.1"
 appcompat = "1.6.1"
+
 calendar = "1.2.0"
 charts = "0.2.4-alpha"
 clock = "1.2.0"
 constraintlayout = "2.1.4"
 core = "1.9.51"
-
 core-ktx = "1.12.0"
 compose-bom = "2024.01.00"
 coreVersion = "1.2.0"
 coroutines = "1.7.1"
+
 datastore = "1.0.0"
-foundationAndroid = "1.6.0"
-icon-extended = "1.6.0"
 data-store = "1.0.0"
 detektGradlePlugin = "1.23.0"
+
+foundationAndroid = "1.6.0"
+icon-extended = "1.6.0"
+
 espresso-core = "3.5.1"
 google-Truth= "1.1.3"
 hilt = "2.48"
@@ -67,21 +70,27 @@ androidx-material3 = { module = "androidx.compose.material3:material3", version.
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomCompilerVersion" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomCompilerVersion" }
 androidx-ui-tooling-preview-android = { module = "androidx.compose.ui:ui-tooling-preview-android", version.ref = "uiToolingPreviewAndroid" }
+
 calendar = { module = "com.maxkeppeler.sheets-compose-dialogs:calendar", version.ref = "calendar" }
 charts = { module = "com.github.tehras:charts", version.ref = "charts" }
 clock = { module = "com.maxkeppeler.sheets-compose-dialogs:clock", version.ref = "clock" }
 core = { module = "io.github.raamcosta.compose-destinations:core", version.ref = "core" }
+
 duration = { module = "com.maxkeppeler.sheets-compose-dialogs:duration", version.ref = "calendar" }
 kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutable" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 ksp = { module = "io.github.raamcosta.compose-destinations:ksp", version.ref = "ksp" }
+
 lottie-compose = { module = "com.airbnb.android:lottie-compose", version.ref = "lottieCompose" }
+
 maps-compose = { module = "com.google.maps.android:maps-compose", version.ref = "mapsCompose" }
 maps-compose-utils = { module = "com.google.maps.android:maps-compose-utils", version.ref = "mapsCompose" }
 maps-compose-widgets = { module = "com.google.maps.android:maps-compose-widgets", version.ref = "mapsCompose" }
+
 play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocation" }
 play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
 room-compiler-v252 = { module = "androidx.room:room-compiler", version.ref = "roomCompilerVersion" }
+
 sheets-compose-dialogs-core = { module = "com.maxkeppeler.sheets-compose-dialogs:core", version.ref = "coreVersion" }
 splashscreen = { group ="androidx.core", name = "core-splashscreen", version.ref="splashscreen"}
 
@@ -122,16 +131,19 @@ material3-window ={ group = "androidx.compose.material3", name = "material3-wind
 
 navigation-library = { group ="androidx.navigation", name ="navigation-compose", version.ref ="navigation"}
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+
 ui = { group = "androidx.compose.ui", name = "ui" }
 ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+
 square-leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakCanary" }
 square-moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
 square-moshi-kotlin-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
 square-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+square-gsonconverter = { module = "com.squareup.retrofit2:gson-converter", version.ref = "retrofit" }
 square-retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit"}
 
 turbine = { group = "app.cash.turbine", name = "turbine" , version.ref = "turbine"}
