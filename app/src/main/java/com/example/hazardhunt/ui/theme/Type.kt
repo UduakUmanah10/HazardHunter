@@ -36,7 +36,7 @@ val AppTypography =
         displaySmall = TextStyle(
             fontFamily = UrbanistMedium,
             fontWeight = FontWeight.W400,
-            fontSize = 23.sp,
+            fontSize = 17.sp,
             lineHeight = 40.sp,
             letterSpacing = 0.sp,
         ),
