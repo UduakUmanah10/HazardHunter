@@ -78,12 +78,12 @@ fun SuperScriptText(
             style = MaterialTheme.typography.titleMedium,
             color = MaterialTheme.colorScheme.secondaryContainer,
         )
-       // Text(
-         //   modifier = Modifier
-           //     .padding(start = 10.dp),
-           // text = "partly cloudy",
-            //style = MaterialTheme.typography.titleMedium,
-            //color = MaterialTheme.colorScheme.secondaryContainer,
-        //)
+        // Text(
+        //   modifier = Modifier
+        //     .padding(start = 10.dp),
+        // text = "partly cloudy",
+        // style = MaterialTheme.typography.titleMedium,
+        // color = MaterialTheme.colorScheme.secondaryContainer,
+        // )
     }
 }

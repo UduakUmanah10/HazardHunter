@@ -143,8 +143,7 @@ square-leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", ver
 square-moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
 square-moshi-kotlin-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
 square-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
-square-gsonconverter = { module = "com.squareup.retrofit2:gson-converter", version.ref = "retrofit" }
-square-retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit"}
+square-gsonconverter = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit"}
 
 turbine = { group = "app.cash.turbine", name = "turbine" , version.ref = "turbine"}
 
