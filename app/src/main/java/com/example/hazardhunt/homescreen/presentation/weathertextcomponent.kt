@@ -40,7 +40,7 @@ fun weathertextComposable(
 
         )
         Icon(
-          //  modifier = Modifier.size(40.dp),
+            modifier = Modifier.size(40.dp),
             painter = painterResource(id = R.drawable.drop_down_arrow),
             contentDescription =""
         )
