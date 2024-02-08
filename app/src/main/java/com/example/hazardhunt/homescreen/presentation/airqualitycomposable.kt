@@ -28,7 +28,7 @@ import com.example.hazardhunt.ui.theme.HazardHuntTheme
 fun airquality() {
     Row(
         modifier = Modifier
-           // .height(100.dp)
+            // .height(100.dp)
             .wrapContentSize(),
     ) {
         Image(

@@ -2,11 +2,11 @@
 package com.example.hazardhunt.homescreen.presentation
 
 import android.content.res.Configuration
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -25,24 +25,32 @@ fun weathertextComposable(
     locationText: String = "Surulere Lagos",
     coordinateText: String = "South West Nigeria",
 ) {
-    Text(
-        text = locationText,
-        style = MaterialTheme.typography.headlineMedium,
+    Row() {
+        Text(
+            text = locationText,
+            style = MaterialTheme.typography.headlineMedium,
 
-    )
+        )
+        Icon(
+            modifier = Modifier.size(40.dp).padding(10.dp),
+            painter = painterResource(id = R.drawable.location),
+            contentDescription = "",
+        )
+    }
+
     Row(
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
 
-        ) {
+    ) {
         Text(
             text = coordinateText,
             style = MaterialTheme.typography.displaySmall,
 
         )
         Icon(
-            modifier = Modifier.size(40.dp),
+            modifier = Modifier.size(20.dp),
             painter = painterResource(id = R.drawable.drop_down_arrow),
-            contentDescription =""
+            contentDescription = "",
         )
     }
 }
