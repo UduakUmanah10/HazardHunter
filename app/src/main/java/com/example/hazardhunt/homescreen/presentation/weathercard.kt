@@ -5,9 +5,7 @@ import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
@@ -28,14 +26,14 @@ fun weathercard() {
     ) {
         Column(
             modifier = Modifier.wrapContentSize()
-               // .height(200.dp)
-                //.width(400.dp)
+                // .height(200.dp)
+                // .width(400.dp)
                 .padding(2.dp),
         ) {
             temperatureandWeatherImage()
             weathertextComposable(
                 locationText = "Surulere Lagos",
-            coordinateText= "South West Nigeria",
+                coordinateText = "South West Nigeria",
             )
             airquality()
         }
