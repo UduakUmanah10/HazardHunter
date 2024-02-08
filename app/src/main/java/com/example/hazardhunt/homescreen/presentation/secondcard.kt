@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -23,14 +24,14 @@ import com.example.hazardhunt.ui.theme.HazardHuntTheme
 @Composable
 fun temperatureandWeatherImage() {
     Row(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth().wrapContentHeight(),
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         SuperScriptText(
             normalText = "35",
-            normalTextFontSize = MaterialTheme.typography.displayLarge.fontSize,
+            normalTextFontSize = MaterialTheme.typography.displayMedium.fontSize,
             superText = "°",
-            superTextFontSize = MaterialTheme.typography.displayLarge.fontSize,
+            superTextFontSize = MaterialTheme.typography.displayMedium.fontSize,
             superTextFontWeight = FontWeight.Thin,
             baselineShift = BaselineShift.Superscript,
         )
