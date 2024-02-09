@@ -42,7 +42,7 @@ fun SuperScriptText(
                     style = SpanStyle(
                         fontSize = normalTextFontSize,
                         fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.onSecondary,
+                        color = Color.Black,
                     ),
                 ) {
                     append(normalText)
@@ -52,7 +52,7 @@ fun SuperScriptText(
                         fontSize = superTextFontSize,
                         fontWeight = superTextFontWeight,
                         baselineShift = baselineShift,
-                        color = MaterialTheme.colorScheme.onSecondary,
+                        color = Color.Black,
                     ),
                 ) {
                     append(superText)
@@ -64,7 +64,7 @@ fun SuperScriptText(
             modifier =
             Modifier
                 .padding(start = 5.dp, top = 5.dp)
-                .height(30.dp)
+                .height(25.dp)
                 .width(3.dp),
 
             color = Color.Black,
@@ -76,7 +76,7 @@ fun SuperScriptText(
                 .padding(start = 10.dp),
             text = "partly cloudy",
             style = MaterialTheme.typography.titleMedium,
-            color = MaterialTheme.colorScheme.secondaryContainer,
+            color = Color.Black,
         )
         // Text(
         //   modifier = Modifier

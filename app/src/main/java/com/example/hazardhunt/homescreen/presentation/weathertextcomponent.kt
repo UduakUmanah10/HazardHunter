@@ -25,33 +25,37 @@ fun weathertextComposable(
     locationText: String = "Surulere Lagos",
     coordinateText: String = "South West Nigeria",
 ) {
-    Row() {
-        Text(
-            text = locationText,
-            style = MaterialTheme.typography.headlineMedium,
+    Column(modifier = Modifier.padding(4.dp)) {
+        Row() {
+            Text(
+                text = locationText,
+                style = MaterialTheme.typography.headlineMedium,
 
-        )
-        Icon(
-            modifier = Modifier.size(40.dp).padding(10.dp),
-            painter = painterResource(id = R.drawable.location),
-            contentDescription = "",
-        )
-    }
+            )
+            Icon(
+                modifier = Modifier
+                    .size(40.dp)
+                    .padding(10.dp),
+                painter = painterResource(id = R.drawable.location),
+                contentDescription = "",
+            )
+        }
 
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
 
-    ) {
-        Text(
-            text = coordinateText,
-            style = MaterialTheme.typography.displaySmall,
+        ) {
+            Text(
+                text = coordinateText,
+                style = MaterialTheme.typography.displaySmall,
 
-        )
-        Icon(
-            modifier = Modifier.size(20.dp),
-            painter = painterResource(id = R.drawable.drop_down_arrow),
-            contentDescription = "",
-        )
+            )
+            Icon(
+                modifier = Modifier.size(20.dp),
+                painter = painterResource(id = R.drawable.drop_down_arrow),
+                contentDescription = "",
+            )
+        }
     }
 }
 
