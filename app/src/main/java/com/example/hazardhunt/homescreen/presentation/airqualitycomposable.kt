@@ -28,15 +28,15 @@ import com.example.hazardhunt.ui.theme.HazardHuntTheme
 fun airquality() {
     Row(
         modifier = Modifier
-            // .height(100.dp)
+            .padding(2.dp)
             .wrapContentSize(),
     ) {
         Image(
             painter = painterResource(id = R.drawable.airpolution),
             contentDescription = "",
-            modifier = Modifier
-                .height(70.dp)
-                .width(70.dp).padding(top = 3.dp),
+            modifier = Modifier.padding(top = 2.dp)
+                .height(60.dp)
+                .width(60.dp),
         )
 
         textComponentOfairQuality()
@@ -45,7 +45,7 @@ fun airquality() {
 
 @Composable
 fun textComponentOfairQuality() {
-    Column(modifier = Modifier.padding(5.dp).height(100.dp)) {
+    Column(modifier = Modifier.padding(5.dp).height(80.dp)) {
         Row(modifier = Modifier.fillMaxWidth()) {
             Text(
                 text = "162",
@@ -54,7 +54,7 @@ fun textComponentOfairQuality() {
             Divider(
                 modifier =
                 Modifier
-                    .padding(start = 5.dp, top = 15.dp)
+                    .padding(start = 8.dp, top = 15.dp)
                     .height(25.dp)
                     .width(3.dp),
 
@@ -73,7 +73,7 @@ fun textComponentOfairQuality() {
 
         Text(
             modifier = Modifier
-                .padding(bottom = 3.dp)
+                .padding(start = 3.dp, bottom = 3.dp)
                 .fillMaxWidth().wrapContentHeight(),
 
             // i am adding you
