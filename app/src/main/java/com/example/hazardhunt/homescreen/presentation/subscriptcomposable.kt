@@ -11,7 +11,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
@@ -34,30 +33,13 @@ fun SuperScriptText(
         verticalAlignment = Alignment.CenterVertically,
 
     ) {
-        Text(
-            modifier = Modifier.padding(start = 4.dp),
-
-            text = buildAnnotatedString {
-                withStyle(
-                    style = SpanStyle(
-                        fontSize = normalTextFontSize,
-                        fontWeight = FontWeight.Bold,
-                        color = Color.Black,
-                    ),
-                ) {
-                    append(normalText)
-                }
-                withStyle(
-                    style = SpanStyle(
-                        fontSize = superTextFontSize,
-                        fontWeight = superTextFontWeight,
-                        baselineShift = baselineShift,
-                        color = Color.Black,
-                    ),
-                ) {
-                    append(superText)
-                }
-            },
+        subscript(
+            normalTextFontSize,
+            normalText,
+            superTextFontSize,
+            superTextFontWeight,
+            baselineShift,
+            superText,
         )
 
         Divider(
@@ -67,7 +49,7 @@ fun SuperScriptText(
                 .height(25.dp)
                 .width(3.dp),
 
-            color = Color.Black,
+            color = MaterialTheme.colorScheme.onPrimary,
             thickness = 200.dp,
         )
 
@@ -76,7 +58,7 @@ fun SuperScriptText(
                 .padding(start = 10.dp),
             text = "partly cloudy",
             style = MaterialTheme.typography.titleMedium,
-            color = Color.Black,
+            color = MaterialTheme.colorScheme.onPrimary,
         )
         // Text(
         //   modifier = Modifier
@@ -86,4 +68,40 @@ fun SuperScriptText(
         // color = MaterialTheme.colorScheme.secondaryContainer,
         // )
     }
+}
+
+@Composable
+fun subscript(
+    normalTextFontSize: TextUnit,
+    normalText: String,
+    superTextFontSize: TextUnit,
+    superTextFontWeight: FontWeight,
+    baselineShift: BaselineShift,
+    superText: String,
+) {
+    Text(
+        modifier = Modifier.padding(start = 4.dp),
+
+        text = buildAnnotatedString {
+            withStyle(
+                style = SpanStyle(
+                    fontSize = normalTextFontSize,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onPrimary,
+                ),
+            ) {
+                append(normalText)
+            }
+            withStyle(
+                style = SpanStyle(
+                    fontSize = superTextFontSize,
+                    fontWeight = superTextFontWeight,
+                    baselineShift = baselineShift,
+                    color = MaterialTheme.colorScheme.onPrimary,
+                ),
+            ) {
+                append(superText)
+            }
+        },
+    )
 }

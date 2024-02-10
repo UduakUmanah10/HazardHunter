@@ -17,7 +17,6 @@ import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -50,6 +49,8 @@ fun textComponentOfairQuality() {
             Text(
                 text = "162",
                 style = MaterialTheme.typography.displayMedium,
+                color = MaterialTheme.colorScheme.onPrimary,
+
             )
             Divider(
                 modifier =
@@ -58,7 +59,7 @@ fun textComponentOfairQuality() {
                     .height(25.dp)
                     .width(3.dp),
 
-                color = Color.Black,
+                color = MaterialTheme.colorScheme.onPrimary,
                 thickness = 200.dp,
             )
 
@@ -68,6 +69,7 @@ fun textComponentOfairQuality() {
                     .fillMaxWidth(),
                 text = "Micro Dust / Pm 2.5",
                 style = MaterialTheme.typography.displaySmall,
+                color = MaterialTheme.colorScheme.onPrimary,
             )
         }
 
@@ -79,6 +81,7 @@ fun textComponentOfairQuality() {
             // i am adding you
             text = "Unhealthy",
             style = MaterialTheme.typography.displaySmall,
+            color = MaterialTheme.colorScheme.onPrimary,
         )
     }
 }

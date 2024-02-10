@@ -30,7 +30,7 @@ fun weathertextComposable(
             Text(
                 text = locationText,
                 style = MaterialTheme.typography.headlineMedium,
-
+                color = MaterialTheme.colorScheme.onPrimary,
             )
             Icon(
                 modifier = Modifier
@@ -38,6 +38,7 @@ fun weathertextComposable(
                     .padding(10.dp),
                 painter = painterResource(id = R.drawable.location),
                 contentDescription = "",
+                tint = MaterialTheme.colorScheme.onPrimary,
             )
         }
 
@@ -48,12 +49,14 @@ fun weathertextComposable(
             Text(
                 text = coordinateText,
                 style = MaterialTheme.typography.displaySmall,
+                color = MaterialTheme.colorScheme.onPrimary,
 
             )
             Icon(
                 modifier = Modifier.size(20.dp),
                 painter = painterResource(id = R.drawable.drop_down_arrow),
                 contentDescription = "",
+                tint = MaterialTheme.colorScheme.onPrimary,
             )
         }
     }
