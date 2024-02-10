@@ -40,18 +40,17 @@ fun HazardHuntTheme(
 
             WindowCompat.getInsetsController(window, view)
                 .isAppearanceLightStatusBars = !darkTheme
-
-            // WindowCompat.getInsetsController(window, view)
-            //   .isAppearanceLightNavigationBars = !darkTheme
         }
     }
 
     androidx.compose.material.MaterialTheme(
         colors = if (darkTheme) {
             // LightThemeColors
-            DarkMD2Colors
-        } else {
             LightMD2Colors
+            // DarkMD2Colors
+        } else {
+            // LightMD2Colors
+            DarkMD2Colors
         },
     ) {
         MaterialTheme(
