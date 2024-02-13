@@ -14,10 +14,14 @@ import com.example.hazardhunt.ui.theme.HazardHuntTheme
 
 @Composable
 fun dotanddashedline(
+    modifier: Modifier = Modifier,
     circleColor: Color = Color.Blue,
     dottedlineColor: Color = Color.Blue,
 ) {
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+    Column(
+        modifier = modifier,
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
         for (i in BEGIN..STOP) {
             coloredcircle(circleColor = circleColor)
             if (i < STOP) {

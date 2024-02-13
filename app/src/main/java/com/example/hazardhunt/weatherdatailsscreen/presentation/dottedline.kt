@@ -20,7 +20,7 @@ fun dottedline(
         modifier = Modifier
             .padding(start = 10.dp, top = 5.dp, bottom = 5.dp)
             .width(10.dp)
-            .height(60.dp),
+            .height(80.dp),
 
     ) {
         drawLine(
