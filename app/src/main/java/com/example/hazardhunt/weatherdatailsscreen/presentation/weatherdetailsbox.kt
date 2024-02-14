@@ -34,13 +34,13 @@ fun weatherdetailsbox(
     Column(
         verticalArrangement = Arrangement.Center,
         modifier = Modifier
-            .height(70.dp)
+            .height(70.dp).padding(start = 7.dp)
             .width(256.dp).background(backgroundColor),
 
     ) {
         Column(
             modifier = Modifier
-                .padding(7.dp)
+                .padding(start = 10.dp)
                 .wrapContentHeight()
                 .width(200.dp),
         ) {
