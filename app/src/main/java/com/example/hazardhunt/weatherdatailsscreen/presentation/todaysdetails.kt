@@ -1,7 +1,7 @@
 // ktlint-disable filename
 package com.example.hazardhunt.weatherdatailsscreen.presentation
-
 import android.content.res.Configuration
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -21,25 +21,33 @@ import com.example.hazardhunt.R
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 
 @Composable
-fun iconandvalue() {
-    Row(verticalAlignment = Alignment.CenterVertically) {
+fun iconandvalue(
+    @DrawableRes icon: Int = R.drawable.humidity,
+    calibration: String = "E 8 kmh",
+    element: String = "wind",
+
+) {
+    Row(
+        modifier = Modifier.padding(10.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
         Icon(
             modifier = Modifier
                 .size(60.dp)
                 .padding(10.dp),
-            painter = painterResource(id = R.drawable.humidity),
+            painter = painterResource(icon),
             contentDescription = "",
             tint = MaterialTheme.colorScheme.onPrimary,
         )
         Column {
             Text(
-                text = "E 8 kmh",
+                text = calibration,
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onPrimary,
             )
             Text(
                 modifier = Modifier.padding(2.dp),
-                text = "wind",
+                text = element,
                 style = MaterialTheme.typography.titleMedium,
                 color = MaterialTheme.colorScheme.onPrimary,
             )
@@ -63,7 +71,9 @@ fun iconandtext() {
                 .fillMaxSize()
                 .fillMaxWidth(),
         ) {
-            iconandvalue()
+            //       iconandvalue()
+            multipleRow()
+            multipleRow()
         }
     }
 }
