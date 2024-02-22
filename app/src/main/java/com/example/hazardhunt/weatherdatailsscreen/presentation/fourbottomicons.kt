@@ -63,7 +63,6 @@ fun fouriconpreview() {
         ) {
             //       iconandvalue()
             multipleRow()
-            multipleRow()
         }
     }
 }

@@ -2,18 +2,56 @@
 package com.example.hazardhunt.weatherdatailsscreen.presentation
 
 import android.content.res.Configuration
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import com.example.hazardhunt.R
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 
 @Composable
-fun modulatedfourbottomicon() {
-    multipleRow()
-    multipleRow()
+fun modulatedfourbottomicon(
+    @DrawableRes firstIcon: Int = R.drawable.air,
+    @DrawableRes secondIcon: Int = R.drawable.humidity_low,
+    firstCalibration: String = "E 8 kmh",
+    secondCalibration: String = "61%",
+    firstweatherElement: String = "wind",
+    secondweatherElement: String = "humidity",
+    modifier: Modifier = Modifier
+        .fillMaxWidth()
+        .padding(10.dp),
+    @DrawableRes thirdIcon: Int = R.drawable.sunny,
+    @DrawableRes fourthIcon: Int = R.drawable.arrow_circle,
+    thirdCalibration: String = "11",
+    fourthCalibration: String = "11 kPa",
+    thirdweatherElement: String = "uv index",
+    fourthweatherElement: String = "pressure",
+) {
+    Column(modifier = modifier) {
+        multipleRow(
+            firstIcon = firstIcon,
+            secondIcon = secondIcon,
+            firstCalibration = firstCalibration,
+            secondCalibration = secondCalibration,
+            firstweatherElement = firstweatherElement,
+            secondweatherElement = secondweatherElement,
+            modifier,
+
+        )
+        multipleRow(
+            firstIcon = thirdIcon,
+            secondIcon = fourthIcon,
+            firstCalibration = thirdCalibration,
+            secondCalibration = fourthCalibration,
+            firstweatherElement = thirdweatherElement,
+            secondweatherElement = fourthweatherElement,
+        )
+    }
 }
 
 @Preview(
