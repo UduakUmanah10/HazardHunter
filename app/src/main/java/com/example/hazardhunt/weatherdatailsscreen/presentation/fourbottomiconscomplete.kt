@@ -28,7 +28,7 @@ fun modulatedfourbottomicon(
     @DrawableRes thirdIcon: Int = R.drawable.sunny,
     @DrawableRes fourthIcon: Int = R.drawable.arrow_circle,
     thirdCalibration: String = "11",
-    fourthCalibration: String = " 11 mpha",
+    fourthCalibration: String = "11 kPa",
     thirdweatherElement: String = "uv index",
     fourthweatherElement: String = "pressure",
 ) {
