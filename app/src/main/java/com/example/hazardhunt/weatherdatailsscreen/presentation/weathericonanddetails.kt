@@ -2,6 +2,7 @@
 package com.example.hazardhunt.weatherdatailsscreen.presentation
 
 import android.content.res.Configuration
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -16,6 +17,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.hazardhunt.R
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
+import com.example.hazardhunt.ui.theme.first
+import com.example.hazardhunt.ui.theme.fourth
+import com.example.hazardhunt.ui.theme.second
+import com.example.hazardhunt.ui.theme.third
 
 typealias start = Int
 typealias end = Int
@@ -31,6 +36,7 @@ fun weathericonanddetails(
     temperatureValue: String = "30",
     timeoftheDay: String = "Afternoon",
     imageComponent: Int = R.drawable.sun_and_cloud,
+    text: String = "initials ",
 ) {
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
@@ -44,6 +50,8 @@ fun weathericonanddetails(
             backgroundColor = backgroundColor,
             subScript = subScript,
             temperatureValue = temperatureValue,
+            text = text,
+
         )
     }
 }
@@ -51,7 +59,8 @@ fun weathericonanddetails(
 @Composable
 fun new(
     modifier: Modifier =
-        Modifier.width(380.dp)
+        Modifier
+            .width(380.dp)
             .padding(bottom = 40.dp),
 
     columModifier: Modifier = Modifier
@@ -82,6 +91,50 @@ fun new(
     }
 }
 
+data class Weatherdetails(
+    val timeoftheDay: String,
+    @DrawableRes val icon: Int,
+    val temperature: String,
+    val details: String,
+    val color: Color,
+)
+
+val items: List<Weatherdetails> = arrayListOf(
+    Weatherdetails("Morning", R.drawable.sun_and_cloud, "30", "warmest day of the week", first),
+    Weatherdetails("Afternoon", R.drawable.clearsky, "30", "turning cloudy and windy", second),
+    Weatherdetails("Evening", R.drawable.moonandrain, "30", "wind light and chance of rain", third),
+    Weatherdetails("Night", R.drawable.halfmoon, "30", "chance of heavy rain", fourth),
+)
+
+@Composable
+fun refactoredWeatherdetails(
+    modifier: Modifier =
+        Modifier
+            .width(380.dp)
+            .padding(bottom = 40.dp),
+    subScript: String = "°",
+    items: List<Weatherdetails>,
+) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .fillMaxWidth(),
+    ) {
+        items.forEach { details ->
+
+            weathericonanddetails(
+                backgroundColor = details.color,
+                subScript = subScript,
+                temperatureValue = details.temperature,
+                timeoftheDay = details.timeoftheDay,
+                imageComponent = details.icon,
+                text = details.details,
+                modifier = modifier,
+            )
+        }
+    }
+}
+
 @Preview(
     name = "Night Mode",
     uiMode = Configuration.UI_MODE_NIGHT_YES,
@@ -93,7 +146,8 @@ fun new(
 @Composable
 fun weathericonanddetailspreview(
     modifier: Modifier =
-        Modifier.width(380.dp)
+        Modifier
+            .width(380.dp)
             .padding(bottom = 40.dp),
 
     columModifier: Modifier = Modifier
@@ -107,18 +161,25 @@ fun weathericonanddetailspreview(
     imageComponent: Int = R.drawable.sun_and_cloud,
 ) {
     HazardHuntTheme {
-        new(
-            modifier = Modifier.width(380.dp)
+        refactoredWeatherdetails(
+            modifier = Modifier
+                .width(380.dp)
                 .padding(bottom = 40.dp),
-            columModifier = Modifier
-                .fillMaxSize()
-                .fillMaxWidth(),
-
-            backgroundColor = Color.Blue,
-            subScript = "°",
-            temperatureValue = "30",
-            timeoftheDay = "Afternoon",
-            imageComponent = R.drawable.sun_and_cloud,
+            items = items,
         )
+        //  new(
+        //    modifier = Modifier
+        //      .width(380.dp)
+        //    .padding(bottom = 40.dp),
+        // columModifier = Modifier
+        //   .fillMaxSize()
+        //  .fillMaxWidth(),
+
+        // backgroundColor = Color.Blue,
+        // subScript = "°",
+        // temperatureValue = "30",
+        // timeoftheDay = "Afternoon",
+        // imageComponent = R.drawable.sun_and_cloud,
+        // )
     }
 }

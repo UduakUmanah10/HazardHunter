@@ -29,6 +29,7 @@ fun weatherdetailsbox(
     @ColorInt backgroundColor: Color = Color.Blue,
     temperatureValue: String = "30",
     subScript: String = "°",
+    text: String = "Hottest Day of the Week",
 
 ) {
     Column(
@@ -60,7 +61,7 @@ fun weatherdetailsbox(
                     .fillMaxWidth().wrapContentHeight(),
 
                 // i am adding you
-                text = "Hottest Day of the Week",
+                text = text,
                 style = MaterialTheme.typography.displaySmall,
                 color = MaterialTheme.colorScheme.onPrimary,
             )
