@@ -17,7 +17,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -41,10 +40,10 @@ fun weathericonandtimeoftheday(
             Image(
                 painter = painterResource(id = imageComponent),
                 contentDescription = "",
-                contentScale = ContentScale.Crop,
+                // contentScale = ContentScale.Crop,
                 modifier = Modifier.padding(top = 7.dp)
-                    .height(38.dp)
-                    .width(39.dp),
+                    .height(40.dp)
+                    .width(40.dp),
             )
         }
 

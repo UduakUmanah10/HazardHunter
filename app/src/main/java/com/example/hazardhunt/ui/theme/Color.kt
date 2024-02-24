@@ -6,6 +6,11 @@ import androidx.compose.material.lightColors
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.ui.graphics.Color
+val first = Color(0xFF90D0FF)
+val second = Color(0xFFFFE1B2)
+val third = Color(0xFFFFBAC1)
+val fourth = Color(0xFF02A8A8)
+val circledot = Color(0xFF617BE3)
 
 private val light_primary = Color(0xFF006495)
 private val light_onPrimary = Color(0xFFffffff)
