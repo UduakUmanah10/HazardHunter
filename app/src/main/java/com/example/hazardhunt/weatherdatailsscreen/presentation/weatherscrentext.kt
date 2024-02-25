@@ -19,10 +19,26 @@ fun weatherscrentest(text: String = "Feburary 2020") {
     weatherdetailsTopappbar()
 
     Text(
-        modifier = Modifier.fillMaxWidth().padding(30.dp),
-        text = "Feburary 2020",
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(25.dp),
+        text = text,
         style = MaterialTheme.typography.headlineMedium,
         color = MaterialTheme.colorScheme.onPrimary,
+    )
+    circleddotandweatherdetails()
+    Text(
+        text = "Todays Details",
+        style = MaterialTheme.typography.bodyMedium,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 30.dp, bottom = 10.dp),
+        color = MaterialTheme.colorScheme.onPrimary,
+    )
+    modulatedfourbottomicon(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 13.dp, end = 13.dp),
     )
 }
 

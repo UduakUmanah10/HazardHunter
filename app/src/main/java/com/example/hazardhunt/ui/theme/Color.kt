@@ -40,7 +40,7 @@ private val light_inverseSurface = Color(0xFF2f3032)
 private val light_ColorBar = Color(0xFFf4f4f2)
 
 private val dark_primary = Color(0xFF8bcdff)
-private val dark_onPrimary = Color(0xFF000000)
+private val dark_onPrimary = Color(0xFF111810)
 private val dark_primaryContainer = Color(0xFF004b72)
 private val dark_onPrimaryContainer = Color(0xFFc9e6ff)
 private val dark_secondary = Color(0xFFb7c8d9)

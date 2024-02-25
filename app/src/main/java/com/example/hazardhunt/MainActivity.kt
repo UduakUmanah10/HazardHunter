@@ -76,6 +76,7 @@ class MainActivity : ComponentActivity() {
             HazardHuntTheme {
                 val navController = rememberNavController()
                 val startdestination = navigationViewMode.startdestination
+
                 ScreenNavigation(
                     navHostController = navController,
                     startDestination = startdestination,

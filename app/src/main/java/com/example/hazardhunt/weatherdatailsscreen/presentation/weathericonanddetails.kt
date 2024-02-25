@@ -117,7 +117,6 @@ fun refactoredWeatherdetails(
 ) {
     Column(
         modifier = Modifier
-            .fillMaxSize()
             .fillMaxWidth(),
     ) {
         items.forEach { details ->
