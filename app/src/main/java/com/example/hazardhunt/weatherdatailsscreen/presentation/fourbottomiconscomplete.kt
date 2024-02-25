@@ -6,11 +6,9 @@ import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.example.hazardhunt.R
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 
@@ -22,13 +20,11 @@ fun modulatedfourbottomicon(
     secondCalibration: String = "61%",
     firstweatherElement: String = "wind",
     secondweatherElement: String = "humidity",
-    modifier: Modifier = Modifier
-        .fillMaxWidth()
-        .padding(10.dp),
+    modifier: Modifier = Modifier,
     @DrawableRes thirdIcon: Int = R.drawable.sunny,
     @DrawableRes fourthIcon: Int = R.drawable.arrow_circle,
     thirdCalibration: String = "11",
-    fourthCalibration: String = "11 kPa",
+    fourthCalibration: String = "11 mkPa",
     thirdweatherElement: String = "uv index",
     fourthweatherElement: String = "pressure",
 ) {

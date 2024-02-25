@@ -1,0 +1,20 @@
+
+
+
+<vector android:height="50dp" android:viewportHeight="24"
+    android:viewportWidth="24" android:width="50dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:name="animationGroup"
+        android:pivotX="12"
+        android:pivotY="12"
+        >
+
+    <path android:fillColor="#95a5a6" android:pathData="m3,3v10c0,4.2 3.632,8 9,10 5.368,-2 9,-5.8 9,-10v-10h-18z"/>
+    <path android:fillColor="#ecf0f1" android:pathData="m3,2v10c0,4.2 3.632,8 9,10 5.368,-2 9,-5.8 9,-10v-10h-18z"/>
+    <path android:fillColor="#bdc3c7" android:pathData="m3,2v10c0,4.2 3.632,8 9,10v-20h-9z"/>
+    <path android:fillColor="#27ae60" android:pathData="m5,4v8c0,3.4 2.825,6.4 7,8 4.175,-1.6 7,-4.6 7,-8v-8h-14z"/>
+    <path android:fillColor="#2ecc71" android:pathData="m12,4v16c4.175,-1.6 7,-4.6 7,-8v-8h-7z"/>
+    <path android:fillColor="#27ae60" android:pathData="m16,9 l-4.683,4.6 -1.951,-1.9 -1.659,1.7 1.951,1.9 1.561,1.6 0.097,0.1 6.342,-6.4 -1.659,-1.6z"/>
+    <path android:fillColor="#ecf0f1" android:pathData="m16,8 l-4.683,4.6 -1.951,-1.9 -1.659,1.7 1.951,1.9 1.561,1.6 0.097,0.1 6.342,-6.4 -1.659,-1.6z"/>
+    </group>
+</vector>
