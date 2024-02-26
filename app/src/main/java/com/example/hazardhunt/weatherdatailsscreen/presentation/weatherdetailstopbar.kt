@@ -2,11 +2,14 @@
 package com.example.hazardhunt.weatherdatailsscreen.presentation
 
 import android.content.res.Configuration
-import androidx.compose.foundation.layout.size
+import androidx.annotation.DrawableRes
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -16,20 +19,29 @@ import com.example.hazardhunt.core.CustomCenterTopAppbar
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 
 @Composable
-fun weatherdetailsTopappbar() {
+fun weatherdetailsTopappbar(
+    titleContentColor: Color = MaterialTheme.colorScheme.onSecondary,
+    containerColor: Color = MaterialTheme.colorScheme.outline,
+    titleText: String = "Today",
+    onClick: () -> Unit = {},
+    @DrawableRes icon: Int = R.drawable.chevronleft,
+    iconColor: Color = MaterialTheme.colorScheme.secondaryContainer,
+    clickable: () -> Unit = {},
+
+) {
     CustomCenterTopAppbar(
-        titleContentColor = MaterialTheme.colorScheme.onSecondary,
-        containerColor = MaterialTheme.colorScheme.outline,
+        titleContentColor = titleContentColor,
+        containerColor = containerColor,
         scrollContainerColor = MaterialTheme.colorScheme.error,
-        title = "Today",
+        title = titleText,
         // navIcon = R.drawable.mail,
-        onNavigationIconClicked = {},
+        onNavigationIconClicked = onClick,
         navigationIcon = {
             Icon(
-                painter = painterResource(id = R.drawable.chevronleft),
+                painter = painterResource(id = icon),
                 contentDescription = stringResource(R.string.Password),
-                tint = MaterialTheme.colorScheme.secondaryContainer,
-                modifier = Modifier.size(80.dp),
+                tint = iconColor,
+                modifier = Modifier.height(200.dp).width(100.dp),
             )
         },
 
