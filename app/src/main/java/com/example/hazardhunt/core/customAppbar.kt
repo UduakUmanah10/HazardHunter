@@ -15,6 +15,7 @@ import androidx.compose.ui.text.style.TextOverflow
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CustomCenterTopAppbar(
+    iconmodifier: Modifier = Modifier,
     titleContentColor: Color,
     scrollContainerColor: Color,
     containerColor: Color,
@@ -46,6 +47,7 @@ fun CustomCenterTopAppbar(
         },
         navigationIcon = {
             IconButton(
+                modifier = iconmodifier,
                 onClick = onNavigationIconClicked,
                 content = navigationIcon,
             )
