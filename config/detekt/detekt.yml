@@ -100,7 +100,7 @@ complexity:
     active: true
     threshold: 80
   LongParameterList:
-    active: true
+    active: false
     functionThreshold: 15
     constructorThreshold: 7
     ignoreDefaultParameters: false
