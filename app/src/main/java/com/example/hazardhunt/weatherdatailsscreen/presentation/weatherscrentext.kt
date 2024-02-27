@@ -27,6 +27,20 @@ fun weatherscrentest(
     iconColor: Color = MaterialTheme.colorScheme.secondaryContainer,
     clickable: () -> Unit = {},
     datetext: String = "Feburary 2020",
+    @DrawableRes firstIcon: Int = R.drawable.air,
+    @DrawableRes secondIcon: Int = R.drawable.humidity_low,
+    firstCalibration: String = "E 8 kmh",
+    secondCalibration: String = "61%",
+    firstweatherElement: String = "wind",
+    secondweatherElement: String = "humidity",
+    modifier: Modifier = Modifier,
+    @DrawableRes thirdIcon: Int = R.drawable.sunny,
+    @DrawableRes fourthIcon: Int = R.drawable.arrow_circle,
+    thirdCalibration: String = "11",
+    fourthCalibration: String = "11 mkPa",
+    thirdweatherElement: String = "uv index",
+    fourthweatherElement: String = "pressure",
+
 ) {
     weatherdetailsTopappbar(
         titleContentColor = titleContentColor,
@@ -55,6 +69,18 @@ fun weatherscrentest(
         color = MaterialTheme.colorScheme.onPrimary,
     )
     modulatedfourbottomicon(
+        firstIcon = firstIcon,
+        secondIcon = secondIcon,
+        thirdIcon = thirdIcon,
+        fourthIcon = fourthIcon,
+        firstweatherElement = firstweatherElement,
+        secondweatherElement = secondweatherElement,
+        thirdweatherElement = thirdweatherElement,
+        fourthweatherElement = fourthweatherElement,
+        firstCalibration = firstCalibration,
+        secondCalibration = secondCalibration,
+        thirdCalibration = thirdCalibration,
+        fourthCalibration = fourthCalibration,
         modifier = Modifier
             .fillMaxWidth()
             .padding(start = 13.dp, end = 13.dp),
