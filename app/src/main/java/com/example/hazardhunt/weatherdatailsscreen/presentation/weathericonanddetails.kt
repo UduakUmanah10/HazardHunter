@@ -42,7 +42,7 @@ fun weathericonanddetails(
         horizontalArrangement = Arrangement.SpaceBetween,
         modifier = modifier,
     ) {
-        weathericonandtimeoftheday(
+        reuseableiconandtext(
             textComponent = timeoftheDay,
             imageComponent = imageComponent,
         )

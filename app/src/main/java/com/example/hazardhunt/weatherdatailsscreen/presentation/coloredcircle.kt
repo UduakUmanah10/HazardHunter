@@ -12,12 +12,13 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun coloredcircle(
+    modifier: Modifier = Modifier
+        .height(20.dp)
+        .width(20.dp),
     circleColor: Color = Color.Blue,
 ) {
     Surface(
-        modifier = Modifier
-            .height(20.dp)
-            .width(20.dp),
+        modifier = modifier,
         color = circleColor,
         shape = CircleShape,
     ) {

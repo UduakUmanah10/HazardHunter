@@ -24,7 +24,7 @@ import com.example.hazardhunt.R
 import com.example.hazardhunt.ui.theme.HazardHuntTheme
 
 @Composable
-fun weathericonandtimeoftheday(
+fun reuseableiconandtext(
     modifier: Modifier = Modifier,
     @DrawableRes imageComponent: Int = R.drawable.sun_and_cloud,
     textComponent: String = "Afternoon",
@@ -80,7 +80,7 @@ fun weathericonandtimeofthedaypreview() {
                 .fillMaxSize()
                 .fillMaxWidth(),
         ) {
-            weathericonandtimeoftheday()
+            reuseableiconandtext()
         }
     }
 }
