@@ -60,8 +60,8 @@ jobs:
         with:
           releaseDirectory: app/build/outputs/bundle/release
           signingKeyBase64 : ${{ secrets.ANDROID_KEYSTORE }}
-          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-          alias: ${{ secrets.ALIAS }}
+          keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
+          alias: ${{ secrets.SAFEBUDDY_ALIAS }}
           keyPassword: ${{ secrets.ALIAS_PASSWORD }}
 
       - name: Set Up Authorization With Google Play Store
