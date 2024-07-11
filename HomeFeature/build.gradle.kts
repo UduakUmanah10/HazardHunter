@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.hazardhunt.homefeature"
+    namespace = "com.example.com.safebuddy.com.homefeature"
     compileSdk = 33
 
     defaultConfig {
