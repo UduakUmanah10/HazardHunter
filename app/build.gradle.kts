@@ -16,11 +16,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.hazardhunt"
+    namespace = "com.hazardhunt.safebuddy"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.hazardhunt"
+        applicationId = "com.hazardhunt.safebuddy"
         minSdk = 28
         targetSdk = 33
         versionCode = 1
