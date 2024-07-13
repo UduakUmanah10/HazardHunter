@@ -71,8 +71,8 @@ jobs:
         uses: r0adkll/upload-google-play@v1.1.3
         with:
           serviceAccountJson: service_account.json
-          packageName: com.hazardhunt.safebuddy
+          packageName: com.hazardhunt.safebuddyvv
           releaseFiles: app/build/outputs/bundle/release/app-release.aab
-          track: internal
+          track: 'internal'
           status: 'completed'
           whatsNewDirectory: whatsNew/
