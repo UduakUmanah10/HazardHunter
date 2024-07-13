@@ -65,7 +65,7 @@ jobs:
           keyPassword: ${{ secrets.ALIAS_PASSWORD }}
 
       - name: Set Up Authorization With Google Play Store
-        run: echo '${{ secrets.PLAY_AUTH_JSON  }}' > service_account.json
+        run: echo '${{ secrets.PLAY_AUTH_JSON }}' > service_account.json
 
       - name: Deploy Bundle to google play
         uses: r0adkll/upload-google-play@v1.1.3
