@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "917058052106",
+    "project_id": "safety-buddy-a812d",
+    "storage_bucket": "safety-buddy-a812d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917058052106:android:cfacb69a7f44af1c34fff3",
+        "android_client_info": {
+          "package_name": "com.hazardhunt.safebuddy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9bT9QweEzCyF6naV5-pDWjtwiJhB0DHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
