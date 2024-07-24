@@ -27,10 +27,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.hazardhunt.safebuddy" />
+                  <option name="mobileSdkAppId" value="1:917058052106:android:cfacb69a7f44af1c34fff3" />
+                  <option name="projectId" value="safety-buddy-a812d" />
+                  <option name="projectNumber" value="917058052106" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

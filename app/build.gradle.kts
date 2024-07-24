@@ -4,9 +4,11 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.kolinter)
+    alias(libs.plugins.fire.base)
     //alias(libs.plugins.hilt)
     alias(libs.plugins.kover)
     alias(libs.plugins.detekt)
+    alias(libs.plugins.crashlytics)
     id("kotlin-parcelize")
     //id("kotlin-kapt")
     id("org.jetbrains.kotlin.plugin.serialization")
@@ -91,6 +93,9 @@ dependencies {
     implementation (libs.androidx.material3)
     //implementation ("androidx.compose.material3:material3-window-size-class:1.1.2")
     implementation(libs.material3.window)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.crashlytics)
 
 
     // DURATION

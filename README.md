@@ -31,7 +31,7 @@ Educational content on personal safety, emergency preparedness, and self-defense
 Community Watch:
 
 - [ ] continous updates
-Continuous updates to enhance the app's features, security, and usability based on user feedback and emerging safety pratices.
+Continuous updates to enhance the app's features, security, and usab./gradlew buildility based on user feedback and emerging safety pratices.
 
 
 

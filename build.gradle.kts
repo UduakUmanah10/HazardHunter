@@ -5,6 +5,8 @@ plugins {
     alias(libs.plugins.kotlinAndroid) apply false
     alias(libs.plugins.detekt)
     alias(libs.plugins.kolinter)
+
+
     //alias(libs.plugins.ksp) apply false
     id("com.google.devtools.ksp") version "1.9.22-1.0.17" apply false
 
@@ -35,6 +37,11 @@ buildscript{
         classpath("com.google.dagger:hilt-android-gradle-plugin:2.48")
         //classpath ("com.google.protobuf:protobuf-gradle-plugin:0.8.19")
 
+    }
+
+    plugins {
+        alias(libs.plugins.fire.base) apply false
+        alias(libs.plugins.crashlytics) apply false
     }
 
 
