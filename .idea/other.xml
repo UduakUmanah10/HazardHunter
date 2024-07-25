@@ -4,6 +4,30 @@
     <option name="deviceSelectionList">
       <list>
         <PersistentDeviceSelectionData>
+          <option name="api" value="34" />
+          <option name="brand" value="google" />
+          <option name="codename" value="husky" />
+          <option name="id" value="husky" />
+          <option name="manufacturer" value="Google" />
+          <option name="name" value="Pixel 8 Pro" />
+          <option name="screenDensity" value="390" />
+          <option name="screenX" value="1008" />
+          <option name="screenY" value="2244" />
+          <option name="selected" value="true" />
+        </PersistentDeviceSelectionData>
+        <PersistentDeviceSelectionData>
+          <option name="api" value="34" />
+          <option name="brand" value="samsung" />
+          <option name="codename" value="q5q" />
+          <option name="id" value="q5q" />
+          <option name="manufacturer" value="Samsung" />
+          <option name="name" value="Galaxy Z Fold5" />
+          <option name="screenDensity" value="420" />
+          <option name="screenX" value="1812" />
+          <option name="screenY" value="2176" />
+          <option name="selected" value="true" />
+        </PersistentDeviceSelectionData>
+        <PersistentDeviceSelectionData>
           <option name="api" value="27" />
           <option name="brand" value="DOCOMO" />
           <option name="codename" value="F01L" />
@@ -125,17 +149,6 @@
           <option name="screenY" value="2960" />
         </PersistentDeviceSelectionData>
         <PersistentDeviceSelectionData>
-          <option name="api" value="34" />
-          <option name="brand" value="google" />
-          <option name="codename" value="husky" />
-          <option name="id" value="husky" />
-          <option name="manufacturer" value="Google" />
-          <option name="name" value="Pixel 8 Pro" />
-          <option name="screenDensity" value="390" />
-          <option name="screenX" value="1008" />
-          <option name="screenY" value="2244" />
-        </PersistentDeviceSelectionData>
-        <PersistentDeviceSelectionData>
           <option name="api" value="30" />
           <option name="brand" value="motorola" />
           <option name="codename" value="java" />
@@ -189,17 +202,6 @@
           <option name="screenDensity" value="420" />
           <option name="screenX" value="1768" />
           <option name="screenY" value="2208" />
-        </PersistentDeviceSelectionData>
-        <PersistentDeviceSelectionData>
-          <option name="api" value="34" />
-          <option name="brand" value="samsung" />
-          <option name="codename" value="q5q" />
-          <option name="id" value="q5q" />
-          <option name="manufacturer" value="Samsung" />
-          <option name="name" value="Galaxy Z Fold5" />
-          <option name="screenDensity" value="420" />
-          <option name="screenX" value="1812" />
-          <option name="screenY" value="2176" />
         </PersistentDeviceSelectionData>
         <PersistentDeviceSelectionData>
           <option name="api" value="30" />
@@ -259,5 +261,6 @@
         </PersistentDeviceSelectionData>
       </list>
     </option>
+    <option name="selectedCloudProject" value="safety-buddy-9dfaa" />
   </component>
 </project>

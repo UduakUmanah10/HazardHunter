@@ -2,6 +2,7 @@
 package com.hazardhunt.safebuddy.homescreen.presentation
 
 import android.content.res.Configuration
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -26,7 +27,10 @@ import com.hazardhunt.safebuddy.R
 import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
 @Composable
-fun addSurface(modifier: Modifier = Modifier) {
+fun addSurface(
+    modifier: Modifier = Modifier,
+    @DrawableRes icon: Int = R.drawable.add,
+) {
     Surface(
         modifier = modifier,
     ) {
@@ -36,7 +40,7 @@ fun addSurface(modifier: Modifier = Modifier) {
             verticalArrangement = Arrangement.Center,
         ) {
             Icon(
-                painter = painterResource(id = R.drawable.add),
+                painter = painterResource(id = icon),
                 contentDescription = "add image",
                 tint = Color.Black,
                 modifier = Modifier
