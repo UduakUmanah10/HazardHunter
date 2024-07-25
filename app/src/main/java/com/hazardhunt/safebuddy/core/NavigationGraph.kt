@@ -3,7 +3,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
@@ -11,10 +10,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.hazardhunt.safebuddy.login.presentation.LoginScreen
-import com.hazardhunt.safebuddy.onboarding.domain.Navigationviewmodel
 import com.hazardhunt.safebuddy.onboarding.presentation.OnBoardingViewModel
 import com.hazardhunt.safebuddy.onboarding.presentation.OnboardingScreen
-import com.hazardhunt.safebuddy.onboarding.presentation.Screen
 import com.hazardhunt.safebuddy.onboarding.presentation.navgraph.NavigationRoutes
 import com.hazardhunt.safebuddy.savedtaskscreen.HomeScreen
 import com.hazardhunt.safebuddy.signup.presentation.SignUpPage
@@ -90,33 +87,5 @@ fun ScreenNavigation(
                 onAddButtonClicked = {},
             )
         }
-    }
-}
-
-@Composable
-fun onBoarding(
-    navHostController: NavHostController,
-    navigationViewModel: Navigationviewmodel = hiltViewModel(),
-    signup: () -> Unit,
-) {
-    val viewmodel: OnBoardingViewModel = hiltViewModel()
-
-    val start = navigationViewModel.startDestination.collectAsState()
-
-    if (start.value == Screen.onboardingScreen.route) {
-        OnboardingScreen(
-            navController = navHostController,
-            event = viewmodel::onEvent,
-        )
-    }
-
-    if (start.value == Screen.welcomeScreen.route) {
-        LoginScreen(
-            loginCompleted = {
-                navHostController.popBackStack()
-                navHostController.navigate("first")
-            },
-            signup = signup,
-        )
     }
 }

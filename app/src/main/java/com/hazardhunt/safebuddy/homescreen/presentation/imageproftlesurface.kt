@@ -1,5 +1,6 @@
 // ktlint-disable filename
 package com.hazardhunt.safebuddy.homescreen.presentation
+
 import android.content.res.Configuration
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
@@ -37,6 +38,7 @@ fun AnimatedBorderCard(
     gradient: Brush = Brush.sweepGradient(listOf(Color.Gray, Color.White)),
     animationDuration: Int = 10000,
     onCardClick: () -> Unit = {},
+    animate: Boolean = true,
     content: @Composable () -> Unit,
 ) {
     val infiniteTransition = rememberInfiniteTransition(label = "Infinite Color Animation")
@@ -57,19 +59,28 @@ fun AnimatedBorderCard(
         shape = shape,
     ) {
         Surface(
-            modifier = Modifier
-                .wrapContentSize()
-                .padding(borderWidth)
-                .drawWithContent {
-                    rotate(degrees = degrees) {
-                        drawCircle(
-                            brush = gradient,
-                            radius = size.width,
-                            blendMode = BlendMode.SrcIn,
-                        )
-                    }
-                    drawContent()
+            modifier = Modifier.then(
+                if (animate) {
+                    Modifier
+                        .wrapContentSize()
+                        .padding(borderWidth)
+                        .drawWithContent {
+                            rotate(degrees = degrees) {
+                                drawCircle(
+                                    brush = gradient,
+                                    radius = size.width,
+                                    blendMode = BlendMode.SrcIn,
+                                )
+                            }
+                            drawContent()
+                        }
+                } else {
+                    Modifier
+                        .wrapContentSize()
+                        .padding(1.dp)
                 },
+
+            ),
             color = MaterialTheme.colorScheme.surface,
             shape = shape,
         ) {

@@ -46,8 +46,9 @@ fun profileSurfaceandNotification(
             backgroundColor = notifiactionBackgroundcolor,
             painterResource = R.drawable.notifications,
         )
-        AnimatedBorderCard {
+        AnimatedBorderCard(animate = false) {
             profileImageSurface(
+                showaddSurface = true,
                 surfaceHeight = animatedBorderHeight,
                 surfaceWidth = animatedBorderWidth,
                 surfaceShape = animatedSurfaceShape,
