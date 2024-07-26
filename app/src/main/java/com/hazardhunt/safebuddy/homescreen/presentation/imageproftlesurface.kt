@@ -8,6 +8,7 @@ import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
@@ -29,12 +30,30 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.hazardhunt.safebuddy.R
 import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
+/**
+ *
+ * This is a surface composable that has a functionality of displaying the profile picture of the users in two
+ * modes. one of the display mode is to display the profile pictures with a moving animated background and the
+ * other mode is to display the user profile picture without an animated border.
+ * the functionality of the border is controlled by a boolean @param[animate] parameter in the function.
+ * other parameters in the composable are:
+ *
+ * @param[modifier] to modify the composable
+ * @param[shape] specifies the shape of the composable
+ * @param[animatedBorderwidth] specifies the width of the animation border width
+ * @param[gradient] specifies thw width of the gradient
+ * @param[animationDuration]  specifies the animation duration
+ * @param[onCardClick] provides a clickable response for the composable
+ * @param[content] specifies the composable item that would be wrapped in the surface.
+ *
+ * **/
 
 @Composable
 fun AnimatedBorderCard(
     modifier: Modifier = Modifier,
     shape: Shape = CircleShape,
-    borderWidth: Dp = 2.dp,
+    animatedBorderwidth: Dp = 2.dp,
+    unanimatedBorderWidth: Dp = 1.dp,
     gradient: Brush = Brush.sweepGradient(listOf(Color.Gray, Color.White)),
     animationDuration: Int = 10000,
     onCardClick: () -> Unit = {},
@@ -57,13 +76,14 @@ fun AnimatedBorderCard(
             .clip(shape)
             .clickable { onCardClick() },
         shape = shape,
+
     ) {
         Surface(
             modifier = Modifier.then(
                 if (animate) {
                     Modifier
                         .wrapContentSize()
-                        .padding(borderWidth)
+                        .padding(animatedBorderwidth)
                         .drawWithContent {
                             rotate(degrees = degrees) {
                                 drawCircle(
@@ -77,12 +97,13 @@ fun AnimatedBorderCard(
                 } else {
                     Modifier
                         .wrapContentSize()
-                        .padding(1.dp)
                 },
 
             ),
             color = MaterialTheme.colorScheme.surface,
             shape = shape,
+            border = if (animate) null else BorderStroke(unanimatedBorderWidth, Color.White),
+
         ) {
             content()
         }
@@ -101,7 +122,7 @@ fun AnimatedBorderCard(
 fun PofileImagSurface() {
     HazardHuntTheme {
         // ProfileImageSurface()
-        AnimatedBorderCard {
+        AnimatedBorderCard(animate = false) {
             profileImageSurface(
                 surfaceHeight = 30.dp,
                 surfaceWidth = 30.dp,
