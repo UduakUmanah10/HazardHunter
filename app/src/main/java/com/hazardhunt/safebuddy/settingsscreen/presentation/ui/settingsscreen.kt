@@ -1,11 +1,23 @@
+// ktlint-disable filename
 package com.hazardhunt.safebuddy.settingsscreen.presentation.ui
 
 import android.content.res.Configuration
+import androidx.annotation.DrawableRes
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.Surface
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -28,14 +40,65 @@ import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 * */
 
 @Composable
-fun settingsscreen() {
+fun Individualsettingsitem() {
+    Column() {
+        IndividualsettingComponant()
+        HorizontalDivider(thickness = 2.dp)
+    }
+}
+
+@Composable
+fun IndividualsettingComponant(
+    @DrawableRes surfaceIcon: Int = R.drawable.arrow_circle,
+    surfaceColor: Color = Color.Blue,
+    text: String = "settings",
+    onClickEnabled: Boolean = true,
+    onIconClicked: () -> Unit = {},
+) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween,
 
-        modifier = Modifier.fillMaxWidth().padding(start = 20.dp),
+        modifier = Modifier.wrapContentWidth()
+            .fillMaxWidth()
+            .padding(start = 20.dp, end = 20.dp),
     ) {
-        Icon(painter = painterResource(id = R.drawable.arrow_circle), contentDescription = "", tint = Color.Blue)
-        Text(text = " settings", color = Color.White, modifier = Modifier.padding(15.dp))
+        Iconandsurface(
+            surfaceIcon = surfaceIcon,
+            surfacetintColor = surfaceColor,
+
+        )
+        Text(text = text, color = Color.White, modifier = Modifier.padding(35.dp))
+        Icon(
+            painter = painterResource(id = R.drawable.chevron_right),
+            contentDescription = "",
+            tint = Color.Blue,
+            modifier = Modifier
+                .padding(3.dp)
+                .size(30.dp).clickable(onClick = onIconClicked, enabled = onClickEnabled),
+        )
+    }
+}
+
+@OptIn(ExperimentalMaterialApi::class)
+@Composable
+fun Iconandsurface(
+    @DrawableRes surfaceIcon: Int = R.drawable.arrow_circle,
+    surfacetintColor: Color = Color.Blue,
+) {
+    Surface(
+        modifier = Modifier
+            .height(37.dp)
+            .width(37.dp),
+        color = Color.Red,
+        shape = RoundedCornerShape(5.dp),
+    ) {
+        Icon(
+            painter = painterResource(id = surfaceIcon),
+            contentDescription = "",
+            tint = surfacetintColor,
+            modifier = Modifier.padding(3.dp),
+        )
     }
 }
 
@@ -55,7 +118,7 @@ fun iconandtext() {
                 .fillMaxSize()
                 .fillMaxWidth(),
         ) {
-            settingsscreen()
+            Individualsettingsitem()
         }
     }
 }

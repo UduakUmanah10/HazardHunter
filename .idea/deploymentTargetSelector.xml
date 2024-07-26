@@ -4,20 +4,14 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2024-07-25T08:27:34.630329200Z">
+        <DropdownSelection timestamp="2024-07-26T10:29:29.572291800Z">
           <Target type="DEFAULT_BOOT">
-            <handle>
-              <DeviceId pluginId="FirebaseDirectAccess" identifier="reservation=projects/safety-buddy-9dfaa/deviceSessions/session-161zr2js7otpu" />
-            </handle>
             <template>
-              <DeviceId pluginId="FirebaseDirectAccess" type="TEMPLATE" identifier="model_id=q5q/34" />
+              <DeviceId pluginId="FirebaseDirectAccess" type="TEMPLATE" identifier="model_id=husky/34" />
             </template>
           </Target>
         </DropdownSelection>
         <DialogSelection />
-      </SelectionState>
-      <SelectionState runConfigName="weathertextpreview - Day mode">
-        <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
   </component>
