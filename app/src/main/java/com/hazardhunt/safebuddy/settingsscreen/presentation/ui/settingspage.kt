@@ -24,33 +24,32 @@ import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
 @Composable
 fun settingspage() {
-    CustomCenterTopAppbar(
-        containerColor = Color.Transparent,
-
-        modifier = Modifier.padding(bottom = 50.dp),
-
-        titleContentColor = MaterialTheme.colorScheme.onSecondary,
-
-        scrollContainerColor = MaterialTheme.colorScheme.error,
-        title = "Analytics",
-        // navIcon = R.drawable.mail,
-        onNavigationIconClicked = {},
-        navigationIcon = {
-            Icon(
-                painter = painterResource(id = R.drawable.chevronleft),
-                contentDescription = stringResource(R.string.Password),
-                tint = MaterialTheme.colorScheme.secondaryContainer,
-                modifier = Modifier.size(dimensionResource(id = R.dimen.centerBarIcon)),
-            )
-        },
-        actionIcon = {
-        },
-        actionIconAction = {},
-    )
-
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
+        CustomCenterTopAppbar(
+            containerColor = Color.Transparent,
+
+            modifier = Modifier.padding(bottom = 50.dp),
+
+            titleContentColor = MaterialTheme.colorScheme.onSecondary,
+
+            scrollContainerColor = MaterialTheme.colorScheme.error,
+            title = "Analytics",
+            // navIcon = R.drawable.mail,
+            onNavigationIconClicked = {},
+            navigationIcon = {
+                Icon(
+                    painter = painterResource(id = R.drawable.chevronleft),
+                    contentDescription = stringResource(R.string.Password),
+                    tint = MaterialTheme.colorScheme.secondaryContainer,
+                    modifier = Modifier.size(dimensionResource(id = R.dimen.centerBarIcon)),
+                )
+            },
+            actionIcon = {
+            },
+            actionIconAction = {},
+        )
         surface()
         Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
             Text(text = "Uduak Umanah")
