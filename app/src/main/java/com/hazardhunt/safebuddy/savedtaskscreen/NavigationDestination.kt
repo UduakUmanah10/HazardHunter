@@ -47,7 +47,6 @@ import com.hazardhunt.safebuddy.addnewtask.presentation.AddNewTasksScreen
 import com.hazardhunt.safebuddy.homescreen.presentation.HomeScreen
 import com.hazardhunt.safebuddy.insight.presenatation.InsightsScreen
 import com.hazardhunt.safebuddy.savedtaskscreen.presentation.SafetyTaskScreen
-import com.hazardhunt.safebuddy.sensorscreen.presentation.sensorScreen
 import com.hazardhunt.safebuddy.settingsscreen.presentation.ui.settingspage
 import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
@@ -150,7 +149,7 @@ fun HomeScreen(
                 }
                 composable("SettingsScreen") {
                     // MapScreen()
-                    //sensorScreen()
+                    // sensorScreen()
                     // testscreen()
                     settingspage()
                 }

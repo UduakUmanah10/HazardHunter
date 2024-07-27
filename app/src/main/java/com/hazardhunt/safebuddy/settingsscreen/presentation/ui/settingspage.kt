@@ -24,12 +24,9 @@ import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
 @Composable
 fun settingspage() {
-
-
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-
         CustomCenterTopAppbar(
             containerColor = Color.Transparent,
 
