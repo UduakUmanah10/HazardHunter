@@ -1,6 +1,5 @@
 // ktlint-disable filename
 package com.hazardhunt.safebuddy.homescreen.presentation
-
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize

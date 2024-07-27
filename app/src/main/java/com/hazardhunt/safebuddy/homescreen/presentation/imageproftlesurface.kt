@@ -28,7 +28,7 @@ import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.hazardhunt.safebuddy.R
+import com.hazardhunt.safebuddy.settingsscreen.presentation.ui.surface
 import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 /**
  *
@@ -83,7 +83,7 @@ fun AnimatedBorderCard(
                 if (animate) {
                     Modifier
                         .wrapContentSize()
-                        .padding(animatedBorderwidth)
+                        .padding()
                         .drawWithContent {
                             rotate(degrees = degrees) {
                                 drawCircle(
@@ -102,7 +102,7 @@ fun AnimatedBorderCard(
             ),
             color = MaterialTheme.colorScheme.surface,
             shape = shape,
-            border = if (animate) null else BorderStroke(unanimatedBorderWidth, Color.White),
+            border = if (animate) null else BorderStroke(unanimatedBorderWidth, Color.Red),
 
         ) {
             content()
@@ -123,13 +123,7 @@ fun PofileImagSurface() {
     HazardHuntTheme {
         // ProfileImageSurface()
         AnimatedBorderCard(animate = false) {
-            profileImageSurface(
-                surfaceHeight = 30.dp,
-                surfaceWidth = 30.dp,
-                surfaceShape = CircleShape,
-                backgroundColor = MaterialTheme.colorScheme.surface,
-                painterResource = R.drawable.profileimage,
-            )
+            surface()
         }
     }
 }

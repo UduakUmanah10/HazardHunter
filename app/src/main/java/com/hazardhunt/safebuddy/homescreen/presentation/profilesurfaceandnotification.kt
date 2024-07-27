@@ -48,7 +48,7 @@ fun profileSurfaceandNotification(
         )
         AnimatedBorderCard(animate = false) {
             profileImageSurface(
-                showaddSurface = true,
+                isimageuploaded = true,
                 surfaceHeight = animatedBorderHeight,
                 surfaceWidth = animatedBorderWidth,
                 surfaceShape = animatedSurfaceShape,
