@@ -43,6 +43,7 @@ fun CustomCenterTopAppbar(
                 title,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
+                color = Color.White,
             )
         },
         navigationIcon = {
