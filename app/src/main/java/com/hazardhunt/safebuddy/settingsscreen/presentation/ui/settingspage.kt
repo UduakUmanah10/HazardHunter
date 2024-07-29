@@ -25,17 +25,18 @@ import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 @Composable
 fun settingspage() {
     Column(
+        modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         CustomCenterTopAppbar(
             containerColor = Color.Transparent,
 
-            modifier = Modifier.padding(bottom = 50.dp),
+            modifier = Modifier.padding(bottom = 20.dp),
 
             titleContentColor = MaterialTheme.colorScheme.onSecondary,
 
             scrollContainerColor = MaterialTheme.colorScheme.error,
-            title = "Analytics",
+            title = "Settings",
             // navIcon = R.drawable.mail,
             onNavigationIconClicked = {},
             navigationIcon = {
@@ -51,16 +52,26 @@ fun settingspage() {
             actionIconAction = {},
         )
         surface()
+
         Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Uduak Umanah")
-            Text(text = "UduakUmanah10@gmail.com")
-            Text(text = "Registered at Feb 21 2024")
+            Text(text = "Uduak Umanah", style = MaterialTheme.typography.headlineLarge)
+            Text(text = "UduakUmanah10@gmail.com", style = MaterialTheme.typography.bodyMedium)
+            Text(
+                text = "Registered at Feb 21 2024",
+                style = MaterialTheme.typography.headlineSmall,
+                modifier = Modifier.padding(bottom = 7.dp),
+            )
         }
         settingsoption()
 
         Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Version 3.1.0 (10)")
-            Text(text = "By Uduak Unmanah")
+            Text(
+                text = "Version 3.1.0 (10)",
+                style = MaterialTheme.typography.titleSmall,
+                color = Color.White,
+                modifier = Modifier.padding(top = 20.dp),
+            )
+            Text(text = "By Uduak Unmanah", style = MaterialTheme.typography.titleSmall, color = Color.White)
         }
     }
 }

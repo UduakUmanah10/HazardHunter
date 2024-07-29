@@ -13,9 +13,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Surface
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -40,10 +38,20 @@ import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 * */
 
 @Composable
-fun Individualsettingsitem() {
-    Column() {
-        IndividualsettingComponant()
-        HorizontalDivider(thickness = 2.dp)
+fun Individualsettingsitem(
+    modifier: Modifier = Modifier.height(60.dp).fillMaxWidth().padding(10.dp),
+    @DrawableRes surfaceIcon: Int = R.drawable.arrow_circle,
+    surfaceColor: Color = Color.Blue,
+    textDescription: String = "settings",
+    showdivider: Boolean = false,
+) {
+    Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+        IndividualsettingComponant(
+            surfaceIcon = surfaceIcon,
+            surfaceColor = surfaceColor,
+            text = textDescription,
+        )
+        if (showdivider) HorizontalDivider(thickness = 1.dp, modifier = Modifier.padding(top = 10.dp))
     }
 }
 
@@ -59,45 +67,68 @@ fun IndividualsettingComponant(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
 
-        modifier = Modifier.wrapContentWidth()
+        modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 20.dp, end = 20.dp),
+            .padding(start = 7.dp, end = 7.dp),
     ) {
-        Iconandsurface(
+        Iconandtext(
+            surfaceColor = surfaceColor,
             surfaceIcon = surfaceIcon,
-            surfacetintColor = surfaceColor,
-
+            surfaceIconcolor = Color.White,
+            text = text,
         )
-        Text(text = text, color = Color.White, modifier = Modifier.padding(35.dp))
+
         Icon(
             painter = painterResource(id = R.drawable.chevron_right),
             contentDescription = "",
             tint = Color.Blue,
             modifier = Modifier
-                .padding(3.dp)
-                .size(30.dp).clickable(onClick = onIconClicked, enabled = onClickEnabled),
+                .size(30.dp)
+                .clickable(onClick = onIconClicked, enabled = onClickEnabled),
         )
     }
 }
 
-@OptIn(ExperimentalMaterialApi::class)
+@Composable
+fun Iconandtext(
+    surfaceColor: Color,
+    surfaceIconcolor: Color = Color.Red,
+    @DrawableRes surfaceIcon: Int,
+    text: String,
+) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        Iconandsurface(
+            surfaceIcon = surfaceIcon,
+            surfacetintColor = surfaceIconcolor,
+            surfacecolor = surfaceColor,
+        )
+        Text(
+            text = text,
+            style = androidx.compose.material3.MaterialTheme.typography.titleMedium,
+            modifier = Modifier.padding(start = 15.dp),
+
+        )
+    }
+}
+
 @Composable
 fun Iconandsurface(
     @DrawableRes surfaceIcon: Int = R.drawable.arrow_circle,
     surfacetintColor: Color = Color.Blue,
+    surfacecolor: Color = Color.Red,
 ) {
     Surface(
         modifier = Modifier
             .height(37.dp)
             .width(37.dp),
-        color = Color.Red,
+        color = surfacecolor,
         shape = RoundedCornerShape(5.dp),
     ) {
         Icon(
             painter = painterResource(id = surfaceIcon),
             contentDescription = "",
             tint = surfacetintColor,
-            modifier = Modifier.padding(3.dp),
+            modifier = Modifier.padding(5.dp),
         )
     }
 }
