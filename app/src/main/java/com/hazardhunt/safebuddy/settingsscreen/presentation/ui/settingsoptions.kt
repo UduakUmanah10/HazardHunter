@@ -4,8 +4,6 @@ package com.hazardhunt.safebuddy.settingsscreen.presentation.ui
 import android.content.res.Configuration
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Surface
@@ -22,28 +20,76 @@ import com.hazardhunt.safebuddy.ui.theme.fourth_settings_item
 import com.hazardhunt.safebuddy.ui.theme.second_settings_item
 import com.hazardhunt.safebuddy.ui.theme.third_settings_item
 
-data class Settings(@DrawableRes val icons: Int, val description: String, val routes: String, val color: Color)
-
-val settingsList = listOf(
-    Settings(icons = R.drawable.support, description = "Help and support", routes = "", color = first_settings_item),
-    Settings(icons = R.drawable.star, description = "Rate safe buddy", routes = "", color = second_settings_item),
-    Settings(icons = R.drawable.language, description = " logout", routes = "", color = fifth_settings_item),
-    Settings(icons = R.drawable.sync, description = "Sync database", routes = "", color = third_settings_item),
-    Settings(icons = R.drawable.share, description = "Invite friends", routes = "", color = fourth_settings_item),
-    Settings(icons = R.drawable.logout, description = " logout", routes = "", color = fifth_settings_item),
+data class Settings(
+    @DrawableRes val icons: Int,
+    val description: String,
+    val routes: String,
+    val surfacecolor: Color,
+    val shouldbeenabled: Boolean,
 )
 
+val settingsList = listOf(
+    Settings(
+        icons = R.drawable.support,
+        description = "Help and support",
+        routes = "",
+        surfacecolor = first_settings_item,
+        shouldbeenabled = true,
+    ),
+    Settings(
+        icons = R.drawable.star,
+        description = "Rate safe buddy",
+        routes = "",
+        surfacecolor = second_settings_item,
+        shouldbeenabled = true,
+    ),
+    Settings(
+        icons = R.drawable.language,
+        description = "Languages",
+        routes = "",
+        surfacecolor = fifth_settings_item,
+        shouldbeenabled = true,
+    ),
+    Settings(
+        icons = R.drawable.sync,
+        description = "Sync database",
+        routes = "",
+        surfacecolor = third_settings_item,
+        shouldbeenabled = true,
+    ),
+    Settings(
+        icons = R.drawable.share,
+        description = "Invite friends",
+        routes = "",
+        surfacecolor = fourth_settings_item,
+        shouldbeenabled = true,
+    ),
+    Settings(
+        icons = R.drawable.logout,
+        description = " logout",
+        routes = "",
+        surfacecolor = fifth_settings_item,
+        shouldbeenabled = true,
+    ),
+)
+
+// the size of the icon is controlled by the padding on the ixon
 @Composable
-fun settingsoption() {
-    Surface(shape = RoundedCornerShape(15.dp), modifier = Modifier.padding(20.dp)) {
+fun settingsoption(
+    list: List<Settings> = settingsList,
+    onSurfaceclicked: () -> Unit = {},
+) {
+    Surface(shape = RoundedCornerShape(15.dp), modifier = Modifier.padding(15.dp)) {
         Column {
-            settingsList.forEachIndexed { index, settings ->
+            list.forEachIndexed { index, settings ->
 
                 Individualsettingsitem(
                     surfaceIcon = settings.icons,
-                    surfaceColor = settings.color,
+                    surfaceColor = settings.surfacecolor,
                     textDescription = settings.description,
                     showdivider = index < settingsList.size - 1,
+                    onsurfaceClicked = onSurfaceclicked,
+                    isclickenabled = settings.shouldbeenabled,
                 )
             }
         }
@@ -61,12 +107,6 @@ fun settingsoption() {
 @Composable
 fun settingsOptionspreview() {
     HazardHuntTheme {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .fillMaxWidth(),
-        ) {
-            settingsoption()
-        }
+        settingsoption()
     }
 }

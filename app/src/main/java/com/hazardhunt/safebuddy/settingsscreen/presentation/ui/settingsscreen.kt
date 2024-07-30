@@ -39,19 +39,23 @@ import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
 @Composable
 fun Individualsettingsitem(
-    modifier: Modifier = Modifier.height(60.dp).fillMaxWidth().padding(10.dp),
+    modifier: Modifier = Modifier.height(60.dp).fillMaxWidth().clickable { }.padding(10.dp),
     @DrawableRes surfaceIcon: Int = R.drawable.arrow_circle,
     surfaceColor: Color = Color.Blue,
     textDescription: String = "settings",
     showdivider: Boolean = false,
+    onsurfaceClicked: () -> Unit = {},
+    isclickenabled: Boolean = true,
 ) {
     Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
         IndividualsettingComponant(
             surfaceIcon = surfaceIcon,
             surfaceColor = surfaceColor,
             text = textDescription,
+            onIconClicked = onsurfaceClicked,
+            onClickEnabled = true,
         )
-        if (showdivider) HorizontalDivider(thickness = 1.dp, modifier = Modifier.padding(top = 10.dp))
+        if (showdivider) HorizontalDivider(thickness = 1.dp, modifier = Modifier.padding(top = 10.dp).clickable { })
     }
 }
 
@@ -69,7 +73,7 @@ fun IndividualsettingComponant(
 
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 7.dp, end = 7.dp),
+            .padding(start = 7.dp, end = 7.dp).clickable(enabled = onClickEnabled) { onIconClicked },
     ) {
         Iconandtext(
             surfaceColor = surfaceColor,
@@ -119,8 +123,8 @@ fun Iconandsurface(
 ) {
     Surface(
         modifier = Modifier
-            .height(37.dp)
-            .width(37.dp),
+            .height(35.dp)
+            .width(35.dp),
         color = surfacecolor,
         shape = RoundedCornerShape(5.dp),
     ) {
@@ -128,7 +132,7 @@ fun Iconandsurface(
             painter = painterResource(id = surfaceIcon),
             contentDescription = "",
             tint = surfacetintColor,
-            modifier = Modifier.padding(5.dp),
+            modifier = Modifier.padding(8.dp),
         )
     }
 }
