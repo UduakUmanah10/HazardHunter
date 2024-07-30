@@ -6,8 +6,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -31,7 +33,7 @@ fun settingspage() {
         CustomCenterTopAppbar(
             containerColor = Color.Transparent,
 
-            modifier = Modifier.padding(bottom = 20.dp),
+            modifier = Modifier.padding(bottom = 10.dp),
 
             titleContentColor = MaterialTheme.colorScheme.onSecondary,
 
@@ -52,18 +54,52 @@ fun settingspage() {
             actionIconAction = {},
         )
         surface()
+        // updateprofilepicture(modifier = Modifier.padding(3.dp))
 
-        Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Uduak Umanah", style = MaterialTheme.typography.headlineLarge)
-            Text(text = "UduakUmanah10@gmail.com", style = MaterialTheme.typography.bodyMedium)
+        Surface(
+            modifier = Modifier.padding(3.dp),
+            shape = RoundedCornerShape(7.dp),
+        ) {
             Text(
-                text = "Registered at Feb 21 2024",
-                style = MaterialTheme.typography.headlineSmall,
-                modifier = Modifier.padding(bottom = 7.dp),
+                text = "update profile picture",
+                modifier = Modifier.padding(4.dp),
+                style = MaterialTheme.typography.titleSmall,
             )
         }
+        Surface(
+            modifier = Modifier.padding(15.dp),
+            shape = RoundedCornerShape(7.dp),
+        ) {
+            Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
+                Text(text = "Uduak Umanah", style = MaterialTheme.typography.titleMedium)
+                Text(text = "UduakUmanah10@gmail.com", style = MaterialTheme.typography.titleMedium)
+                Text(
+                    text = "Registered on Feb 21 2024",
+                    style = MaterialTheme.typography.titleMedium,
+                    modifier = Modifier.padding(bottom = 7.dp),
+                )
+            }
+        }
+
+//        Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
+//            Text(text = "Uduak Umanah", style = MaterialTheme.typography.titleMedium)
+//            Text(text = "UduakUmanah10@gmail.com", style = MaterialTheme.typography.titleMedium)
+//            Text(
+//                text = "Registered at Feb 21 2024",
+//                style = MaterialTheme.typography.titleMedium,
+//                modifier = Modifier.padding(bottom = 7.dp),
+//            )
+//        }
         settingsoption()
 
+        Surface(shape = RoundedCornerShape(15.dp), modifier = Modifier.padding(15.dp)) {
+            Individualsettingsitem(
+                surfaceIcon = R.drawable.delete,
+                surfaceColor = Color.Red,
+                textDescription = "delete",
+                showdivider = false,
+            )
+        }
         Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
             Text(
                 text = "Version 3.1.0 (10)",
@@ -87,12 +123,6 @@ fun settingspage() {
 @Composable
 fun settingspagepreview() {
     HazardHuntTheme {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .fillMaxWidth(),
-        ) {
-            settingspage()
-        }
+        settingspage()
     }
 }

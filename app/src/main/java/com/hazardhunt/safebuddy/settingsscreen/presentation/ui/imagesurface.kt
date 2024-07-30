@@ -35,7 +35,7 @@ fun surface(
     Box(
         modifier = Modifier
             .height(100.dp)
-            .width(100.dp).padding(3.dp),
+            .width(100.dp).padding(2.dp),
     ) {
         AnimatedBorderCard(animate = false, unanimatedBorderWidth = 2.dp) {
             profileImageSurface(
