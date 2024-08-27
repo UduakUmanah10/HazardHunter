@@ -12,6 +12,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -33,7 +35,7 @@ fun settingspage() {
         CustomCenterTopAppbar(
             containerColor = Color.Transparent,
 
-            modifier = Modifier.padding(bottom = 10.dp),
+            modifier = Modifier.padding(bottom = 5.dp),
 
             titleContentColor = MaterialTheme.colorScheme.onSecondary,
 
@@ -50,34 +52,48 @@ fun settingspage() {
                 )
             },
             actionIcon = {
+                Icon(
+                    painter = painterResource(id = R.drawable.help),
+                    contentDescription = stringResource(R.string.Password),
+                    tint = MaterialTheme.colorScheme.secondaryContainer,
+                    modifier = Modifier.size(dimensionResource(id = R.dimen.centerBarIcon)),
+                )
             },
             actionIconAction = {},
         )
+
         surface()
         // updateprofilepicture(modifier = Modifier.padding(3.dp))
 
+//        Surface(
+//            modifier = Modifier.padding(3.dp),
+//            shape = RoundedCornerShape(7.dp),
+//        ) {
+//            Text(
+//                text = "update profile picture",
+//                modifier = Modifier.padding(4.dp),
+//                style = MaterialTheme.typography.titleSmall,
+//            )
+//        }
         Surface(
-            modifier = Modifier.padding(3.dp),
-            shape = RoundedCornerShape(7.dp),
+            modifier = Modifier.padding(top = 3.dp, bottom = 10.dp, start = 15.dp, end = 15.dp),
+            shape = RoundedCornerShape(15.dp),
         ) {
-            Text(
-                text = "update profile picture",
-                modifier = Modifier.padding(4.dp),
-                style = MaterialTheme.typography.titleSmall,
-            )
-        }
-        Surface(
-            modifier = Modifier.padding(15.dp),
-            shape = RoundedCornerShape(7.dp),
-        ) {
-            Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.fillMaxWidth().padding(5.dp),
+            ) {
                 Text(text = "Uduak Umanah", style = MaterialTheme.typography.titleMedium)
-                Text(text = "UduakUmanah10@gmail.com", style = MaterialTheme.typography.titleMedium)
                 Text(
-                    text = "Registered on Feb 21 2024",
+                    text = "UduakUmanah10@gmail.com",
                     style = MaterialTheme.typography.titleMedium,
                     modifier = Modifier.padding(bottom = 7.dp),
                 )
+                // Text(
+                //  text = "Registered on Feb 21 2024",
+                // style = MaterialTheme.typography.titleMedium,
+                // modifier = Modifier.padding(bottom = 7.dp),
+                // )
             }
         }
 

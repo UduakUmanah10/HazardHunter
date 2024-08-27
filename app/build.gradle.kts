@@ -24,7 +24,7 @@ android {
     defaultConfig {
         applicationId = "com.hazardhunt.safebuddy"
         minSdk = 28
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -96,6 +96,7 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.crashlytics)
+    implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 
 
     // DURATION
