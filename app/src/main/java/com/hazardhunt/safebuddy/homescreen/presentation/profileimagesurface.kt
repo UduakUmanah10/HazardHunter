@@ -4,11 +4,12 @@ package com.hazardhunt.safebuddy.homescreen.presentation
 import android.content.res.Configuration
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.Surface
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -19,6 +20,7 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
+import com.hazardhunt.safebuddy.R
 import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
 @Composable
@@ -39,17 +41,17 @@ fun profileImageSurface(
         // MaterialTheme.colorScheme.surface,
 
     ) {
-        Box {
+        Box(modifier = Modifier.background(Color.Transparent)) {
             if (isimageuploaded) {
                 Image(
-                    painter = painterResource(id = painterResource),
+                    painter = painterResource(id = R.drawable.profileimage),
                     contentDescription = "",
                 )
             } else {
                 Text(
                     text = "UU",
                     modifier = Modifier.align(Alignment.Center),
-                    style = MaterialTheme.typography.headlineMedium,
+                    style = MaterialTheme.typography.titleMedium,
                 )
             }
         }

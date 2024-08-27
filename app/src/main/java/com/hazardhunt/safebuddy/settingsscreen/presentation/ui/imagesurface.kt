@@ -8,10 +8,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -35,7 +33,7 @@ fun surface(
     Box(
         modifier = Modifier
             .height(100.dp)
-            .width(100.dp).padding(2.dp),
+            .width(100.dp).padding(2.dp, bottom = 7.dp),
     ) {
         AnimatedBorderCard(animate = false, unanimatedBorderWidth = 2.dp) {
             profileImageSurface(
@@ -47,15 +45,25 @@ fun surface(
                 isimageuploaded = isimageUploaded,
             )
         }
-        Icon(
-            painter = painterResource(id = R.drawable.edit),
-            contentDescription = "",
-            tint = Color.Black,
+
+        Iconandsurface(
             modifier = Modifier
-                .padding(end = 3.dp, bottom = 15.dp)
-                .size(30.dp)
-                .align(Alignment.BottomEnd),
+                .height(30.dp)
+                .width(30.dp).align(Alignment.BottomEnd),
+            surfaceIcon = R.drawable.edit,
+            surfacetintColor = Color.Blue,
+            surfacecolor = Color.Red,
+            shape = CircleShape,
         )
+//        Icon(
+//            painter = painterResource(id = R.drawable.edit),
+//            contentDescription = "",
+//            tint = Color.Black,
+//            modifier = Modifier
+//                .padding(end = 3.dp, bottom = 15.dp)
+//                .size(30.dp)
+//                .align(Alignment.BottomEnd),
+//        )
     }
 }
 

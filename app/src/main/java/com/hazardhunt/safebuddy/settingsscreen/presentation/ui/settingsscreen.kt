@@ -22,6 +22,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -117,16 +118,18 @@ fun Iconandtext(
 
 @Composable
 fun Iconandsurface(
+    modifier: Modifier = Modifier
+        .height(33.dp)
+        .width(33.dp),
     @DrawableRes surfaceIcon: Int = R.drawable.arrow_circle,
     surfacetintColor: Color = Color.Blue,
     surfacecolor: Color = Color.Red,
+    shape: Shape = RoundedCornerShape(5.dp),
 ) {
     Surface(
-        modifier = Modifier
-            .height(35.dp)
-            .width(35.dp),
+        modifier = modifier,
         color = surfacecolor,
-        shape = RoundedCornerShape(5.dp),
+        shape = shape,
     ) {
         Icon(
             painter = painterResource(id = surfaceIcon),
