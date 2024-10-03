@@ -1,5 +1,6 @@
 package com.hazardhunt.safebuddy.login.presentation
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hazardhunt.safebuddy.R
@@ -14,18 +15,24 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
     private val credentialLoginUseCase: CredentialsLoginUsecase,
+    private val savedStateHandle: SavedStateHandle,
 ) : ViewModel() {
 
     private val _viewState: MutableStateFlow<LogInViewState> =
         MutableStateFlow(LogInViewState.InitialLoginState)
 
-    val viewState: StateFlow<LogInViewState> = _viewState
+    val viewState1: StateFlow<LogInViewState> = _viewState.asStateFlow()
+
+    val viewState: StateFlow<LogInViewState> =
+        savedStateHandle.getStateFlow(LOGIN_SCREEN_STATE, LogInViewState.InitialLoginState)
 
     val completedState = Channel<Unit>()
 
@@ -34,11 +41,23 @@ class LoginViewModel @Inject constructor(
         val currentPasswordErrorMessage =
             (_viewState.value as? LogInViewState.Active)?.passwordInputErrorMessage
 
-        _viewState.value = LogInViewState.Active(
-            credentials = currentCredentials.withUpdatedEmail(email),
-            emailInputErrorMessage = null,
-            passwordInputErrorMessage = currentPasswordErrorMessage,
-        )
+        _viewState.update {
+            LogInViewState.Active(
+                credentials = currentCredentials.withUpdatedEmail(email),
+                emailInputErrorMessage = null,
+                passwordInputErrorMessage = currentPasswordErrorMessage,
+            )
+        }
+
+        val value = savedStateHandle.get<LogInViewState>(LOGIN_SCREEN_STATE)
+
+        if (value != null) {
+            savedStateHandle[LOGIN_SCREEN_STATE] = LogInViewState.Active(
+                credentials = currentCredentials.withUpdatedEmail(email),
+                emailInputErrorMessage = null,
+                passwordInputErrorMessage = currentPasswordErrorMessage,
+            )
+        }
     }
 
     fun passwordChangeed(password: String) {
@@ -47,11 +66,13 @@ class LoginViewModel @Inject constructor(
         val currentPasswordErrorMessage =
             (_viewState.value as? LogInViewState.Active)?.emailInputErrorMessage
 
-        _viewState.value = LogInViewState.Active(
-            credentials = currentCredentials.withUpdatedPassword(password),
-            emailInputErrorMessage = currentPasswordErrorMessage,
-            passwordInputErrorMessage = null,
-        )
+        _viewState.update {
+            LogInViewState.Active(
+                credentials = currentCredentials.withUpdatedPassword(password),
+                emailInputErrorMessage = currentPasswordErrorMessage,
+                passwordInputErrorMessage = null,
+            )
+        }
     }
 
     fun signUpButtonClicked() {
@@ -120,5 +141,9 @@ class LoginViewModel @Inject constructor(
         return this.copy(
             password = Password(password),
         )
+    }
+
+    companion object {
+        const val LOGIN_SCREEN_STATE = "loginScreenStateKey"
     }
 }

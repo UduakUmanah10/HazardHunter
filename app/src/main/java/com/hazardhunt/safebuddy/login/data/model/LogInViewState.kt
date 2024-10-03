@@ -1,8 +1,10 @@
 // ktlint-disable filename
 package com.hazardhunt.safebuddy.login.data.model
 
+import android.os.Parcelable
 import com.hazardhunt.safebuddy.core.UIText
 import com.hazardhunt.safebuddy.login.domain.util.Credentials
+import kotlinx.parcelize.Parcelize
 
 /**
  * This class Defines the current and possible state of the log in screen
@@ -10,11 +12,11 @@ import com.hazardhunt.safebuddy.login.domain.util.Credentials
  * @param[buttonsEnabled] the current password entered in the password field
  *
  */
-
+@Parcelize
 sealed class LogInViewState(
     open val credentials: Credentials,
     open val buttonsEnabled: Boolean = true,
-) {
+) : Parcelable {
     object InitialLoginState : LogInViewState(
         credentials = Credentials(),
     )

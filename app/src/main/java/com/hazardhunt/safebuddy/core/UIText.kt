@@ -1,11 +1,14 @@
 // ktlint-disable filename
 package com.hazardhunt.safebuddy.core
 import android.content.Context
+import android.os.Parcelable
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import kotlinx.parcelize.Parcelize
 
-sealed class UIText {
+@Parcelize
+sealed class UIText : Parcelable {
 
     data class StringText(val value: String) : UIText()
     data class ResourceStringText(@StringRes val value: Int) : UIText()

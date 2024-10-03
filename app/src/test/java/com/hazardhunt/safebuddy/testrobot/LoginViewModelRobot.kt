@@ -1,5 +1,6 @@
 package com.hazardhunt.safebuddy.testrobot
 
+import androidx.lifecycle.SavedStateHandle
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
 import com.hazardhunt.safebuddy.fakeclasses.FakeCredentialsLoginUseCase
@@ -14,10 +15,10 @@ class LoginViewModelRobot {
 
     private lateinit var viewModel: LoginViewModel
 
-    // The
     fun BuildViewModel() = apply {
         viewModel = LoginViewModel(
             credentialLoginUseCase = fakeCrekentialsLogInUsecase.mock,
+            savedStateHandle = SavedStateHandle(),
 
         )
     }
