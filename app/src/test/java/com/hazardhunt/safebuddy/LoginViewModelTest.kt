@@ -11,7 +11,9 @@ import com.hazardhunt.safebuddy.login.domain.util.Email
 import com.hazardhunt.safebuddy.login.domain.util.LoginResults
 import com.hazardhunt.safebuddy.login.domain.util.Password
 import com.hazardhunt.safebuddy.testrobot.LoginViewModelRobot
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
 import org.junit.After
 import org.junit.Before
@@ -34,9 +36,10 @@ class LoginViewModelTest {
         testRobot = LoginViewModelRobot()
     }
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     @After
     fun tearDown() {
-        //  Dispatchers.resetMain()
+        Dispatchers.resetMain()
     }
 
     private lateinit var testRobot: LoginViewModelRobot

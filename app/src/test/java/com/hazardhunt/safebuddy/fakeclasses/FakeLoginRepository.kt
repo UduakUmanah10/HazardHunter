@@ -19,8 +19,9 @@ class FakeLoginRepository {
             mock.login(credentials)
         } returns result
     }
+
     fun vreifyLoginCall() {
-        coVerify(exactly = 0) {
+        coVerify(exactly = 1) {
             mock.login(any())
         }
     }

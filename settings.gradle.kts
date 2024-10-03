@@ -14,5 +14,7 @@ dependencyResolutionManagement {
     }
 }
 
+
+
 rootProject.name = "HazardHunt"
 include(":app")

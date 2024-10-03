@@ -9,11 +9,13 @@ plugins {
     alias(libs.plugins.kover)
     alias(libs.plugins.detekt)
     alias(libs.plugins.crashlytics)
+    alias(libs.plugins.compose.compiler)
     id("kotlin-parcelize")
     //id("kotlin-kapt")
     id("org.jetbrains.kotlin.plugin.serialization")
     id ("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
+
 
 }
 
@@ -56,7 +58,7 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.8"
     }
-    packagingOptions {
+    packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
@@ -114,8 +116,8 @@ dependencies {
     implementation(libs.androidx.appcompat)
     //implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
-    implementation(platform("androidx.compose:compose-bom:2022.10.00"))
-    androidTestImplementation(platform("androidx.compose:compose-bom:2022.10.00"))
+    implementation(platform(libs.compose.bom))
+    androidTestImplementation(platform(libs.compose.bom.v20221000))
     annotationProcessor(libs.androidx.room.compiler)
 
     // To use Kotlin annotation processing tool (kapt)
@@ -194,7 +196,7 @@ dependencies {
     ksp(libs.square.moshi.kotlin.codegen)
     kspAndroidTest(libs.hilt.android.compiler)
     implementation( libs.core)
-    ksp(libs.ksp)
+   // ksp(libs.ksp)
 
 
 }
