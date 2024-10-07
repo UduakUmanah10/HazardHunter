@@ -5,7 +5,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -42,15 +42,13 @@ fun SuperScriptText(
             superText,
         )
 
-        Divider(
-            modifier =
-            Modifier
+        HorizontalDivider(
+            modifier = Modifier
                 .padding(start = 5.dp, top = 5.dp)
                 .height(25.dp)
                 .width(3.dp),
-
-            color = MaterialTheme.colorScheme.onPrimary,
             thickness = 200.dp,
+            color = MaterialTheme.colorScheme.onPrimary,
         )
 
         Text(

@@ -9,10 +9,10 @@ plugins {
 
     //alias(libs.plugins.ksp) apply false
     id("com.google.devtools.ksp") version "2.0.20-1.0.25" apply false
-
     alias(libs.plugins.kover)
     id("com.android.library") version "8.1.4" apply false
-
+    alias(libs.plugins.fire.base) apply false
+    alias(libs.plugins.crashlytics) apply false
 
 
 }
@@ -39,10 +39,7 @@ buildscript{
 
     }
 
-    plugins {
-        alias(libs.plugins.fire.base) apply false
-        alias(libs.plugins.crashlytics) apply false
-    }
+
 
 
 }
