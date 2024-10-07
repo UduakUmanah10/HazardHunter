@@ -178,7 +178,7 @@ private fun BoxInsideConstraint(features: Features) {
 }
 
 fun Path.standardQuadtTo(from: Offset, to: Offset) {
-    quadraticBezierTo(
+    quadraticTo(
         from.x,
         from.y,
         abs(from.x + to.x) / 2f,

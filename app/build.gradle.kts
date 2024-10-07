@@ -5,17 +5,14 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.kolinter)
     alias(libs.plugins.fire.base)
-    //alias(libs.plugins.hilt)
     alias(libs.plugins.kover)
     alias(libs.plugins.detekt)
     alias(libs.plugins.crashlytics)
     alias(libs.plugins.compose.compiler)
     id("kotlin-parcelize")
-    //id("kotlin-kapt")
     id("org.jetbrains.kotlin.plugin.serialization")
     id ("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
-
 
 }
 
@@ -68,10 +65,15 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    testOptions.unitTests{
+        all { tests ->
+            tests.useJUnitPlatform()
+            tests.testLogging {
+                events("passed", "failed", "skipped")
+            }
+        }
 
-    //hilt {
-      //  enableAggregatingTask = true
-    //}
+    }
 }
 kotlin {
     sourceSets {
@@ -197,6 +199,11 @@ dependencies {
     kspAndroidTest(libs.hilt.android.compiler)
     implementation( libs.core)
    // ksp(libs.ksp)
+
+    testImplementation(libs.bundles.ui.testing)
+    testImplementation(libs.bundles.unit.testing)
+    testRuntimeOnly(libs.junit.jupiter.engine)
+
 
 
 }

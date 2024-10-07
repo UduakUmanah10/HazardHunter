@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -121,13 +122,12 @@ private fun LogoInputColum(
         if (viewState is LogInViewState.Submitting) {
             // IndeterminateCircularIndicator()
             // do nothing
-            // CircularProgressIndicator(
-            //  modifier = Modifier
-            //     .wrapContentSize()
-
-            // .align(Alignment.CenterHorizontally),
-            // color = MaterialTheme.colorScheme.secondaryContainer,
-            // )
+            CircularProgressIndicator(
+                modifier = Modifier
+                    .wrapContentSize().padding(bottom = 4.dp)
+                    .align(Alignment.CenterHorizontally),
+                color = MaterialTheme.colorScheme.secondaryContainer,
+            )
             // CircularProgressIndicator()
         }
 
