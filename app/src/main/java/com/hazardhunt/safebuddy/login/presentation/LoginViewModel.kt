@@ -1,5 +1,4 @@
 package com.hazardhunt.safebuddy.login.presentation
-
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -15,8 +14,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -29,50 +26,33 @@ class LoginViewModel @Inject constructor(
     private val _viewState: MutableStateFlow<LogInViewState> =
         MutableStateFlow(LogInViewState.InitialLoginState)
 
-    val viewState1: StateFlow<LogInViewState> = _viewState.asStateFlow()
-
     val viewState: StateFlow<LogInViewState> =
-        savedStateHandle.getStateFlow(LOGIN_SCREEN_STATE, LogInViewState.InitialLoginState)
+        savedStateHandle.getStateFlow(LOGIN_SCREEN_STATE, _viewState.value)
 
     val completedState = Channel<Unit>()
 
     fun emailChange(email: String) {
-        val currentCredentials = _viewState.value.credentials
+        val currentCredentials = viewState.value.credentials
         val currentPasswordErrorMessage =
-            (_viewState.value as? LogInViewState.Active)?.passwordInputErrorMessage
-
-        _viewState.update {
-            LogInViewState.Active(
-                credentials = currentCredentials.withUpdatedEmail(email),
-                emailInputErrorMessage = null,
-                passwordInputErrorMessage = currentPasswordErrorMessage,
-            )
-        }
-
-        val value = savedStateHandle.get<LogInViewState>(LOGIN_SCREEN_STATE)
-
-        if (value != null) {
-            savedStateHandle[LOGIN_SCREEN_STATE] = LogInViewState.Active(
-                credentials = currentCredentials.withUpdatedEmail(email),
-                emailInputErrorMessage = null,
-                passwordInputErrorMessage = currentPasswordErrorMessage,
-            )
-        }
+            (viewState.value as? LogInViewState.Active)?.passwordInputErrorMessage
+        savedStateHandle[LOGIN_SCREEN_STATE] = LogInViewState.Active(
+            credentials = currentCredentials.withUpdatedEmail(email)
+                .withUpdatedEmail(email),
+            emailInputErrorMessage = null,
+            passwordInputErrorMessage = currentPasswordErrorMessage,
+        )
     }
 
     fun passwordChangeed(password: String) {
-        val currentCredentials = _viewState.value.credentials
-
+        val currentCredentials = viewState.value.credentials
         val currentPasswordErrorMessage =
-            (_viewState.value as? LogInViewState.Active)?.emailInputErrorMessage
+            (viewState.value as? LogInViewState.Active)?.emailInputErrorMessage
 
-        _viewState.update {
-            LogInViewState.Active(
-                credentials = currentCredentials.withUpdatedPassword(password),
-                emailInputErrorMessage = currentPasswordErrorMessage,
-                passwordInputErrorMessage = null,
-            )
-        }
+        savedStateHandle[LOGIN_SCREEN_STATE] = LogInViewState.Active(
+            credentials = currentCredentials.withUpdatedPassword(password),
+            emailInputErrorMessage = null,
+            passwordInputErrorMessage = currentPasswordErrorMessage,
+        )
     }
 
     fun signUpButtonClicked() {
@@ -80,16 +60,17 @@ class LoginViewModel @Inject constructor(
     }
 
     fun signInButtonClicked() {
-        val currentCredentials = _viewState.value.credentials
+        val currentCredentials = viewState.value.credentials
 
-        _viewState.value = LogInViewState.Submitting(
+        savedStateHandle[LOGIN_SCREEN_STATE] = LogInViewState.Submitting(
             credentials = currentCredentials,
+
         )
 
         viewModelScope.launch {
             val loginResult = credentialLoginUseCase(currentCredentials)
 
-            _viewState.value = when (loginResult) {
+            savedStateHandle[LOGIN_SCREEN_STATE] = when (loginResult) {
                 is LoginResults.Failure.InvalidCredentials -> {
                     LogInViewState.SubmissionError(
                         credentials = currentCredentials,
@@ -126,7 +107,7 @@ class LoginViewModel @Inject constructor(
                     }
                     LogInViewState.LoginSuccess
                 }
-                else -> _viewState.value
+                //  else -> _viewState.value
             }
         }
     }

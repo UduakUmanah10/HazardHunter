@@ -11,16 +11,10 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.resetMain
 import org.junit.After
 import org.junit.Before
-import org.junit.Rule
 
 class LoginViewModelTest {
     private lateinit var loginRepository: FakeLoginRepository
     private lateinit var tokenRepository: FakeAuthTokenRepository
-
-    // val uncaughtExceptionHandlerRule = ThreadExceptionHandler()
-    // val dispatcher = StandardTestDispatcher()
-    @get:Rule
-    val mainDispatcherRule = MainDispatcherRule()
 
     @Before
     fun setUp() {
