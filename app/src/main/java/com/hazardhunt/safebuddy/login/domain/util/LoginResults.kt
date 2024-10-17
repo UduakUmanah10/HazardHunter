@@ -13,13 +13,22 @@ sealed class LoginResults {
      */
     sealed class Failure : LoginResults() {
 
-        object InvalidCredentials : Failure()
+        data object InvalidCredentials : Failure()
 
-        object Unknown : Failure()
+        data object Unknown : Failure()
 
-        data class EmptyCredentials(
-            val emptyEmail: Boolean,
-            val emptyPassword: Boolean,
-        ) : Failure()
+        sealed class EmptyCredentials: Failure() {
+
+            data object EmptyEmail: EmptyCredentials()
+
+            data object EmptyPassword: EmptyCredentials()
+
+            data object EmptyBoth: EmptyCredentials()
+        }
+
+//        data class EmptyCredentials(
+//            val emptyEmail: Boolean,
+//            val emptyPassword: Boolean,
+//        ) : Failure()
     }
 }

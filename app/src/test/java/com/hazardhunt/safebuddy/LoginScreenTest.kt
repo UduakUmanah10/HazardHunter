@@ -1,7 +1,9 @@
 package com.hazardhunt.safebuddy
+
 import androidx.lifecycle.SavedStateHandle
 import com.google.common.truth.Truth.assertThat
 import com.hazardhunt.safebuddy.core.UIText
+import com.hazardhunt.safebuddy.fakeclasses.FakeCredentialsLoginUseCase
 import com.hazardhunt.safebuddy.login.data.model.LogInViewState
 import com.hazardhunt.safebuddy.login.domain.usecase.CredentialsLoginUsecase
 import com.hazardhunt.safebuddy.login.domain.util.Credentials
@@ -9,6 +11,13 @@ import com.hazardhunt.safebuddy.login.domain.util.Email
 import com.hazardhunt.safebuddy.login.domain.util.LoginResults
 import com.hazardhunt.safebuddy.login.domain.util.Password
 import com.hazardhunt.safebuddy.login.presentation.LoginViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.test.UnconfinedTestDispatcher
+import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -16,103 +25,109 @@ import org.junit.jupiter.api.extension.ExtendWith
 @ExtendWith(CoroutineTestExtension::class)
 class LoginScreenTest {
 
+    private val savedStateHandle = SavedStateHandle()
+    private val loginViewModel = LoginViewModel(
+        credentialLoginUseCase = credentiaLoginUsecase(),
+        savedStateHandle = savedStateHandle,
+    )
+
     @Test
-    fun defatltstate() = runTest {
-        val viewmodel = LoginViewModel(credentialLoginUseCase = credentialusecase(), savedStateHandle = SavedStateHandle())
-        assertThat(viewmodel.viewState.value).isEqualTo(LogInViewState.InitialLoginState)
+    fun initialState() = runTest {
+        assertThat(loginViewModel.viewState.value).isEqualTo(LogInViewState.InitialLoginState)
     }
 
     @Test
     fun emailEnteredState() = runTest {
         val testEmail = "testy@mactest.com"
         val emailEnteredState = LogInViewState.Active(Credentials(email = Email(testEmail)))
-        val viewmodel = LoginViewModel(credentialLoginUseCase = credentiaLoginUsecase(), savedStateHandle = SavedStateHandle())
-        viewmodel.emailChange(testEmail)
-        assertThat(viewmodel.viewState.value).isEqualTo(emailEnteredState)
+
+        loginViewModel.emailChange(testEmail)
+
+        assertThat(loginViewModel.viewState.value).isEqualTo(emailEnteredState)
     }
 
     @Test
     fun passwordEnteredState() = runTest {
         val password = "1234"
         val emailEnteredState = LogInViewState.Active(Credentials(password = Password(password)))
-        val viewmodel = LoginViewModel(credentialLoginUseCase = credentiaLoginUsecase(), savedStateHandle = SavedStateHandle())
 
-        viewmodel.passwordChangeed(password)
+        loginViewModel.passwordChangeed(password)
 
-        assertThat(viewmodel.viewState.value).isEqualTo(emailEnteredState)
+        assertThat(loginViewModel.viewState.value).isEqualTo(emailEnteredState)
     }
 
     @Test
     fun emailAndPasswordEntered() = runTest {
         val testEmail = "testy@mactest.com"
         val testPassword = "12345"
-
         val passwordEnteredState = LogInViewState.Active(Credentials(email = Email(testEmail), password = Password(testPassword)))
-        val viewmodel = LoginViewModel(credentialLoginUseCase = credentialusecase(), savedStateHandle = SavedStateHandle())
 
-        viewmodel.emailChange(testEmail)
-        viewmodel.passwordChangeed(testPassword)
+        loginViewModel.emailChange(testEmail)
+        loginViewModel.passwordChangeed(testPassword)
 
-        assertThat(viewmodel.viewState.value).isEqualTo(passwordEnteredState)
+        assertThat(loginViewModel.viewState.value).isEqualTo(passwordEnteredState)
     }
 
     @Test
     fun onlyEmailSubmittedTest() = runTest {
         val testEmail = "testy@mactest.com"
-        val credentials = Credentials(
-            email = Email(testEmail),
-        )
-
-        val invalidpasswordInputState = LogInViewState.Active(
-            credentials = credentials,
+        val invalidPasswordInputState = LogInViewState.Active(
+            credentials = Credentials(email = Email(testEmail)),
             passwordInputErrorMessage = UIText.ResourceStringText(R.string.error_empty_password),
         )
+        val viewmodel =
+            LoginViewModel(credentialLoginUseCase = onlyEmailCredentialEnteredUsecase(), savedStateHandle = savedStateHandle).apply {
+                emailChange(testEmail)
+            }
 
-        val viewmodel = LoginViewModel(credentialLoginUseCase = onlyEmailCredentialEnteredUsecase(), savedStateHandle = SavedStateHandle())
-        viewmodel.emailChange(testEmail)
         viewmodel.signInButtonClicked()
 
-        assertThat(viewmodel.viewState.value).isEqualTo(invalidpasswordInputState)
+        assertThat(viewmodel.viewState.value).isEqualTo(invalidPasswordInputState)
     }
 
     @Test
     fun onlyPasswordSubmitted() = runTest {
         val testPassword = "12345"
-        val credentials = Credentials(password = Password(testPassword))
-
         val invalidEmailInputState = LogInViewState.Active(
-            credentials = credentials,
+            credentials = Credentials(password = Password(testPassword)),
             emailInputErrorMessage = UIText.ResourceStringText(R.string.error_empty_email),
         )
-
         val viewmodel = LoginViewModel(
             credentialLoginUseCase = onlyPasswordCredentialEnteredUsecase(),
-            savedStateHandle = SavedStateHandle(),
-        )
+            savedStateHandle = savedStateHandle,
+        ).apply {
+            passwordChangeed(testPassword)
+        }
 
-        viewmodel.passwordChangeed(testPassword)
         viewmodel.signInButtonClicked()
 
         assertThat(viewmodel.viewState.value).isEqualTo(invalidEmailInputState)
     }
 
     @Test
-    fun noEmailandPasswordsnSubmitted() = runTest {
+    fun noEmailAndPasswordSubmitted() = runTest {
         val credentials = Credentials()
-
         val invalidInputState = LogInViewState.Active(
             credentials = credentials,
             emailInputErrorMessage = UIText.ResourceStringText(R.string.error_empty_email),
             passwordInputErrorMessage = UIText.ResourceStringText(R.string.error_empty_password),
-
         )
         val viewmodel = LoginViewModel(
-            credentialLoginUseCase = noEmaialAndPasswordCredentialEnteredUsecase(),
-            savedStateHandle = SavedStateHandle(),
+            credentialLoginUseCase = ControllableCredentialsLoginUseCase(LoginResults.Failure.EmptyCredentials.EmptyBoth),
+            savedStateHandle = savedStateHandle,
         )
+
         viewmodel.signInButtonClicked()
 
         assertThat(viewmodel.viewState.value).isEqualTo(invalidInputState)
+    }
+
+    class ControllableCredentialsLoginUseCase(
+        private val desiredResults: LoginResults
+    ): CredentialsLoginUsecase {
+        override suspend fun invoke(credentials: Credentials): LoginResults {
+            return desiredResults
+        }
     }
 
     class credentiaLoginUsecase : CredentialsLoginUsecase {
@@ -123,25 +138,25 @@ class LoginScreenTest {
 
     class onlyEmailCredentialEnteredUsecase : CredentialsLoginUsecase {
         override suspend fun invoke(credentials: Credentials): LoginResults {
-            return LoginResults.Failure.EmptyCredentials(false, true)
+            return LoginResults.Failure.EmptyCredentials.EmptyPassword
         }
     }
 
     class onlyPasswordCredentialEnteredUsecase : CredentialsLoginUsecase {
         override suspend fun invoke(credentials: Credentials): LoginResults {
-            return LoginResults.Failure.EmptyCredentials(true, false)
+            return LoginResults.Failure.EmptyCredentials.EmptyEmail
         }
     }
 
     class noEmaialAndPasswordCredentialEnteredUsecase : CredentialsLoginUsecase {
         override suspend fun invoke(credentials: Credentials): LoginResults {
-            return LoginResults.Failure.EmptyCredentials(true, true)
+            return LoginResults.Failure.EmptyCredentials.EmptyBoth
         }
     }
 
     class credentialusecase : CredentialsLoginUsecase {
         override suspend fun invoke(credentials: Credentials): LoginResults {
-            return LoginResults.Failure.EmptyCredentials(false, true)
+            return LoginResults.Failure.EmptyCredentials.EmptyEmail
         }
     }
 }

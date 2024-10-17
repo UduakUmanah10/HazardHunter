@@ -86,18 +86,17 @@ class LoginViewModel @Inject constructor(
                 is LoginResults.Failure.EmptyCredentials -> {
                     LogInViewState.Active(
                         credentials = currentCredentials,
-                        emailInputErrorMessage = if (loginResult.emptyEmail) {
+                        emailInputErrorMessage = if (loginResult == LoginResults.Failure.EmptyCredentials.EmptyEmail) {
                             UIText.ResourceStringText(R.string.error_empty_email)
                         } else {
                             null
                         },
 
-                        passwordInputErrorMessage = if (loginResult.emptyPassword) {
+                        passwordInputErrorMessage = if (loginResult == LoginResults.Failure.EmptyCredentials.EmptyPassword) {
                             UIText.ResourceStringText(R.string.error_empty_password)
                         } else {
                             null
                         },
-
                     )
                 }
                 is LoginResults.Success -> {

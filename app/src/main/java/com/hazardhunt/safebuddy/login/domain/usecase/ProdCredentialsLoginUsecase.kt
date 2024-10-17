@@ -24,11 +24,11 @@ class ProdCredentialsLoginUseCase @Inject constructor(
         val emptyPassword = credentials.password.passwordValue.isEmpty()
 
         if (emptyEmail || emptyPassword) {
-            return LoginResults.Failure.EmptyCredentials(
-                emptyEmail = emptyEmail,
-                emptyPassword = emptyPassword,
-
-            )
+            return when {
+                emptyEmail && emptyPassword -> LoginResults.Failure.EmptyCredentials.EmptyBoth
+                emptyEmail -> LoginResults.Failure.EmptyCredentials.EmptyEmail
+                else -> LoginResults.Failure.EmptyCredentials.EmptyPassword
+            }
         }
         delay(DELAYTIME.toLong())
 
