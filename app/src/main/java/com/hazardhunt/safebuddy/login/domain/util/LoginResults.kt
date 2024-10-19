@@ -17,13 +17,13 @@ sealed class LoginResults {
 
         data object Unknown : Failure()
 
-        sealed class EmptyCredentials: Failure() {
+        sealed class EmptyCredentials : Failure() {
 
-            data object EmptyEmail: EmptyCredentials()
+            data object EmptyEmail : EmptyCredentials()
 
-            data object EmptyPassword: EmptyCredentials()
+            data object EmptyPassword : EmptyCredentials()
 
-            data object EmptyBoth: EmptyCredentials()
+            data object EmptyBoth : EmptyCredentials()
         }
 
 //        data class EmptyCredentials(
