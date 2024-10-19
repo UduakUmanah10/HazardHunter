@@ -88,11 +88,15 @@ class LoginViewModel @Inject constructor(
                         credentials = currentCredentials,
                         emailInputErrorMessage = if (loginResult == LoginResults.Failure.EmptyCredentials.EmptyEmail) {
                             UIText.ResourceStringText(R.string.error_empty_email)
+                        } else if (loginResult == LoginResults.Failure.EmptyCredentials.EmptyBoth) {
+                            UIText.ResourceStringText(R.string.error_empty_email)
                         } else {
                             null
                         },
 
                         passwordInputErrorMessage = if (loginResult == LoginResults.Failure.EmptyCredentials.EmptyPassword) {
+                            UIText.ResourceStringText(R.string.error_empty_password)
+                        } else if (loginResult == LoginResults.Failure.EmptyCredentials.EmptyBoth) {
                             UIText.ResourceStringText(R.string.error_empty_password)
                         } else {
                             null
@@ -106,7 +110,6 @@ class LoginViewModel @Inject constructor(
                     }
                     LogInViewState.LoginSuccess
                 }
-                //  else -> _viewState.value
             }
         }
     }

@@ -3,7 +3,6 @@ package com.hazardhunt.safebuddy
 import androidx.lifecycle.SavedStateHandle
 import com.google.common.truth.Truth.assertThat
 import com.hazardhunt.safebuddy.core.UIText
-import com.hazardhunt.safebuddy.fakeclasses.FakeCredentialsLoginUseCase
 import com.hazardhunt.safebuddy.login.data.model.LogInViewState
 import com.hazardhunt.safebuddy.login.domain.usecase.CredentialsLoginUsecase
 import com.hazardhunt.safebuddy.login.domain.util.Credentials
@@ -11,13 +10,6 @@ import com.hazardhunt.safebuddy.login.domain.util.Email
 import com.hazardhunt.safebuddy.login.domain.util.LoginResults
 import com.hazardhunt.safebuddy.login.domain.util.Password
 import com.hazardhunt.safebuddy.login.presentation.LoginViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.test.UnconfinedTestDispatcher
-import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -123,8 +115,8 @@ class LoginScreenTest {
     }
 
     class ControllableCredentialsLoginUseCase(
-        private val desiredResults: LoginResults
-    ): CredentialsLoginUsecase {
+        private val desiredResults: LoginResults,
+    ) : CredentialsLoginUsecase {
         override suspend fun invoke(credentials: Credentials): LoginResults {
             return desiredResults
         }
@@ -143,18 +135,6 @@ class LoginScreenTest {
     }
 
     class onlyPasswordCredentialEnteredUsecase : CredentialsLoginUsecase {
-        override suspend fun invoke(credentials: Credentials): LoginResults {
-            return LoginResults.Failure.EmptyCredentials.EmptyEmail
-        }
-    }
-
-    class noEmaialAndPasswordCredentialEnteredUsecase : CredentialsLoginUsecase {
-        override suspend fun invoke(credentials: Credentials): LoginResults {
-            return LoginResults.Failure.EmptyCredentials.EmptyBoth
-        }
-    }
-
-    class credentialusecase : CredentialsLoginUsecase {
         override suspend fun invoke(credentials: Credentials): LoginResults {
             return LoginResults.Failure.EmptyCredentials.EmptyEmail
         }
