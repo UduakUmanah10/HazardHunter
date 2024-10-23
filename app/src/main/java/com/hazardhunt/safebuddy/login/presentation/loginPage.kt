@@ -120,8 +120,6 @@ private fun LogoInputColum(
         VerticalSpacer(height = 10.dp)
 
         if (viewState is LogInViewState.Submitting) {
-            // IndeterminateCircularIndicator()
-            // do nothing
             CircularProgressIndicator(
                 modifier = Modifier
                     .wrapContentSize().padding(bottom = 4.dp)
@@ -189,8 +187,6 @@ private fun LogoInputColum(
         VerticalSpacer(height = 20.dp)
 
         SignupAnnotatedString(action = signup)
-
-        // SignUpButton(onSignupClicked = onSignupClicked)
     }
 }
 
@@ -330,6 +326,12 @@ class LoginViewStateProvider : PreviewParameterProvider<LogInViewState> {
                 Password("1234"),
 
             )
+
+            val invalidCredentials = Credentials(
+                Email("uduakumana"),
+                Password("1234"),
+
+            )
             return sequenceOf(
                 LogInViewState.InitialLoginState,
                 LogInViewState.Active(activeCredentials),
@@ -343,6 +345,10 @@ class LoginViewStateProvider : PreviewParameterProvider<LogInViewState> {
                     emailInputErrorMessage = UIText.StringText("please enter email"),
                     passwordInputErrorMessage = UIText.StringText("password"),
 
+                ),
+                LogInViewState.SubmissionError(
+                    invalidCredentials,
+                    UIText.StringText("Email or password is wrong"),
                 ),
 
             )

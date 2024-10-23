@@ -5,8 +5,8 @@ import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
 import com.hazardhunt.safebuddy.fakeclasses.FakeCredentialsLoginUseCase
 import com.hazardhunt.safebuddy.login.data.model.LogInViewState
+import com.hazardhunt.safebuddy.login.data.model.LoginResults
 import com.hazardhunt.safebuddy.login.domain.util.Credentials
-import com.hazardhunt.safebuddy.login.domain.util.LoginResults
 import com.hazardhunt.safebuddy.login.presentation.LoginViewModel
 
 class LoginViewModelRobot {

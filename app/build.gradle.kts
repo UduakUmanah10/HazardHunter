@@ -188,6 +188,7 @@ dependencies {
     androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.ui.test.junit4)
     androidTestImplementation(libs.hilt.android.testing)
+    androidTestImplementation(libs.bundles.ui.testing)
 
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)

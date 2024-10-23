@@ -1,4 +1,4 @@
-package com.hazardhunt.safebuddy.login.domain.util
+package com.hazardhunt.safebuddy.login.data.model
 
 sealed class LoginResults {
     /**
@@ -25,10 +25,5 @@ sealed class LoginResults {
 
             data object EmptyBoth : EmptyCredentials()
         }
-
-//        data class EmptyCredentials(
-//            val emptyEmail: Boolean,
-//            val emptyPassword: Boolean,
-//        ) : Failure()
     }
 }

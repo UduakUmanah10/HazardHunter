@@ -4,10 +4,10 @@ import androidx.lifecycle.SavedStateHandle
 import com.google.common.truth.Truth.assertThat
 import com.hazardhunt.safebuddy.core.UIText
 import com.hazardhunt.safebuddy.login.data.model.LogInViewState
+import com.hazardhunt.safebuddy.login.data.model.LoginResults
 import com.hazardhunt.safebuddy.login.domain.usecase.CredentialsLoginUsecase
 import com.hazardhunt.safebuddy.login.domain.util.Credentials
 import com.hazardhunt.safebuddy.login.domain.util.Email
-import com.hazardhunt.safebuddy.login.domain.util.LoginResults
 import com.hazardhunt.safebuddy.login.domain.util.Password
 import com.hazardhunt.safebuddy.login.presentation.LoginViewModel
 import kotlinx.coroutines.test.runTest
@@ -109,6 +109,28 @@ class LoginScreenTest {
             savedStateHandle = savedStateHandle,
         )
 
+        viewmodel.signInButtonClicked()
+
+        assertThat(viewmodel.viewState.value).isEqualTo(invalidInputState)
+    }
+
+    @Test
+    fun EmailAndPasswordSubmitted() = runTest {
+        val testEmail = "testy@mactest.com"
+        val testPassword = "12345"
+        val credentials = Credentials(Email(testEmail), Password(testPassword))
+
+        val invalidInputState = LogInViewState.SubmissionError(
+            credentials = credentials,
+            errorMessage = UIText.ResourceStringText(R.string.error_invalid_credentials),
+        )
+        val viewmodel = LoginViewModel(
+            credentialLoginUseCase = ControllableCredentialsLoginUseCase(LoginResults.Failure.InvalidCredentials),
+            savedStateHandle = savedStateHandle,
+        )
+
+        viewmodel.emailChange(testEmail)
+        viewmodel.passwordChangeed(testPassword)
         viewmodel.signInButtonClicked()
 
         assertThat(viewmodel.viewState.value).isEqualTo(invalidInputState)

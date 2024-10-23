@@ -5,10 +5,10 @@ import androidx.lifecycle.viewModelScope
 import com.hazardhunt.safebuddy.R
 import com.hazardhunt.safebuddy.core.UIText
 import com.hazardhunt.safebuddy.login.data.model.LogInViewState
+import com.hazardhunt.safebuddy.login.data.model.LoginResults
 import com.hazardhunt.safebuddy.login.domain.usecase.CredentialsLoginUsecase
 import com.hazardhunt.safebuddy.login.domain.util.Credentials
 import com.hazardhunt.safebuddy.login.domain.util.Email
-import com.hazardhunt.safebuddy.login.domain.util.LoginResults
 import com.hazardhunt.safebuddy.login.domain.util.Password
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
@@ -103,6 +103,7 @@ class LoginViewModel @Inject constructor(
                         },
                     )
                 }
+
                 is LoginResults.Success -> {
                     _viewState.value
                     viewModelScope.launch {
