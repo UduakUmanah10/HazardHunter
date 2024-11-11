@@ -323,7 +323,7 @@ class LoginViewStateProvider : PreviewParameterProvider<LogInViewState> {
         get() {
             val activeCredentials = Credentials(
                 Email("uduakumanah19@gmail.com"),
-                Password("1234"),
+                Password("A@umanah.1234"),
 
             )
 

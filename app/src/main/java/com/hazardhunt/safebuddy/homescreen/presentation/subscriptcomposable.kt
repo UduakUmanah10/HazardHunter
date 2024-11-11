@@ -5,9 +5,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.VerticalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -41,13 +41,12 @@ fun SuperScriptText(
             baselineShift,
             superText,
         )
-
-        HorizontalDivider(
+        VerticalDivider(
             modifier = Modifier
-                .padding(start = 5.dp, top = 5.dp)
-                .height(25.dp)
+                .padding(start = 8.dp, top = 7.dp)
+                .height(17.dp)
                 .width(3.dp),
-            thickness = 200.dp,
+            thickness = 3.dp,
             color = MaterialTheme.colorScheme.onPrimary,
         )
 
@@ -58,13 +57,6 @@ fun SuperScriptText(
             style = MaterialTheme.typography.titleMedium,
             color = MaterialTheme.colorScheme.onPrimary,
         )
-        // Text(
-        //   modifier = Modifier
-        //     .padding(start = 10.dp),
-        // text = "partly cloudy",
-        // style = MaterialTheme.typography.titleMedium,
-        // color = MaterialTheme.colorScheme.secondaryContainer,
-        // )
     }
 }
 

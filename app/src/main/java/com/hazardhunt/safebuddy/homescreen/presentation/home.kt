@@ -3,7 +3,6 @@ package com.hazardhunt.safebuddy.homescreen.presentation
 
 import android.content.res.Configuration
 import androidx.annotation.DrawableRes
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -96,7 +95,6 @@ fun imagec() {
     )
 }
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun HomeScreen() {
     Scaffold(modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)) {
@@ -113,7 +111,7 @@ fun HomeScreen() {
             profileBar(
                 notificationModifier = Modifier.padding(7.dp),
                 rowModifier = Modifier
-                    .padding(10.dp)
+                    .padding()
                     .width(90.dp)
                     .height(50.dp),
                 notificationSurfaceHeight = 30.dp,
@@ -125,55 +123,13 @@ fun HomeScreen() {
                 animatedSurfaceShape = CircleShape,
                 animatedBackgroundColor = Color.Transparent,
             )
-            pagerScreen()
-            lazyVerticalGrid(
-                features = listOf(
-                    Features(
-                        title = "Sensors",
-                        icon = R.drawable.person,
-                        MaterialTheme.colorScheme.inversePrimary,
-                        MaterialTheme.colorScheme.secondaryContainer,
-                        MaterialTheme.colorScheme.onPrimary,
-
-                    ),
-                    Features(
-                        title = "Sensors",
-                        icon = R.drawable.person,
-                        MaterialTheme.colorScheme.inversePrimary,
-                        MaterialTheme.colorScheme.secondaryContainer,
-                        MaterialTheme.colorScheme.onPrimary,
-
-                    ),
-                    Features(
-                        title = "Sensors",
-                        icon = R.drawable.person,
-                        MaterialTheme.colorScheme.inversePrimary,
-                        MaterialTheme.colorScheme.secondaryContainer,
-                        MaterialTheme.colorScheme.onPrimary,
-
-                    ),
-                    Features(
-                        title = "Sensors",
-                        icon = R.drawable.person,
-                        MaterialTheme.colorScheme.inversePrimary,
-                        MaterialTheme.colorScheme.secondaryContainer,
-                        MaterialTheme.colorScheme.onPrimary,
-
-                    ),
-                    Features(
-                        title = "Sensors",
-                        icon = R.drawable.person,
-                        MaterialTheme.colorScheme.inversePrimary,
-                        MaterialTheme.colorScheme.secondaryContainer,
-                        MaterialTheme.colorScheme.onPrimary,
-                    ),
-                ),
-            )
+            // pagerScreen()
+            weathercard()
+            staggeredGrid()
         }
     }
 }
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun pagerScreen() {
     val pageCount = PAGER_COUNT

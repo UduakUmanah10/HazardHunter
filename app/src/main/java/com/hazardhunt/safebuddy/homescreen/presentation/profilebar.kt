@@ -38,13 +38,13 @@ fun profileBar(
 
 ) {
     Row(
-        modifier = Modifier.height(80.dp).fillMaxWidth(),
+        modifier = Modifier.padding(start = 17.dp, end = 17.dp).height(80.dp).fillMaxWidth(),
         horizontalArrangement = Arrangement.Absolute.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
     ) {
         profilebarText(
             columModifier = Modifier
-                .padding(10.dp)
+                .padding()
                 .height(70.dp)
                 .wrapContentSize(),
             upperText = "Hi Temi !",
