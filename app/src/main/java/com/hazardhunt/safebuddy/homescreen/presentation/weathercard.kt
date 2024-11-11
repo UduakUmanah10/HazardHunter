@@ -18,16 +18,19 @@ import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 fun weathercard() {
     Card(
         modifier = Modifier
-            .padding(10.dp),
+            .padding(
+                start = 15.dp,
+                end =
+                15.dp,
+                top = 15.dp,
+            ),
 
         shape = RoundedCornerShape(15.dp),
 
     ) {
         Column(
             modifier = Modifier.wrapContentSize()
-                // .height(200.dp)
-                // .width(400.dp)
-                .padding(2.dp),
+                .padding(16.dp),
         ) {
             temperatureandWeatherImage()
             weathertextComposable(
