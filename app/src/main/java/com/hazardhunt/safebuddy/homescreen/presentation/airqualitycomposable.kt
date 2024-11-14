@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentSize
@@ -16,6 +17,7 @@ import androidx.compose.material.Text
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.VerticalDivider
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -29,14 +31,14 @@ fun airquality() {
         modifier = Modifier
             .padding(2.dp)
             .wrapContentSize(),
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         Image(
             painter = painterResource(id = R.drawable.airpolution),
             contentDescription = "",
             modifier = Modifier
                 .padding(top = 2.dp)
-                .height(60.dp)
-                .width(60.dp),
+                .size(25.dp),
         )
 
         textComponentOfairQuality()
@@ -48,18 +50,21 @@ fun textComponentOfairQuality() {
     Column(
         modifier = Modifier
             .padding(5.dp)
-            .height(80.dp),
+            .wrapContentSize(),
     ) {
-        Row(modifier = Modifier.fillMaxWidth()) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
             Text(
                 text = "162",
-                style = MaterialTheme.typography.displayMedium,
+                style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onPrimary,
 
             )
             VerticalDivider(
                 modifier = Modifier
-                    .padding(start = 8.dp, top = 15.dp)
+                    .padding(start = 8.dp)
                     .height(20.dp)
                     .width(3.dp),
                 thickness = 3.dp,
@@ -68,7 +73,7 @@ fun textComponentOfairQuality() {
 
             Text(
                 modifier = Modifier
-                    .padding(start = 7.dp, top = 15.dp)
+                    .padding(start = 7.dp)
                     .fillMaxWidth(),
                 text = "Micro Dust / Pm 2.5",
                 style = MaterialTheme.typography.displaySmall,
@@ -78,7 +83,7 @@ fun textComponentOfairQuality() {
 
         Text(
             modifier = Modifier
-                .padding(start = 3.dp, bottom = 3.dp)
+                // .padding(start = 3.dp, bottom = 3.dp)
                 .fillMaxWidth()
                 .wrapContentHeight(),
 

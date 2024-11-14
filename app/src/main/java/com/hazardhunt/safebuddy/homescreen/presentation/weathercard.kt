@@ -22,7 +22,8 @@ fun weathercard() {
                 start = 15.dp,
                 end =
                 15.dp,
-                top = 15.dp,
+                top = 10.dp,
+                bottom = 5.dp,
             ),
 
         shape = RoundedCornerShape(15.dp),

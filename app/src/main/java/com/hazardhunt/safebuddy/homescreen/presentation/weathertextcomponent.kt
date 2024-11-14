@@ -2,6 +2,7 @@
 package com.hazardhunt.safebuddy.homescreen.presentation
 
 import android.content.res.Configuration
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -25,8 +26,16 @@ fun weathertextComposable(
     locationText: String = "Surulere Lagos",
     coordinateText: String = "South West Nigeria",
 ) {
-    Column(modifier = Modifier.padding(4.dp)) {
-        Row() {
+    Column(
+        modifier = Modifier.padding(4.dp),
+        // horizontalAlignment = Alignment.CenterHorizontally,
+        // verticalArrangement = Arrangement.SpaceBetween
+    ) {
+        Row(
+            modifier = Modifier,
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween,
+        ) {
             Text(
                 text = locationText,
                 style = MaterialTheme.typography.headlineMedium,
@@ -34,8 +43,8 @@ fun weathertextComposable(
             )
             Icon(
                 modifier = Modifier
-                    .size(40.dp)
-                    .padding(10.dp),
+                    .size(30.dp)
+                    .padding(vertical = 5.dp),
                 painter = painterResource(id = R.drawable.location),
                 contentDescription = "",
                 tint = MaterialTheme.colorScheme.onPrimary,
