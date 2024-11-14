@@ -37,9 +37,9 @@ data class ListItem(
 
 val listofitem = listOf(
     ListItem(230.dp, Color(FIRST_COLOUR), 3.dp),
-    ListItem(100.dp, Color(SECOND_COLOR), 3.dp),
+    ListItem(120.dp, Color(SECOND_COLOR), 3.dp),
     ListItem(230.dp, Color(THIRD_COLOR), 3.dp),
-    ListItem(100.dp, Color(FOURTH_COLOR), 3.dp),
+    ListItem(120.dp, Color(FOURTH_COLOR), 3.dp),
 )
 
 @Composable
@@ -78,7 +78,7 @@ fun staggeredViewPreview() {
 fun staggeredGrid() {
     LazyVerticalStaggeredGrid(
         columns = StaggeredGridCells.Fixed(2),
-        modifier = Modifier.wrapContentSize().padding(start = 4.dp, end = 4.dp),
+        modifier = Modifier.wrapContentSize().padding(start = 6.dp, end = 6.dp),
         contentPadding = PaddingValues(10.dp),
         horizontalArrangement = Arrangement.spacedBy(10.dp),
         verticalItemSpacing = 10.dp,

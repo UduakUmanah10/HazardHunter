@@ -44,7 +44,7 @@ fun SuperScriptText(
         VerticalDivider(
             modifier = Modifier
                 .padding(start = 8.dp, top = 7.dp)
-                .height(17.dp)
+                .height(20.dp)
                 .width(3.dp),
             thickness = 3.dp,
             color = MaterialTheme.colorScheme.onPrimary,

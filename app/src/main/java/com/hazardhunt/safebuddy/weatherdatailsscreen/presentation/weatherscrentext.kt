@@ -34,7 +34,6 @@ fun weatherscrentest(
     secondCalibration: String = "61%",
     firstweatherElement: String = "wind",
     secondweatherElement: String = "humidity",
-    modifier: Modifier = Modifier,
     @DrawableRes thirdIcon: Int = R.drawable.sunny,
     @DrawableRes fourthIcon: Int = R.drawable.arrow_circle,
     thirdCalibration: String = "11",
