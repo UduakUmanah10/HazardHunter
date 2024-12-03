@@ -12,15 +12,20 @@ import com.hazardhunt.safebuddy.login.domain.util.Email
 import com.hazardhunt.safebuddy.login.domain.util.Password
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
+import kotlin.coroutines.CoroutineContext
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
     private val credentialLoginUseCase: CredentialsLoginUsecase,
     private val savedStateHandle: SavedStateHandle,
+    private val backgroundDispatcher: CoroutineContext,
 ) : ViewModel() {
 
     private val _viewState: MutableStateFlow<LogInViewState> =
@@ -31,10 +36,15 @@ class LoginViewModel @Inject constructor(
 
     val completedState = Channel<Unit>()
 
+    private val loggedOut = MutableSharedFlow<Unit>()
+    val loggedOutt = loggedOut.asSharedFlow()
+
     fun emailChange(email: String) {
         val currentCredentials = viewState.value.credentials
+
         val currentPasswordErrorMessage =
             (viewState.value as? LogInViewState.Active)?.passwordInputErrorMessage
+
         savedStateHandle[LOGIN_SCREEN_STATE] = LogInViewState.Active(
             credentials = currentCredentials.withUpdatedEmail(email)
                 .withUpdatedEmail(email),
@@ -45,6 +55,7 @@ class LoginViewModel @Inject constructor(
 
     fun passwordChangeed(password: String) {
         val currentCredentials = viewState.value.credentials
+
         val currentPasswordErrorMessage =
             (viewState.value as? LogInViewState.Active)?.emailInputErrorMessage
 
@@ -56,7 +67,7 @@ class LoginViewModel @Inject constructor(
     }
 
     fun signUpButtonClicked() {
-        // Todo
+        // Todo()
     }
 
     fun signInButtonClicked() {
@@ -68,6 +79,9 @@ class LoginViewModel @Inject constructor(
         )
 
         viewModelScope.launch {
+            val result = withContext(backgroundDispatcher) {
+            }
+
             val loginResult = credentialLoginUseCase(currentCredentials)
 
             savedStateHandle[LOGIN_SCREEN_STATE] = when (loginResult) {
@@ -125,6 +139,12 @@ class LoginViewModel @Inject constructor(
         return this.copy(
             password = Password(password),
         )
+    }
+
+    fun observeloggedout() {
+        viewModelScope.launch {
+            loggedOut.emit(Unit)
+        }
     }
 
     companion object {

@@ -8,6 +8,7 @@ import com.hazardhunt.safebuddy.login.data.model.LogInViewState
 import com.hazardhunt.safebuddy.login.data.model.LoginResults
 import com.hazardhunt.safebuddy.login.domain.util.Credentials
 import com.hazardhunt.safebuddy.login.presentation.LoginViewModel
+import kotlinx.coroutines.Dispatchers
 
 class LoginViewModelRobot {
 
@@ -19,6 +20,7 @@ class LoginViewModelRobot {
         viewModel = LoginViewModel(
             credentialLoginUseCase = fakeCrekentialsLogInUsecase.mock,
             savedStateHandle = SavedStateHandle(),
+            Dispatchers.Unconfined,
 
         )
     }
