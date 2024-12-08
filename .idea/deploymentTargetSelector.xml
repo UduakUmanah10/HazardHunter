@@ -31,6 +31,9 @@
           </targets>
         </DialogSelection>
       </SelectionState>
+      <SelectionState runConfigName="core.view">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
     </selectionStates>
   </component>
 </project>

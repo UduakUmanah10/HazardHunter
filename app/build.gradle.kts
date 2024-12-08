@@ -18,12 +18,12 @@ plugins {
 
 android {
     namespace = "com.hazardhunt.safebuddy"
-    compileSdk = 34
+    compileSdk = libs.versions.target.sdk.version.get().toInt()
 
     defaultConfig {
         applicationId = "com.hazardhunt.safebuddy"
-        minSdk = 28
-        targetSdk = 34
+        minSdk = libs.versions.min.sdk.version.get().toInt()
+        targetSdk = libs.versions.target.sdk.version.get().toInt()
         versionCode = 1
         versionName = "1.0"
 
@@ -53,7 +53,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.8"
+        kotlinCompilerExtensionVersion = libs.versions.kotlin.compiler.extension.version.get()
     }
     packaging {
         resources {
@@ -119,11 +119,11 @@ dependencies {
     //implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
     implementation(platform(libs.compose.bom))
-    androidTestImplementation(platform(libs.compose.bom.v20221000))
+    androidTestImplementation(platform(libs.compose.bom))
     annotationProcessor(libs.androidx.room.compiler)
 
     // To use Kotlin annotation processing tool (kapt)
-    ksp(libs.room.compiler.v252)
+    ksp(libs.androidx.room.compiler)
 
     implementation(libs.maps.compose)
     implementation(libs.play.services.maps)
@@ -166,7 +166,7 @@ dependencies {
     implementation(libs.square.gsonconverter)
     //implementation(libs.square.retrofit.converter.moshi)
     implementation(libs.hilt.android)
-    implementation(libs.androidx.lifecycle)
+    //implementation(libs.androidx.lifecycle)
     implementation(libs.navigation.library)
     implementation(libs.hilt.nav)
     implementation(libs.datastorelib)
@@ -187,7 +187,7 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.ui.test.junit4)
-    androidTestImplementation(libs.hilt.android.testing)
+    androidTestImplementation(libs.hilt.android.test)
     androidTestImplementation(libs.bundles.ui.testing)
 
     debugImplementation(libs.ui.tooling)
