@@ -86,6 +86,10 @@ kotlin {
     }
 }
 dependencies {
+
+    implementation(libs.bundles.compose)
+    implementation(libs.bundles.compose.debug)
+    implementation(libs.bundles.android.x)
     implementation(libs.play.services.location)
     implementation(libs.sheets.compose.dialogs.core)
 
@@ -94,7 +98,7 @@ dependencies {
 
     // CLOCK
     implementation(libs.clock)
-    implementation (libs.androidx.material3)
+    // 3 implementation (libs.androidx.material3)
     //implementation ("androidx.compose.material3:material3-window-size-class:1.1.2")
     implementation(libs.material3.window)
     implementation(platform(libs.firebase.bom))
@@ -108,7 +112,7 @@ dependencies {
 
 
     implementation (libs.timber)
-    implementation(libs.activity.compose)
+   // 1 implementation(libs.activity.compose)
     //implementation("io.appwrite:sdk-for-android:4.0.0")
 
     implementation(libs.androidx.room.runtime)
@@ -151,9 +155,9 @@ dependencies {
     // DataStore Preferences
     implementation(libs.datastorelib)
 //    implementation(libs.splashscreen)
-    //implementation(libs.material2)
-    implementation(libs.core.ktx)
-    implementation(libs.lifecycle.runtime.ktx)
+    // implementation(libs.material2)
+   // implementation(libs.core.ktx)
+    // implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
     implementation(platform(libs.compose.bom))
     implementation(libs.ui)
@@ -167,12 +171,12 @@ dependencies {
     //implementation(libs.square.retrofit.converter.moshi)
     implementation(libs.hilt.android)
     //implementation(libs.androidx.lifecycle)
-    implementation(libs.navigation.library)
+    implementation(libs.compose.navigation)
     implementation(libs.hilt.nav)
     implementation(libs.datastorelib)
     implementation(libs.viewmodel.lifecycle)
     implementation(libs.iconextended)
-    implementation(libs.compose.ui.tooling)
+    // 2 implementation(libs.compose.ui.tooling)
     implementation(libs.lottie.compose)
    //implementation(project(":HomeFeature"))
 

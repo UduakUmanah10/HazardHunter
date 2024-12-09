@@ -59,7 +59,7 @@ dependencies {
     implementation(libs.square.retrofit.converter.moshi)
     implementation(libs.hilt.android)
     implementation(libs.androidx.lifecycle)
-    implementation(libs.navigation.library)
+    implementation(libs.compose.navigation)
     implementation(libs.hilt.nav)
     implementation(libs.datastorelib)
     implementation(libs.viewmodel.lifecycle)
