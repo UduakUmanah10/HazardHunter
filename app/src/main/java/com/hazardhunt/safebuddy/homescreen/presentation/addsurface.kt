@@ -26,7 +26,6 @@ import androidx.compose.ui.unit.dp
 import com.hazardhunt.safebuddy.R
 import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
-
 @Composable
 fun addSurface(
     modifier: Modifier = Modifier,
