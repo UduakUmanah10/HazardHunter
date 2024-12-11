@@ -26,7 +26,6 @@ import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 import com.hazardhunt.safebuddy.ui.theme.OutlinedTextFieldShape
 import com.hazardhunt.safebuddy.ui.theme.UrbanistMedium
 
-
 /** this is a Custom text field implementation to ensure that it  implements
  * the track-app styling that we Expect. */
 

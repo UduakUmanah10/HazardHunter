@@ -19,7 +19,6 @@ import com.hazardhunt.safebuddy.R
 import com.hazardhunt.safebuddy.savedtaskscreen.data.model.SafetyTasks
 import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
-
 @Composable
 fun ListofTasksItem(
     task: SafetyTasks,
