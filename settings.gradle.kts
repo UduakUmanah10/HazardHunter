@@ -18,4 +18,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "HazardHunt"
 include(":app")
+include(":core2:view")
 include(":core:view")

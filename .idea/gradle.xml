@@ -13,6 +13,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/view" />
+            <option value="$PROJECT_DIR$/core2" />
+            <option value="$PROJECT_DIR$/core2/view" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

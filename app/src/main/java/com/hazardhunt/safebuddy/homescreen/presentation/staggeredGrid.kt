@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
+
 const val FIRST_COLOUR = 0xFF6b1b0f
 const val SECOND_COLOR = 0xFFa46b41
 const val THIRD_COLOR = 0xFF333236

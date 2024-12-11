@@ -73,7 +73,7 @@ class MainActivity : ComponentActivity() {
         )
 
         setContent {
-            HazardHuntTheme {
+              HazardHuntTheme {
                 val navController = rememberNavController()
                 val startdestination = navigationViewMode.startdestination
 

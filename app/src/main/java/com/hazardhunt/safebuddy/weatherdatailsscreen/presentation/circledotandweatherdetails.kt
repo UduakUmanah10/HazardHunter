@@ -35,7 +35,7 @@ fun circleddotandweatherdetails(
     dotanddashedlineModifier: Modifier = Modifier.padding(top = 29.dp, start = 20.dp),
     weatherdata: List<Weatherdetails> = item1,
 
-) {
+    ) {
     Row(modifier = Modifier.fillMaxWidth()) {
         dotanddashedline(
             dottedlineColor = dottedlinecolor,

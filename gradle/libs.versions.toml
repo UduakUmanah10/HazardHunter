@@ -68,6 +68,7 @@ kover ="0.7.2"
 testJunitJupiterVersion = "5.10.0"
 agp = "8.5.2"
 material = "1.12.0"
+agpVersion = "8.1.4"
 
 
 [libraries]
@@ -94,7 +95,7 @@ compose-graphics = { module = "androidx.compose.ui:ui-graphics"}
 compose-preview = { module = "androidx.compose.ui:ui-tooling-preview"}
 compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-tooling" }
 compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
-
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
 
 
 duration = { module = "com.maxkeppeler.sheets-compose-dialogs:duration", version.ref = "calendar" }
@@ -127,7 +128,7 @@ androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref =
 datastorelib = { group ="androidx.datastore" ,name ="datastore-preferences", version.ref ="data-store"}
 
 
-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 coroutine-test = { group= "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test",version.ref = "coroutines"}
 detekt-gradle-plugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detektGradlePlugin" }
@@ -152,7 +153,6 @@ lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtim
 
 material3 = { group = "androidx.compose.material3", name = "material3" }
 mock-library = { group = "io.mockk", name = "mockk", version.ref = "mock-library"}
-material3-window ={ group = "androidx.compose.material3", name = "material3-window-size-class", version.ref = "material3Window"}
 
 
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
@@ -188,7 +188,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 
 
 [plugins]
-androidApplication = { id = "com.android.application", version = "8.5.2" }
+androidApplication = { id = "com.android.application", version = "8.7.3" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android",version.ref = "dagger-hilt" }
 detekt = { id = "io.gitlab.arturbosch.detekt",version.ref = "detektGradlePlugin" }
@@ -197,13 +197,12 @@ kover = {id="org.jetbrains.kotlinx.kover", version.ref= "kover"}
 fire-base = { id ="com.google.gms.google-services", version.ref = "fire-base" }
 crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlytics"}
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-android-library = { id = "com.android.library", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agpVersion" }
 
 
 [bundles]
 ui-testing = ["androidx-test-ext-junit", "espresso-core", "androidx-compose-test", "hilt-android-test"]
 unit-testing = ["jupiter", "jupiter-params", "googleTruth", "jupiter-vintage", "coroutine-test", "test-okhttp-mockserver"]
 android-x =["core-ktx", "lifecycle-runtime-ktx", ]
-
 compose = ["activity-compose","compose-ui","compose-graphics","compose-preview","androidx-material3"]
 compose-debug =["compose-ui-tooling", "compose-ui-test-manifest"]

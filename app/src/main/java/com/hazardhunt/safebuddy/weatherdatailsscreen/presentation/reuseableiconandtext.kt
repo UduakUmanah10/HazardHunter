@@ -29,7 +29,7 @@ fun reuseableiconandtext(
     @DrawableRes imageComponent: Int = R.drawable.sun_and_cloud,
     textComponent: String = "Afternoon",
 
-) {
+    ) {
     Column(modifier = modifier) {
         Row(
             modifier = Modifier.width(100.dp),
