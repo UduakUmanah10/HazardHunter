@@ -1,4 +1,4 @@
-package com.hazardhunt.safebuddy.core.view
+package com.example.core.view
 
 import org.junit.Test
 

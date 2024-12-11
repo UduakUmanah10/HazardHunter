@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
+
 /**
  *
  * these is a composable that tis responsible for updating the profile picture when

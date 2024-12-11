@@ -22,6 +22,7 @@ import com.hazardhunt.safebuddy.ui.theme.fourth
 import com.hazardhunt.safebuddy.ui.theme.second
 import com.hazardhunt.safebuddy.ui.theme.third
 
+
 typealias start = Int
 typealias end = Int
 

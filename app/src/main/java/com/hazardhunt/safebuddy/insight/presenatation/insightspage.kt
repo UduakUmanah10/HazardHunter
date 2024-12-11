@@ -23,6 +23,7 @@ import com.github.tehras.charts.piechart.PieChartData.Slice
 import com.github.tehras.charts.piechart.animation.simpleChartAnimation
 import com.github.tehras.charts.piechart.renderer.SimpleSliceDrawer
 import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
+
 typealias SLICEDATA = Float
 const val FIRST_SLICE_VALUE: SLICEDATA = 20f
 const val SECOND_SLICE_VALUE: SLICEDATA = 40f

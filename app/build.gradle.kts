@@ -2,6 +2,7 @@ apply(plugin = "org.jetbrains.kotlin.android")
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.androidApplication)
+    //alias(libs.plugins.android.library)
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.kolinter)
     alias(libs.plugins.fire.base)
@@ -65,6 +66,9 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+
+
     testOptions.unitTests{
         all { tests ->
             tests.useJUnitPlatform()
@@ -86,7 +90,15 @@ kotlin {
     }
 }
 dependencies {
+
+    //implementation(libs.bundles.compose)
+    //implementation(libs.bundles.compose.debug)
+    //implementation(libs.bundles.android.x)
     implementation(libs.play.services.location)
+    // implementation(platform(libs.compose.bom))
+
+    //implementation(project(":core:view"))
+    implementation(project(":core:view"))
     implementation(libs.sheets.compose.dialogs.core)
 
     // CALENDAR
@@ -94,9 +106,9 @@ dependencies {
 
     // CLOCK
     implementation(libs.clock)
-    implementation (libs.androidx.material3)
+    // 3 implementation (libs.androidx.material3)
     //implementation ("androidx.compose.material3:material3-window-size-class:1.1.2")
-    implementation(libs.material3.window)
+   // implementation(libs.material3.window)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.crashlytics)
@@ -108,7 +120,7 @@ dependencies {
 
 
     implementation (libs.timber)
-    implementation(libs.activity.compose)
+   // 1 implementation(libs.activity.compose)
     //implementation("io.appwrite:sdk-for-android:4.0.0")
 
     implementation(libs.androidx.room.runtime)
@@ -116,9 +128,7 @@ dependencies {
     implementation(libs.androidx.foundation.android)
     implementation(libs.androidx.ui.tooling.preview.android)
     implementation(libs.androidx.appcompat)
-    //implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
-    implementation(platform(libs.compose.bom))
     androidTestImplementation(platform(libs.compose.bom))
     annotationProcessor(libs.androidx.room.compiler)
 
@@ -150,29 +160,22 @@ dependencies {
 
     // DataStore Preferences
     implementation(libs.datastorelib)
-//    implementation(libs.splashscreen)
-    //implementation(libs.material2)
-    implementation(libs.core.ktx)
-    implementation(libs.lifecycle.runtime.ktx)
-    implementation(libs.activity.compose)
-    implementation(platform(libs.compose.bom))
-    implementation(libs.ui)
-    implementation(libs.ui.graphics)
-    implementation(libs.ui.tooling.preview)
-    //implementation(libs.material3)
+//    implementation(libs.activity.compose)
+//    implementation(platform(libs.compose.bom))
+//    implementation(libs.ui)
+//    implementation(libs.ui.graphics)
+//    implementation(libs.ui.tooling.preview)
     implementation(libs.accompanist.systemuicontroller)
     implementation(libs.square.moshi.kotlin)
     implementation(libs.square.retrofit)
     implementation(libs.square.gsonconverter)
-    //implementation(libs.square.retrofit.converter.moshi)
     implementation(libs.hilt.android)
-    //implementation(libs.androidx.lifecycle)
-    implementation(libs.navigation.library)
+    implementation(libs.compose.navigation)
     implementation(libs.hilt.nav)
     implementation(libs.datastorelib)
     implementation(libs.viewmodel.lifecycle)
     implementation(libs.iconextended)
-    implementation(libs.compose.ui.tooling)
+    // 2 implementation(libs.compose.ui.tooling)
     implementation(libs.lottie.compose)
    //implementation(project(":HomeFeature"))
 
@@ -185,12 +188,12 @@ dependencies {
 
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    androidTestImplementation(platform(libs.compose.bom))
+  //  androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.ui.test.junit4)
     androidTestImplementation(libs.hilt.android.test)
     androidTestImplementation(libs.bundles.ui.testing)
 
-    debugImplementation(libs.ui.tooling)
+   // debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
     debugImplementation(libs.square.leakcanary)
 
@@ -204,7 +207,6 @@ dependencies {
     testImplementation(libs.bundles.ui.testing)
     testImplementation(libs.bundles.unit.testing)
     testRuntimeOnly(libs.junit.jupiter.engine)
-
 
 
 }

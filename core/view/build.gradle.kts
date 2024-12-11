@@ -1,18 +1,17 @@
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlinAndroid)
 }
 
 android {
-    namespace = "com.hazardhunt.safebuddy.core.view"
+    namespace = "com.example.core.view"
     compileSdk = 34
 
     defaultConfig {
         minSdk = 24
-        versionCode = 1
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-  //      consumerProguardFiles("consumer-rules.pro")
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -34,10 +33,15 @@ android {
 }
 
 dependencies {
-
-    implementation(libs.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
+    api(libs.core.ktx)
+    api(libs.bundles.compose)
+    api(libs.bundles.compose.debug)
+    api(libs.bundles.android.x)
+    api(platform(libs.compose.bom))
+    api(libs.core.ktx)
+    api(libs.androidx.appcompat)
+    api(libs.material)
+    debugImplementation(libs.bundles.compose.debug)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

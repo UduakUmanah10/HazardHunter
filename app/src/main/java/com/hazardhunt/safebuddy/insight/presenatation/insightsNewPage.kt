@@ -37,6 +37,7 @@ import com.hazardhunt.safebuddy.R
 import com.hazardhunt.safebuddy.core.CustomCenterTopAppbar
 import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
+
 @Composable
 fun InsightsScreen(onNavigationIconClicked: () -> Unit) {
     val pieChartContent = listOf(

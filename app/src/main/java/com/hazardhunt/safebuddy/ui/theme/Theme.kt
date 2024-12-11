@@ -1,3 +1,4 @@
+
 package com.hazardhunt.safebuddy.ui.theme
 
 import android.app.Activity

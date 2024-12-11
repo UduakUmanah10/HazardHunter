@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.hazardhunt.safebuddy.settingsscreen.presentation.ui.surface
 import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
+
 /**
  *
  * This is a surface composable that has a functionality of displaying the profile picture of the users in two

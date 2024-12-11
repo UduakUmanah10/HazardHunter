@@ -1,4 +1,4 @@
-package com.hazardhunt.safebuddy.core.view
+package com.example.test.two
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.hazardhunt.safebuddy.core.view.test", appContext.packageName)
+        assertEquals("com.example.test.two.test", appContext.packageName)
     }
 }
