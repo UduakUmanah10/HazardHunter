@@ -14,9 +14,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.core.view.theme.SafeBuddyTheme
 import com.hazardhunt.safebuddy.R
 import com.hazardhunt.safebuddy.core.CustomCenterTopAppbar
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
 @Composable
 fun weatherdetailsTopappbar(
@@ -60,7 +60,7 @@ fun weatherdetailsTopappbar(
 )
 @Composable
 fun weathecentertopbarpreview() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         weatherdetailsTopappbar()
     }
 }

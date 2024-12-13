@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
+import com.example.core.view.theme.SafeBuddyTheme
 
 /**
  *
@@ -49,7 +49,7 @@ fun updateprofilepicture(
 )
 @Composable
 fun Update_profile_picture_preview() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         updateprofilepicture(modifier = Modifier)
     }
 }

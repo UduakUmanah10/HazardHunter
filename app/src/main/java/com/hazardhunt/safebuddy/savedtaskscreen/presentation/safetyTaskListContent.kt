@@ -12,9 +12,9 @@ import androidx.compose.animation.togetherWith
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.core.view.theme.SafeBuddyTheme
 import com.hazardhunt.safebuddy.core.loadingScreen
 import com.hazardhunt.safebuddy.savedtaskscreen.data.model.SafetyTasks
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
 typealias TWIN = Int
 const val TWEEN_VALUE = 450
@@ -88,7 +88,7 @@ fun TaskPreview() {
     val tasks = (0..10).map { num ->
         SafetyTasks("Task no $num")
     }
-    HazardHuntTheme {
+    SafeBuddyTheme {
         TaskListContent(
             viewState = SafetyListViewState.loaded(tasks = tasks),
             onclick = {},

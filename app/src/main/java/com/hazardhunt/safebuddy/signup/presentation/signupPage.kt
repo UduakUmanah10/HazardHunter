@@ -23,6 +23,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.core.view.theme.SafeBuddyTheme
 import com.hazardhunt.safebuddy.R
 import com.hazardhunt.safebuddy.core.BoldTExtField
 import com.hazardhunt.safebuddy.core.CheckBox
@@ -30,7 +31,6 @@ import com.hazardhunt.safebuddy.core.CustomTextField
 import com.hazardhunt.safebuddy.core.Email
 import com.hazardhunt.safebuddy.core.Password
 import com.hazardhunt.safebuddy.core.SignUpButton
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
 @Composable
 fun SignUpPage() {
@@ -134,7 +134,7 @@ private fun BoldzTextField() {
 )
 @Composable
 fun SignupPreview() {
-    HazardHuntTheme() {
+    SafeBuddyTheme() {
         SignUpPage()
     }
 }

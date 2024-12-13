@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
+import com.example.core.view.theme.SafeBuddyTheme
 
 @Composable
 fun profilebarText(
@@ -60,7 +60,7 @@ fun profilebarText(
 )
 @Composable
 fun profileText() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         profilebarText(
             upperText = "Hi Temi !",
             upperTextModifier = Modifier,

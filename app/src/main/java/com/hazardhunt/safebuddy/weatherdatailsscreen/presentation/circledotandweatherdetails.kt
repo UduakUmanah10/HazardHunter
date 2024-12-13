@@ -12,13 +12,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.core.view.theme.SafeBuddyTheme
+import com.example.core.view.theme.circledot
+import com.example.core.view.theme.first
+import com.example.core.view.theme.fourth
+import com.example.core.view.theme.second
+import com.example.core.view.theme.third
 import com.hazardhunt.safebuddy.R
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
-import com.hazardhunt.safebuddy.ui.theme.circledot
-import com.hazardhunt.safebuddy.ui.theme.first
-import com.hazardhunt.safebuddy.ui.theme.fourth
-import com.hazardhunt.safebuddy.ui.theme.second
-import com.hazardhunt.safebuddy.ui.theme.third
 
 val item1: List<Weatherdetails> = arrayListOf(
     Weatherdetails("Morning", R.drawable.sun_and_cloud, "30", "warmest day of the week", first),
@@ -84,7 +84,7 @@ fun circledotandweatherpreview(
         .fillMaxWidth(),
 
 ) {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         circleddotandweatherdetails()
     }
 }

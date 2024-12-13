@@ -28,8 +28,8 @@ import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.example.core.view.theme.SafeBuddyTheme
 import com.hazardhunt.safebuddy.settingsscreen.presentation.ui.surface
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
 /**
  *
@@ -121,7 +121,7 @@ fun AnimatedBorderCard(
 )
 @Composable
 fun PofileImagSurface() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         // ProfileImageSurface()
         AnimatedBorderCard(animate = false) {
             surface()

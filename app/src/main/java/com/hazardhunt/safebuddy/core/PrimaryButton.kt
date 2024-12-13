@@ -16,8 +16,8 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.core.view.theme.SafeBuddyTheme
 import com.hazardhunt.safebuddy.R
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
 /**
  * This is a custom [Button] that  provides the shape and styling expected in the application
@@ -64,7 +64,7 @@ fun PrimaryButton(
 @Composable
 @Suppress("UnusedPrivateMember")
 private fun PreviewPrimaryButton() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         PrimaryButton(
             text = "primary button",
             onclick = {},

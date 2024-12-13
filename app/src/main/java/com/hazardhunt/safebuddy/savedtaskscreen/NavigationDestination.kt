@@ -42,13 +42,13 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.core.view.theme.SafeBuddyTheme
 import com.hazardhunt.safebuddy.R
 import com.hazardhunt.safebuddy.addnewtask.presentation.AddNewTasksScreen
 import com.hazardhunt.safebuddy.homescreen.presentation.HomeScreen
 import com.hazardhunt.safebuddy.insight.presenatation.InsightsScreen
 import com.hazardhunt.safebuddy.savedtaskscreen.presentation.SafetyTaskScreen
 import com.hazardhunt.safebuddy.settingsscreen.presentation.ui.settingspage
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
 typealias DELAY = Int
 const val ANIMATION_DELAY: DELAY = 1200
@@ -203,7 +203,7 @@ private fun RowScope.NavigationBarItem(
 )
 @Composable
 fun SignupPreview() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         HomeScreen(
             NavigationDestinationItems,
             {},

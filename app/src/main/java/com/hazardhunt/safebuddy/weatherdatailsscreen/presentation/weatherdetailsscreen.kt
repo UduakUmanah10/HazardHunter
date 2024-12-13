@@ -8,7 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
+import com.example.core.view.theme.SafeBuddyTheme
 
 @Composable
 fun weatherdetailsSecrren() {
@@ -26,7 +26,7 @@ fun weatherdetailsSecrren() {
 )
 @Composable
 fun weathercardpreview() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         Column(
             modifier = Modifier
                 .fillMaxSize()

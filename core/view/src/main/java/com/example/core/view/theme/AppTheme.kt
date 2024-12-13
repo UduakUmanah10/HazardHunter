@@ -1,11 +1,25 @@
-@file:Suppress("MagicNumber")
+package com.example.core.view.theme
 
-package com.hazardhunt.safebuddy.ui.theme
-import androidx.compose.material.darkColors
-import androidx.compose.material.lightColors
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.lightColorScheme
+import AppColorScheme
+import AppShape
+import AppSize
+import AppTypography
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import localAppColorScheme
+import localAppTypography
+import localAppshape
+
+
+val Roboto = UrbanistBold
+
 val first = Color(0xFF90D0FF)
 val second = Color(0xFFFFE1B2)
 val third = Color(0xFFFFBAC1)
@@ -75,10 +89,11 @@ private val dark_ColorBar = Color(0xFFf4f4f2)
 
 private val dark_backgroundColor = Color(0xff2b2b2a)
 private val onboarding_buttonColor = Color(0xFF292992)
-val seed = Color(0xFF0f3750)
-val error = Color(0xFFba1b1b)
+private val seed = Color(0xFF0f3750)
+private val error = Color(0xFFba1b1b)
 
-val LightThemeColors = lightColorScheme(
+private  val lightColorScheme = AppColorScheme(
+
     primary = light_primary,
     onPrimary = light_onPrimary,
     primaryContainer = light_primaryContainer,
@@ -105,14 +120,16 @@ val LightThemeColors = lightColorScheme(
     inverseOnSurface = light_inverseOnSurface,
     inverseSurface = light_inverseSurface,
     scrim = light_ColorBar,
+
 )
 
-val DarkThemeColors = darkColorScheme(
-    primary = dark_primary,
+
+private val darkColorScheme = AppColorScheme(
     onPrimary = dark_onPrimary,
-    primaryContainer = dark_primaryContainer,
     onPrimaryContainer = dark_onPrimaryContainer,
     secondary = dark_secondary,
+    primary = dark_primary,
+    primaryContainer = dark_primaryContainer,
     onSecondary = light_onSecondary,
     secondaryContainer = dark_onSecondaryContainer,
     onSecondaryContainer = dark_onSecondaryContainer,
@@ -136,28 +153,144 @@ val DarkThemeColors = darkColorScheme(
     scrim = light_ColorBar,
 )
 
-val DarkMD2Colors = darkColors(
-    primary = DarkThemeColors.primary,
-    secondary = DarkThemeColors.secondary,
-    background = DarkThemeColors.background,
-    surface = DarkThemeColors.surface,
-    error = DarkThemeColors.error,
-    onPrimary = LightThemeColors.onPrimary,
-    onSecondary = DarkThemeColors.onSecondary,
-    onBackground = DarkThemeColors.onBackground,
-    onSurface = DarkThemeColors.onSurface,
-    onError = DarkThemeColors.onError,
+private val typography =     AppTypography(
+    displayLarge = TextStyle(
+        fontFamily = Roboto,
+        fontWeight = FontWeight.W400,
+        fontSize = 57.sp,
+        lineHeight = 64.sp,
+        letterSpacing = (-0.25).sp,
+    ),
+    displayMedium = TextStyle(
+        fontFamily = Roboto,
+        fontWeight = FontWeight.W400,
+        fontSize = 45.sp,
+        lineHeight = 52.sp,
+        letterSpacing = 0.sp,
+    ),
+    displaySmall = TextStyle(
+        fontFamily = UrbanistMedium,
+        fontWeight = FontWeight.W400,
+        fontSize = 17.sp,
+        lineHeight = 40.sp,
+        letterSpacing = 0.sp,
+    ),
+    headlineLarge = TextStyle(
+        fontFamily = Roboto,
+        fontWeight = FontWeight.W400,
+        fontSize = 32.sp,
+        lineHeight = 40.sp,
+        letterSpacing = 0.sp,
+    ),
+    headlineMedium = TextStyle(
+        fontFamily = Roboto,
+        fontWeight = FontWeight.W400,
+        fontSize = 28.sp,
+        lineHeight = 36.sp,
+        letterSpacing = 0.sp,
+    ),
+    headlineSmall = TextStyle(
+        fontFamily = Roboto,
+        fontWeight = FontWeight.W400,
+        fontSize = 24.sp,
+        lineHeight = 32.sp,
+        letterSpacing = 0.sp,
+    ),
+    titleLarge = TextStyle(
+        fontFamily = Roboto,
+        fontWeight = FontWeight.W400,
+        fontSize = 23.sp,
+        lineHeight = 28.sp,
+        letterSpacing = 0.sp,
+    ),
+    titleMedium = TextStyle(
+        fontFamily = UrbanistMedium,
+        fontWeight = FontWeight.Medium,
+        fontSize = 16.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.1.sp,
+    ),
+    titleSmall = TextStyle(
+        fontFamily = Roboto,
+        fontWeight = FontWeight.Medium,
+        fontSize = 14.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.1.sp,
+    ),
+    labelLarge = TextStyle(
+        fontFamily = Roboto,
+        fontWeight = FontWeight.Medium,
+        fontSize = 14.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.1.sp,
+    ),
+    bodyLarge = TextStyle(
+        fontFamily = Roboto,
+        fontWeight = FontWeight.W400,
+        fontSize = 16.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.5.sp,
+    ),
+    bodyMedium = TextStyle(
+        fontFamily = Roboto,
+        fontWeight = FontWeight.W400,
+        fontSize = 24.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.25.sp,
+    ),
+    bodySmall = TextStyle(
+        fontFamily = Roboto,
+        fontWeight = FontWeight.W400,
+        fontSize = 12.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.4.sp,
+    ),
+    labelMedium = TextStyle(
+        fontFamily = Roboto,
+        fontWeight = FontWeight.Medium,
+        fontSize = 12.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.5.sp,
+    ),
+    labelSmall = TextStyle(
+        fontFamily = Roboto,
+        fontWeight = FontWeight.Medium,
+        fontSize = 11.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.5.sp,
+    ),
+    headlineSmal =TextStyle(
+        fontFamily = Roboto,
+        fontWeight = FontWeight.Medium,
+        fontSize = 11.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.5.sp,
+    )
 )
 
-val LightMD2Colors = lightColors(
-    primary = LightThemeColors.primary,
-    secondary = LightThemeColors.secondary,
-    background = LightThemeColors.background,
-    surface = LightThemeColors.surface,
-    error = LightThemeColors.error,
-    onPrimary = DarkThemeColors.onPrimary,
-    onSecondary = LightThemeColors.onSecondary,
-    onBackground = LightThemeColors.onBackground,
-    onSurface = LightThemeColors.onSurface,
-    onError = LightThemeColors.onError,
+private  val shape =AppShape(
+    container = RoundedCornerShape(12.dp),
+    button = RoundedCornerShape(50)
+
 )
+private val size = AppSize(
+    large =24.dp,
+    medium =16.dp,
+    normal =12.dp,
+    small =8.dp
+)
+
+
+@Composable
+fun SafeBuddyTheme(
+    isDarkTheme:Boolean = isSystemInDarkTheme(),
+    content : @Composable ()-> Unit
+){
+   val colorScheme = if (isDarkTheme) darkColorScheme else lightColorScheme
+   CompositionLocalProvider(
+       localAppColorScheme provides colorScheme,
+       localAppTypography provides  typography ,
+       localAppshape provides shape,
+       content= content
+   )
+}

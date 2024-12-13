@@ -21,8 +21,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.BaselineShift
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.core.view.theme.SafeBuddyTheme
 import com.hazardhunt.safebuddy.homescreen.presentation.subscript
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
 @Composable
 fun weatherdetailsbox(
@@ -79,7 +79,7 @@ fun weatherdetailsbox(
 )
 @Composable
 fun weatherdetailsboxpreview() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         Column(
             modifier = Modifier
                 .fillMaxSize()

@@ -26,8 +26,8 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.core.view.theme.SafeBuddyTheme
 import com.hazardhunt.safebuddy.R
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
 /**
  * this would also have a motion layout
@@ -150,7 +150,7 @@ fun Iconandsurface(
 )
 @Composable
 fun iconandtext() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         Column(
             modifier = Modifier
                 .fillMaxSize()

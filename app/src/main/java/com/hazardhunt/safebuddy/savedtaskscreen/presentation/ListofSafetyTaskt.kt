@@ -23,10 +23,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.core.view.theme.SafeBuddyTheme
 import com.hazardhunt.safebuddy.R
 import com.hazardhunt.safebuddy.core.CustomCenterTopAppbar
 import com.hazardhunt.safebuddy.savedtaskscreen.data.model.SafetyTasks
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
 @Composable
 fun safetyTaskList(
@@ -104,7 +104,7 @@ fun LazyPreview() {
     val tasks = (0..10).map { num ->
         SafetyTasks("Task no $num")
     }
-    HazardHuntTheme {
+    SafeBuddyTheme {
         safetyTaskList(
             tasks = tasks,
             onRescheduleClicked = {},

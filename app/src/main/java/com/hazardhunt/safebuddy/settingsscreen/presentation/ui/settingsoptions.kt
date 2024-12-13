@@ -12,13 +12,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.core.view.theme.SafeBuddyTheme
+import com.example.core.view.theme.fifth_settings_item
+import com.example.core.view.theme.first_settings_item
+import com.example.core.view.theme.fourth_settings_item
+import com.example.core.view.theme.second_settings_item
+import com.example.core.view.theme.third_settings_item
 import com.hazardhunt.safebuddy.R
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
-import com.hazardhunt.safebuddy.ui.theme.fifth_settings_item
-import com.hazardhunt.safebuddy.ui.theme.first_settings_item
-import com.hazardhunt.safebuddy.ui.theme.fourth_settings_item
-import com.hazardhunt.safebuddy.ui.theme.second_settings_item
-import com.hazardhunt.safebuddy.ui.theme.third_settings_item
 
 data class Settings(
     @DrawableRes val icons: Int,
@@ -106,7 +106,7 @@ fun settingsoption(
 )
 @Composable
 fun settingsOptionspreview() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         settingsoption()
     }
 }

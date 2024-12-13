@@ -26,12 +26,12 @@ import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.example.core.view.theme.SafeBuddyTheme
 import com.hazardhunt.safebuddy.R
 import com.hazardhunt.safebuddy.addnewtask.data.model.TaskinputModel
 import com.hazardhunt.safebuddy.core.CustomCenterTopAppbar
 import com.hazardhunt.safebuddy.core.PrimaryButton
 import com.hazardhunt.safebuddy.core.UIText
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 import com.maxkeppeker.sheets.core.models.base.UseCaseState
 import java.time.LocalDate
 
@@ -211,7 +211,7 @@ fun NewTaskPage(
     addtaskviewstate: Addtaskviewstate,
 ) {
     val vm: AddNewTaskVieModel = hiltViewModel()
-    HazardHuntTheme {
+    SafeBuddyTheme {
         // AddNewTasksScreen(
         //   vm)
     }

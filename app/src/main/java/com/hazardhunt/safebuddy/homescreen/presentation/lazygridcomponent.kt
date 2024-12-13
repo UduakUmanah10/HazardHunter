@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
+import com.example.core.view.theme.SafeBuddyTheme
 
 @Composable
 fun lazyGridComponent() {
@@ -38,7 +38,7 @@ fun lazyGridComponent() {
 )
 @Composable
 fun lazyGridComponentPreview() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         lazyGridComponent()
     }
 }

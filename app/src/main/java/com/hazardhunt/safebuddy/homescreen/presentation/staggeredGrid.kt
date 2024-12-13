@@ -22,7 +22,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
+import com.example.core.view.theme.SafeBuddyTheme
 
 const val FIRST_COLOUR = 0xFF6b1b0f
 const val SECOND_COLOR = 0xFFa46b41
@@ -63,7 +63,7 @@ fun RandomColorBox(item: ListItem) {
 )
 @Composable
 fun staggeredViewPreview() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         Column(
             modifier = Modifier
                 .fillMaxSize()
