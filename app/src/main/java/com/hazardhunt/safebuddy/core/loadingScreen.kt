@@ -8,7 +8,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
+import com.example.core.view.theme.SafeBuddyTheme
 
 @Composable
 fun loadingScreen() {
@@ -35,7 +35,7 @@ fun loadingScreen() {
 )
 @Composable
 fun LazyPreview() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         loadingScreen()
     }
 }

@@ -15,12 +15,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.core.view.theme.SafeBuddyTheme
+import com.example.core.view.theme.first
+import com.example.core.view.theme.fourth
+import com.example.core.view.theme.second
+import com.example.core.view.theme.third
 import com.hazardhunt.safebuddy.R
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
-import com.hazardhunt.safebuddy.ui.theme.first
-import com.hazardhunt.safebuddy.ui.theme.fourth
-import com.hazardhunt.safebuddy.ui.theme.second
-import com.hazardhunt.safebuddy.ui.theme.third
 
 typealias start = Int
 typealias end = Int
@@ -159,7 +159,7 @@ fun weathericonanddetailspreview(
     timeoftheDay: String = "Afternoon",
     imageComponent: Int = R.drawable.sun_and_cloud,
 ) {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         refactoredWeatherdetails(
             modifier = Modifier
                 .width(380.dp)

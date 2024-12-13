@@ -4,7 +4,7 @@ package com.hazardhunt.safebuddy.activetasks.presentation
 import android.content.res.Configuration
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
+import com.example.core.view.theme.SafeBuddyTheme
 
 @Preview(
     name = "Night Mode",
@@ -16,6 +16,6 @@ import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 )
 @Composable
 fun activetasksPage() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
     }
 }

@@ -42,6 +42,7 @@ dependencies {
     api(libs.core.ktx)
     api(libs.androidx.appcompat)
     api(libs.material)
+    api(libs.versions.material)
     debugImplementation(libs.bundles.compose.debug)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)

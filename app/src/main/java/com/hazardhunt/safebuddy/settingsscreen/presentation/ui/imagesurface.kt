@@ -18,10 +18,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.example.core.view.theme.SafeBuddyTheme
 import com.hazardhunt.safebuddy.R
 import com.hazardhunt.safebuddy.homescreen.presentation.AnimatedBorderCard
 import com.hazardhunt.safebuddy.homescreen.presentation.profileImageSurface
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
 @Composable
 fun surface(
@@ -76,7 +76,7 @@ fun surface(
 )
 @Composable
 fun imagesurface() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         Column(
             modifier = Modifier
                 .fillMaxSize()

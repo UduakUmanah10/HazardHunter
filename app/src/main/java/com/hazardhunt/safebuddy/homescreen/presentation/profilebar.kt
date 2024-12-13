@@ -21,7 +21,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
+import com.example.core.view.theme.SafeBuddyTheme
 
 @Composable
 fun profileBar(
@@ -86,7 +86,7 @@ fun profileBar(
 )
 @Composable
 fun ProfilebarPreview() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         profileBar(
             notificationModifier = Modifier.padding(7.dp),
             rowModifier = Modifier.padding(10.dp).width(90.dp),

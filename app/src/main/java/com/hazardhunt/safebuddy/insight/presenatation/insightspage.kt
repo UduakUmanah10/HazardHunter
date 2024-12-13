@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.core.view.theme.SafeBuddyTheme
 import com.github.tehras.charts.bar.BarChart
 import com.github.tehras.charts.bar.BarChartData
 import com.github.tehras.charts.bar.BarChartData.Bar
@@ -22,7 +23,6 @@ import com.github.tehras.charts.piechart.PieChartData
 import com.github.tehras.charts.piechart.PieChartData.Slice
 import com.github.tehras.charts.piechart.animation.simpleChartAnimation
 import com.github.tehras.charts.piechart.renderer.SimpleSliceDrawer
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 
 typealias SLICEDATA = Float
 const val FIRST_SLICE_VALUE: SLICEDATA = 20f
@@ -120,7 +120,7 @@ fun BarChartComposable(barContent: List<Bar>) {
 )
 @Composable
 fun InsightPreview() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         viewchart()
     }
 }
@@ -140,7 +140,7 @@ fun PieChartDataPreview() {
         Slice(40f, MaterialTheme.colorScheme.error),
         Slice(40f, MaterialTheme.colorScheme.primary),
     )
-    HazardHuntTheme {
+    SafeBuddyTheme {
         PieChartComposable(content)
     }
 }

@@ -21,10 +21,10 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.core.view.theme.OutlinedTextFieldShape
+import com.example.core.view.theme.SafeBuddyTheme
+import com.example.core.view.theme.UrbanistMedium
 import com.hazardhunt.safebuddy.R
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
-import com.hazardhunt.safebuddy.ui.theme.OutlinedTextFieldShape
-import com.hazardhunt.safebuddy.ui.theme.UrbanistMedium
 
 /** this is a Custom text field implementation to ensure that it  implements
  * the track-app styling that we Expect. */
@@ -104,7 +104,7 @@ fun CustomTextField(
 @Suppress("UnusedPrivateMember ")
 @Composable
 private fun FilledCustomTextField() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         Surface() {
             CustomTextField(
                 text = "Toa Text fiels",
@@ -127,7 +127,7 @@ private fun FilledCustomTextField() {
 @Suppress("UnusedPrivateMember ")
 @Composable
 private fun EmptyFilledCustomTextField() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         CustomTextField(
             text = "",
             onTextChanged = {},
@@ -148,7 +148,7 @@ private fun EmptyFilledCustomTextField() {
 @Suppress("UnusedPrivateMember ")
 @Composable
 private fun ErrorFilledCustomTextField() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         CustomTextField(
             text = "",
             onTextChanged = {},

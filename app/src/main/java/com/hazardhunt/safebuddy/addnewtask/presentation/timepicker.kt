@@ -8,7 +8,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.window.DialogProperties
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
+import com.example.core.view.theme.SafeBuddyTheme
 import com.maxkeppeker.sheets.core.models.base.UseCaseState
 import com.maxkeppeker.sheets.core.models.base.rememberUseCaseState
 import com.maxkeppeler.sheets.clock.ClockDialog
@@ -68,7 +68,7 @@ fun timePicker(
 )
 @Composable
 fun TimePicker() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         timePicker(true, true, closeTimeSelection = {}) {
             it.formatToDayAndNight()
         }

@@ -14,11 +14,11 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.compose.rememberNavController
+import com.example.core.view.theme.SafeBuddyTheme
 import com.hazardhunt.safebuddy.core.ScreenNavigation
 import com.hazardhunt.safebuddy.core.broadcastRecievers.AirPlaneModeReciever
 import com.hazardhunt.safebuddy.onboarding.data.model.OnBoardingUseCases
 import com.hazardhunt.safebuddy.onboarding.presentation.MainViewModel
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -73,7 +73,7 @@ class MainActivity : ComponentActivity() {
         )
 
         setContent {
-            HazardHuntTheme {
+            SafeBuddyTheme {
                 val navController = rememberNavController()
                 val startdestination = navigationViewMode.startdestination
 

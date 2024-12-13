@@ -12,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
+import com.example.core.view.theme.SafeBuddyTheme
 
 @Composable
 fun weathercard() {
@@ -53,7 +53,7 @@ fun weathercard() {
 )
 @Composable
 fun weathercardpreview() {
-    HazardHuntTheme {
+    SafeBuddyTheme {
         Column(
             modifier = Modifier
                 .fillMaxSize()

@@ -41,6 +41,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
+import com.example.core.view.theme.SafeBuddyTheme
+import com.example.core.view.theme.UrbanistMedium
 import com.hazardhunt.safebuddy.R
 import com.hazardhunt.safebuddy.core.CustomTextField
 import com.hazardhunt.safebuddy.core.PrimaryButton
@@ -52,8 +54,6 @@ import com.hazardhunt.safebuddy.login.data.model.LogInViewState
 import com.hazardhunt.safebuddy.login.domain.util.Credentials
 import com.hazardhunt.safebuddy.login.domain.util.Email
 import com.hazardhunt.safebuddy.login.domain.util.Password
-import com.hazardhunt.safebuddy.ui.theme.HazardHuntTheme
-import com.hazardhunt.safebuddy.ui.theme.UrbanistMedium
 
 /**
  * This is a composable that maintains the the entire login Screen.
@@ -305,7 +305,7 @@ private fun LoginPreview(
     logInViewState: LogInViewState,
 ) {
     val viewState = logInViewState
-    HazardHuntTheme {
+    SafeBuddyTheme {
         LoginPage(
             viewState = viewState,
             {},
