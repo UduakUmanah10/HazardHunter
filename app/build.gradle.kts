@@ -95,7 +95,7 @@ dependencies {
     //implementation(libs.bundles.compose.debug)
     //implementation(libs.bundles.android.x)
     implementation(libs.play.services.location)
-    // implementation(platform(libs.compose.bom))
+     implementation(platform(libs.compose.bom))
 
     //implementation(project(":core:view"))
     implementation(project(":core:view"))

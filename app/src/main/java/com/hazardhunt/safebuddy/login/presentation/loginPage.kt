@@ -42,7 +42,7 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import com.example.core.view.theme.SafeBuddyTheme
-import com.example.core.view.theme.UrbanistMedium
+//import com.example.core.view.theme.UrbanistMedium
 import com.hazardhunt.safebuddy.R
 import com.hazardhunt.safebuddy.core.CustomTextField
 import com.hazardhunt.safebuddy.core.PrimaryButton
@@ -173,7 +173,7 @@ private fun LogoInputColum(
         )
         if (viewState is LogInViewState.SubmissionError) {
             Text(
-                fontFamily = UrbanistMedium,
+//                fontFamily = UrbanistMedium,
                 text = viewState.errorMessage.getString(LocalContext.current),
                 color = MaterialTheme.colorScheme.error,
                 modifier = Modifier.padding(top = 12.dp),
