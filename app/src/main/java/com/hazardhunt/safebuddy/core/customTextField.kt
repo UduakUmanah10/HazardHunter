@@ -23,7 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.core.view.theme.OutlinedTextFieldShape
 import com.example.core.view.theme.SafeBuddyTheme
-import com.example.core.view.theme.UrbanistMedium
+//import com.example.core.view.theme.UrbanistMedium
 import com.hazardhunt.safebuddy.R
 
 /** this is a Custom text field implementation to ensure that it  implements
@@ -46,7 +46,7 @@ fun CustomTextField(
 ) {
     Column {
         OutlinedTextField(
-            textStyle = TextStyle(fontFamily = UrbanistMedium),
+//            textStyle = TextStyle(fontFamily = UrbanistMedium),
             trailingIcon = trailingIcon,
             keyboardOptions = keyboardOption,
             singleLine = true,
@@ -63,7 +63,7 @@ fun CustomTextField(
             label = {
                 Text(
                     text = labelText,
-                    fontFamily = UrbanistMedium,
+//                    fontFamily = UrbanistMedium,
                 )
             },
             modifier = modifier
@@ -82,7 +82,7 @@ fun CustomTextField(
             Text(
                 text = errorMessage,
                 color = MaterialTheme.colors.error,
-                fontFamily = UrbanistMedium,
+//                fontFamily = UrbanistMedium,
                 modifier = Modifier.padding(
                     top = 1.dp,
                     start = 16.dp,
